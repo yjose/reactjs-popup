@@ -11,7 +11,7 @@
     "build": "node tools/build",
     "storybook": "start-storybook -p 6006",
     "build-examples": "build-storybook -c .storybook -o pages",
-    "preview-examples": "http-server ./pages"
+    "preview-examples": "http-server pages"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
