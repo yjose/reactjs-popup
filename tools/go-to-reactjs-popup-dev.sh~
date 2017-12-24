@@ -1,0 +1,6 @@
+#!/bin/bash
+export WD="/media/disk2/Work/my_react/reactjs-popup/"
+pantheon-terminal --tab --working-directory=$WD \
+ -e 'bash -c "export BASH_POST_RC=\"npm run storybook\"; exec bash"' \
+ --tab --working-directory=$WD \
+ -e 'bash -c "export BASH_POST_RC=\"git status\"; exec bash"'

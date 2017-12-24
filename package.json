@@ -1,0 +1,64 @@
+{
+  "name": "reactjs-popup",
+  "version": "0.1.0",
+  "description": "React Popup Component",
+  "main": "reactPopup.mjs",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "update-snap": "jest --updateSnapshot",
+    "start": " npm run storybook",
+    "build": "node tools/build",
+    "storybook": "start-storybook -p 6006",
+    "build-examples": "build-storybook -c .storybook -o pages",
+    "preview-examples": "http-server ./pages"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.18",
+    "@storybook/addon-knobs": "^3.2.18",
+    "@storybook/addon-links": "^3.2.18",
+    "@storybook/react": "^3.2.18",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
+    "http-server": "^0.10.0",
+    "jest": "^22.0.4",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rollup": "^0.52.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yjose/reactjs-popup.git"
+  },
+  "keywords": ["react", "popup", "reactjs", "react-popup", "reactjs-popup"],
+  "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yjose/reactjs-popup/issues"
+  },
+  "homepage": "https://yjose.github.io/reactjs-popup/"
+}

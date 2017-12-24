@@ -1,0 +1,27 @@
+{
+  "name": "reactjs-popup",
+  "version": "0.1.0",
+  "description": "React Popup Component",
+  "main": "reactPopup.mjs",
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yjose/reactjs-popup.git"
+  },
+  "keywords": [
+    "react",
+    "popup",
+    "reactjs",
+    "react-popup",
+    "reactjs-popup"
+  ],
+  "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yjose/reactjs-popup/issues"
+  },
+  "homepage": "https://github.com/yjose/reactjs-popup#readme"
+}

@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should close on click outside popup  1`] = `
+<PopupTest
+  triggerOn="click"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={false}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should close on click outside popup  2`] = `
+<PopupTest
+  triggerOn="click"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={false}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1`] = `
+<PopupTest
+  closeOnDocumentClick={true}
+  triggerOn="click"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={true}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+      onClick={[Function]}
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2`] = `
+<PopupTest
+  closeOnDocumentClick={true}
+  triggerOn="click"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={true}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should render correctly  1`] = `
+<Popup
+  className=""
+  closeOnDocumentClick={false}
+  defaultOpen={false}
+  position="bottom,center"
+  style={Object {}}
+  trigger={
+    <button>
+       Trigger
+    </button>
+  }
+  triggerOn="click"
+>
+  popup content
+</Popup>
+`;
+
+exports[`it should render correctly on click   1`] = `
+<PopupTest>
+  <Popup
+    className=""
+    closeOnDocumentClick={false}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
+<PopupTest
+  triggerOn="click"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={false}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="click"
+  >
+    <button
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
+
+exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
+<PopupTest
+  triggerOn="hover"
+>
+  <Popup
+    className=""
+    closeOnDocumentClick={false}
+    defaultOpen={false}
+    position="bottom,center"
+    style={Object {}}
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+    triggerOn="hover"
+  >
+    <button
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+       Trigger
+    </button>
+    <div
+      className="overlay"
+    >
+      <div
+        className="popup-content  "
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        style={
+          Object {
+            "position": "fixed",
+          }
+        }
+      >
+        <div
+          className="popup-arrow"
+        />
+        popup content
+      </div>
+    </div>
+  </Popup>
+</PopupTest>
+`;
