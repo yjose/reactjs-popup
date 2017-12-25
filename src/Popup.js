@@ -110,15 +110,15 @@ export default class Popup extends React.Component {
     );
   }
 }
-
 Popup.propTypes = {
   style: PropTypes.object,
   className: PropTypes.string,
-  children: PropTypes.oneOf([
+  trigger: PropTypes.element,
+  children: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.element,
     PropTypes.string
-  ]),
+  ]).isRequired,
   closeOnDocumentClick: PropTypes.bool,
   triggerOn: PropTypes.oneOf(["hover", "click"]),
   position: PropTypes.oneOf([

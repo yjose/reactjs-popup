@@ -1,7 +1,27 @@
-import { configure } from '@storybook/react';
+import { configure } from "@storybook/react";
+import { setOptions } from "@storybook/addon-options";
+import { setDefaults } from "@storybook/addon-info";
 
-function loadStories() {
-  require('../src');
-}
+setOptions({
+  name: "Reactjs Component",
+  url: "#",
+  downPanelInRight: true,
+  hierarchySeparator: /\//,
+  sortStoriesByKind: true
+});
+setDefaults({
+  header: false,
+  inline: true,
+  source: true
+});
 
-configure(loadStories, module);
+const req = require.context("../src/stories", true, /\.js$/);
+
+const load = () => {
+  // require('./Library')
+  req.keys().forEach(req);
+};
+
+configure(load, module);
+
+//configure(() => require("../src"), module);

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withInfo } from "@storybook/addon-info";
 import {
   withKnobs,
   text,
@@ -21,7 +21,21 @@ import PopupFunc from "./stories/PopupFunc";
 // const stories = storiesOf('Storybook Knobs', module);
 // stories.addDecorator(withKnobs);
 
+storiesOf("Readme", module).add(
+  "React Popup Componenet",
+  withInfo(`
+      description or documentation about my component, supports markdown
+    
+      ~~~js
+      <Button>Click Here</Button>
+      
+      ~~~
+    
+    `)(() => {})
+);
+
 storiesOf("My Components", module)
+  //.addDecorator((story, context) => withInfo("common info")(story)(context))
   .addDecorator(withKnobs)
   .add("Popup Simple", () => <PopupElement />)
   .add("Popup child function", () => <PopupFunc />)
