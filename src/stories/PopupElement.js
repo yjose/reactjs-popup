@@ -12,9 +12,8 @@ import { storiesOf } from "@storybook/react";
 import styles from "../index.scss";
 import Popup from "../Popup";
 
-storiesOf("My Components", module)
+storiesOf("React Popup js", module)
   .addDecorator((story, context) => withInfo("common info")(story)(context))
-  .addDecorator(withKnobs)
   .add("Popup element ", () => {
     const labels = "Styles";
     const defaultValueStyles = {

@@ -12,7 +12,7 @@ import { storiesOf } from "@storybook/react";
 
 import Popup from "../Popup";
 
-storiesOf("My Components", module)
+storiesOf("React Popup js", module)
   //.addDecorator((story, context) => withInfo("common info")(story)(context))
   .addDecorator(withKnobs)
   .add("Popup function ", () => {

@@ -59,7 +59,7 @@ export default class Popup extends React.Component {
 
   renderTrigger = () => {
     const triggerProps = {};
-    const triggerOn = this.props.triggerOn || "click";
+    const { triggerOn } = this.props;
     triggerProps.ref = this.setTriggerRef;
     switch (triggerOn) {
       case "click":
