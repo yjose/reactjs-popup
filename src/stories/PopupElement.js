@@ -1,5 +1,4 @@
 import React from "react";
-import { withInfo } from "@storybook/addon-info";
 import {
   withKnobs,
   text,
@@ -12,12 +11,12 @@ import { storiesOf } from "@storybook/react";
 import styles from "../index.scss";
 import Popup from "../Popup";
 
-storiesOf("React Popup js", module)
-  .addDecorator((story, context) => withInfo("common info")(story)(context))
+storiesOf("React Popup", module)
+  .addDecorator(withKnobs)
   .add("Popup element ", () => {
     const labels = "Styles";
     const defaultValueStyles = {
-      backgroundColor: "red"
+      backgroundColor: "#FFFFFF"
     };
 
     const label = "trigger On";
@@ -66,25 +65,27 @@ storiesOf("React Popup js", module)
             closeOnDocumentClick={closeOnDocumentClick}
             position={position}
           >
-            sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
-            blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
-            nihil asperiores ae facilis quis commodi dolores, at enim. Deserunt
-            qui, officiis culpa optio numquam ullam pariatur voluptas tempora
-            doloremque!
-            <Popup
-              triggerOn="click"
-              position="top,left"
-              closeOnDocumentClick={true}
-              trigger={<button>Button nested</button>}
-            >
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                voluptas ex, blanditiis reiciendis dolor numquam pariatur
-                facilis, labore, libero nihil asperiores ae facilis quis commodi
-                dolores, at enim. Deserunt qui, officiis culpa optio numquam
-                ullam pariatur voluptas tempora doloremque!
-              </div>
-            </Popup>
+            <div>
+              sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
+              blanditiis reiciendis dolor numquam pariatur facilis, labore,
+              libero nihil asperiores ae facilis quis commodi dolores, at enim.
+              Deserunt qui, officiis culpa optio numquam ullam pariatur voluptas
+              tempora doloremque!
+              <Popup
+                triggerOn="click"
+                position="bottom,left"
+                closeOnDocumentClick={true}
+                trigger={<button>Button nested</button>}
+              >
+                <div>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                  voluptas ex, blanditiis reiciendis dolor numquam pariatur
+                  facilis, labore, libero nihil asperiores ae facilis quis
+                  commodi dolores, at enim. Deserunt qui, officiis culpa optio
+                  numquam ullam pariatur voluptas tempora doloremque!
+                </div>
+              </Popup>
+            </div>
           </Popup>
         </div>
 

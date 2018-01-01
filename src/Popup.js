@@ -1,6 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import calculatePosition from "./Utils";
+// https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
+
+import styles from "./popup.css.js";
 
 export default class Popup extends React.Component {
   static defaultProps = {
@@ -21,6 +23,7 @@ export default class Popup extends React.Component {
     this.setTriggerRef = r => (this.TriggerEl = r);
     this.setContentRef = r => (this.ContentEl = r);
     this.setArrowRef = r => (this.ArrowEl = r);
+    this.setHelperRef = r => (this.HelperEl = r);
   }
 
   togglePopup = () => {
@@ -47,14 +50,20 @@ export default class Popup extends React.Component {
   };
 
   setPosition = () => {
+    const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
     const cords = calculatePosition(trigger, content, this.props.position);
-    this.ContentEl.style.top = cords.top + "px";
-    this.ContentEl.style.left = cords.left + "px";
+    this.ContentEl.style.top = cords.top - helper.top + "px";
+    this.ContentEl.style.left = cords.left - helper.left + "px";
     this.ArrowEl.style.transform = cords.transform;
     this.ArrowEl.style.top = cords.arrowTop;
     this.ArrowEl.style.left = cords.arrowLeft;
+    if (
+      this.TriggerEl.style.position == "static" ||
+      this.TriggerEl.style.position == ""
+    )
+      this.TriggerEl.style.position = "relative";
   };
 
   renderTrigger = () => {
@@ -75,10 +84,12 @@ export default class Popup extends React.Component {
 
   addWarperAction = () => {
     const childrenElementProps = {
-      className: `popup-content  ${this.props.className}`,
-      style: Object.assign({ position: "fixed" }, this.props.style),
+      className: `${this.props.className}`,
+      style: Object.assign({}, styles.popupContent, this.props.style),
       ref: this.setContentRef,
-      onClick: e => e.stopPropagation()
+      onClick: e => {
+        e.stopPropagation();
+      }
     };
     if (this.props.triggerOn === "hover") {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
@@ -87,6 +98,69 @@ export default class Popup extends React.Component {
     return childrenElementProps;
   };
 
+  render() {
+    return (
+      <React.Fragment>
+        <div
+          style={{ position: "absolute", top: "0px", left: "0px" }}
+          ref={this.setHelperRef}
+        />
+        {this.state.isOpen &&
+          this.props.closeOnDocumentClick && (
+            <span
+              style={styles.overlay}
+              onClick={
+                this.props.closeOnDocumentClick ? this.closePopup : undefined
+              }
+            />
+          )}
+
+        {this.state.isOpen && (
+          <div {...this.addWarperAction()}>
+            <div ref={this.setArrowRef} style={styles.popupArrow} />
+            {typeof this.props.children === "function"
+              ? this.props.children(this.state.isOpen, this.closePopup)
+              : this.props.children}
+          </div>
+        )}
+        {this.renderTrigger()}
+      </React.Fragment>
+    );
+  }
+}
+
+if (process.env.NODE_ENV !== "production") {
+  const PropTypes = require("prop-types");
+
+  Popup.propTypes = {
+    style: PropTypes.object,
+    className: PropTypes.string,
+    trigger: PropTypes.element,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.element,
+      PropTypes.string
+    ]).isRequired,
+    closeOnDocumentClick: PropTypes.bool,
+    triggerOn: PropTypes.oneOf(["hover", "click"]),
+    position: PropTypes.oneOf([
+      "top,left",
+      "top,center",
+      "top,right",
+      "bottom,left",
+      "bottom,center",
+      "bottom,right",
+      "right,top",
+      "right,center",
+      "right,bottom",
+      "left,top",
+      "left,center",
+      "left,bottom"
+    ])
+  };
+}
+
+/*
   render() {
     return (
       <React.Fragment>
@@ -110,29 +184,4 @@ export default class Popup extends React.Component {
     );
   }
 }
-Popup.propTypes = {
-  style: PropTypes.object,
-  className: PropTypes.string,
-  trigger: PropTypes.element,
-  children: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.element,
-    PropTypes.string
-  ]).isRequired,
-  closeOnDocumentClick: PropTypes.bool,
-  triggerOn: PropTypes.oneOf(["hover", "click"]),
-  position: PropTypes.oneOf([
-    "top,left",
-    "top,center",
-    "top,right",
-    "bottom,left",
-    "bottom,center",
-    "bottom,right",
-    "right,top",
-    "right,center",
-    "right,bottom",
-    "left,top",
-    "left,center",
-    "left,bottom"
-  ])
-};
+*/

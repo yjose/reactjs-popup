@@ -1,8 +1,10 @@
 {
   "name": "reactjs-popup",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React Popup Component",
-  "main": "reactPopup.mjs",
+  "main": "reactjsPopup.es.js",
+  "module": "reactjsPopup.es.js",
+  "jsnext:main": "reactjsPopup.es.js",
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.2.0"

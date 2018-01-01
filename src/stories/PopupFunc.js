@@ -1,5 +1,4 @@
 import React from "react";
-import { withInfo } from "@storybook/addon-info";
 import {
   withKnobs,
   text,
@@ -12,8 +11,7 @@ import { storiesOf } from "@storybook/react";
 
 import Popup from "../Popup";
 
-storiesOf("React Popup js", module)
-  //.addDecorator((story, context) => withInfo("common info")(story)(context))
+storiesOf("React Popup", module)
   .addDecorator(withKnobs)
   .add("Popup function ", () => {
     const labels = "Styles";
@@ -41,32 +39,28 @@ storiesOf("React Popup js", module)
       "left,center": "left,center",
       "left,bottom": "left,bottom"
     };
-    const defaultValue2 = "top,left";
+    const defaultValue2 = "top,center";
     const position = select(label2, options2, defaultValue2);
     const StylesValue = object(labels, defaultValueStyles);
     const closeOnDocumentClick = boolean("closeOnDocumentClick", true);
 
     return (
       <div>
+        <div style={{ height: "500px" }}>tessttt</div>
         <Popup
           triggerOn={triggerOn}
           style={StylesValue}
-          trigger={
-            <button
-              style={{ position: "absolute", top: "100px", left: "300px" }}
-            >
-              {" "}
-              Button 2
-            </button>
-          }
+          trigger={<button> Button 2</button>}
           closeOnDocumentClick={closeOnDocumentClick}
           position={position}
         >
           {(open, close) => (
             <div>
-              {" "}
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              voluptas s{" "}
+              voluptas s lore Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Nemo voluptas s loreLorem ipsum dolor sit amet consectetur
+              adipisicing elit. Nemo voluptas s loreLorem ipsum dolor sit amet
+              consectetur adipisicing elit. Nemo voluptas s lore
               <a className="close" onClick={close}>
                 &times;
               </a>{" "}

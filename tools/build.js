@@ -5,12 +5,13 @@ const del = require("del");
 const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
 const uglify = require("rollup-plugin-uglify");
+const replace = require("rollup-plugin-replace");
 const pkg = require("../package.json");
 
 const bundles = [
   {
     format: "es",
-    ext: ".mjs",
+    ext: ".es.js",
     plugins: [],
     babelPresets: [["env", { modules: false }], "react"],
     babelPlugins: ["transform-class-properties", "external-helpers"]
@@ -18,13 +19,17 @@ const bundles = [
   {
     format: "cjs",
     ext: ".browser.js",
-    plugins: [],
+    plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify("production")
+      })
+    ],
     babelPresets: [["env", { modules: false }], "react"],
     babelPlugins: ["transform-class-properties"]
   },
   {
     format: "umd",
-    ext: ".js",
+    ext: ".dev.js",
     plugins: [],
     babelPresets: [["env", { modules: false }], "react"],
     babelPlugins: ["transform-class-properties"],
@@ -32,8 +37,25 @@ const bundles = [
   },
   {
     format: "umd",
+    ext: ".js",
+    plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify("development")
+      })
+    ],
+    babelPresets: [["env", { modules: false }], "react"],
+    babelPlugins: ["transform-class-properties"],
+    moduleName: "reactjs-popup"
+  },
+  {
+    format: "umd",
     ext: ".min.js",
-    plugins: [uglify()],
+    plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify("production")
+      }),
+      uglify()
+    ],
     babelPresets: [["env", { modules: false }], "react"],
     babelPlugins: ["transform-class-properties"],
     moduleName: "reactjs-popup",
@@ -44,7 +66,7 @@ const bundles = [
 let promise = Promise.resolve();
 
 // Clean up the output directory
-promise = promise.then(() => del(["dist/*"]));
+promise = promise.then(() => del(["lib/*"]));
 
 // Compile source code into a distributable format with Babel and Rollup
 for (const config of bundles) {
@@ -84,6 +106,11 @@ promise = promise.then(() => {
     "utf-8"
   );
   fs.writeFileSync("lib/LICENSE", fs.readFileSync("LICENSE", "utf-8"), "utf-8");
+  fs.writeFileSync(
+    "lib/README.md",
+    fs.readFileSync("README.md", "utf-8"),
+    "utf-8"
+  );
   fs.writeFileSync(
     "lib/.npmignore",
     fs.readFileSync(".npmignore", "utf-8"),

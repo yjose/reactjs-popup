@@ -22,9 +22,9 @@ export default function calculatePosition(
   position
 ) {
   const style = {};
-  const margin = 5;
+  const margin = 8;
   const args = position.split(",");
-  // the 1 step : center the popup content => ok
+  // the step N 1 : center the popup content => ok
   const CenterTop = triggerBounding.top + triggerBounding.height / 2;
   const CenterLeft = triggerBounding.left + triggerBounding.width / 2;
   const { height, width } = ContentBounding;
@@ -33,48 +33,48 @@ export default function calculatePosition(
   let transform = "";
   let arrowTop = "0%";
   let arrowLeft = "0%";
-  // the 2 step : => ok
+  // the  step N 2 : => ok
   switch (args[0]) {
     case "top":
       top -= height / 2 + triggerBounding.height / 2 + margin;
-      transform = `translateX(-50%) rotate(45deg)`;
+      transform = `rotate(45deg)`;
       arrowTop = "100%";
       arrowLeft = "50%";
       break;
     case "bottom":
       top += height / 2 + triggerBounding.height / 2 + margin;
-      transform = `translateX(-50%) rotate(225deg)`;
+      transform = `rotate(225deg)`;
       arrowLeft = "50%";
       break;
     case "left":
       left -= width / 2 + triggerBounding.width / 2 + margin;
-      transform = ` translateY(-50%) rotate(-45deg)`;
+      transform = ` rotate(-45deg)`;
       arrowLeft = "100%";
       arrowTop = "50%";
       break;
     case "right":
       left += width / 2 + triggerBounding.width / 2 + margin;
-      transform = `translateY(-50%) rotate(135deg)`;
+      transform = `rotate(135deg)`;
       arrowTop = "50%";
 
       break;
   }
   switch (args[1]) {
     case "top":
-      top += height / 4;
-      arrowTop = "25%";
+      top = triggerBounding.top;
+      arrowTop = triggerBounding.height / 2 + "px";
       break;
     case "bottom":
-      top -= height / 4;
-      arrowTop = "75%";
+      top = triggerBounding.bottom - height + triggerBounding.height;
+      arrowTop = height - triggerBounding.height / 2 + "px";
       break;
     case "left":
-      left += width / 4;
-      arrowLeft = "25%";
+      left = triggerBounding.left;
+      arrowLeft = triggerBounding.width / 2 + "px";
       break;
     case "right":
-      left -= width / 4;
-      arrowLeft = "75%";
+      left = triggerBounding.left - width + triggerBounding.width;
+      arrowLeft = width - triggerBounding.width / 2 + "px";
       break;
   }
 
