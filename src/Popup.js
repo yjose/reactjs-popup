@@ -136,7 +136,6 @@ export default class Popup extends React.Component {
   render() {
     const { modal, overlayStyle } = this.props;
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
-
     return [
       <div
         key="H"
@@ -155,7 +154,6 @@ export default class Popup extends React.Component {
           {modal && this.renderContent()}
         </div>
       ),
-
       this.state.isOpen && !modal && this.renderContent(),
       this.renderTrigger()
     ];
