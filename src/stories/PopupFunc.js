@@ -26,20 +26,20 @@ storiesOf("React Popup", module)
     const triggerOn = select(label, options, defaultValue);
     const label2 = "Position";
     const options2 = {
-      "top,left": "top,left",
-      "top,center": "top,center",
-      "top,right": "top,right",
-      "bottom,left": "bottom,left",
-      "bottom,center": "bottom,center",
-      "bottom,right": "bottom,right",
-      "right,top": "right,top",
-      "right,center": "right,center",
-      "right,bottom": "right,bottom",
-      "left,top": "left,top",
-      "left,center": "left,center",
-      "left,bottom": "left,bottom"
+      "top left": "top left",
+      "top center": "top center",
+      "top right": "top right",
+      "bottom left": "bottom left",
+      "bottom center": "bottom center",
+      "bottom right": "bottom right",
+      "right top": "right top",
+      "right center": "right center",
+      "right bottom": "right bottom",
+      "left top": "left top",
+      "left center": "left center",
+      "left bottom": "left bottom"
     };
-    const defaultValue2 = "top,center";
+    const defaultValue2 = "top center";
     const position = select(label2, options2, defaultValue2);
     const StylesValue = object(labels, defaultValueStyles);
     const closeOnDocumentClick = boolean("closeOnDocumentClick", true);
@@ -47,26 +47,31 @@ storiesOf("React Popup", module)
     return (
       <div>
         <div style={{ height: "500px" }}>tessttt</div>
-        <Popup
-          triggerOn={triggerOn}
-          style={StylesValue}
-          trigger={<button> Button 2</button>}
-          closeOnDocumentClick={closeOnDocumentClick}
-          position={position}
+        <div
+          style={{ height: "100px", background: "red", position: "relative" }}
         >
-          {(open, close) => (
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              voluptas s lore Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Nemo voluptas s loreLorem ipsum dolor sit amet consectetur
-              adipisicing elit. Nemo voluptas s loreLorem ipsum dolor sit amet
-              consectetur adipisicing elit. Nemo voluptas s lore
-              <a className="close" onClick={close}>
-                &times;
-              </a>{" "}
-            </div>
-          )}
-        </Popup>
+          <Popup
+            triggerOn={triggerOn}
+            contentStyle={StylesValue}
+            trigger={<button> Button 2</button>}
+            closeOnDocumentClick={closeOnDocumentClick}
+            position={position}
+          >
+            {(open, close) => (
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                voluptas s lore Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Nemo voluptas s loreLorem ipsum dolor sit amet
+                consectetur adipisicing elit. Nemo voluptas s loreLorem ipsum
+                dolor sit amet consectetur adipisicing elit. Nemo voluptas s
+                lore
+                <a className="close" onClick={close}>
+                  &times;
+                </a>{" "}
+              </div>
+            )}
+          </Popup>
+        </div>
       </div>
     );
   });

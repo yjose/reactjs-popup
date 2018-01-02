@@ -8,11 +8,12 @@ import {
   object
 } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
+
 import Popup from "../Popup";
 
 storiesOf("React Popup", module)
   .addDecorator(withKnobs)
-  .add("Popup element ", () => {
+  .add("Modal", () => {
     const labels = "Styles";
     const defaultValueStyles = {
       backgroundColor: "#FFFFFF"
@@ -52,23 +53,36 @@ storiesOf("React Popup", module)
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
           s{" "}
           <Popup
-            triggerOn="click"
-            position="bottom left"
-            closeOnDocumentClick={true}
-            defaultOpen={true}
-            trigger={<button>Button nested</button>}
+            triggerOn={triggerOn}
+            contentStyle={StylesValue}
+            modal
+            trigger={
+              <button
+                style={{ position: "absolute", top: "100px", left: "450px" }}
+              >
+                Button 1
+              </button>
+            }
+            position={position}
           >
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              voluptas ex, blanditiis reiciendis dolor numquam pariatur facilis,
-              labore, libero nihil asperiores ae facilis quis commodi dolores,
-              at enim. Deserunt qui, officiis culpa optio numquam ullam pariatur
-              voluptas tempora doloremque!
-            </div>
+            {(open, close) => (
+              <div style={{ width: "600px" }}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                voluptas s lore Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Nemo voluptas s loreLorem ipsum dolor sit amet
+                consectetur adipisicing elit. Nemo voluptas s loreLorem ipsum
+                dolor sit amet consectetur adipisicing elit. Nemo voluptas s
+                lore
+                <a className="close" onClick={close}>
+                  &times;
+                </a>{" "}
+              </div>
+            )}
           </Popup>
           <Popup
             triggerOn={triggerOn}
-            contentStyle={StylesValue}
+            style={StylesValue}
+            modal
             trigger={
               <button
                 style={{ position: "absolute", top: "100px", left: "300px" }}

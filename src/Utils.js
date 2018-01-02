@@ -19,11 +19,12 @@
 export default function calculatePosition(
   triggerBounding,
   ContentBounding,
-  position
+  position,
+  arrow
 ) {
   const style = {};
-  const margin = 8;
-  const args = position.split(",");
+  const margin = arrow ? 8 : 0;
+  const args = position.split(" ");
   // the step N 1 : center the popup content => ok
   const CenterTop = triggerBounding.top + triggerBounding.height / 2;
   const CenterLeft = triggerBounding.left + triggerBounding.width / 2;
@@ -65,7 +66,7 @@ export default function calculatePosition(
       arrowTop = triggerBounding.height / 2 + "px";
       break;
     case "bottom":
-      top = triggerBounding.bottom - height + triggerBounding.height;
+      top = triggerBounding.top - height + triggerBounding.height;
       arrowTop = height - triggerBounding.height / 2 + "px";
       break;
     case "left":
