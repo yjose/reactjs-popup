@@ -9,9 +9,14 @@ export default class Popup extends React.Component {
     closeOnDocumentClick: false,
     defaultOpen: false,
     triggerOn: "click",
-    style: {},
+    contentStyle: {},
+    arrowStyle: {},
+    overlayStyle: {},
     className: "",
-    position: "bottom,center"
+    position: "bottom center",
+    modal: false,
+    arrow: true,
+    children: () => <span> Your Content Here !!</span>
   };
   state = {
     isOpen: this.props.defaultOpen
@@ -24,6 +29,10 @@ export default class Popup extends React.Component {
     this.setContentRef = r => (this.ContentEl = r);
     this.setArrowRef = r => (this.ArrowEl = r);
     this.setHelperRef = r => (this.HelperEl = r);
+  }
+
+  componentDidMount() {
+    if (this.props.defaultOpen) this.setPosition();
   }
 
   togglePopup = () => {
@@ -50,15 +59,19 @@ export default class Popup extends React.Component {
   };
 
   setPosition = () => {
+    const { modal, arrow, position } = this.props;
+    if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-    const cords = calculatePosition(trigger, content, this.props.position);
+    const cords = calculatePosition(trigger, content, position, arrow);
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
-    this.ArrowEl.style.transform = cords.transform;
-    this.ArrowEl.style.top = cords.arrowTop;
-    this.ArrowEl.style.left = cords.arrowLeft;
+    if (arrow) {
+      this.ArrowEl.style.transform = cords.transform;
+      this.ArrowEl.style.top = cords.arrowTop;
+      this.ArrowEl.style.left = cords.arrowLeft;
+    }
     if (
       this.TriggerEl.style.position == "static" ||
       this.TriggerEl.style.position == ""
@@ -66,6 +79,26 @@ export default class Popup extends React.Component {
       this.TriggerEl.style.position = "relative";
   };
 
+  addWarperAction = () => {
+    const { contentStyle, className, modal, triggerOn } = this.props;
+    const popupContentStyle = modal
+      ? styles.popupContent.modal
+      : styles.popupContent.tooltip;
+
+    const childrenElementProps = {
+      className: `popup-content ${className}`,
+      style: Object.assign({}, popupContentStyle, contentStyle),
+      ref: this.setContentRef,
+      onClick: e => {
+        e.stopPropagation();
+      }
+    };
+    if (!modal && triggerOn === "hover") {
+      childrenElementProps.onMouseEnter = this.onMouseEnter;
+      childrenElementProps.onMouseLeave = this.onMouseLeave;
+    }
+    return childrenElementProps;
+  };
   renderTrigger = () => {
     const triggerProps = {};
     const { triggerOn } = this.props;
@@ -82,50 +115,50 @@ export default class Popup extends React.Component {
     return React.cloneElement(this.props.trigger, triggerProps);
   };
 
-  addWarperAction = () => {
-    const childrenElementProps = {
-      className: `${this.props.className}`,
-      style: Object.assign({}, styles.popupContent, this.props.style),
-      ref: this.setContentRef,
-      onClick: e => {
-        e.stopPropagation();
-      }
-    };
-    if (this.props.triggerOn === "hover") {
-      childrenElementProps.onMouseEnter = this.onMouseEnter;
-      childrenElementProps.onMouseLeave = this.onMouseLeave;
-    }
-    return childrenElementProps;
+  renderContent = () => {
+    const { arrow, modal, arrowStyle } = this.props;
+    return (
+      <div {...this.addWarperAction()}>
+        {arrow &&
+          !modal && (
+            <div
+              ref={this.setArrowRef}
+              style={Object.assign({}, styles.popupArrow, arrowStyle)}
+            />
+          )}
+        {typeof this.props.children === "function"
+          ? this.props.children(this.state.isOpen, this.closePopup)
+          : this.props.children}
+      </div>
+    );
   };
 
   render() {
-    return (
-      <React.Fragment>
-        <div
-          style={{ position: "absolute", top: "0px", left: "0px" }}
-          ref={this.setHelperRef}
-        />
-        {this.state.isOpen &&
-          this.props.closeOnDocumentClick && (
-            <span
-              style={styles.overlay}
-              onClick={
-                this.props.closeOnDocumentClick ? this.closePopup : undefined
-              }
-            />
-          )}
+    const { modal, overlayStyle } = this.props;
+    const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
 
-        {this.state.isOpen && (
-          <div {...this.addWarperAction()}>
-            <div ref={this.setArrowRef} style={styles.popupArrow} />
-            {typeof this.props.children === "function"
-              ? this.props.children(this.state.isOpen, this.closePopup)
-              : this.props.children}
-          </div>
-        )}
-        {this.renderTrigger()}
-      </React.Fragment>
-    );
+    return [
+      <div
+        key="H"
+        style={{ position: "absolute", top: "0px", left: "0px" }}
+        ref={this.setHelperRef}
+      />,
+      this.state.isOpen && (
+        <div
+          key="O"
+          className="popup-overlay"
+          style={Object.assign({}, ovStyle, overlayStyle)}
+          onClick={
+            this.props.closeOnDocumentClick ? this.closePopup : undefined
+          }
+        >
+          {modal && this.renderContent()}
+        </div>
+      ),
+
+      this.state.isOpen && !modal && this.renderContent(),
+      this.renderTrigger()
+    ];
   }
 }
 
@@ -133,55 +166,32 @@ if (process.env.NODE_ENV !== "production") {
   const PropTypes = require("prop-types");
 
   Popup.propTypes = {
-    style: PropTypes.object,
+    arrowStyle: PropTypes.object,
+    contentStyle: PropTypes.object,
+    overlayStyle: PropTypes.object,
     className: PropTypes.string,
-    trigger: PropTypes.element,
+    modal: PropTypes.bool,
+    closeOnDocumentClick: PropTypes.bool,
+    trigger: PropTypes.element.isRequired,
+    triggerOn: PropTypes.oneOf(["hover", "click"]),
     children: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.element,
       PropTypes.string
     ]).isRequired,
-    closeOnDocumentClick: PropTypes.bool,
-    triggerOn: PropTypes.oneOf(["hover", "click"]),
     position: PropTypes.oneOf([
-      "top,left",
-      "top,center",
-      "top,right",
-      "bottom,left",
-      "bottom,center",
-      "bottom,right",
-      "right,top",
-      "right,center",
-      "right,bottom",
-      "left,top",
-      "left,center",
-      "left,bottom"
+      "top left",
+      "top center",
+      "top right",
+      "bottom left",
+      "bottom center",
+      "bottom right",
+      "right top",
+      "right center",
+      "right bottom",
+      "left top",
+      "left center",
+      "left bottom"
     ])
   };
 }
-
-/*
-  render() {
-    return (
-      <React.Fragment>
-        {this.renderTrigger()}
-        {this.state.isOpen && (
-          <div
-            className="overlay"
-            onClick={
-              this.props.closeOnDocumentClick ? this.closePopup : undefined
-            }
-          >
-            <div {...this.addWarperAction()}>
-              <div ref={this.setArrowRef} className="popup-arrow" />
-              {typeof this.props.children === "function"
-                ? this.props.children(this.state.isOpen, this.closePopup)
-                : this.props.children}
-            </div>
-          </div>
-        )}
-      </React.Fragment>
-    );
-  }
-}
-*/
