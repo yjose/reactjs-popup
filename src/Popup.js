@@ -100,7 +100,7 @@ export default class Popup extends React.Component {
     return childrenElementProps;
   };
   renderTrigger = () => {
-    const triggerProps = {};
+    const triggerProps = {key:"T"};
     const { triggerOn } = this.props;
     triggerProps.ref = this.setTriggerRef;
     switch (triggerOn) {
@@ -118,7 +118,7 @@ export default class Popup extends React.Component {
   renderContent = () => {
     const { arrow, modal, arrowStyle } = this.props;
     return (
-      <div {...this.addWarperAction()}>
+      <div {...this.addWarperAction()} key="C">
         {arrow &&
           !modal && (
             <div
