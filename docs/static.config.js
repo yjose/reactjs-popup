@@ -70,7 +70,12 @@ export default {
       <Body className="slug-home">
         {children}
         {renderMeta.scripts &&
-          renderMeta.scripts.map(script => <script type="text/javascript" src={`/${script}`} />)}
+          renderMeta.scripts.map(script => (
+            <script
+              type="text/javascript"
+              src={`https://yjose.github.io/reactjs-popup/${script}`}
+            />
+          ))}
       </Body>
     </Html>
   ),
