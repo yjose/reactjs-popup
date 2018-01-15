@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "React Popup Component",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",
@@ -10,14 +10,11 @@
     "test-watch": "jest --watch",
     "update-snap": "jest --updateSnapshot",
     "start": " npm run storybook",
-    "build": "node tools/build",
-    "storybook": "start-storybook -p 6006",
-    "build-examples": "build-storybook -c .storybook -o pages",
-    "preview-examples": "http-server pages"
+    "build": "node build",
+    "storybook": "start-storybook -p 6006"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.1",
