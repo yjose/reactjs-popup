@@ -1,0 +1,41 @@
+.sidebar {
+  width: 220px;
+  display: block;
+  position: sticky;
+  top: 0;
+  padding: 20px 5px;
+  font-size: 16px;
+}
+.sidebar li {
+  list-style: outside none none;
+  margin: 0.5em 0.2em;
+  padding: 0;
+}
+.sidebar a {
+  padding: 0 0.6em;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  text-decoration: none;
+}
+.sidebar a:hover,
+.sidebar .current {
+  color: #2980b9;
+}
+.sidebar a:after {
+  width: 3px;
+  height: 0;
+  position: absolute;
+  content: "";
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  background-color: #2980b9;
+}
+
+.sidebar a:after {
+  top: 0;
+  left: 0;
+}
+.sidebar a:hover:after,
+.sidebar .current:after {
+  height: 100%;
+}

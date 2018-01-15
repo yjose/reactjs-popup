@@ -1,0 +1,51 @@
+body {
+  margin: 0px;
+  background: #eaecef69;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cover {
+  text-align: center;
+  padding: 40px;
+  border-bottom: 1px solid rgb(207, 206, 206);
+}
+.title {
+  font-size: 50px;
+  color: #000000;
+}
+.badges img {
+  margin: 0px 5px;
+}
+.description {
+  color: rgb(133, 132, 132);
+}
+.main {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.markdown-body {
+  flex: 1;
+  min-height: 200px;
+}
+.markdown-body div {
+  width: 100%;
+}
+.markdown-footer {
+  font-size: 13px;
+  padding: 5px 0px;
+  background: #f6f7f8;
+  position: sticky;
+  bottom: 0px;
+}
+.markdown-footer a {
+  text-decoration: none;
+  float: right;
+}
+pre[class*="language-"] {
+  background-color: #bfbfbe61 !important;
+}

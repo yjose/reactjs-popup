@@ -1,0 +1,34 @@
+{
+  "name": "Reactjs-Popup-Docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-static start",
+    "build": "react-static build",
+    "serve": "serve dist -p 3000"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-plugin-universal-import": "^1.4.0",
+    "markdown-to-jsx": "^6.3.2",
+    "prismjs": "^1.9.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
+    "react-router": "^4.2.0",
+    "react-static": "^4.8.3",
+    "reactjs-popup": "^0.4.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-react-tools": "1.0.10",
+    "front-matter": "^2.3.0",
+    "front-matter-loader": "^0.2.0",
+    "json-loader": "^0.5.7",
+    "raw-loader": "^0.5.1",
+    "react-universal-component": "^2.8.1",
+    "serve": "^6.1.0",
+    "webpack-flush-chunks": "^1.2.3"
+  }
+}
