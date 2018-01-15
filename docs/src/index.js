@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 
 // Your top level component
@@ -14,7 +15,9 @@ if (typeof document !== 'undefined') {
   const render = Comp => {
     renderMethod(
       <AppContainer>
-        <Comp />
+        <BrowserRouter>
+          <Comp />
+        </BrowserRouter>
       </AppContainer>,
       document.getElementById('root'),
     )

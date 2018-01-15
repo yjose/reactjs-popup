@@ -6,7 +6,6 @@ import webpack from 'webpack'
 import { ReportChunks } from 'react-universal-component'
 import flushChunks from 'webpack-flush-chunks'
 
-
 import APPCONFIG from './src/config.json'
 
 const resolve = p => path.resolve(__dirname, p)
@@ -35,14 +34,11 @@ export default {
     const routes = Object.entries(APPCONFIG.menu).map(r => {
       const path = `/${r[0].replace(new RegExp(' ', 'g'), '-')}`
       const file = r[1]
-      // const source = fs.readFileSync(`./src/markdown/${file}`, 'utf8')
-      // const markdown = loadMd(source)
       const getProps = () => ({
         file,
       })
       return { path, getProps }
     })
-    console.log(routes)
 
     return [...routes]
   },
