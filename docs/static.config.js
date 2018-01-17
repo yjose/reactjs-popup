@@ -29,7 +29,7 @@ export default {
   getSiteProps: () => ({
     title: 'Reactjs-Popup Component',
   }),
-  siteRoot: 'https://yjose.github.io/reactjs-popup/',
+  siteRoot: 'https://react-popup.netlify.com/',
   getRoutes: async () => {
     const routes = Object.entries(APPCONFIG.menu).map(r => {
       const path = `/${r[0].replace(new RegExp(' ', 'g'), '-')}`
@@ -62,20 +62,16 @@ export default {
     <Html lang="en-US">
       <Head>
         <meta charSet="UTF-8" />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
         />
       </Head>
-      <Body className="slug-home">
+      <Body>
         {children}
         {renderMeta.scripts &&
-          renderMeta.scripts.map(script => (
-            <script
-              type="text/javascript"
-              src={`https://yjose.github.io/reactjs-popup/${script}`}
-            />
-          ))}
+          renderMeta.scripts.map(script => <script type="text/javascript" src={`/${script}`} />)}
       </Body>
     </Html>
   ),
