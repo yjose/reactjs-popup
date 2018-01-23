@@ -6,8 +6,7 @@
   "module": "reactjsPopup.es.js",
   "jsnext:main": "reactjsPopup.es.js",
   "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+    "react": "^16.0.0"
   },
   "repository": {
     "type": "git",

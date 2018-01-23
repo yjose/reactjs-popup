@@ -6,11 +6,11 @@ setOptions({
   url: "#"
 });
 
-const req = require.context("../src/stories", true, /\.js$/);
+//const req = require.context("../src/stories", true, /\.js$/);
 
 const load = () => {
-  // require('./Library')
-  req.keys().forEach(req);
+   require('../src/index')
+  //req.keys().forEach(req);
 };
 
 configure(load, module);

@@ -9,10 +9,7 @@ import {
 } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
 import Popup from "../Popup";
-
-storiesOf("React Popup", module)
-  .addDecorator(withKnobs)
-  .add("Popup element ", () => {
+const PopupElement =  () => {
     const labels = "Styles";
     const defaultValueStyles = {
       backgroundColor: "#FFFFFF"
@@ -24,7 +21,7 @@ storiesOf("React Popup", module)
       hover: "hover"
     };
     const defaultValue = "click";
-    const triggerOn = select(label, options, defaultValue);
+    const on = select(label, options, defaultValue);
     const label2 = "Position";
     const options2 = {
       "top left": "top left",
@@ -52,7 +49,7 @@ storiesOf("React Popup", module)
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
           s{" "}
           <Popup
-            triggerOn="click"
+            on="click"
             position="bottom left"
             closeOnDocumentClick={true}
             defaultOpen={true}
@@ -67,7 +64,7 @@ storiesOf("React Popup", module)
             </div>
           </Popup>
           <Popup
-            triggerOn={triggerOn}
+            on={on}
             contentStyle={StylesValue}
             trigger={
               <button
@@ -86,7 +83,7 @@ storiesOf("React Popup", module)
               Deserunt qui, officiis culpa optio numquam ullam pariatur voluptas
               tempora doloremque!
               <Popup
-                triggerOn="click"
+                on="click"
                 position="bottom left"
                 closeOnDocumentClick={true}
                 trigger={<button>Button nested</button>}
@@ -111,4 +108,7 @@ storiesOf("React Popup", module)
         </div>
       </div>
     );
-  });
+  };
+
+  export default PopupElement;
+  

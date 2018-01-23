@@ -5,11 +5,15 @@ exports[`it should close on click outside popup  1`] = `
   triggerOn="click"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={false}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -17,29 +21,64 @@ exports[`it should close on click outside popup  1`] = `
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onClick={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;
@@ -49,11 +88,15 @@ exports[`it should close on click outside popup  2`] = `
   triggerOn="click"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={false}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -61,29 +104,64 @@ exports[`it should close on click outside popup  2`] = `
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onClick={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;
@@ -94,11 +172,15 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
   triggerOn="click"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={true}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -106,30 +188,65 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      onClick={[Function]}
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onClick={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-      onClick={[Function]}
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;
@@ -140,11 +257,15 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
   triggerOn="click"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={true}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -152,6 +273,16 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
     <button
       onClick={[Function]}
     >
@@ -163,11 +294,15 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
 
 exports[`it should render correctly  1`] = `
 <Popup
+  arrow={true}
+  arrowStyle={Object {}}
   className=""
   closeOnDocumentClick={false}
+  contentStyle={Object {}}
   defaultOpen={false}
-  position="bottom,center"
-  style={Object {}}
+  modal={false}
+  overlayStyle={Object {}}
+  position="bottom center"
   trigger={
     <button>
        Trigger
@@ -182,11 +317,15 @@ exports[`it should render correctly  1`] = `
 exports[`it should render correctly on click   1`] = `
 <PopupTest>
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={false}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -194,29 +333,64 @@ exports[`it should render correctly on click   1`] = `
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onClick={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;
@@ -226,11 +400,15 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
   triggerOn="click"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={false}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -238,29 +416,64 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     }
     triggerOn="click"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onClick={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;
@@ -270,11 +483,15 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
   triggerOn="hover"
 >
   <Popup
+    arrow={true}
+    arrowStyle={Object {}}
     className=""
     closeOnDocumentClick={false}
+    contentStyle={Object {}}
     defaultOpen={false}
-    position="bottom,center"
-    style={Object {}}
+    modal={false}
+    overlayStyle={Object {}}
+    position="bottom center"
     trigger={
       <button>
          Trigger
@@ -282,32 +499,67 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     }
     triggerOn="hover"
   >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 2px 2px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+          }
+        }
+      />
+      popup content
+    </div>
     <button
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
        Trigger
     </button>
-    <div
-      className="overlay"
-    >
-      <div
-        className="popup-content  "
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-        style={
-          Object {
-            "position": "fixed",
-          }
-        }
-      >
-        <div
-          className="popup-arrow"
-        />
-        popup content
-      </div>
-    </div>
   </Popup>
 </PopupTest>
 `;

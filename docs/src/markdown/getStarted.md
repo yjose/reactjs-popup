@@ -23,7 +23,7 @@ This package is available in npm repository as reactjs-popup. It will work corre
 ```bash
 npm install reactjs-popup --save
 //or
-yarn add reactjs-popup -s
+yarn add reactjs-popup -s test 
 ```
 
 ### Component API

@@ -1,6 +1,6 @@
 {
   "presets": ["env", "react"],
   "plugins": [
-    "transform-class-properties",
+    "transform-class-properties"
   ]
 }

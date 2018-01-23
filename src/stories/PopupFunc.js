@@ -7,13 +7,11 @@ import {
   select,
   object
 } from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
 
 import Popup from "../Popup";
 
-storiesOf("React Popup", module)
-  .addDecorator(withKnobs)
-  .add("Popup function ", () => {
+
+export default () => {
     const labels = "Styles";
     const defaultValueStyles = {};
 
@@ -23,7 +21,7 @@ storiesOf("React Popup", module)
       hover: "hover"
     };
     const defaultValue = "click";
-    const triggerOn = select(label, options, defaultValue);
+    const on = select(label, options, defaultValue);
     const label2 = "Position";
     const options2 = {
       "top left": "top left",
@@ -51,7 +49,7 @@ storiesOf("React Popup", module)
           style={{ height: "100px", background: "red", position: "relative" }}
         >
           <Popup
-            triggerOn={triggerOn}
+            on={on}
             contentStyle={StylesValue}
             trigger={<button> Button 2</button>}
             closeOnDocumentClick={closeOnDocumentClick}
@@ -74,4 +72,4 @@ storiesOf("React Popup", module)
         </div>
       </div>
     );
-  });
+  };

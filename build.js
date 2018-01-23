@@ -6,7 +6,7 @@ const rollup = require("rollup");
 const babel = require("rollup-plugin-babel");
 const uglify = require("rollup-plugin-uglify");
 const replace = require("rollup-plugin-replace");
-const pkg = require("../package.json");
+const pkg = require("./package.json");
 
 const bundles = [
   {

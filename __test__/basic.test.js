@@ -53,7 +53,7 @@ test("it should close on click outside popup ", () => {
   const popup = mount(<PopupTest triggerOn="click" />);
   popup.find("button").simulate("click");
   expect(shallowToJson(popup)).toMatchSnapshot();
-  popup.find("div.overlay").simulate("click");
+  popup.find("div.popup-overlay").simulate("click");
   expect(shallowToJson(popup)).toMatchSnapshot();
 });
 test("it should close on click outside popup (closeOnDocumentClick = true )", () => {
@@ -62,6 +62,6 @@ test("it should close on click outside popup (closeOnDocumentClick = true )", ()
   );
   popup.find("button").simulate("click");
   expect(shallowToJson(popup)).toMatchSnapshot();
-  popup.find("div.overlay").simulate("click");
+  popup.find("div.popup-overlay").simulate("click");
   expect(shallowToJson(popup)).toMatchSnapshot();
 });

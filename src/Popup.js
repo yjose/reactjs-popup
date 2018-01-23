@@ -1,14 +1,16 @@
 import React from "react";
 import calculatePosition from "./Utils";
-// https://philipwalton.com/articles/what-no-one-told-you-about-z-index/
 
 import styles from "./popup.css.js";
 
 export default class Popup extends React.Component {
   static defaultProps = {
+    children: () => <span> Your Content Here !!</span>,
+    onOpen: () => {},
+    onClose: () => {},
     closeOnDocumentClick: false,
     defaultOpen: false,
-    triggerOn: "click",
+    on: "click",
     contentStyle: {},
     arrowStyle: {},
     overlayStyle: {},
@@ -16,7 +18,9 @@ export default class Popup extends React.Component {
     position: "bottom center",
     modal: false,
     arrow: true,
-    children: () => <span> Your Content Here !!</span>
+    offset: 0,
+    mouseEnterDelay: 300,
+    mouseLeaveDelay: 300
   };
   state = {
     isOpen: this.props.defaultOpen
@@ -34,6 +38,9 @@ export default class Popup extends React.Component {
   componentDidMount() {
     if (this.props.defaultOpen) this.setPosition();
   }
+  componentWillUnmount() {
+    clearTimeout(this.timeOut);
+  }
 
   togglePopup = () => {
     this.setState(
@@ -44,27 +51,34 @@ export default class Popup extends React.Component {
     );
   };
   openPopup = () => {
-    this.setState({ isOpen: true }, () => this.setPosition());
+    if (this.state.isOpen) return;
+    this.setState({ isOpen: true }, () => {
+      this.setPosition();
+      this.props.onOpen();
+    });
   };
   closePopup = () => {
-    this.setState({ isOpen: false });
+    if (!this.state.isOpen) return;
+    this.setState({ isOpen: false }, this.props.onClose());
   };
   onMouseEnter = () => {
     clearTimeout(this.timeOut);
-    this.openPopup();
+    const { mouseEnterDelay } = this.props;
+    this.timeOut = setTimeout(() => this.openPopup(), mouseEnterDelay);
   };
   onMouseLeave = () => {
     clearTimeout(this.timeOut);
-    this.timeOut = setTimeout(() => this.closePopup(), 300);
+    const { mouseLeaveDelay } = this.props;
+    this.timeOut = setTimeout(() => this.closePopup(), mouseLeaveDelay);
   };
 
   setPosition = () => {
-    const { modal, arrow, position } = this.props;
+    const { modal, arrow, position, offset } = this.props;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-    const cords = calculatePosition(trigger, content, position, arrow);
+    const cords = calculatePosition(trigger, content, position, arrow, offset);
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
@@ -80,7 +94,7 @@ export default class Popup extends React.Component {
   };
 
   addWarperAction = () => {
-    const { contentStyle, className, modal, triggerOn } = this.props;
+    const { contentStyle, className, modal, on } = this.props;
     const popupContentStyle = modal
       ? styles.popupContent.modal
       : styles.popupContent.tooltip;
@@ -93,17 +107,17 @@ export default class Popup extends React.Component {
         e.stopPropagation();
       }
     };
-    if (!modal && triggerOn === "hover") {
+    if (!modal && on === "hover") {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
     return childrenElementProps;
   };
   renderTrigger = () => {
-    const triggerProps = {key:"T"};
-    const { triggerOn } = this.props;
+    const triggerProps = { key: "T" };
+    const { on } = this.props;
     triggerProps.ref = this.setTriggerRef;
-    switch (triggerOn) {
+    switch (on) {
       case "click":
         triggerProps.onClick = this.togglePopup;
         break;
@@ -170,8 +184,13 @@ if (process.env.NODE_ENV !== "production") {
     className: PropTypes.string,
     modal: PropTypes.bool,
     closeOnDocumentClick: PropTypes.bool,
+    offset: PropTypes.number,
+    mouseEnterDelay: PropTypes.number,
+    mouseLeaveDelay: PropTypes.number,
+    onOpen: PropTypes.func,
+    onClose: PropTypes.func,
     trigger: PropTypes.element.isRequired,
-    triggerOn: PropTypes.oneOf(["hover", "click"]),
+    on: PropTypes.oneOf(["hover", "click", "focus"]),
     children: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.element,
