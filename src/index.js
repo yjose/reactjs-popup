@@ -14,11 +14,14 @@ import {
 
 import PopupElement from "./stories/PopupElement";
 import PopupFunc from "./stories/PopupFunc";
-import Modal from './stories/Modal';
-import Menu from './stories/Menu';
+import PopupInputFocus from "./stories/PopupInputFocus";
+import Modal from "./stories/Modal";
+import Menu from "./stories/Menu";
 
-storiesOf("React Popup", module).addDecorator(withKnobs)
-.add("Popup Menu ", ()=> <Modal />)
-.add("Popup Modal ", ()=> <Menu />)
-.add("Popup PopupElement ", ()=> <PopupElement />)
-.add("Popup PopupFunc ", ()=> <PopupFunc />)
+storiesOf("React Popup", module)
+  .addDecorator(withKnobs)
+  .add("simple tooltip  ", () => <PopupElement />)
+  .add("function as child ", () => <PopupFunc />)
+  .add("on input focus ", () => <PopupInputFocus />)
+  .add("Menu use case ", () => <Modal />)
+  .add("modal use case ", () => <Menu />);
