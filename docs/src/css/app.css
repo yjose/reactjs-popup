@@ -50,7 +50,7 @@ pre[class*="language-"] {
   background-color: #bfbfbe61 !important;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (max-width: 768px) {
   .main {
     margin-top: 5px;
     flex-wrap: wrap;
