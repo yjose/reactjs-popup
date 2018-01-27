@@ -39,3 +39,17 @@
 .sidebar .current:after {
   height: 100%;
 }
+
+@media only screen and (min-width: 320px) {
+  .sidebar {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 1px solid #cfcece;
+  }
+  .sidebar a:after {
+    display: none;
+  }
+}

@@ -1,3 +1,14 @@
+---
+title: reactjs Popup - Use case -Tooltip
+description: A simple tooltip example with reactjs-popup
+components: 
+  Example: SampleTooltip
+---
+
 ## Use Case - Tooltip
 
-coming soon
+Reactjs Popup is built to be a tooltip by default
+
+```bash
+
+```

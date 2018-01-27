@@ -19,13 +19,16 @@ export default getRouteProps(({ file }) => {
   return (
     <div className="markdown-body">
       <Markdown
+        className="content"
         options={{
           overrides,
         }}
       >
         {markdown.body}
       </Markdown>
-      <div calssName='nextLink'><span className="previous"> previous</span> <span className="next"> previews</span></div>
+      <div className="nextLink">
+        <span className="previous"> previous</span> <span className="next"> previews</span>
+      </div>
       <div className="markdown-footer">
         {' '}
         built with 💚 by @yjose

@@ -22,88 +22,52 @@ This package is available in npm repository as reactjs-popup. It will work corre
 
 ```bash
 npm install reactjs-popup --save
-//or
-yarn add reactjs-popup -s test 
 ```
 
-### Component API
+Using yarn
 
-| Option       | Default           | Type           | Description                                                                                                                                            |
-| ------------ | ----------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| trigger      |                   | {node}         | Element to be rendered in-place where the popup is defined                                                                                             |
-| defaultOpen  | false             | {bool}         | default open value : initial state                                                                                                                     |
-| on           | `'hover'`         | {enum}         | Events triggering the popup. Enums: `'hover' 'click' 'focus'`                                                                                          |
-| children     |                   | {node or func} | Popup content                                                                                                                                          |
-| position     | `'bottom center'` | {enum}         | Position for the popover. <br /> Enums:`'top left' 'top right' 'bottom right' 'bottom left' 'right center' 'left center' 'top center' 'bottom center'` |
-| offset       | 0                 | number         | Offset in pixels to be applied to the Popup.                                                                                                           |
-| arrow        | true              | {bool}         | Arrow element                                                                                                                                          |
-| onOpen       |                   | {func}         | function called on open event                                                                                                                          |
-| onClose      |                   | {func}         | function called on close event                                                                                                                         |
-| contentStyle |                   | {object}       | Custom popup content style                                                                                                                             |
-| overlayStyle |                   | {object}       | Custom overlay style                                                                                                                                   |
-| arrowStyle   |                   | {object}       | Custom arrow style                                                                                                                                     |
+```bash
+yarn add reactjs-popup -s
+```
 
-### Include the Component
+## Include the Component
+
+To start using reactjs popup you just need to import the component from the reactjs-popup package.
 
 ```jsx
 import React from "react";
 import Popup from "reactjs-popup";
-//
 
 export default () => (
-  <Popup
-    trigger={<button> click here </button>}
-    position="right center"
-    closeOnDocumentClick
-  >
-    <div>
-      skqdklsqjd dsfkjdsf dsf dkfjksldfj dskfjds fl dsfkjfs
-      <Popup
-        trigger={<button> testt </button>}
-        position="right center"
-        triggerOn="hover"
-        style={{ padding: "5px" }}
-      >
-        <span> skqdklsqjd dsfkjdsf dsf dkfjksldfj dskfjds fl dsfkjfs</span>
-      </Popup>
-    </div>
-  </Popup>
-);
-```
-
-skdjskjd
-
-```jsx
-import React from "react";
-import Popup from "./reactjsPopup";
-
-export default () => (
-  <Popup trigger={<button> testt </button>} position="right,center">
-    skqdklsqjd dsfkjdsf dsf dkfjksldfj dskfjds fl dsfkjfs
+  <Popup trigger={<button> Trigger</button>} position="right center">
+    <div>popup content here</div>
   </Popup>
 );
 ```
 
 You can also use it with function as children pattern
 
-<Example />
+```jsx
+import React from "react";
+import Popup from "reactjs-popup";
 
-```js
-<Popup
-  triggerOn="click"
-  position="top,left"
-  closeOnDocumentClick={true}
-  trigger={<button>Button nested</button>}
->
-  {(open, close) => (
-    <div>
-      content here
-      <a className="close" onClick={close}>
-        &times;
-      </a>
-    </div>
-  )}
-</Popup>
+export default () => (
+  <Popup
+    triggerOn="click"
+    position="top left"
+    closeOnDocumentClick={true}
+    trigger={<button>Trigger</button>}
+  >
+    {close => (
+      <div>
+        content here
+        <a className="close" onClick={close}>
+          &times;
+        </a>
+      </div>
+    )}
+  </Popup>
+);
 ```
 
-You can find more examples in the [reactjs-popup home page](http://yjose.github.io/react-popup/)
+You can find more examples in the Use case sections

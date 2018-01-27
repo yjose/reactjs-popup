@@ -26,8 +26,6 @@ npm install reactjs-popup --save
 yarn add reactjs-popup -s
 ```
 
-<Example />
-
 ### Include the Component
 
 ```jsx

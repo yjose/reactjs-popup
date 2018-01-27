@@ -7,6 +7,8 @@ components:
 
 ### Component API
 
+The reactjs-popup API is inspired by semantic popup docs
+
 | Option       | Default           | Type           | Description                                                                                                                                            |
 | ------------ | ----------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | trigger      |                   | {node}         | Element to be rendered in-place where the popup is defined                                                                                             |

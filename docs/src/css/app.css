@@ -30,10 +30,10 @@ body {
 }
 .markdown-body {
   flex: 1;
-  min-height: 200px;
+  max-width: calc(100% - 220px);
 }
-.markdown-body div {
-  width: 100%;
+.markdown-body > .content {
+  min-height: 400px;
 }
 .markdown-footer {
   font-size: 13px;
@@ -48,4 +48,16 @@ body {
 }
 pre[class*="language-"] {
   background-color: #bfbfbe61 !important;
+}
+
+@media only screen and (min-width: 320px) {
+  .main {
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .markdown-body {
+    padding: 5px 1%;
+    max-width: 98%;
+  }
 }
