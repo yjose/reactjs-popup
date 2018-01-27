@@ -21,7 +21,7 @@ import Menu from "./stories/Menu";
 storiesOf("React Popup", module)
   .addDecorator(withKnobs)
   .add("simple tooltip  ", () => <PopupElement />)
-  .add("function as child ", () => <PopupFunc />)
+  .add("function as child with scroll", () => <PopupFunc />)
   .add("on input focus ", () => <PopupInputFocus />)
   .add("Menu use case ", () => <Modal />)
   .add("modal use case ", () => <Menu />);

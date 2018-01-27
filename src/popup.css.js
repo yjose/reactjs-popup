@@ -25,8 +25,8 @@ export default {
     background: "rgb(255, 255, 255)",
     transform: "rotate(45deg)",
     margin: "-5px",
-    zIndex:"-1",
-    boxShadow: "rgba(0, 0, 0, 0.2) 2px 2px 1px"
+    zIndex: "-1",
+    boxShadow: "rgba(0, 0, 0, 0.2) 1px 1px 1px"
   },
   overlay: {
     tooltip: {
