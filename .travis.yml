@@ -5,13 +5,13 @@ cache:
   directories:
   - node_modules
 script:
-  - cd docs
   - npm install
-  - npm run build
+  - npm run test
+  - npm run build-examples
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist
+  local_dir: pages
   on:
     branch: master
