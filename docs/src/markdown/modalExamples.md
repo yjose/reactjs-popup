@@ -2,15 +2,15 @@
 title: Use case - Modal example
 description: A simple tooltip example with reactjs-popup
 components: 
-  SampleModal : SampleModal
+  SimpleModal : SimpleModal
   CustomModal : CustomModal
 ---
 
 ## Use Case - Modal
 
-To create a simple Modal with reactjs-popup you just need to add the 'modal' attribute to your popup component.
+To create a simple Modal with reactjs-popup you need just to add the 'modal' attribute to your popup component.
 
-<SampleModal />
+<SimpleModal />
 
 ```jsx
 import React from "react";

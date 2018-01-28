@@ -7,12 +7,12 @@ components:
 
 ## Welcome
 
-reactjs-popup is a simple react popup component with a lot of benefits :
+Reactjs-popup is a simple react popup component with a lot of benefits :
 
 * Built with react fragment that's mean no additional wrapper divs in your code or in the trigger element.
-* Does not inject HTML outside your app root
+* Does not inject HTML outside your app root.
 * Function as children pattern to take control over your popup anywhere in your code.
-* All this clocks in at around 3 kB gzipped
+* All this clocks in at around 3 kB zipped.
 
 Requires React >= 16.0
 

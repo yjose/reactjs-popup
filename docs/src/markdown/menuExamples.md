@@ -2,14 +2,14 @@
 title: Use case - Menu example
 description: A simple tooltip example with reactjs-popup
 components: 
-  SampleMenu: SampleMenu
+  SimpleMenu: SimpleMenu
 ---
 
 ## Use Case - Menu
 
-you can create a nested Menu with reactjs-popup very easy like the following.
+you can create a nested Menu with reactjs-popup easily as the following.
 
-<SampleMenu />
+<SimpleMenu />
 
 ```jsx
 import React from "react";

@@ -69,11 +69,14 @@ export default {
           name="description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
+        <meta name="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
+
         <meta itemProp="name" content="React Popup - Simple Reactjs Popup" />
         <meta
           itemProp="description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
+        <meta itemProp="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="React Popup - Simple Reactjs Popup" />
@@ -82,12 +85,19 @@ export default {
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
         <meta name="twitter:creator" content="@ELaziziYoussouf" />
+        <meta
+          name="twitter:image:src"
+          content="https://react-popup.netlify.com/reactjs-popup.png"
+        />
 
         <meta name="og:title" content="React Popup - Simple Reactjs Popup" />
         <meta
           name="og:description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
+        <meta name="og:image" content="https://react-popup.netlify.com/reactjs-popup.png" />
+        <meta name="og:url" content="https://react-popup.netlify.com/" />
+        <meta name="og:site_name" content="React Popup - Simple Reactjs Popup" />
         <meta name="og:type" content="website" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
