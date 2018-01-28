@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Popup Component",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",
@@ -12,17 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/yjose/reactjs-popup.git"
   },
-  "keywords": [
-    "react",
-    "popup",
-    "reactjs",
-    "react-popup",
-    "reactjs-popup"
-  ],
+  "keywords": ["react", "popup", "reactjs", "react-popup", "reactjs-popup"],
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yjose/reactjs-popup/issues"
   },
-  "homepage": "https://yjose.github.io/reactjs-popup/"
+  "homepage": "https://react-popup.netlify.com/"
 }
