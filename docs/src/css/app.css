@@ -42,7 +42,7 @@ body {
   position: sticky;
   bottom: 0px;
 }
-.markdown-footer a {
+.markdown-footer > .edit {
   text-decoration: none;
   float: right;
 }

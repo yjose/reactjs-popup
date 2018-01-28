@@ -1,10 +1,14 @@
 .sidebar {
   width: 220px;
-  display: block;
-  position: sticky;
-  top: 0;
-  padding: 20px 5px;
   font-size: 16px;
+  padding: 20px 5px;
+}
+
+.sidebar ul {
+  position: sticky;
+  top: 20px;
+  display: block;
+  padding: 0;
 }
 .sidebar li {
   list-style: outside none none;
@@ -44,10 +48,12 @@
   .sidebar {
     width: 100%;
     text-align: center;
-    position: relative;
     padding: 5px;
     margin: 5px;
     border-bottom: 1px solid #cfcece;
+  }
+  .sidebar ul {
+    position: relative;
   }
   .sidebar a:after {
     display: none;

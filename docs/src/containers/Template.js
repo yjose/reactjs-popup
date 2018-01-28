@@ -1,9 +1,18 @@
 import React from 'react'
 import { getRouteProps } from 'react-static'
+import { Helmet } from 'react-helmet'
 import universal from 'react-universal-component'
 import Markdown from '../components/Markdown'
 
 import '../css/github-markdown.css'
+
+const Head = ({ title, description }) => (
+  <Helmet>
+    <meta charSet="utf-8" />
+    <title> React Popup | {title}</title>
+    <meta name="description" content={description} />
+  </Helmet>
+)
 
 export default getRouteProps(({ file }) => {
   const markdown = require(`!json-loader!front-matter!../markdown/${file}`)
@@ -18,6 +27,7 @@ export default getRouteProps(({ file }) => {
 
   return (
     <div className="markdown-body">
+      <Head {...markdown.attributes} />
       <Markdown
         className="content"
         options={{
@@ -26,13 +36,19 @@ export default getRouteProps(({ file }) => {
       >
         {markdown.body}
       </Markdown>
-      <div className="nextLink">
-        <span className="previous"> previous</span> <span className="next"> previews</span>
-      </div>
       <div className="markdown-footer">
         {' '}
-        built with 💚 by @yjose
-        <a href={`https://github/yjose/reactjs-popup/docs/src/markdown/${file}`}>EDIT THIS PAGE</a>
+        built with 💚 by
+        <a href="https://github.com/yjose" target="_blank">
+          {' '}
+          @yjose
+        </a>
+        <a
+          className="edit"
+          href={`https://github.com/yjose/reactjs-popup/tree/master/docs/src/markdown/${file}`}
+        >
+          EDIT THIS PAGE
+        </a>
       </div>
     </div>
   )

@@ -1,7 +1,8 @@
 {
-  "title": "react popup ",
+  "title": "React popup ",
   "menu": {
-    "": "getStarted.md",
+    "": "welcome.md",
+    "Home": "welcome.md",
     "Getting Started": "getStarted.md",
     "Component API": "componentApi.md",
     "Use Case - Tooltip": "tooltipExamples.md",

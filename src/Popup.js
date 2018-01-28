@@ -19,13 +19,12 @@ export default class Popup extends React.Component {
     modal: false,
     arrow: true,
     offset: 0,
-    mouseEnterDelay: 300,
-    mouseLeaveDelay: 300
+    mouseEnterDelay: 100,
+    mouseLeaveDelay: 100
   };
   state = {
     isOpen: this.props.defaultOpen
   };
-  timeOut = 0;
 
   constructor(props) {
     super(props);
@@ -33,6 +32,7 @@ export default class Popup extends React.Component {
     this.setContentRef = r => (this.ContentEl = r);
     this.setArrowRef = r => (this.ArrowEl = r);
     this.setHelperRef = r => (this.HelperEl = r);
+    this.timeOut = 0;
   }
 
   componentDidMount() {
@@ -82,7 +82,9 @@ export default class Popup extends React.Component {
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
-      this.ArrowEl.style.transform = cords.transform;
+      this.ArrowEl.style['transform']= cords.transform;
+      this.ArrowEl.style['-ms-transform']= cords.transform;
+      this.ArrowEl.style['-webkit-transform']= cords.transform;
       this.ArrowEl.style.top = cords.arrowTop;
       this.ArrowEl.style.left = cords.arrowLeft;
     }
@@ -125,8 +127,7 @@ export default class Popup extends React.Component {
         triggerProps.onMouseEnter = this.onMouseEnter;
         triggerProps.onMouseLeave = this.onMouseLeave;
       case "focus":
-        triggerProps.onMouseEnter = this.onMouseEnter;
-        triggerProps.onMouseLeave = this.onMouseLeave;
+        triggerProps.onFocus = this.onMouseEnter;
         break;
     }
     return React.cloneElement(this.props.trigger, triggerProps);
@@ -144,7 +145,7 @@ export default class Popup extends React.Component {
             />
           )}
         {typeof this.props.children === "function"
-          ? this.props.children(this.state.isOpen, this.closePopup)
+          ? this.props.children(this.closePopup, this.state.isOpen)
           : this.props.children}
       </div>
     );

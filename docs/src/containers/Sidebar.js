@@ -8,7 +8,8 @@ export default class Sidebar extends React.Component {
   render () {
     const routes = Object.entries(APPCONFIG.menu).map(r => r[0])
     return (
-        <ul className="sidebar">
+      <div className="sidebar">
+        <ul>
           {routes.map((r, i) => {
             if (r !== '') {
               return (
@@ -24,6 +25,7 @@ export default class Sidebar extends React.Component {
             }
           })}
         </ul>
+      </div>
     )
   }
 }

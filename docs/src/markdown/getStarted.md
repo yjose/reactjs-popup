@@ -1,20 +1,7 @@
 ---
-title: Just hack'n
-description: Nothing to see here
-components: 
-  Example: Example
+title:  Component Home page
+description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
-
-## Welcome
-
-reactjs-popup is a simple react popup component with a lot of benefits :
-
-* Built with react fragment that's mean no additional wrapper divs in your code or in the trigger element.
-* Does not inject HTML outside your app root
-* Function as children pattern to take control over your popup anywhere in your code.
-* All this clocks in at around 3 kB gzipped
-
-Requires React >= 16.0
 
 ## Installing / Getting started
 
@@ -40,7 +27,7 @@ import Popup from "reactjs-popup";
 
 export default () => (
   <Popup trigger={<button> Trigger</button>} position="right center">
-    <div>popup content here</div>
+    <div>Popup content here !!</div>
   </Popup>
 );
 ```
@@ -52,15 +39,10 @@ import React from "react";
 import Popup from "reactjs-popup";
 
 export default () => (
-  <Popup
-    triggerOn="click"
-    position="top left"
-    closeOnDocumentClick={true}
-    trigger={<button>Trigger</button>}
-  >
+  <Popup trigger={<button>Trigger</button>} position="top left">
     {close => (
       <div>
-        content here
+        Content here
         <a className="close" onClick={close}>
           &times;
         </a>

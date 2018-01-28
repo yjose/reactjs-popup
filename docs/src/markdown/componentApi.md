@@ -1,8 +1,8 @@
 ---
-title: Just hack'n
-description: Nothing to see here
-components: 
-  Example: Example
+title: React Popup | Component API 
+description: The reactjs-popup API is inspired by semantic popup docs
+components:
+ InputFocus : InputFocus
 ---
 
 ### Component API
@@ -23,3 +23,23 @@ The reactjs-popup API is inspired by semantic popup docs
 | contentStyle |                   | {object}       | Custom popup content style                                                                                                                             |
 | overlayStyle |                   | {object}       | Custom overlay style                                                                                                                                   |
 | arrowStyle   |                   | {object}       | Custom arrow style                                                                                                                                     |
+
+### Example : on focus
+
+<InputFocus />
+
+```jsx
+import React from "react";
+import Popup from "reactjs-popup";
+
+export default () => (
+  <Popup
+    trigger={<input type="text" placeholder="start typing ... " />}
+    on="focus"
+    position="top left"
+    closeOnDocumentClick
+  >
+    <span> On focus popup event </span>
+  </Popup>
+);
+```
