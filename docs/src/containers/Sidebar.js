@@ -16,7 +16,7 @@ export default class Sidebar extends React.Component {
                 <li key={i}>
                   <NavLink
                     activeClassName="current"
-                    to={`/${r.replace(new RegExp(' ', 'g'), '-')}/`}
+                    to={`/${r.replace(new RegExp(' ', 'g'), '-').toLowerCase()}/`}
                   >
                     {r}
                   </NavLink>

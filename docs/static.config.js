@@ -27,12 +27,12 @@ const externals = fs
 
 export default {
   getSiteProps: () => ({
-    title: 'Reactjs-Popup Component',
+    title: 'React-Popup Component',
   }),
   siteRoot: 'https://react-popup.netlify.com/',
   getRoutes: async () => {
     const routes = Object.entries(APPCONFIG.menu).map(r => {
-      const path = `/${r[0].replace(new RegExp(' ', 'g'), '-')}`
+      const path = `/${r[0].replace(new RegExp(' ', 'g'), '-').toLowerCase()}`
       const file = r[1]
       const getProps = () => ({
         file,

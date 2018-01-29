@@ -7,6 +7,7 @@ import Cover from './containers/Cover'
 import './css/normalize.css'
 import './css/app.css'
 import './css/examples.css'
+
 require('prismjs/themes/prism-solarizedlight.css')
 
 import Sidebar from './containers/Sidebar'
@@ -23,7 +24,7 @@ export default () => {
           <Sidebar />
           <Switch>
             {routes.map((r, i) => {
-              const path = r.replace(new RegExp(' ', 'g'), '-')
+              const path = r.replace(new RegExp(' ', 'g'), '-').toLowerCase()
               return <Route key={i} path={`/${path}/`} component={Template} />
             })}
             <Route component={NotFound} />
