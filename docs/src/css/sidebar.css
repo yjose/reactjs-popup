@@ -54,6 +54,7 @@
   }
   .sidebar ul {
     position: relative;
+    top: 0px;
   }
   .sidebar a:after {
     display: none;
