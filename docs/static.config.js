@@ -27,7 +27,7 @@ const externals = fs
 
 export default {
   getSiteProps: () => ({
-    title: 'React-Popup Component',
+    title: 'React Popup Component - Modals,Tooltips and Menus —  All in one',
   }),
   siteRoot: 'https://react-popup.netlify.com/',
   getRoutes: async () => {
@@ -63,7 +63,7 @@ export default {
       <Head>
         <meta charSet="UTF-8" />
 
-        <title>React Popup - Simple Reactjs Popup</title>
+        <title>React Popup Component - Modals,Tooltips and Menus —  All in one</title>
 
         <meta
           name="description"
@@ -71,7 +71,7 @@ export default {
         />
         <meta name="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
 
-        <meta itemProp="name" content="React Popup - Simple Reactjs Popup" />
+        <meta itemProp="name" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
         <meta
           itemProp="description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
@@ -79,7 +79,7 @@ export default {
         <meta itemProp="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="React Popup - Simple Reactjs Popup" />
+        <meta name="twitter:title" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
         <meta
           name="twitter:description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
@@ -90,7 +90,7 @@ export default {
           content="https://react-popup.netlify.com/reactjs-popup.png"
         />
 
-        <meta name="og:title" content="React Popup - Simple Reactjs Popup" />
+        <meta name="og:title" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
         <meta
           name="og:description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."

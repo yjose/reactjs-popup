@@ -8,7 +8,7 @@ import '../css/github-markdown.css'
 
 const Head = ({ title, description }) => (
   <Helmet>
-    <title> React Popup | {title} </title>
+    <title>{title}</title>
     <meta name="description" content={description} />
   </Helmet>
 )
@@ -25,7 +25,6 @@ export default getRouteProps(({ file }) => {
   })
 
   const { title, description } = markdown.attributes
-  console.log(title, description)
 
   return (
     <div className="markdown-body">

@@ -1,5 +1,5 @@
 ---
-title:  Component Home page
+title:  React Popup Component - Modals,Tooltips and Menus —  All in one
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
 

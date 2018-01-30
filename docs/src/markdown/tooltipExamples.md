@@ -1,5 +1,5 @@
 ---
-title: Use case - Tooltip example
+title: React Popup |  Use case - Tooltip example
 description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position 
 components: 
   SimpleTooltip: SimpleTooltip

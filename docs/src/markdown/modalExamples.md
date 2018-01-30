@@ -1,5 +1,5 @@
 ---
-title: Use case - Modal example
+title: React Popup |  Use case - Modal example
 description: A simple tooltip example with reactjs-popup
 components: 
   SimpleModal : SimpleModal

@@ -1,5 +1,5 @@
 ---
-title: Use case - Menu example
+title: React Popup |  Use case - Menu example
 description: A simple tooltip example with reactjs-popup
 components: 
   SimpleMenu: SimpleMenu

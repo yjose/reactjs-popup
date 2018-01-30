@@ -1,5 +1,5 @@
 ---
-title : Component API 
+title : React Popup | Component API 
 description : The reactjs-popup API is inspired by semantic popup docs
 components:
  InputFocus : InputFocus
