@@ -29,7 +29,7 @@ export default {
   getSiteProps: () => ({
     title: 'React Popup Component - Modals,Tooltips and Menus —  All in one',
   }),
-  siteRoot: 'https://react-popup.netlify.com/',
+  siteRoot: '/',
   getRoutes: async () => {
     const routes = Object.entries(APPCONFIG.menu).map(r => {
       const path = `/${r[0].replace(new RegExp(' ', 'g'), '-').toLowerCase()}`
