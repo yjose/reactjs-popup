@@ -5,10 +5,12 @@ import universal from 'react-universal-component'
 import Markdown from '../components/Markdown'
 
 import '../css/github-markdown.css'
-import { setTimeout } from 'timers';
 
-
-const Loader = () => <div className="loader"></div>
+const Loader = () => (
+  <div className="example-warper">
+    <div className="loader" />
+  </div>
+)
 
 const Head = ({ title, description }) => (
   <Helmet>
@@ -22,7 +24,7 @@ export default getRouteProps(({ file }) => {
   const overrides = Object.assign({}, markdown.attributes.components)
   const filesName = Object.assign({}, markdown.attributes.components)
   Object.keys(overrides).map((key, index) => {
-    const Example = universal(import(`../examples/${filesName[key]}`), { loading :Loader })
+    const Example = universal(import(`../examples/${filesName[key]}`), { loading: Loader })
     overrides[key] = {
       component: Example,
     }
