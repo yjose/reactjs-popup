@@ -1,6 +1,5 @@
 import { configure } from "@storybook/react";
 import { setOptions } from "@storybook/addon-options";
-import styles from "../src/index.scss";
 setOptions({
   name: "Reactjs Component",
   url: "#"
@@ -9,8 +8,7 @@ setOptions({
 //const req = require.context("../src/stories", true, /\.js$/);
 
 const load = () => {
-   require('../src/index')
-  //req.keys().forEach(req);
+  require("../src/index");
 };
 
 configure(load, module);

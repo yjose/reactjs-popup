@@ -19,11 +19,10 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.3.0",
-    "@storybook/addon-knobs": "3.3.0",
-    "@storybook/addon-options": "3.3.0",
-    "@storybook/react": "3.3.0",
-    "autoprefixer": "^7.2.3",
+    "@storybook/addon-actions": "3.3.11",
+    "@storybook/addon-knobs": "3.3.11",
+    "@storybook/addon-options": "3.3.11",
+    "@storybook/react": "3.3.11",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -32,13 +31,11 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.1",
-    "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.0",
     "http-server": "^0.10.0",
     "jest": "^22.0.4",
-    "node-sass": "^4.7.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -48,11 +45,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.5",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.1",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "rollup-plugin-uglify": "^2.0.1"
   },
   "repository": {
     "type": "git",
