@@ -82,9 +82,9 @@ export default class Popup extends React.Component {
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
-      this.ArrowEl.style['transform']= cords.transform;
-      this.ArrowEl.style['-ms-transform']= cords.transform;
-      this.ArrowEl.style['-webkit-transform']= cords.transform;
+      this.ArrowEl.style["transform"] = cords.transform;
+      this.ArrowEl.style["-ms-transform"] = cords.transform;
+      this.ArrowEl.style["-webkit-transform"] = cords.transform;
       this.ArrowEl.style.top = cords.arrowTop;
       this.ArrowEl.style.left = cords.arrowLeft;
     }
@@ -117,7 +117,7 @@ export default class Popup extends React.Component {
   };
   renderTrigger = () => {
     const triggerProps = { key: "T" };
-    const { on } = this.props;
+    const { on, trigger } = this.props;
     triggerProps.ref = this.setTriggerRef;
     switch (on) {
       case "click":
@@ -130,7 +130,10 @@ export default class Popup extends React.Component {
         triggerProps.onFocus = this.onMouseEnter;
         break;
     }
-    return React.cloneElement(this.props.trigger, triggerProps);
+    if (typeof trigger === "function")
+      return React.cloneElement(trigger(this.state.isOpen), triggerProps);
+
+    return React.cloneElement(trigger, triggerProps);
   };
 
   renderContent = () => {
@@ -193,7 +196,8 @@ if (process.env.NODE_ENV !== "production") {
     mouseLeaveDelay: PropTypes.number,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    trigger: PropTypes.element.isRequired,
+    trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
+      .isRequired,
     on: PropTypes.oneOf(["hover", "click", "focus"]),
     children: PropTypes.oneOfType([
       PropTypes.func,
