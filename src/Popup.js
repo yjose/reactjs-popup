@@ -10,7 +10,7 @@ export default class Popup extends React.Component {
     onClose: () => {},
     closeOnDocumentClick: false,
     defaultOpen: false,
-    on: "click",
+    on: ["click"],
     contentStyle: {},
     arrowStyle: {},
     overlayStyle: {},
@@ -109,7 +109,7 @@ export default class Popup extends React.Component {
         e.stopPropagation();
       }
     };
-    if (!modal && on === "hover") {
+    if (!modal && on.includes("hover")) {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
@@ -119,17 +119,21 @@ export default class Popup extends React.Component {
     const triggerProps = { key: "T" };
     const { on, trigger } = this.props;
     triggerProps.ref = this.setTriggerRef;
-    switch (on) {
-      case "click":
-        triggerProps.onClick = this.togglePopup;
-        break;
-      case "hover":
-        triggerProps.onMouseEnter = this.onMouseEnter;
-        triggerProps.onMouseLeave = this.onMouseLeave;
-      case "focus":
-        triggerProps.onFocus = this.onMouseEnter;
-        break;
+    const onAsArray = Array.isArray(on) ? on : [on];
+    for (let i = 0, len = onAsArray.length; i < len; i++) {
+      switch (onAsArray[i]) {
+        case "click":
+          triggerProps.onClick = this.togglePopup;
+          break;
+        case "hover":
+          triggerProps.onMouseEnter = this.onMouseEnter;
+          triggerProps.onMouseLeave = this.onMouseLeave;
+        case "focus":
+          triggerProps.onFocus = this.onMouseEnter;
+          break;
+      }
     }
+
     if (typeof trigger === "function")
       return React.cloneElement(trigger(this.state.isOpen), triggerProps);
 
@@ -198,7 +202,10 @@ if (process.env.NODE_ENV !== "production") {
     onClose: PropTypes.func,
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
       .isRequired,
-    on: PropTypes.oneOf(["hover", "click", "focus"]),
+    on: PropTypes.oneOfType([
+      PropTypes.oneOf(["hover", "click", "focus"]),
+      PropTypes.arrayOf(PropTypes.oneOf(["hover", "click", "focus"]))
+    ]),
     children: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.element,
