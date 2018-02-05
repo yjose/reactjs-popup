@@ -19,7 +19,9 @@ import Popup from "reactjs-popup";
 
 export default () => (
   <Popup
-    trigger={<button className="button"> Trigger </button>}
+    trigger={open => (
+      <button className="button">Trigger - {open ? "Opened" : "Closed"}</button>
+    )}
     position="right center"
     closeOnDocumentClick
   >

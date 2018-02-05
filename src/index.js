@@ -9,7 +9,7 @@ import {
   object
 } from "@storybook/addon-knobs";
 
-//import styles from "../src/index.scss";
+import "./index.css";
 //import Popup from "../src/Popup";
 
 import PopupElement from "./stories/PopupElement";

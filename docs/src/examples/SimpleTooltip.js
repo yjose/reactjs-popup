@@ -5,7 +5,7 @@ import Popup from '../../../lib/reactjsPopup.es'
 
 const SimpleTooltip = () => (
   <Popup
-    trigger={<button className="button"> Trigger </button>}
+    trigger={open => <button className="button">Trigger - {open ? 'Opened' : 'Closed'}</button>}
     position="right center"
     closeOnDocumentClick
   >

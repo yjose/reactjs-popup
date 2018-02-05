@@ -9,10 +9,11 @@ import {
 } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
 import Popup from "../Popup";
+
 const PopupElement = () => {
   const labels = "Styles";
   const defaultValueStyles = {
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "#FFFFF0"
   };
 
   const label = "trigger On";
@@ -48,7 +49,7 @@ const PopupElement = () => {
         {" "}
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s{" "}
         <Popup
-          on="click"
+          on={["hover", "click"]}
           position="bottom left"
           closeOnDocumentClick={true}
           //defaultOpen={true}
@@ -57,11 +58,9 @@ const PopupElement = () => {
           )}
         >
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            voluptas ex, blanditiis reiciendis dolor numquam pariatur facilis,
-            labore, libero nihil asperiores ae facilis quis commodi dolores, at
-            enim. Deserunt qui, officiis culpa optio numquam ullam pariatur
-            voluptas tempora doloremque!
+            Lorem ipsum dolor sit amet consecit. , libero nihil asperiores ae
+            facilis quis commodi dolores, at enim. Deserunt qui, officiis culpa
+            optio numquam ullam
           </div>
         </Popup>
         <Popup
@@ -79,12 +78,9 @@ const PopupElement = () => {
         >
           <div>
             sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
-            blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
-            nihil asperiores ae facilis quis commodi dolores, at enim. Deserunt
-            qui, officiis culpa optio numquam ullam pariatur voluptas tempora
-            doloremque!
+            blanditiis reiciendir voluptas tempora doloremque!
             <Popup
-              on="click"
+              on={["click"]}
               position="bottom left"
               closeOnDocumentClick={true}
               trigger={<button>Button nested</button>}
