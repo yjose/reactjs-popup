@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Popup Component",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",
@@ -31,6 +31,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.1",
+    "del": "^3.0.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.0",

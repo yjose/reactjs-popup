@@ -16,7 +16,11 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -110,7 +114,11 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -154,7 +162,11 @@ exports[`it should render correctly  1`] = `
   mouseEnterDelay={100}
   mouseLeaveDelay={100}
   offset={0}
-  on="click"
+  on={
+    Array [
+      "click",
+    ]
+  }
   onClose={[Function]}
   onOpen={[Function]}
   overlayStyle={Object {}}
@@ -183,7 +195,11 @@ exports[`it should render correctly on click   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -274,7 +290,11 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -351,6 +371,286 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
 </PopupTest>
 `;
 
+exports[`it should render correctly on click and will update the the popup content text   1`] = `
+<PopupContentAsFunction>
+  <Popup
+    arrow={true}
+    arrowStyle={Object {}}
+    className=""
+    closeOnDocumentClick={false}
+    contentStyle={Object {}}
+    defaultOpen={false}
+    modal={false}
+    mouseEnterDelay={100}
+    mouseLeaveDelay={100}
+    offset={0}
+    on={
+      Array [
+        "click",
+      ]
+    }
+    onClose={[Function]}
+    onOpen={[Function]}
+    overlayStyle={Object {}}
+    position="bottom center"
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+  >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      key="C"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 1px 1px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+            "zIndex": "-1",
+          }
+        }
+      />
+      <div>
+         Popup content 
+        open
+         
+      </div>
+    </div>
+    <button
+      key="T"
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+  </Popup>
+</PopupContentAsFunction>
+`;
+
+exports[`it should render correctly on click and will update the the popup content text   2`] = `
+<PopupContentAsFunction>
+  <Popup
+    arrow={true}
+    arrowStyle={Object {}}
+    className=""
+    closeOnDocumentClick={false}
+    contentStyle={Object {}}
+    defaultOpen={false}
+    modal={false}
+    mouseEnterDelay={100}
+    mouseLeaveDelay={100}
+    offset={0}
+    on={
+      Array [
+        "click",
+      ]
+    }
+    onClose={[Function]}
+    onOpen={[Function]}
+    overlayStyle={Object {}}
+    position="bottom center"
+    trigger={
+      <button>
+         Trigger
+      </button>
+    }
+  >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <button
+      key="T"
+      onClick={[Function]}
+    >
+       Trigger
+    </button>
+  </Popup>
+</PopupContentAsFunction>
+`;
+
+exports[`it should render correctly on click and will update the trigger text   1`] = `
+<PopupTriggerFunction>
+  <Popup
+    arrow={true}
+    arrowStyle={Object {}}
+    className=""
+    closeOnDocumentClick={false}
+    contentStyle={Object {}}
+    defaultOpen={false}
+    modal={false}
+    mouseEnterDelay={100}
+    mouseLeaveDelay={100}
+    offset={0}
+    on={
+      Array [
+        "click",
+      ]
+    }
+    onClose={[Function]}
+    onOpen={[Function]}
+    overlayStyle={Object {}}
+    position="bottom center"
+    trigger={[Function]}
+  >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <div
+      className="popup-overlay"
+      key="O"
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "position": "fixed",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    />
+    <div
+      className="popup-content "
+      key="C"
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(187, 187, 187)",
+          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
+          "padding": "5px",
+          "position": "absolute",
+          "width": "200px",
+          "zIndex": "2",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "rgba(0, 0, 0, 0.2) 1px 1px 1px",
+            "height": "10px",
+            "margin": "-5px",
+            "position": "absolute",
+            "transform": "rotate(45deg)",
+            "width": "10px",
+            "zIndex": "-1",
+          }
+        }
+      />
+      popup content
+    </div>
+    <button
+      key="T"
+      onClick={[Function]}
+    >
+      Button nested 
+      open
+    </button>
+  </Popup>
+</PopupTriggerFunction>
+`;
+
+exports[`it should render correctly on click and will update the trigger text   2`] = `
+<PopupTriggerFunction>
+  <Popup
+    arrow={true}
+    arrowStyle={Object {}}
+    className=""
+    closeOnDocumentClick={false}
+    contentStyle={Object {}}
+    defaultOpen={false}
+    modal={false}
+    mouseEnterDelay={100}
+    mouseLeaveDelay={100}
+    offset={0}
+    on={
+      Array [
+        "click",
+      ]
+    }
+    onClose={[Function]}
+    onOpen={[Function]}
+    overlayStyle={Object {}}
+    position="bottom center"
+    trigger={[Function]}
+  >
+    <div
+      key="H"
+      style={
+        Object {
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+        }
+      }
+    />
+    <button
+      key="T"
+      onClick={[Function]}
+    >
+      Button nested 
+      close
+    </button>
+  </Popup>
+</PopupTriggerFunction>
+`;
+
 exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
 <PopupTestInput
   triggerOn="focus"
@@ -366,7 +666,11 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -412,7 +716,11 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -460,7 +768,11 @@ exports[`it should rendered in the bottom center position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -553,7 +865,11 @@ exports[`it should rendered in the bottom left position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -646,7 +962,11 @@ exports[`it should rendered in the bottom right position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -739,7 +1059,11 @@ exports[`it should rendered in the left bottom position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -832,7 +1156,11 @@ exports[`it should rendered in the left center position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -925,7 +1253,11 @@ exports[`it should rendered in the left top position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1018,7 +1350,11 @@ exports[`it should rendered in the right bottom position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1111,7 +1447,11 @@ exports[`it should rendered in the right center position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1204,7 +1544,11 @@ exports[`it should rendered in the right top position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1297,7 +1641,11 @@ exports[`it should rendered in the top center position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1390,7 +1738,11 @@ exports[`it should rendered in the top left position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1483,7 +1835,11 @@ exports[`it should rendered in the top right position   1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1575,7 +1931,11 @@ exports[`it shouldn't close on click outside popup  1`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}
@@ -1667,7 +2027,11 @@ exports[`it shouldn't close on click outside popup  2`] = `
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
     offset={0}
-    on="click"
+    on={
+      Array [
+        "click",
+      ]
+    }
     onClose={[Function]}
     onOpen={[Function]}
     overlayStyle={Object {}}

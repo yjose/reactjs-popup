@@ -26,6 +26,18 @@ Requires React >= 16.0
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*x-TqQwyT2ADmnb51oRJCOg.gif)
 
+## TO DO
+
+* [x] Create repository && publish package
+* [x] Create reactjs-popup Home page
+* [x] Tooltip Support
+* [x] Modal Support
+* [x] Menu & Nested Menu Support
+* [x] Add Live examples
+* [ ] Animation API
+* [ ] Toast Support
+* [ ] suggest a feature [here](https://github.com/yjose/reactjs-popup/labels/Features)
+
 ## Installing / Getting started
 
 This package is available in npm repository as reactjs-popup. It will work correctly with all popular bundlers.

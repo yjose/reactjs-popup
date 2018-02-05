@@ -17,7 +17,19 @@ const PopupTestInput = props => (
     popup content
   </Popup>
 );
-
+const PopupTriggerFunction = props => (
+  <Popup
+    {...props}
+    trigger={open => <button>Button nested {open ? "open" : "close"}</button>}
+  >
+    popup content
+  </Popup>
+);
+const PopupContentAsFunction = props => (
+  <Popup {...props} trigger={<button> Trigger</button>}>
+    {(close, open) => <div> Popup content {open ? "open" : "close"} </div>}
+  </Popup>
+);
 test("it should render correctly ", () => {
   const popup = shallow(<PopupTest triggerOn="click" />);
   expect(shallowToJson(popup)).toMatchSnapshot();
@@ -45,7 +57,26 @@ test("it should render correctly on hover (triggerOn = 'focus') ", () => {
   expect(shallowToJson(popup)).toMatchSnapshot();
 });
 
-// closeOnDocumentClick Tests
+// trigger as function
+
+test("it should render correctly on click and will update the trigger text  ", () => {
+  const popup = mount(<PopupTriggerFunction />);
+  popup.find("button").simulate("click");
+  expect(shallowToJson(popup)).toMatchSnapshot();
+  popup.find("button").simulate("click");
+  expect(shallowToJson(popup)).toMatchSnapshot();
+});
+
+// content as function
+test("it should render correctly on click and will update the the popup content text  ", () => {
+  const popup = mount(<PopupContentAsFunction />);
+  popup.find("button").simulate("click");
+  expect(shallowToJson(popup)).toMatchSnapshot();
+  popup.find("button").simulate("click");
+  expect(shallowToJson(popup)).toMatchSnapshot();
+});
+
+// closeOnDocumentClick Tests PopupContentAsFunction
 
 test("it shouldn't close on click outside popup ", () => {
   const popup = mount(<PopupTest triggerOn="click" />);
