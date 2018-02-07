@@ -23,5 +23,5 @@ storiesOf("React Popup", module)
   .add("simple tooltip  ", () => <PopupElement />)
   .add("function as child with scroll", () => <PopupFunc />)
   .add("on input focus ", () => <PopupInputFocus />)
-  .add("Menu use case ", () => <Modal />)
-  .add("modal use case ", () => <Menu />);
+  .add("Modal use case ", () => <Modal />)
+  .add("Menu use case ", () => <Menu />);

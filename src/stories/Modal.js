@@ -13,7 +13,9 @@ import Popup from "../Popup";
 const Modal = () => {
   const labels = "Styles";
   const defaultValueStyles = {
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "#FFFFFF",
+    height: "200px",
+    overflow: "auto"
   };
 
   const label = "trigger On";
@@ -45,7 +47,7 @@ const Modal = () => {
 
   return (
     <div>
-      <div style={{ zIndex: "90" }}>
+      <div style={{ zIndex: "90", height: "1000px" }}>
         {" "}
         testtt dhsjlz zkez adipisicing elit. Nemo voluptas s{" "}
         <Popup
@@ -61,8 +63,8 @@ const Modal = () => {
           }
           position={position}
         >
-          {(open, close) => (
-            <div style={{ width: "600px" }}>
+          {close => (
+            <div style={{ width: "600px", height: "600px" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
               voluptas s lore Lorem ipsum dolor sit amet consectetur adipisicing
               elit. Nemo voluptas s loreLorem ipsum dolor sit amet consectetur

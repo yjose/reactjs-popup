@@ -42,24 +42,33 @@ export default class Popup extends React.Component {
     clearTimeout(this.timeOut);
   }
 
+  lockScroll = () => {
+    if (this.props.modal)
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+  };
+  resetScroll = () => {
+    if (this.props.modal)
+      document.getElementsByTagName("body")[0].style.overflow = "auto";
+  };
+
   togglePopup = () => {
-    this.setState(
-      prevState => ({
-        isOpen: !prevState.isOpen
-      }),
-      () => this.state.isOpen && this.setPosition()
-    );
+    if (this.state.isOpen) this.closePopup();
+    else this.openPopup();
   };
   openPopup = () => {
     if (this.state.isOpen) return;
     this.setState({ isOpen: true }, () => {
       this.setPosition();
       this.props.onOpen();
+      this.lockScroll();
     });
   };
   closePopup = () => {
     if (!this.state.isOpen) return;
-    this.setState({ isOpen: false }, this.props.onClose());
+    this.setState({ isOpen: false }, () => {
+      this.props.onClose();
+      this.resetScroll();
+    });
   };
   onMouseEnter = () => {
     clearTimeout(this.timeOut);
@@ -159,7 +168,7 @@ export default class Popup extends React.Component {
   };
 
   render() {
-    const { modal, overlayStyle } = this.props;
+    const { modal, overlayStyle, closeOnDocumentClick } = this.props;
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       <div
@@ -172,9 +181,7 @@ export default class Popup extends React.Component {
           key="O"
           className="popup-overlay"
           style={Object.assign({}, ovStyle, overlayStyle)}
-          onClick={
-            this.props.closeOnDocumentClick ? this.closePopup : undefined
-          }
+          onClick={closeOnDocumentClick ? this.closePopup : undefined}
         >
           {modal && this.renderContent()}
         </div>
