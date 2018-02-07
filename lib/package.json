@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Popup Component",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",

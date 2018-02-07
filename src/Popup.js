@@ -17,6 +17,7 @@ export default class Popup extends React.Component {
     className: "",
     position: "bottom center",
     modal: false,
+    lockScroll: true,
     arrow: true,
     offset: 0,
     mouseEnterDelay: 100,
@@ -43,11 +44,11 @@ export default class Popup extends React.Component {
   }
 
   lockScroll = () => {
-    if (this.props.modal)
+    if (this.props.modal && this.props.lockScroll)
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
   };
   resetScroll = () => {
-    if (this.props.modal)
+    if (this.props.modal && this.props.lockScroll)
       document.getElementsByTagName("body")[0].style.overflow = "auto";
   };
 
@@ -202,6 +203,7 @@ if (process.env.NODE_ENV !== "production") {
     className: PropTypes.string,
     modal: PropTypes.bool,
     closeOnDocumentClick: PropTypes.bool,
+    lockScroll: PropTypes.bool,
     offset: PropTypes.number,
     mouseEnterDelay: PropTypes.number,
     mouseLeaveDelay: PropTypes.number,
