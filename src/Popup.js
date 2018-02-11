@@ -9,6 +9,7 @@ export default class Popup extends React.Component {
     onOpen: () => {},
     onClose: () => {},
     closeOnDocumentClick: false,
+    closeOnEscape: true,
     defaultOpen: false,
     on: ["click"],
     contentStyle: {},
@@ -37,7 +38,13 @@ export default class Popup extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.defaultOpen) this.setPosition();
+    const { closeOnEscape, defaultOpen } = this.props;
+    if (defaultOpen) this.setPosition();
+    if (closeOnEscape) {
+      window.addEventListener("keyup", e => {
+        if (e.key === "Escape") this.closePopup();
+      });
+    }
   }
   componentWillUnmount() {
     clearTimeout(this.timeOut);

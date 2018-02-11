@@ -21,6 +21,7 @@ The reactjs-popup API is inspired by semantic popup docs
 | modal                | false             | {bool}         | A modal component when modal ={true}                                                                                                                   |
 | lockScroll           | true              | {bool}         | Disable body scroll when modal is open ( work only with modal)                                                                                         |
 | closeOnDocumentClick | false             | {bool}         | close popup when the overlay clicked                                                                                                                   |
+| closeOnEscape | true             | {bool}         | close popup when Escape clicked                                                                                                                   |
 | mouseEnterDelay      | {number}          | 100            | Milliseconds to wait before opening on mouse over                                                                                                      |
 | mouseLeaveDelay      | {number}          | 100            | Milliseconds to wait before closing on mouse leave                                                                                                     |
 | onOpen               |                   | {func}         | function called on open event                                                                                                                          |

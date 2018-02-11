@@ -52,7 +52,7 @@ export default () => {
           closeOnDocumentClick={closeOnDocumentClick}
           position={position}
         >
-          {(open, close) => (
+          {close => (
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
               voluptas s lore Lorem ipsum dolor sit amet consectetur adipisicing
