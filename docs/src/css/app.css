@@ -57,7 +57,7 @@ pre[class*="language-"] {
   }
 
   .markdown-body {
-    padding: 5px 1%;
+    padding: 5px 3%;
     max-width: 98%;
   }
 }
@@ -78,4 +78,8 @@ pre[class*="language-"] {
   100% {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  z-index: 0;
 }
