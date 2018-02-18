@@ -17,7 +17,8 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -90,12 +91,17 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -117,7 +123,8 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -144,12 +151,17 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
         }
       }
     />
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -167,7 +179,8 @@ exports[`it should render correctly  1`] = `
   modal={false}
   mouseEnterDelay={100}
   mouseLeaveDelay={100}
-  offset={0}
+  offsetX={0}
+  offsetY={0}
   on={
     Array [
       "click",
@@ -202,7 +215,8 @@ exports[`it should render correctly on click   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -273,12 +287,17 @@ exports[`it should render correctly on click   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -299,7 +318,8 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -371,12 +391,17 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -395,7 +420,8 @@ exports[`it should render correctly on click and will update the the popup conte
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -470,12 +496,17 @@ exports[`it should render correctly on click and will update the the popup conte
          
       </div>
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupContentAsFunction>
 `;
@@ -494,7 +525,8 @@ exports[`it should render correctly on click and will update the the popup conte
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -520,12 +552,17 @@ exports[`it should render correctly on click and will update the the popup conte
         }
       }
     />
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupContentAsFunction>
 `;
@@ -544,7 +581,8 @@ exports[`it should render correctly on click and will update the trigger text   
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -611,13 +649,18 @@ exports[`it should render correctly on click and will update the trigger text   
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-      Button nested 
-      open
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+        Button nested 
+        open
+      </button>
+    </Ref>
   </Popup>
 </PopupTriggerFunction>
 `;
@@ -636,7 +679,8 @@ exports[`it should render correctly on click and will update the trigger text   
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -658,13 +702,18 @@ exports[`it should render correctly on click and will update the trigger text   
         }
       }
     />
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-      Button nested 
-      close
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+        Button nested 
+        close
+      </button>
+    </Ref>
   </Popup>
 </PopupTriggerFunction>
 `;
@@ -685,7 +734,8 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -712,11 +762,16 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
         }
       }
     />
-    <input
-      key="T"
-      onClick={[Function]}
-      type="text"
-    />
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <input
+        key="T"
+        onClick={[Function]}
+        type="text"
+      />
+    </Ref>
   </Popup>
 </PopupTestInput>
 `;
@@ -737,7 +792,8 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -764,12 +820,17 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
         }
       }
     />
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -791,7 +852,8 @@ exports[`it should rendered in the bottom center position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -863,12 +925,17 @@ exports[`it should rendered in the bottom center position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -890,7 +957,8 @@ exports[`it should rendered in the bottom left position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -962,12 +1030,17 @@ exports[`it should rendered in the bottom left position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -989,7 +1062,8 @@ exports[`it should rendered in the bottom right position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1061,12 +1135,17 @@ exports[`it should rendered in the bottom right position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1088,7 +1167,8 @@ exports[`it should rendered in the left bottom position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1160,12 +1240,17 @@ exports[`it should rendered in the left bottom position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1187,7 +1272,8 @@ exports[`it should rendered in the left center position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1259,12 +1345,17 @@ exports[`it should rendered in the left center position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1286,7 +1377,8 @@ exports[`it should rendered in the left top position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1358,12 +1450,17 @@ exports[`it should rendered in the left top position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1385,7 +1482,8 @@ exports[`it should rendered in the right bottom position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1457,12 +1555,17 @@ exports[`it should rendered in the right bottom position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1484,7 +1587,8 @@ exports[`it should rendered in the right center position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1556,12 +1660,17 @@ exports[`it should rendered in the right center position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1583,7 +1692,8 @@ exports[`it should rendered in the right top position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1655,12 +1765,17 @@ exports[`it should rendered in the right top position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1682,7 +1797,8 @@ exports[`it should rendered in the top center position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1754,12 +1870,17 @@ exports[`it should rendered in the top center position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1781,7 +1902,8 @@ exports[`it should rendered in the top left position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1853,12 +1975,17 @@ exports[`it should rendered in the top left position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1880,7 +2007,8 @@ exports[`it should rendered in the top right position   1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -1952,12 +2080,17 @@ exports[`it should rendered in the top right position   1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1978,7 +2111,8 @@ exports[`it shouldn't close on click outside popup  1`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -2050,12 +2184,17 @@ exports[`it shouldn't close on click outside popup  1`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -2076,7 +2215,8 @@ exports[`it shouldn't close on click outside popup  2`] = `
     modal={false}
     mouseEnterDelay={100}
     mouseLeaveDelay={100}
-    offset={0}
+    offsetX={0}
+    offsetY={0}
     on={
       Array [
         "click",
@@ -2148,12 +2288,17 @@ exports[`it shouldn't close on click outside popup  2`] = `
       />
       popup content
     </div>
-    <button
-      key="T"
-      onClick={[Function]}
+    <Ref
+      innerRef={[Function]}
+      key="R"
     >
-       Trigger
-    </button>
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
   </Popup>
 </PopupTest>
 `;

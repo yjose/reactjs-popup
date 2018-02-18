@@ -25,7 +25,8 @@ export default function calculatePosition(
 ) {
   const style = {};
   const margin = arrow ? 8 : 0;
-  const totalMargin = margin + offset;
+  const MarginX = margin + offset.offsetX;
+  const MarginY = margin + offset.offsetY;
   const args = position.split(" ");
   // the step N 1 : center the popup content => ok
   const CenterTop = triggerBounding.top + triggerBounding.height / 2;
@@ -39,24 +40,24 @@ export default function calculatePosition(
   // the  step N 2 : => ok
   switch (args[0]) {
     case "top":
-      top -= height / 2 + triggerBounding.height / 2 + totalMargin;
+      top -= height / 2 + triggerBounding.height / 2 + MarginY;
       transform = `rotate(45deg)`;
       arrowTop = "100%";
       arrowLeft = "50%";
       break;
     case "bottom":
-      top += height / 2 + triggerBounding.height / 2 + totalMargin;
+      top += height / 2 + triggerBounding.height / 2 + MarginY;
       transform = `rotate(225deg)`;
       arrowLeft = "50%";
       break;
     case "left":
-      left -= width / 2 + triggerBounding.width / 2 + totalMargin;
+      left -= width / 2 + triggerBounding.width / 2 + MarginX;
       transform = ` rotate(-45deg)`;
       arrowLeft = "100%";
       arrowTop = "50%";
       break;
     case "right":
-      left += width / 2 + triggerBounding.width / 2 + totalMargin;
+      left += width / 2 + triggerBounding.width / 2 + MarginX;
       transform = `rotate(135deg)`;
       arrowTop = "50%";
 

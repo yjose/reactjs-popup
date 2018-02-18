@@ -1,4 +1,5 @@
 import React from "react";
+import { findDOMNode } from "react-dom";
 import calculatePosition from "./Utils";
 
 import styles from "./popup.css.js";
@@ -20,7 +21,8 @@ export default class Popup extends React.Component {
     modal: false,
     lockScroll: true,
     arrow: true,
-    offset: 0,
+    offsetX: 0,
+    offsetY: 0,
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100
   };
@@ -90,12 +92,15 @@ export default class Popup extends React.Component {
   };
 
   setPosition = () => {
-    const { modal, arrow, position, offset } = this.props;
+    const { modal, arrow, position, offsetX, offsetY } = this.props;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-    const cords = calculatePosition(trigger, content, position, arrow, offset);
+    const cords = calculatePosition(trigger, content, position, arrow, {
+      offsetX,
+      offsetY
+    });
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
@@ -106,8 +111,12 @@ export default class Popup extends React.Component {
       this.ArrowEl.style.left = cords.arrowLeft;
     }
     if (
-      this.TriggerEl.style.position == "static" ||
-      this.TriggerEl.style.position == ""
+      window
+        .getComputedStyle(this.TriggerEl, null)
+        .getPropertyValue("position") == "static" ||
+      window
+        .getComputedStyle(this.TriggerEl, null)
+        .getPropertyValue("position") == ""
     )
       this.TriggerEl.style.position = "relative";
   };
@@ -135,7 +144,6 @@ export default class Popup extends React.Component {
   renderTrigger = () => {
     const triggerProps = { key: "T" };
     const { on, trigger } = this.props;
-    triggerProps.ref = this.setTriggerRef;
     const onAsArray = Array.isArray(on) ? on : [on];
     for (let i = 0, len = onAsArray.length; i < len; i++) {
       switch (onAsArray[i]) {
@@ -195,7 +203,9 @@ export default class Popup extends React.Component {
         </div>
       ),
       this.state.isOpen && !modal && this.renderContent(),
-      this.renderTrigger()
+      <Ref innerRef={this.setTriggerRef} key="R">
+        {this.renderTrigger()}
+      </Ref>
     ];
   }
 }
@@ -211,7 +221,8 @@ if (process.env.NODE_ENV !== "production") {
     modal: PropTypes.bool,
     closeOnDocumentClick: PropTypes.bool,
     lockScroll: PropTypes.bool,
-    offset: PropTypes.number,
+    offsetX: PropTypes.number,
+    offsetY: PropTypes.number,
     mouseEnterDelay: PropTypes.number,
     mouseLeaveDelay: PropTypes.number,
     onOpen: PropTypes.func,
@@ -242,4 +253,18 @@ if (process.env.NODE_ENV !== "production") {
       "left bottom"
     ])
   };
+}
+
+class Ref extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    const { innerRef } = this.props;
+    if (innerRef) innerRef(findDOMNode(this));
+  }
+  render() {
+    const { children } = this.props;
+    return React.Children.only(children);
+  }
 }

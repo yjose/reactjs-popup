@@ -16,7 +16,8 @@
     "preview-examples": "http-server ./pages"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.3.11",
@@ -30,6 +31,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "enzyme": "^3.2.0",

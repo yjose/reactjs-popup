@@ -43,19 +43,24 @@ const PopupElement = () => {
   const StylesValue = object(labels, defaultValueStyles);
   const closeOnDocumentClick = boolean("closeOnDocumentClick", true);
 
+  const Button = ({ open, ...props }) => (
+    <button {...props}>Button nested {open ? "open" : "close"} </button>
+  );
+  const Div = (open = (
+    <div>
+      <Button open={open} />
+    </div>
+  ));
   return (
     <div>
       <div style={{ zIndex: "90" }}>
         {" "}
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s{" "}
         <Popup
-          on={["hover", "click"]}
+          on="click"
           position="bottom left"
           closeOnDocumentClick={true}
-          //defaultOpen={true}
-          trigger={open => (
-            <button>Button nested {open ? "open" : "close"}</button>
-          )}
+          trigger={open => <Button open={open} />}
         >
           <div>
             Lorem ipsum dolor sit amet consecit. , libero nihil asperiores ae
@@ -76,24 +81,7 @@ const PopupElement = () => {
           closeOnDocumentClick={closeOnDocumentClick}
           position={position}
         >
-          <div>
-            sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
-            blanditiis reiciendir voluptas tempora doloremque!
-            <Popup
-              on={["click"]}
-              position="bottom left"
-              closeOnDocumentClick={true}
-              trigger={<button>Button nested</button>}
-            >
-              <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-                voluptas ex, blanditiis reiciendis dolor numquam pariatur
-                facilis, labore, libero nihil asperiores ae facilis quis commodi
-                dolores, at enim. Deserunt qui, officiis culpa optio numquam
-                ullam pariatur voluptas tempora doloremque!
-              </div>
-            </Popup>
-          </div>
+          {close => <Content close={close} />}
         </Popup>
       </div>
 
@@ -108,3 +96,24 @@ const PopupElement = () => {
 };
 
 export default PopupElement;
+
+const Content = ({ close }) => (
+  <div>
+    sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
+    blanditiis reiciendir voluptas tempora doloremque!{" "}
+    <button onClick={close}>close</button>
+    <Popup
+      on={["click"]}
+      position="bottom left"
+      closeOnDocumentClick={true}
+      trigger={<button>Button nested</button>}
+    >
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
+        ex, blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
+        nihil asperiores ae facilis quis commodi dolores, at enim. Deserunt qui,
+        officiis culpa optio numquam ullam pariatur voluptas tempora doloremque!
+      </div>
+    </Popup>
+  </div>
+);
