@@ -23,7 +23,7 @@ Requires React >= 16.0
 
 <Demo />
 
-## TO DO
+## TO DO Next
 
 * [x] Create repository && publish package
 * [x] Create reactjs-popup Home page
@@ -34,3 +34,9 @@ Requires React >= 16.0
 * [ ] Animation API
 * [ ] Toast Support
 * [ ] suggest a feature [here](https://github.com/yjose/reactjs-popup/labels/Features)
+
+## Show your support!
+
+That's all, thank you for your attention, please star the repo to show your support...
+
+...we are all made of stars star !
