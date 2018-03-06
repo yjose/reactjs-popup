@@ -106,3 +106,9 @@ Before submitting a pull request run `npm run test` to run the unit-tests.
 ## Licensing
 
 The code in this project is licensed under MIT license.
+
+# Show your support!
+
+That's all, thank you for your attention, please star the repo to show your support...
+
+...we are all made of stars star !
