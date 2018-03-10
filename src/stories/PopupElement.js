@@ -44,13 +44,8 @@ const PopupElement = () => {
   const closeOnDocumentClick = boolean("closeOnDocumentClick", true);
 
   const Button = ({ open, ...props }) => (
-    <button {...props}>Button nested {open ? "open" : "close"} </button>
+    <button {...props}> Button nested {open ? "open" : "close"} </button>
   );
-  const Div = (open = (
-    <div>
-      <Button open={open} />
-    </div>
-  ));
   return (
     <div>
       <div style={{ zIndex: "90" }}>
@@ -60,10 +55,10 @@ const PopupElement = () => {
           on="click"
           position="bottom left"
           closeOnDocumentClick={true}
-          trigger={open => <Button open={open} />}
+          trigger={(open) => <Button open={true} />}
         >
           <div>
-            Lorem ipsum dolor sit amet consecit. , libero nihil asperiores ae
+            Lorem ipsum r sit amet consecit. , libero nihil asperiores ae
             facilis quis commodi dolores, at enim. Deserunt qui, officiis culpa
             optio numquam ullam
           </div>

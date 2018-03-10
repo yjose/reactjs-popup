@@ -17,6 +17,7 @@ import PopupFunc from "./stories/PopupFunc";
 import PopupInputFocus from "./stories/PopupInputFocus";
 import Modal from "./stories/Modal";
 import Menu from "./stories/Menu";
+import ControlledPopup from "./stories/Controlledpopup";
 
 storiesOf("React Popup", module)
   .addDecorator(withKnobs)
@@ -24,4 +25,5 @@ storiesOf("React Popup", module)
   .add("function as child with scroll", () => <PopupFunc />)
   .add("on input focus ", () => <PopupInputFocus />)
   .add("Modal use case ", () => <Modal />)
-  .add("Menu use case ", () => <Menu />);
+  .add("Menu use case ", () => <Menu />)
+  .add("Controlled Popup ", () => <ControlledPopup />);

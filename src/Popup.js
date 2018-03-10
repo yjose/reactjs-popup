@@ -7,11 +7,13 @@ import styles from "./popup.css.js";
 export default class Popup extends React.Component {
   static defaultProps = {
     children: () => <span> Your Content Here !!</span>,
+    trigger: null,
     onOpen: () => {},
     onClose: () => {},
+    defaultOpen: false,
+    open: false,
     closeOnDocumentClick: false,
     closeOnEscape: true,
-    defaultOpen: false,
     on: ["click"],
     contentStyle: {},
     arrowStyle: {},
@@ -27,7 +29,9 @@ export default class Popup extends React.Component {
     mouseLeaveDelay: 100
   };
   state = {
-    isOpen: this.props.defaultOpen
+    isOpen: this.props.open || this.props.defaultOpen,
+    modal: this.props.modal ? true : !this.props.trigger 
+    // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't existe    
   };
 
   constructor(props) {
@@ -48,16 +52,22 @@ export default class Popup extends React.Component {
       });
     }
   }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.open === nextProps.open) return;
+    if (nextProps.open) this.openPopup();
+    else this.closePopup();
+  }
   componentWillUnmount() {
+    // kill any function to execute if the component is unmounted 
     clearTimeout(this.timeOut);
   }
 
   lockScroll = () => {
-    if (this.props.modal && this.props.lockScroll)
+    if (this.state.modal && this.props.lockScroll)
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
   };
   resetScroll = () => {
-    if (this.props.modal && this.props.lockScroll)
+    if (this.state.modal && this.props.lockScroll)
       document.getElementsByTagName("body")[0].style.overflow = "auto";
   };
 
@@ -92,7 +102,8 @@ export default class Popup extends React.Component {
   };
 
   setPosition = () => {
-    const { modal, arrow, position, offsetX, offsetY } = this.props;
+    const { arrow, position, offsetX, offsetY } = this.props;
+    const { modal } = this.state;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
@@ -122,7 +133,8 @@ export default class Popup extends React.Component {
   };
 
   addWarperAction = () => {
-    const { contentStyle, className, modal, on } = this.props;
+    const { contentStyle, className, on } = this.props;
+    const { modal } = this.state;
     const popupContentStyle = modal
       ? styles.popupContent.modal
       : styles.popupContent.tooltip;
@@ -166,7 +178,8 @@ export default class Popup extends React.Component {
   };
 
   renderContent = () => {
-    const { arrow, modal, arrowStyle } = this.props;
+    const { arrow, arrowStyle } = this.props;
+    const { modal } = this.state;
     return (
       <div {...this.addWarperAction()} key="C">
         {arrow &&
@@ -184,7 +197,8 @@ export default class Popup extends React.Component {
   };
 
   render() {
-    const { modal, overlayStyle, closeOnDocumentClick } = this.props;
+    const { overlayStyle, closeOnDocumentClick } = this.props;
+    const { modal } = this.state;
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       <div
@@ -203,9 +217,11 @@ export default class Popup extends React.Component {
         </div>
       ),
       this.state.isOpen && !modal && this.renderContent(),
-      <Ref innerRef={this.setTriggerRef} key="R">
-        {this.renderTrigger()}
-      </Ref>
+      !!this.props.trigger && (
+        <Ref innerRef={this.setTriggerRef} key="R">
+          {this.renderTrigger()}
+        </Ref>
+      )
     ];
   }
 }
@@ -227,8 +243,9 @@ if (process.env.NODE_ENV !== "production") {
     mouseLeaveDelay: PropTypes.number,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element])
-      .isRequired,
+    open: PropTypes.bool,
+    defaultOpen: PropTypes.bool,
+    trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([
       PropTypes.oneOf(["hover", "click", "focus"]),
       PropTypes.arrayOf(PropTypes.oneOf(["hover", "click", "focus"]))
