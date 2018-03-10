@@ -4,7 +4,7 @@ import calculatePosition from "./Utils";
 
 import styles from "./popup.css.js";
 
-export default class Popup extends React.Component {
+export default class Popup extends React.PureComponent {
   static defaultProps = {
     children: () => <span> Your Content Here !!</span>,
     trigger: null,
@@ -30,8 +30,8 @@ export default class Popup extends React.Component {
   };
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
-    modal: this.props.modal ? true : !this.props.trigger 
-    // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't existe    
+    modal: this.props.modal ? true : !this.props.trigger
+    // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't existe
   };
 
   constructor(props) {
@@ -58,7 +58,7 @@ export default class Popup extends React.Component {
     else this.closePopup();
   }
   componentWillUnmount() {
-    // kill any function to execute if the component is unmounted 
+    // kill any function to execute if the component is unmounted
     clearTimeout(this.timeOut);
   }
 
@@ -272,7 +272,7 @@ if (process.env.NODE_ENV !== "production") {
   };
 }
 
-class Ref extends React.Component {
+class Ref extends React.PureComponent {
   constructor(props) {
     super(props);
   }

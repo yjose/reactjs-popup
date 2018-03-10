@@ -27,3 +27,9 @@ storiesOf("React Popup", module)
   .add("Modal use case ", () => <Modal />)
   .add("Menu use case ", () => <Menu />)
   .add("Controlled Popup ", () => <ControlledPopup />);
+
+//  why-did-you-update code
+if (process.env.NODE_ENV !== "production") {
+  const { whyDidYouUpdate } = require("why-did-you-update");
+  whyDidYouUpdate(React);
+}

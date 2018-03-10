@@ -54,11 +54,20 @@
     "type": "git",
     "url": "git+https://github.com/yjose/reactjs-popup.git"
   },
-  "keywords": ["react", "popup", "reactjs", "react-popup", "reactjs-popup"],
+  "keywords": [
+    "react",
+    "popup",
+    "reactjs",
+    "react-popup",
+    "reactjs-popup"
+  ],
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yjose/reactjs-popup/issues"
   },
-  "homepage": "https://react-popup.netlify.com/"
+  "homepage": "https://react-popup.netlify.com/",
+  "dependencies": {
+    "why-did-you-update": "^0.1.1"
+  }
 }
