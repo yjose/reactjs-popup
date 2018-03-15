@@ -5,6 +5,7 @@
     "Home": "welcome.md",
     "Getting Started": "getStarted.md",
     "Component API": "componentApi.md",
+    "Controlled Popup": "controlledPopup.md",
     "Use Case - Tooltip": "tooltipExamples.md",
     "Use Case - Modal": "modalExamples.md",
     "Use Case - Menu": "menuExamples.md",
