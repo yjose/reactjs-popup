@@ -201,7 +201,7 @@ export default class Popup extends React.PureComponent {
     const { modal } = this.state;
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
-      <div
+      this.state.isOpen && <div
         key="H"
         style={{ position: "absolute", top: "0px", left: "0px" }}
         ref={this.setHelperRef}

@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Popup Component",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",
@@ -48,26 +48,18 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.5",
     "rollup-plugin-replace": "^2.0.0",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup-plugin-uglify": "^2.0.1",
+    "why-did-you-update": "^0.1.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yjose/reactjs-popup.git"
   },
-  "keywords": [
-    "react",
-    "popup",
-    "reactjs",
-    "react-popup",
-    "reactjs-popup"
-  ],
+  "keywords": ["react", "popup", "reactjs", "react-popup", "reactjs-popup"],
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yjose/reactjs-popup/issues"
   },
-  "homepage": "https://react-popup.netlify.com/",
-  "dependencies": {
-    "why-did-you-update": "^0.1.1"
-  }
+  "homepage": "https://react-popup.netlify.com/"
 }
