@@ -143,16 +143,6 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     }
     triggerOn="click"
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
     <Ref
       innerRef={[Function]}
       key="R"
@@ -549,16 +539,6 @@ exports[`it should render correctly on click and will update the the popup conte
       </button>
     }
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
     <Ref
       innerRef={[Function]}
       key="R"
@@ -701,16 +681,6 @@ exports[`it should render correctly on click and will update the trigger text   
     position="bottom center"
     trigger={[Function]}
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
     <Ref
       innerRef={[Function]}
       key="R"
@@ -762,16 +732,6 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     }
     triggerOn="focus"
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
     <Ref
       innerRef={[Function]}
       key="R"
@@ -821,16 +781,6 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     }
     triggerOn="hover"
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
     <Ref
       innerRef={[Function]}
       key="R"
