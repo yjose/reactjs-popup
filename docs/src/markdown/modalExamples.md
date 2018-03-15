@@ -75,6 +75,7 @@ export default () => (
             close modal
           </button>
       </div>
+      </div>
     )}
   </Popup>
 );
