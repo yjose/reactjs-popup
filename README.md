@@ -1,8 +1,19 @@
 # Reactjs-popup
 
-[![Build Status](https://travis-ci.org/yjose/reactjs-popup.svg?branch=master)](https://travis-ci.org/yjose/reactjs-popup) [![BCH compliance](https://bettercodehub.com/edge/badge/yjose/reactjs-popup?branch=master)](https://bettercodehub.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![NPM](https://nodei.co/npm/reactjs-popup.png?compact=true)](https://nodei.co/npm/reactjs-popup/)
+[![Build Status][build-badge]][build]
+[![version][version-badge]][package]
+[![downloads][downloads-badge]][npmtrends]
+[![MIT License][license-badge]][license]
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![PRs Welcome][prs-badge]][prs]
+[![Code of Conduct][coc-badge]][coc]
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
+
 
 > built with react Fragment : react 16 Tiny 3KB
 
@@ -109,6 +120,28 @@ The code in this project is licensed under MIT license.
 
 # Show your support!
 
-That's all, thank you for your attention, please star the repo to show your support...
+That's all, thank you for your attention, please [![Star on GitHub][github-star-badge]][github-star] the repo to show your support...
 
-...we are all made of stars star !
+...we are all made of stars [![Star on GitHub][github-star-badge]][github-star] !
+
+[build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square
+[build]: https://travis-ci.org/yjose/reactjs-popup
+[version-badge]: https://img.shields.io/npm/v/reactjs-popup.svg?style=flat-square
+[package]: https://www.npmjs.com/package/reactjs-popup
+[downloads-badge]: https://img.shields.io/npm/dm/reactjs-popup.svg?style=flat-square
+[npmtrends]: http://www.npmtrends.com/reactjs-popup
+[license-badge]: https://img.shields.io/npm/l/reactjs-popup.svg?style=flat-square
+[license]: https://github.com/yjose/reactjs-popup/blob/master/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs]: http://makeapullrequest.com
+[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[coc]: https://github.com/yjose/reactjs-popup/blob/master/CODE_OF_CONDUCT.md
+[github-watch-badge]: https://img.shields.io/github/watchers/yjose/reactjs-popup.svg?style=social
+[github-watch]: https://github.com/yjose/reactjs-popup/watchers
+[github-star-badge]: https://img.shields.io/github/stars/yjose/reactjs-popup.svg?style=social
+[github-star]: https://github.com/yjose/reactjs-popup/stargazers
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20reactjs-popup%20by%20%4Elaziziyoussouf%20https%3A%2F%2Fgithub.com%2Fyjose%2Freactjs-popup%20%F0%9F%91%8D
+[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/yjose/reactjs-popup.svg?style=social
+[all-contributors]: https://github.com/yjose/all-contributors
+
