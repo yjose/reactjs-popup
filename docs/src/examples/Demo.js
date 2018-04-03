@@ -1,17 +1,18 @@
-import React from 'react'
-import Warper from './Warper'
-import Popup from '../../../lib/reactjsPopup.es'
+import React from "react";
+import Warper from "./Warper";
+import Popup from "../../../lib/reactjsPopup.es";
 //
 
 const contentStyle = {
-  maxWidth: '600px',
-  width: '90%',
-}
+  maxWidth: "600px",
+  width: "90%"
+};
 
 const CustomModal = () => (
   <Popup
     trigger={<button className="button"> Open Modal </button>}
     modal
+    lockScroll={false}
     contentStyle={contentStyle}
   >
     {close => (
@@ -21,21 +22,23 @@ const CustomModal = () => (
         </a>
         <div className="header"> Modal Title </div>
         <div className="content">
-          {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum. Dolorem,
-          repellat quidem ut, minima sint vel eveniet quibusdam voluptates delectus doloremque,
-          explicabo tempore dicta adipisci fugit amet dignissimos?
+          {" "}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a
+          nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet
+          quibusdam voluptates delectus doloremque, explicabo tempore dicta
+          adipisci fugit amet dignissimos?
           <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur sit commodi beatae
-          optio voluptatum sed eius cumque, delectus saepe repudiandae explicabo nemo nam libero ad,
-          doloribus, voluptas rem alias. Vitae?
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
+          sit commodi beatae optio voluptatum sed eius cumque, delectus saepe
+          repudiandae explicabo nemo nam libero ad, doloribus, voluptas rem
+          alias. Vitae?
         </div>
         <div className="actions">
           <Popup
             trigger={<button className="button"> Menu Demo </button>}
             position="top center"
             closeOnDocumentClick
-            contentStyle={{ padding: '0px', border: 'none' }}
+            contentStyle={{ padding: "0px", border: "none" }}
           >
             <div className="menu">
               <div className="menu-item"> Menu item 1</div>
@@ -48,7 +51,7 @@ const CustomModal = () => (
                 closeOnDocumentClick
                 mouseLeaveDelay={300}
                 mouseEnterDelay={0}
-                contentStyle={{ padding: '0px', border: 'none' }}
+                contentStyle={{ padding: "0px", border: "none" }}
                 arrow={false}
               >
                 <div className="menu">
@@ -63,8 +66,8 @@ const CustomModal = () => (
           <button
             className="button"
             onClick={() => {
-              console.log('modal closed ')
-              close()
+              console.log("modal closed ");
+              close();
             }}
           >
             close modal
@@ -73,6 +76,6 @@ const CustomModal = () => (
       </div>
     )}
   </Popup>
-)
+);
 
-export default Warper(CustomModal)
+export default Warper(CustomModal);

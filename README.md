@@ -1,6 +1,5 @@
 # Reactjs-popup
 
-
 [![Build Status][build-badge]][build]
 [![version][version-badge]][package]
 [![downloads][downloads-badge]][npmtrends]
@@ -13,7 +12,6 @@
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
-
 
 > built with react Fragment : react 16 Tiny 3KB
 
@@ -134,14 +132,12 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
 [license]: https://github.com/yjose/reactjs-popup/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
-[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
 [coc]: https://github.com/yjose/reactjs-popup/blob/master/CODE_OF_CONDUCT.md
 [github-watch-badge]: https://img.shields.io/github/watchers/yjose/reactjs-popup.svg?style=social
 [github-watch]: https://github.com/yjose/reactjs-popup/watchers
 [github-star-badge]: https://img.shields.io/github/stars/yjose/reactjs-popup.svg?style=social
 [github-star]: https://github.com/yjose/reactjs-popup/stargazers
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20reactjs-popup%20by%20%4Elaziziyoussouf%20https%3A%2F%2Fgithub.com%2Fyjose%2Freactjs-popup%20%F0%9F%91%8D
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20reactjs-popup%20by%20%40ElaziziYoussouf%20https%3A%2F%2Fgithub.com%2Fyjose%2Freactjs-popup%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/yjose/reactjs-popup.svg?style=social
 [all-contributors]: https://github.com/yjose/all-contributors
-

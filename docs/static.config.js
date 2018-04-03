@@ -1,15 +1,15 @@
-import axios from 'axios'
-import React from 'react'
-import fs from 'fs'
-import path from 'path'
-import webpack from 'webpack'
-import { ReportChunks } from 'react-universal-component'
-import flushChunks from 'webpack-flush-chunks'
+import axios from "axios";
+import React from "react";
+import fs from "fs";
+import path from "path";
+import webpack from "webpack";
+import { ReportChunks } from "react-universal-component";
+import flushChunks from "webpack-flush-chunks";
 
-import APPCONFIG from './src/config.json'
+import APPCONFIG from "./src/config.json";
 
-const resolve = p => path.resolve(__dirname, p)
-const nodeModules = resolve('./node_modules')
+const resolve = p => path.resolve(__dirname, p);
+const nodeModules = resolve("./node_modules");
 
 // for SSR of dynamic imports
 const externals = fs
@@ -17,45 +17,45 @@ const externals = fs
   .filter(
     moduleName =>
       !/\.bin|require-universal-module|react-universal-component|webpack-flush-chunks/.test(
-        moduleName,
-      ),
+        moduleName
+      )
   )
   .reduce((externals, moduleName) => {
-    externals[moduleName] = moduleName
-    return externals
-  }, {})
+    externals[moduleName] = moduleName;
+    return externals;
+  }, {});
 
 export default {
   getSiteProps: () => ({
-    title: 'React Popup Component - Modals,Tooltips and Menus —  All in one',
+    title: "React Popup Component - Modals,Tooltips and Menus —  All in one"
   }),
-  siteRoot: '/',
+  siteRoot: "/",
   getRoutes: async () => {
     const routes = Object.entries(APPCONFIG.menu).map(r => {
-      const path = `/${r[0].replace(new RegExp(' ', 'g'), '-').toLowerCase()}`
-      const file = r[1]
+      const path = `/${r[0].replace(new RegExp(" ", "g"), "-").toLowerCase()}`;
+      const file = r[1];
       const getProps = () => ({
-        file,
-      })
-      return { path, getProps }
-    })
+        file
+      });
+      return { path, getProps };
+    });
 
-    return [...routes]
+    return [...routes];
   },
   renderToHtml: (renderToString, App, meta, prodStats) => {
-    const chunkNames = []
+    const chunkNames = [];
     const appHtml = renderToString(
       <ReportChunks report={chunkName => chunkNames.push(chunkName)}>
         <App />
-      </ReportChunks>,
-    )
+      </ReportChunks>
+    );
 
     const { scripts } = flushChunks(prodStats, {
-      chunkNames,
-    })
+      chunkNames
+    });
 
-    meta.scripts = scripts.filter(script => script.split('.')[0] !== 'app')
-    return appHtml
+    meta.scripts = scripts.filter(script => script.split(".")[0] !== "app");
+    return appHtml;
   },
 
   Document: ({ Html, Head, Body, children, renderMeta }) => (
@@ -63,23 +63,37 @@ export default {
       <Head>
         <meta charSet="UTF-8" />
 
-        <title>React Popup Component - Modals,Tooltips and Menus —  All in one</title>
+        <title>
+          React Popup Component - Modals,Tooltips and Menus —  All in one
+        </title>
 
         <meta
           name="description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
-        <meta name="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
+        <meta
+          name="image"
+          content="https://react-popup.netlify.com/reactjs-popup.png"
+        />
 
-        <meta itemProp="name" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
+        <meta
+          itemProp="name"
+          content="React Popup Component - Modals,Tooltips and Menus —  All in one"
+        />
         <meta
           itemProp="description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
-        <meta itemProp="image" content="https://react-popup.netlify.com/reactjs-popup.png" />
+        <meta
+          itemProp="image"
+          content="https://react-popup.netlify.com/reactjs-popup.png"
+        />
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
+        <meta
+          name="twitter:title"
+          content="React Popup Component - Modals,Tooltips and Menus —  All in one"
+        />
         <meta
           name="twitter:description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
@@ -90,18 +104,41 @@ export default {
           content="https://react-popup.netlify.com/reactjs-popup.png"
         />
 
-        <meta name="og:title" content="React Popup Component - Modals,Tooltips and Menus —  All in one" />
+        <meta
+          name="og:title"
+          content="React Popup Component - Modals,Tooltips and Menus —  All in one"
+        />
         <meta
           name="og:description"
           content="A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ..."
         />
-        <meta name="og:image" content="https://react-popup.netlify.com/reactjs-popup.png" />
+        <meta
+          name="og:image"
+          content="https://react-popup.netlify.com/reactjs-popup.png"
+        />
         <meta name="og:url" content="https://react-popup.netlify.com/" />
-        <meta name="og:site_name" content="React Popup - Simple Reactjs Popup" />
+        <meta
+          name="og:site_name"
+          content="React Popup - Simple Reactjs Popup"
+        />
         <meta name="og:type" content="website" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#ffffff" />
@@ -113,8 +150,9 @@ export default {
       <Body>
         {children}
         {renderMeta.scripts &&
-          renderMeta.scripts.map(script => <script type="text/javascript" src={`/${script}`} />)}
-        <script async defer src="https://buttons.github.io/buttons.js" />
+          renderMeta.scripts.map(script => (
+            <script type="text/javascript" src={`/${script}`} />
+          ))}
       </Body>
     </Html>
   ),
@@ -128,37 +166,37 @@ export default {
           {
             test: /\.md$/,
             // remark-collapse has ES6 so we need to babel it
-            use: ['json-loader', 'front-matter-loader'],
+            use: ["json-loader", "front-matter-loader"]
           },
           defaultLoaders.jsLoader,
           defaultLoaders.cssLoader,
-          defaultLoaders.fileLoader,
-        ],
-      },
-    ]
+          defaultLoaders.fileLoader
+        ]
+      }
+    ];
 
-    if (stage === 'node') {
-      config.externals = externals
+    if (stage === "node") {
+      config.externals = externals;
 
       config.plugins.push(
         new webpack.optimize.LimitChunkCountPlugin({
-          maxChunks: 1,
-        }),
-      )
+          maxChunks: 1
+        })
+      );
     }
 
-    if (stage === 'prod') {
-      config.output.filename = 'app.[chunkHash:6].js'
-      config.output.chunkFilename = '[name].[chunkHash:6].js'
+    if (stage === "prod") {
+      config.output.filename = "app.[chunkHash:6].js";
+      config.output.chunkFilename = "[name].[chunkHash:6].js";
 
       config.plugins.push(
         new webpack.optimize.CommonsChunkPlugin({
-          name: 'bootstrap',
-          filename: 'bootstrap.[chunkHash:6].js',
-          minChunks: Infinity,
-        }),
-      )
+          name: "bootstrap",
+          filename: "bootstrap.[chunkHash:6].js",
+          minChunks: Infinity
+        })
+      );
     }
-    return config
-  },
-}
+    return config;
+  }
+};
