@@ -1,7 +1,8 @@
 {
   "name": "reactjs-popup",
   "version": "1.0.5",
-  "description": "React Popup Component",
+  "description":
+    "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "reactjsPopup.es.js",
   "module": "reactjsPopup.es.js",
   "jsnext:main": "reactjsPopup.es.js",
@@ -55,7 +56,18 @@
     "type": "git",
     "url": "git+https://github.com/yjose/reactjs-popup.git"
   },
-  "keywords": ["react", "popup", "reactjs", "react-popup", "reactjs-popup"],
+  "keywords": [
+    "react",
+    "popup",
+    "modal",
+    "tooltip",
+    "react-modal",
+    "reactjs",
+    "react-popup",
+    "reactjs-popup",
+    "reactjs-modal",
+    "react-tooltip"
+  ],
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {
