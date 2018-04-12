@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-static'
-import Popup from '../../../lib/reactjsPopup.es'
+import Popup from '../../../lib/reactjs-popup.es'
 import config from '../config.json'
 
 import '../css/sidebar.css'
