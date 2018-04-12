@@ -1,96 +1,27 @@
 import React from "react";
-import {
-  withKnobs,
-  text,
-  boolean,
-  number,
-  select,
-  object
-} from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
-import Popup from "../Popup";
+import Popup from "../../src/Popup";
 
-const PopupElement = () => {
-  const labels = "Styles";
-  const defaultValueStyles = {
-    backgroundColor: "#FFFFF0"
-  };
+const Button = props => (
+  <button {...props}> Button nested {props.open ? "open" : "close"} </button>
+);
 
-  const label = "trigger On";
-  const options = {
-    click: "click",
-    hover: "hover"
-  };
-  const defaultValue = "click";
-  const on = select(label, options, defaultValue);
-  const label2 = "Position";
-  const options2 = {
-    "top left": "top left",
-    "top center": "top center",
-    "top right": "top right",
-    "bottom left": "bottom left",
-    "bottom center": "bottom center",
-    "bottom right": "bottom right",
-    "right top": "right top",
-    "right center": "right center",
-    "right bottom": "right bottom",
-    "left top": "left top",
-    "left center": "left center",
-    "left bottom": "left bottom"
-  };
-  const defaultValue2 = "top left";
-  const position = select(label2, options2, defaultValue2);
-  const StylesValue = object(labels, defaultValueStyles);
-  const closeOnDocumentClick = boolean("closeOnDocumentClick", true);
-
-  const Button = ({ open, ...props }) => (
-    <button {...props}> Button nested {open ? "open" : "close"} </button>
-  );
-  return (
-    <div>
-      <div style={{ zIndex: "90" }}>
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s{" "}
-        <Popup
-          on="click"
-          position="bottom left"
-          closeOnDocumentClick={true}
-          trigger={(open) => <Button open={true} />}
-        >
-          <div>
-            Lorem ipsum r sit amet consecit. , libero nihil asperiores ae
-            facilis quis commodi dolores, at enim. Deserunt qui, officiis culpa
-            optio numquam ullam
-          </div>
-        </Popup>
-        <Popup
-          on={on}
-          contentStyle={StylesValue}
-          trigger={
-            <button
-              style={{ position: "absolute", top: "100px", left: "300px" }}
-            >
-              Button 2
-            </button>
-          }
-          closeOnDocumentClick={closeOnDocumentClick}
-          position={position}
-        >
-          {close => <Content close={close} />}
-        </Popup>
-      </div>
-
-      <div style={{ zIndex: "90" }}>
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
-        ex, blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
-        nihil asperiores ae facilis{" "}
-      </div>
+const PopupElement = () => (
+  <div>
+    <div style={{ zIndex: "90" }}>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s
+      <Popup trigger={open => <Button open={open} />}>
+        {close => <Content close={close} />}
+      </Popup>
     </div>
-  );
-};
 
-export default PopupElement;
+    <div style={{ zIndex: "90" }}>
+      {" "}
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
+      blanditiis reiciendis dolor numquam pariatur facilis, labore, libero nihil
+      asperiores ae facilis{" "}
+    </div>
+  </div>
+);
 
 const Content = ({ close }) => (
   <div>
@@ -112,3 +43,11 @@ const Content = ({ close }) => (
     </Popup>
   </div>
 );
+
+const PopupElementStory = {
+  name: "Popup trigger function",
+  component: PopupElement,
+  props: {}
+};
+
+export default PopupElementStory;

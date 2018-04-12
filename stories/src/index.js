@@ -3,9 +3,9 @@ import Story from "./Story";
 //import { Centred } from "../../src/utils/";
 import { Centred } from "story-router";
 
-//import PopupElement from "./PopupElement";
-//import PopupFunc from "./PopupFunc";
-//import PopupInputFocus from "./PopupInputFocus";
+import PopupElementStory from "./PopupElement";
+import PopupFuncStory from "./PopupFunc";
+import PopupInputFocusStory from "./PopupInputFocus";
 import ModalStory from "./Modal";
 import Menu from "./Menu";
 import ControlledPopup from "./Controlledpopup";
@@ -39,5 +39,8 @@ export default [
     name: "Menu Component", // without props
     component: Centred(Menu)
   },
-  ModalStory
+  ModalStory,
+  PopupFuncStory,
+  PopupInputFocusStory,
+  PopupElementStory
 ];
