@@ -1,10 +1,12 @@
 {
   "name": "reactjs-popup",
   "version": "1.0.5",
-  "description": "React Popup Component",
-  "main": "reactjsPopup.es.js",
-  "module": "reactjsPopup.es.js",
-  "jsnext:main": "reactjsPopup.es.js",
+  "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
+  "main": "reactjs-popup.es.js",
+  "module": "reactjs-popup.es.js",
+  "jsnext:main": "reactjs-popup.es.js",
+  "unpkg": "reactjs-popup.js",
+  "jsdelivr": "reactjs-popup.js",
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
@@ -16,9 +18,14 @@
   "keywords": [
     "react",
     "popup",
+    "modal",
+    "tooltip",
+    "react-modal",
     "reactjs",
     "react-popup",
-    "reactjs-popup"
+    "reactjs-popup",
+    "reactjs-modal",
+    "react-tooltip"
   ],
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
