@@ -1,5 +1,5 @@
 import React from 'react'
-import Popup from '../../../lib/reactjsPopup.es'
+import Popup from '../../../lib/reactjs-popup.es'
 //
 
 export default () => (

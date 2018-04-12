@@ -1,6 +1,6 @@
 import React from 'react'
 import Warper from './Warper'
-import Popup from '../../../lib/reactjsPopup.es'
+import Popup from '../../../lib/reactjs-popup.es'
 //
 
 class ControlledPopup extends React.Component {
