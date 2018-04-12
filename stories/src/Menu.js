@@ -1,19 +1,11 @@
 import React from "react";
-import {
-  withKnobs,
-  text,
-  boolean,
-  number,
-  select,
-  object
-} from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
-import Popup from "../Popup";
+
+import Popup from "../../src/Popup";
 
 const Menu = () => (
   <div className="menu">
     <div className="menu-item"> item 1</div>
-    <div className="menu-item"> item  te</div>
+    <div className="menu-item"> item test </div>
     <div className="menu-item"> item 3</div>
     <Popup
       trigger={<div className="menu-item"> Sub Menu</div>}
@@ -73,6 +65,5 @@ const Menu = () => (
     <div className="menu-item"> item 5</div>
   </div>
 );
-
 
 export default Menu;

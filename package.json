@@ -10,21 +10,14 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "update-snap": "jest --updateSnapshot",
-    "start": " npm run storybook",
-    "build": "node build",
-    "storybook": "start-storybook -p 6006",
-    "build-examples": "build-storybook -c .storybook -o pages",
-    "preview-examples": "http-server ./pages"
+    "start": "parcel  ./stories/index.html  --open",
+    "build": "node build"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "3.3.11",
-    "@storybook/addon-knobs": "3.3.11",
-    "@storybook/addon-options": "3.3.11",
-    "@storybook/react": "3.3.11",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -32,7 +25,6 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.1",
     "del": "^3.0.0",
     "enzyme": "^3.2.0",
@@ -40,6 +32,7 @@
     "enzyme-to-json": "^3.3.0",
     "http-server": "^0.10.0",
     "jest": "^22.0.4",
+    "parcel-bundler": "^1.7.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -50,6 +43,7 @@
     "rollup-plugin-postcss": "^0.5.5",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^2.0.1",
+    "story-router": "^0.0.1",
     "why-did-you-update": "^0.1.1"
   },
   "repository": {

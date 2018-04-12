@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  withKnobs,
-  text,
-  boolean,
-  number,
-  select,
-  object
-} from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
-import Popup from "../Popup";
+import Popup from "../../src/Popup";
 
 const ControlledPopup = () => {
   return (
@@ -42,7 +33,7 @@ class ControlledPopupClass extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>UnControlled Popup</button>
+        <button onClick={this.openModal}>UnControlled Popup </button>
         <Popup
           open={this.state.open}
           closeOnDocumentClick={true}
