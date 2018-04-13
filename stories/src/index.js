@@ -9,6 +9,7 @@ import PopupInputFocusStory from "./PopupInputFocus";
 import ModalStory from "./Modal";
 import Menu from "./Menu";
 import ControlledPopup from "./Controlledpopup";
+import CellTablePopupStory from "./CellTablePopup";
 
 const storyProps = { text: "Parcel Storybook" };
 const buttonProps = {
@@ -42,5 +43,6 @@ export default [
   ModalStory,
   PopupFuncStory,
   PopupInputFocusStory,
-  PopupElementStory
+  PopupElementStory,
+  CellTablePopupStory
 ];

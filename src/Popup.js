@@ -199,6 +199,8 @@ export default class Popup extends React.PureComponent {
   render() {
     const { overlayStyle, closeOnDocumentClick, on } = this.props;
     const { modal } = this.state;
+    const overlay =
+      this.state.isOpen && !on.includes("hover") && closeOnDocumentClick;
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       this.state.isOpen && (
@@ -208,18 +210,16 @@ export default class Popup extends React.PureComponent {
           ref={this.setHelperRef}
         />
       ),
-      this.state.isOpen &&
-        !on.includes("hover") &&
-        closeOnDocumentClick && (
-          <div
-            key="O"
-            className="popup-overlay"
-            style={Object.assign({}, ovStyle, overlayStyle)}
-            onClick={closeOnDocumentClick ? this.closePopup : undefined}
-          >
-            {modal && this.renderContent()}
-          </div>
-        ),
+      overlay && (
+        <div
+          key="O"
+          className="popup-overlay"
+          style={Object.assign({}, ovStyle, overlayStyle)}
+          onClick={this.closePopup}
+        >
+          {modal && this.renderContent()}
+        </div>
+      ),
       this.state.isOpen && !modal && this.renderContent(),
       !!this.props.trigger && (
         <Ref innerRef={this.setTriggerRef} key="R">
