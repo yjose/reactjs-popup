@@ -21,7 +21,7 @@ export default class Popup extends React.PureComponent {
     className: "",
     position: "bottom center",
     modal: false,
-    lockScroll: true,
+    lockScroll: false,
     arrow: true,
     offsetX: 0,
     offsetY: 0,
