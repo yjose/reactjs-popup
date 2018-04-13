@@ -11,12 +11,13 @@ const options = {
   name: "reactjs-popup",
   format: ["es", "cjs", "umd", "umd-min"],
   banner: true,
+  target: "browser",
   external: Object.keys(pkg.peerDependencies)
 };
 
 // some confuse between babel config for parcel that use v6 and Bili that's use V7
 const babelBiliConfig = {
-  presets: ["@babel/preset-react"],
+  presets: [["@babel/preset-env", { modules: false }], "@babel/preset-react"],
   plugins: ["@babel/plugin-proposal-class-properties"]
 };
 const babelParcelConfig = {
