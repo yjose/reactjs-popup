@@ -12,7 +12,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "update-snap": "jest --updateSnapshot",
-    "start": "parcel  ./stories/index.html  --open",
+    "start": "parcel  ./stories/index.html",
     "build": "node build"
   },
   "peerDependencies": {

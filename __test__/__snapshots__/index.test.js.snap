@@ -163,7 +163,7 @@ exports[`it should render correctly  1`] = `
   arrow={true}
   arrowStyle={Object {}}
   className=""
-  closeOnDocumentClick={false}
+  closeOnDocumentClick={true}
   closeOnEscape={true}
   contentStyle={Object {}}
   defaultOpen={false}
@@ -200,7 +200,7 @@ exports[`it should render correctly on click   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -239,6 +239,7 @@ exports[`it should render correctly on click   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -304,7 +305,7 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -344,6 +345,7 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -407,7 +409,7 @@ exports[`it should render correctly on click and will update the the popup conte
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -446,6 +448,7 @@ exports[`it should render correctly on click and will update the the popup conte
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -513,7 +516,7 @@ exports[`it should render correctly on click and will update the the popup conte
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -560,7 +563,7 @@ exports[`it should render correctly on click and will update the trigger text   
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -595,6 +598,7 @@ exports[`it should render correctly on click and will update the trigger text   
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -659,7 +663,7 @@ exports[`it should render correctly on click and will update the trigger text   
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -705,7 +709,7 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -754,7 +758,7 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -805,7 +809,7 @@ exports[`it should rendered in the bottom center position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -845,6 +849,7 @@ exports[`it should rendered in the bottom center position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -911,7 +916,7 @@ exports[`it should rendered in the bottom left position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -951,6 +956,7 @@ exports[`it should rendered in the bottom left position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1017,7 +1023,7 @@ exports[`it should rendered in the bottom right position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1057,6 +1063,7 @@ exports[`it should rendered in the bottom right position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1123,7 +1130,7 @@ exports[`it should rendered in the left bottom position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1163,6 +1170,7 @@ exports[`it should rendered in the left bottom position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1229,7 +1237,7 @@ exports[`it should rendered in the left center position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1269,6 +1277,7 @@ exports[`it should rendered in the left center position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1335,7 +1344,7 @@ exports[`it should rendered in the left top position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1375,6 +1384,7 @@ exports[`it should rendered in the left top position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1441,7 +1451,7 @@ exports[`it should rendered in the right bottom position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1481,6 +1491,7 @@ exports[`it should rendered in the right bottom position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1547,7 +1558,7 @@ exports[`it should rendered in the right center position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1587,6 +1598,7 @@ exports[`it should rendered in the right center position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1653,7 +1665,7 @@ exports[`it should rendered in the right top position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1693,6 +1705,7 @@ exports[`it should rendered in the right top position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1759,7 +1772,7 @@ exports[`it should rendered in the top center position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1799,6 +1812,7 @@ exports[`it should rendered in the top center position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1865,7 +1879,7 @@ exports[`it should rendered in the top left position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -1905,6 +1919,7 @@ exports[`it should rendered in the top left position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -1971,7 +1986,7 @@ exports[`it should rendered in the top right position   1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -2011,6 +2026,7 @@ exports[`it should rendered in the top right position   1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -2076,7 +2092,7 @@ exports[`it shouldn't close on click outside popup  1`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -2116,6 +2132,7 @@ exports[`it shouldn't close on click outside popup  1`] = `
     <div
       className="popup-overlay"
       key="O"
+      onClick={[Function]}
       style={
         Object {
           "bottom": "0",
@@ -2181,7 +2198,7 @@ exports[`it shouldn't close on click outside popup  2`] = `
     arrow={true}
     arrowStyle={Object {}}
     className=""
-    closeOnDocumentClick={false}
+    closeOnDocumentClick={true}
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
@@ -2208,61 +2225,6 @@ exports[`it shouldn't close on click outside popup  2`] = `
     }
     triggerOn="click"
   >
-    <div
-      key="H"
-      style={
-        Object {
-          "left": "0px",
-          "position": "absolute",
-          "top": "0px",
-        }
-      }
-    />
-    <div
-      className="popup-overlay"
-      key="O"
-      style={
-        Object {
-          "bottom": "0",
-          "left": "0",
-          "position": "fixed",
-          "right": "0",
-          "top": "0",
-        }
-      }
-    />
-    <div
-      className="popup-content "
-      key="C"
-      onClick={[Function]}
-      style={
-        Object {
-          "background": "rgb(255, 255, 255)",
-          "border": "1px solid rgb(187, 187, 187)",
-          "boxShadow": "rgba(0, 0, 0, 0.2) 0px 1px 3px",
-          "padding": "5px",
-          "position": "absolute",
-          "width": "200px",
-          "zIndex": "2",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "background": "rgb(255, 255, 255)",
-            "boxShadow": "rgba(0, 0, 0, 0.2) 1px 1px 1px",
-            "height": "10px",
-            "margin": "-5px",
-            "position": "absolute",
-            "transform": "rotate(45deg)",
-            "width": "10px",
-            "zIndex": "-1",
-          }
-        }
-      />
-      popup content
-    </div>
     <Ref
       innerRef={[Function]}
       key="R"
