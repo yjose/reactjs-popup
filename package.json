@@ -12,7 +12,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "update-snap": "jest --updateSnapshot",
-    "start": "parcel  ./stories/index.html",
+    "start": "parcel serve ./stories/index.html --no-autoinstall",
     "build": "node build"
   },
   "peerDependencies": {
@@ -20,6 +20,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
     "@babel/preset-react": "^7.0.0-beta.44",
@@ -34,11 +35,11 @@
     "enzyme-to-json": "^3.3.0",
     "http-server": "^0.10.0",
     "jest": "^22.0.4",
-    "parcel-bundler": "^1.7.0",
+    "parcel-bundler": "^1.7.1",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "story-router": "^0.0.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "story-router": "^1.0.1",
     "why-did-you-update": "^0.1.1"
   },
   "repository": {

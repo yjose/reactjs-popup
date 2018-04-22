@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 // import story-router component
 
 import StoryRouter from "story-router";
-import "story-router/index.css";
+import "story-router/story-router.css";
 import "./index.css";
 
 import Stories from "./src/index";
