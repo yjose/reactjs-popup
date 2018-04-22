@@ -147,7 +147,7 @@ export default class Popup extends React.PureComponent {
         e.stopPropagation();
       }
     };
-    if (!modal && on.includes("hover")) {
+    if (!modal && on.indexOf("hover")>=0) {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
@@ -199,7 +199,7 @@ export default class Popup extends React.PureComponent {
   render() {
     const { overlayStyle, closeOnDocumentClick, on } = this.props;
     const { modal } = this.state;
-    const overlay = this.state.isOpen && !on.includes("hover");
+    const overlay = this.state.isOpen && !(on.indexOf("hover")>=0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       this.state.isOpen && (
