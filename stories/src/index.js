@@ -8,7 +8,9 @@ import PopupFuncStory from "./PopupFunc";
 import PopupInputFocusStory from "./PopupInputFocus";
 import ModalStory from "./Modal";
 import Menu from "./Menu";
-import ControlledPopup from "./Controlledpopup";
+import ControlledModal from "./ControlledModal";
+import ControlledTooltip from "./ControlledTooltip";
+
 import CellTablePopupStory from "./CellTablePopup";
 
 const storyProps = { text: "Parcel Storybook" };
@@ -33,8 +35,12 @@ export default [
     component: Centred(() => <button>Test without props</button>)
   },
   {
-    name: "Controlled Popup Component", // without props
-    component: Centred(ControlledPopup)
+    name: "Controlled Modal Component", // without props
+    component: Centred(ControlledModal)
+  },
+  {
+    name: "Controlled Tooltip Component", // without props
+    component: Centred(ControlledTooltip)
   },
   {
     name: "Menu Component", // without props
