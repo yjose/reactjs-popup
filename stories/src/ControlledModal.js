@@ -1,10 +1,10 @@
 import React from "react";
 import Popup from "../../src/Popup";
 
-const ControlledPopup = () => {
+const ControlledModal = () => {
   return (
     <div>
-      <ControlledPopupClass />
+      <ControlledModalClass />
       <div style={{ zIndex: "90" }}>
         {" "}
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
@@ -15,9 +15,9 @@ const ControlledPopup = () => {
   );
 };
 
-export default ControlledPopup;
+export default ControlledModal;
 
-class ControlledPopupClass extends React.Component {
+class ControlledModalClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false };
