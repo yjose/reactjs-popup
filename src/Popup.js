@@ -31,7 +31,7 @@ export default class Popup extends React.PureComponent {
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
     modal: this.props.modal ? true : !this.props.trigger
-    // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't existe
+    // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't exist
   };
 
   constructor(props) {
@@ -147,7 +147,7 @@ export default class Popup extends React.PureComponent {
         e.stopPropagation();
       }
     };
-    if (!modal && on.indexOf("hover")>=0) {
+    if (!modal && on.indexOf("hover") >= 0) {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
@@ -199,7 +199,7 @@ export default class Popup extends React.PureComponent {
   render() {
     const { overlayStyle, closeOnDocumentClick, on } = this.props;
     const { modal } = this.state;
-    const overlay = this.state.isOpen && !(on.indexOf("hover")>=0);
+    const overlay = this.state.isOpen && !(on.indexOf("hover") >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       this.state.isOpen && (
