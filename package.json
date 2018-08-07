@@ -41,6 +41,9 @@
     "story-router": "^1.0.1",
     "why-did-you-update": "^0.1.1"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yjose/reactjs-popup.git"
