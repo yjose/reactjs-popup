@@ -1,15 +1,19 @@
 import React from "react";
 import Popup from "../../src/Popup";
+import { Centred } from "story-router";
 
 const Button = props => (
-  <button {...props}> Button nested {props.open ? "open" : "close"} </button>
+  <button {...props}>
+    {" "}
+    Button nested with offsetX{props.open ? "open" : "close"}{" "}
+  </button>
 );
 
-const PopupElement = () => (
+const PopupElement = props => (
   <div>
     <div style={{ zIndex: "90" }}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s
-      <Popup trigger={open => <Button open={open} />}>
+      <Popup trigger={open => <Button open={open} />} {...props}>
         {close => <Content close={close} />}
       </Popup>
     </div>
@@ -46,8 +50,12 @@ const Content = ({ close }) => (
 
 const PopupElementStory = {
   name: "Popup trigger function",
-  component: PopupElement,
-  props: {}
+  component: Centred(PopupElement),
+  props: {
+    offsetX: 0,
+    offsetY: 0,
+    position: "top left"
+  }
 };
 
 export default PopupElementStory;
