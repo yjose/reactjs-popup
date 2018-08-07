@@ -19,13 +19,14 @@
 
 [Reactjs-popup](https://react-popup.netlify.com) is a simple react popup component with a lot of benefits :
 
-* Built with react fragment that’s mean no additional wrapper Divs in your code or in the trigger element. 😮
-* Does not inject HTML outside your app root. 📦
-* Function as children pattern to take control over your popup anywhere in your code. 💪
-* Modal, Tooltip, Menu : All in one 🏋️
-* Full style customization 👌
-* Easy to use. 🚀
-* All these clocks in at around 3 kB zipped. ⚡️
+- Built with react fragment that’s mean no additional wrapper Divs in your code or in the trigger element. 😮
+- Does not inject HTML outside your app root. 📦
+- Function as children pattern to take control over your popup anywhere in your code. 💪
+- Modal, Tooltip, Menu : All in one 🏋️
+- Full style customization 👌
+- Easy to use. 🚀
+- IE Support.
+- All these clocks in at around 3 kB zipped. ⚡️
 
 Requires React >= 16.0
 
@@ -37,15 +38,15 @@ Requires React >= 16.0
 
 ## TO DO
 
-* [x] Create repository && publish package
-* [x] Create reactjs-popup Home page
-* [x] Tooltip Support
-* [x] Modal Support
-* [x] Menu & Nested Menu Support
-* [x] Add Live examples
-* [ ] Animation API
-* [ ] Toast Support
-* [ ] suggest a feature [here](https://github.com/yjose/reactjs-popup/labels/Features)
+- [x] Create repository && publish package
+- [x] Create reactjs-popup Home page
+- [x] Tooltip Support
+- [x] Modal Support
+- [x] Menu & Nested Menu Support
+- [x] Add Live examples
+- [ ] Animation API
+- [ ] Toast Support
+- [ ] suggest a feature [here](https://github.com/yjose/reactjs-popup/labels/Features)
 
 ## Installing / Getting started
 

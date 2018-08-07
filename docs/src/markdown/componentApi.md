@@ -1,5 +1,5 @@
 ---
-title : React Popup | Component API 
+title : React Popup | Component API
 description : The reactjs-popup API is inspired by semantic popup docs
 components:
  InputFocus : InputFocus
@@ -17,7 +17,8 @@ The reactjs-popup API is inspired by semantic popup docs
 | on                   | `'hover'`         | {enum,Array}   | Events triggering the popup. Enums or Array of : `'hover' 'click' 'focus'` .                                                                           |
 | children             |                   | {node or func} | Popup content                                                                                                                                          |
 | position             | `'bottom center'` | {enum}         | Position for the popover. <br /> Enums:`'top left' 'top right' 'bottom right' 'bottom left' 'right center' 'left center' 'top center' 'bottom center'` |
-| offset               | 0                 | number         | Offset in pixels to be applied to the Popup.                                                                                                           |
+| offsetX              | 0                 | number         | OffsetX in pixels to be applied to the Popup.                                                                                                          |
+| offsetY              | 0                 | number         | OffsetY in pixels to be applied to the Popup.                                                                                                          |
 | arrow                | true              | {bool}         | Arrow element                                                                                                                                          |
 | modal                | false             | {bool}         | A modal component when modal ={true}                                                                                                                   |
 | lockScroll           | false             | {bool}         | Disable body scroll when modal is open ( work only with modal)                                                                                         |
