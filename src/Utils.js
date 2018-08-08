@@ -64,19 +64,19 @@ export default function calculatePosition(
   switch (args[1]) {
     case "top":
       top = triggerBounding.top;
-      arrowTop = triggerBounding.height / 2;
+      arrowTop = triggerBounding.height / 2 + "px";
       break;
     case "bottom":
       top = triggerBounding.top - height + triggerBounding.height;
-      arrowTop = height - triggerBounding.height / 2;
+      arrowTop = height - triggerBounding.height / 2 + "px";
       break;
     case "left":
       left = triggerBounding.left;
-      arrowLeft = triggerBounding.width / 2;
+      arrowLeft = triggerBounding.width / 2 + "px";
       break;
     case "right":
       left = triggerBounding.left - width + triggerBounding.width;
-      arrowLeft = width - triggerBounding.width / 2;
+      arrowLeft = width - triggerBounding.width / 2 + "px";
       break;
   }
 
@@ -85,3 +85,9 @@ export default function calculatePosition(
 
   return { top, left, transform, arrowLeft, arrowTop };
 }
+
+/*
+
+
+
+*/
