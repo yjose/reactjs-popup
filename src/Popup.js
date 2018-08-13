@@ -85,8 +85,8 @@ export default class Popup extends React.PureComponent {
   };
   closePopup = () => {
     if (!this.state.isOpen) return;
+    this.props.onClose();
     this.setState({ isOpen: false }, () => {
-      this.props.onClose();
       this.resetScroll();
     });
   };
