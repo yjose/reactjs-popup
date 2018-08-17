@@ -10,6 +10,7 @@ import ModalStory from "./Modal";
 import Menu from "./Menu";
 import ControlledModal from "./ControlledModal";
 import ControlledTooltip from "./ControlledTooltip";
+import BoundedTooltip from "./BoundedTooltip";
 
 import CellTablePopupStory from "./CellTablePopup";
 
@@ -45,6 +46,13 @@ export default [
   {
     name: "Menu Component", // without props
     component: Centred(Menu)
+  },
+  {
+    name: "Bounded Tooltip",
+    component: Centred(BoundedTooltip),
+    props: {
+      positions: ["right center", "right bottom", "left center", "left bottom"]
+    }
   },
   ModalStory,
   PopupFuncStory,
