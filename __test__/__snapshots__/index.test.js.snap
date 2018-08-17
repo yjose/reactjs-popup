@@ -13,6 +13,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -28,7 +29,11 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -120,6 +125,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -135,7 +141,11 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -167,6 +177,7 @@ exports[`it should render correctly  1`] = `
   closeOnEscape={true}
   contentStyle={Object {}}
   defaultOpen={false}
+  keepTooltipInside={null}
   lockScroll={false}
   modal={false}
   mouseEnterDelay={100}
@@ -182,7 +193,11 @@ exports[`it should render correctly  1`] = `
   onOpen={[Function]}
   open={false}
   overlayStyle={Object {}}
-  position="bottom center"
+  positions={
+    Array [
+      "bottom center",
+    ]
+  }
   trigger={
     <button>
        Trigger
@@ -204,6 +219,7 @@ exports[`it should render correctly on click   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -219,7 +235,11 @@ exports[`it should render correctly on click   1`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -309,6 +329,7 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -324,7 +345,11 @@ exports[`it should render correctly on click (triggerOn = 'click')  1`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -413,6 +438,7 @@ exports[`it should render correctly on click and will update the the popup conte
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -428,7 +454,11 @@ exports[`it should render correctly on click and will update the the popup conte
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -520,6 +550,7 @@ exports[`it should render correctly on click and will update the the popup conte
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -535,7 +566,11 @@ exports[`it should render correctly on click and will update the the popup conte
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -567,6 +602,7 @@ exports[`it should render correctly on click and will update the trigger text   
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -582,7 +618,11 @@ exports[`it should render correctly on click and will update the trigger text   
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={[Function]}
   >
     <div
@@ -667,6 +707,7 @@ exports[`it should render correctly on click and will update the trigger text   
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -682,7 +723,11 @@ exports[`it should render correctly on click and will update the trigger text   
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={[Function]}
   >
     <Ref
@@ -713,6 +758,7 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -728,7 +774,11 @@ exports[`it should render correctly on hover (triggerOn = 'focus')  1`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <input
         type="text"
@@ -762,6 +812,7 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -777,7 +828,11 @@ exports[`it should render correctly on hover (triggerOn = 'hover')  1`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -813,6 +868,7 @@ exports[`it should rendered in the bottom center position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -829,6 +885,11 @@ exports[`it should rendered in the bottom center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -920,6 +981,7 @@ exports[`it should rendered in the bottom left position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -936,6 +998,11 @@ exports[`it should rendered in the bottom left position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom left"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1027,6 +1094,7 @@ exports[`it should rendered in the bottom right position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1043,6 +1111,11 @@ exports[`it should rendered in the bottom right position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom right"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1134,6 +1207,7 @@ exports[`it should rendered in the left bottom position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1150,6 +1224,11 @@ exports[`it should rendered in the left bottom position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left bottom"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1241,6 +1320,7 @@ exports[`it should rendered in the left center position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1257,6 +1337,11 @@ exports[`it should rendered in the left center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1348,6 +1433,7 @@ exports[`it should rendered in the left top position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1364,6 +1450,11 @@ exports[`it should rendered in the left top position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left top"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1455,6 +1546,7 @@ exports[`it should rendered in the right bottom position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1471,6 +1563,11 @@ exports[`it should rendered in the right bottom position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right bottom"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1562,6 +1659,7 @@ exports[`it should rendered in the right center position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1578,6 +1676,11 @@ exports[`it should rendered in the right center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1669,6 +1772,7 @@ exports[`it should rendered in the right top position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1685,6 +1789,11 @@ exports[`it should rendered in the right top position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right top"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1776,6 +1885,7 @@ exports[`it should rendered in the top center position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1792,6 +1902,11 @@ exports[`it should rendered in the top center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1883,6 +1998,7 @@ exports[`it should rendered in the top left position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -1899,6 +2015,11 @@ exports[`it should rendered in the top left position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top left"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -1990,6 +2111,7 @@ exports[`it should rendered in the top right position   1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -2006,6 +2128,11 @@ exports[`it should rendered in the top right position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top right"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -2096,6 +2223,7 @@ exports[`it shouldn't close on click outside popup  1`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -2111,7 +2239,11 @@ exports[`it shouldn't close on click outside popup  1`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
@@ -2202,6 +2334,7 @@ exports[`it shouldn't close on click outside popup  2`] = `
     closeOnEscape={true}
     contentStyle={Object {}}
     defaultOpen={false}
+    keepTooltipInside={null}
     lockScroll={false}
     modal={false}
     mouseEnterDelay={100}
@@ -2217,7 +2350,11 @@ exports[`it shouldn't close on click outside popup  2`] = `
     onOpen={[Function]}
     open={false}
     overlayStyle={Object {}}
-    position="bottom center"
+    positions={
+      Array [
+        "bottom center",
+      ]
+    }
     trigger={
       <button>
          Trigger
