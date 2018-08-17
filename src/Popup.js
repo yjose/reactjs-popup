@@ -19,14 +19,15 @@ export default class Popup extends React.PureComponent {
     arrowStyle: {},
     overlayStyle: {},
     className: "",
-    position: "bottom center",
+    positions: ["bottom center"],
     modal: false,
     lockScroll: false,
     arrow: true,
     offsetX: 0,
     offsetY: 0,
     mouseEnterDelay: 100,
-    mouseLeaveDelay: 100
+    mouseLeaveDelay: 100,
+    keepTooltipInside: null
   };
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
@@ -102,16 +103,34 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
-    const { arrow, position, offsetX, offsetY } = this.props;
+    const {
+      arrow,
+      positions,
+      offsetX,
+      offsetY,
+      keepTooltipInside
+    } = this.props;
     const { modal } = this.state;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-    const cords = calculatePosition(trigger, content, position, arrow, {
-      offsetX,
-      offsetY
-    });
+    const boundingBox =
+      keepTooltipInside &&
+      typeof keepTooltipInside.getBoundingClientRect === "function"
+        ? keepTooltipInside.getBoundingClientRect()
+        : null;
+    const cords = calculatePosition(
+      trigger,
+      content,
+      positions,
+      arrow,
+      {
+        offsetX,
+        offsetY
+      },
+      boundingBox
+    );
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
@@ -258,20 +277,23 @@ if (process.env.NODE_ENV !== "production") {
       PropTypes.element,
       PropTypes.string
     ]).isRequired,
-    position: PropTypes.oneOf([
-      "top left",
-      "top center",
-      "top right",
-      "bottom left",
-      "bottom center",
-      "bottom right",
-      "right top",
-      "right center",
-      "right bottom",
-      "left top",
-      "left center",
-      "left bottom"
-    ])
+    positions: PropTypes.arrayOf(
+      PropTypes.oneOf([
+        "top left",
+        "top center",
+        "top right",
+        "bottom left",
+        "bottom center",
+        "bottom right",
+        "right top",
+        "right center",
+        "right bottom",
+        "left top",
+        "left center",
+        "left bottom"
+      ])
+    ),
+    keepTooltipInside: PropTypes.node
   };
 }
 

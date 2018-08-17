@@ -32,7 +32,7 @@ const Modal = props => {
         officiis culpa optio numquam ullam pariatur voluptas tempora doloremque!
         <Popup
           on="click"
-          position="bottom left"
+          positions={["bottom left"]}
           closeOnDocumentClick={true}
           trigger={<button>Button nested</button>}
         >

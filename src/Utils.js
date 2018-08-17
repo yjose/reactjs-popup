@@ -14,9 +14,10 @@
       position = 'left top'
       the second argument 'top' => translate popup content by + content.height*4/5
 
+  4. check if calculated position is going out of bounds of wrapper box or not. If yes repeat 1-3 for next position enum. By default wrapper box is window element
 */
 
-export default function calculatePosition(
+function getCoordinatesForPosition(
   triggerBounding,
   ContentBounding,
   position,
@@ -84,6 +85,60 @@ export default function calculatePosition(
   left = args[0] === "left" ? left - offsetX : left + offsetX;
 
   return { top, left, transform, arrowLeft, arrowTop };
+}
+
+export default function calculatePosition(
+  triggerBounding,
+  ContentBounding,
+  positions,
+  arrow,
+  { offsetX, offsetY },
+  wrapperBounding
+) {
+  const wrapperBox = wrapperBounding
+    ? {
+        top: wrapperBounding.top,
+        left: wrapperBounding.left,
+        width: wrapperBounding.width,
+        height: wrapperBounding.height
+      }
+    : {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+
+  let bestCoords;
+  let i = 0;
+  while (i < positions.length) {
+    bestCoords = getCoordinatesForPosition(
+      triggerBounding,
+      ContentBounding,
+      positions[i],
+      arrow,
+      { offsetX, offsetY }
+    );
+
+    const contentBox = {
+      top: bestCoords.top,
+      left: bestCoords.left,
+      width: ContentBounding.width,
+      height: ContentBounding.height
+    };
+
+    if (
+      contentBox.top + contentBox.height >=
+        wrapperBox.top + wrapperBox.height ||
+      contentBox.left + contentBox.width >= wrapperBox.left + wrapperBox.width
+    ) {
+      i++;
+    } else {
+      break;
+    }
+  }
+
+  return bestCoords;
 }
 
 /*
