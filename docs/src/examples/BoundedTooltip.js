@@ -1,6 +1,6 @@
-import React from 'react'
-import Warper from './Warper'
-import Popup from '../../../lib/reactjs-popup.es'
+import React from 'react';
+import Warper from './Warper';
+import Popup from '../../../lib/reactjs-popup.es';
 
 const BoundedTooltip = () => (
   <div
@@ -11,7 +11,7 @@ const BoundedTooltip = () => (
       trigger={<button className="button"> Trigger 1 </button>}
       position={['top center', 'bottom right', 'bottom left']}
       closeOnDocumentClick
-      getTooltipBoundary={() => document.querySelector('.tooltipBoundary')}
+      keepTooltipInside=".tooltipBoundary"
     />
   </div>
 )
