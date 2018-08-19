@@ -53,7 +53,7 @@ const Content = ({ close }) => (
     <button onClick={close}>close</button>
     <Popup
       on={["click"]}
-      positions={["bottom left"]}
+      position={"bottom left"}
       closeOnDocumentClick={true}
       trigger={<button>Button nested</button>}
     >

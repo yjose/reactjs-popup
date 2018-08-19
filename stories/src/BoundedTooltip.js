@@ -16,12 +16,10 @@ export default class BoundedTooltip extends React.Component {
       </button>
     );
 
-    const { positions } = this.props;
-
     return (
       <Popup
         trigger={trigger}
-        positions={positions}
+        position={this.props.position}
         //open={this.state.open}
         closeOnDocumentClick
         // onClose={this.closeModal}

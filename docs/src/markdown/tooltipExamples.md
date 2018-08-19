@@ -1,10 +1,11 @@
 ---
 title: React Popup |  Use case - Tooltip example
-description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position 
-components: 
+description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position
+components:
   SimpleTooltip: SimpleTooltip
   ToolTipPositions : ToolTipPositions
   NestedToolTip : NestedToolTip
+  BoundedTooltip : BoundedTooltip
 ---
 
 ## Use Case - Tooltip
@@ -173,4 +174,29 @@ export default () => (
   font-size: 14px;
   text-align: center;
 }
+```
+
+## Bounded Tooltip
+
+reactjs-popup supports tooltip bounded inside an element(defaults to window)
+
+<BoundedTooltip />
+
+```jsx
+import React from "react";
+import Popup from "reactjs-popup";
+
+export default () => (
+  <div
+    style={{ height: 200, width: 400, border: '1px solid #ccc' }}
+    className={'tooltipBoundary'}
+  >
+    <Popup
+      trigger={<button className="button"> Trigger 1 </button>}
+      position={['top center', 'bottom right', 'bottom left']}
+      closeOnDocumentClick
+      getTooltipBoundary={() => document.querySelector('.tooltipBoundary')}
+    />
+  </div>
+);
 ```

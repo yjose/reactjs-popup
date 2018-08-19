@@ -16,7 +16,7 @@ The reactjs-popup API is inspired by semantic popup docs
 | defaultOpen          | false             | {bool}         | default open value : initial state                                                                                                                     |
 | on                   | `'hover'`         | {enum,Array}   | Events triggering the popup. Enums or Array of : `'hover' 'click' 'focus'` .                                                                           |
 | children             |                   | {node or func} | Popup content                                                                                                                                          |
-| position             | `'bottom center'` | {enum}         | Position for the popover. <br /> Enums:`'top left' 'top right' 'bottom right' 'bottom left' 'right center' 'left center' 'top center' 'bottom center'` |
+| position             | `'bottom center'` | {enum, Array}         | Position for the popover. Best position(calculated by checking against overlap with boundary element) is applied in the order specified. <br /> Enums:`'top left' 'top right' 'bottom right' 'bottom left' 'right center' 'left center' 'top center' 'bottom center'` |
 | offsetX              | 0                 | number         | OffsetX in pixels to be applied to the Popup.                                                                                                          |
 | offsetY              | 0                 | number         | OffsetY in pixels to be applied to the Popup.                                                                                                          |
 | arrow                | true              | {bool}         | Arrow element                                                                                                                                          |
@@ -31,6 +31,7 @@ The reactjs-popup API is inspired by semantic popup docs
 | contentStyle         |                   | {object}       | Custom popup content style                                                                                                                             |
 | overlayStyle         |                   | {object}       | Custom overlay style                                                                                                                                   |
 | arrowStyle           |                   | {object}       | Custom arrow style                                                                                                                                     |
+| getTooltipBoundary           |                   | {func}       | Boundary element for tooltip(defaults to `window`)                                                                 |
 
 ### Example : on focus
 

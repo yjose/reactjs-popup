@@ -90,11 +90,12 @@ function getCoordinatesForPosition(
 export default function calculatePosition(
   triggerBounding,
   ContentBounding,
-  positions,
+  position,
   arrow,
   { offsetX, offsetY },
   wrapperBounding
 ) {
+  const positions = Array.isArray(position) ? position : [position];
   const wrapperBox = wrapperBounding
     ? {
         top: wrapperBounding.top,
@@ -128,6 +129,8 @@ export default function calculatePosition(
     };
 
     if (
+      contentBox.top <= wrapperBox.top ||
+      contentBox.left <= wrapperBox.left ||
       contentBox.top + contentBox.height >=
         wrapperBox.top + wrapperBox.height ||
       contentBox.left + contentBox.width >= wrapperBox.left + wrapperBox.width
