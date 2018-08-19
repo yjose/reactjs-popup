@@ -3,6 +3,20 @@ import { findDOMNode } from "react-dom";
 import calculatePosition from "./Utils";
 
 import styles from "./popup.css.js";
+const POSITION_TYPES = [
+  "top left",
+  "top center",
+  "top right",
+  "right top",
+  "right center",
+  "right bottom",
+  "bottom left",
+  "bottom center",
+  "bottom right",
+  "left top",
+  "left center",
+  "left bottom"
+];
 
 export default class Popup extends React.PureComponent {
   static defaultProps = {
@@ -27,7 +41,7 @@ export default class Popup extends React.PureComponent {
     offsetY: 0,
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100,
-    getTooltipBoundary: () => {}
+    keepTooltipInside: true
   };
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
@@ -102,30 +116,44 @@ export default class Popup extends React.PureComponent {
     this.timeOut = setTimeout(() => this.closePopup(), mouseLeaveDelay);
   };
 
+  getTooltipBoundary = () => {
+    const { keepTooltipInside } = this.props;
+    let boundingBox = {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+    if (typeof keepTooltipInside === "string") {
+      const selector = document.querySelector(keepTooltipInside);
+      if (process.env.NODE_ENV !== "production") {
+        if (selector === null)
+          throw new Error(
+            `${keepTooltipInside} selector is not exist : keepTooltipInside must be a valid html selector 'class' or 'Id'  or a boolean value`
+          );
+      }
+      boundingBox = selector.getBoundingClientRect();
+    }
+    return boundingBox;
+  };
+
   setPosition = () => {
-    const {
-      arrow,
-      position,
-      offsetX,
-      offsetY,
-      getTooltipBoundary
-    } = this.props;
+    const { arrow, position, offsetX, offsetY, keepTooltipInside } = this.props;
     const { modal } = this.state;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-
-    const tooltipBoundary = getTooltipBoundary();
-    const boundingBox =
-      tooltipBoundary && typeof tooltipBoundary.getBoundingClientRect === "function"
-        ? tooltipBoundary.getBoundingClientRect()
-        : null;
+    const boundingBox = this.getTooltipBoundary();
+    let positions = Array.isArray(position) ? position : [position];
+    if (keepTooltipInside || Array.isArray(position))
+      // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
+      positions = [...position, ...POSITION_TYPES];
 
     const cords = calculatePosition(
       trigger,
       content,
-      position,
+      positions,
       arrow,
       {
         offsetX,
@@ -253,20 +281,6 @@ export default class Popup extends React.PureComponent {
 if (process.env.NODE_ENV !== "production") {
   const PropTypes = require("prop-types");
   const TRIGGER_TYPES = ["hover", "click", "focus"];
-  const POSITION_TYPES = [
-    "top left",
-    "top center",
-    "top right",
-    "bottom left",
-    "bottom center",
-    "bottom right",
-    "right top",
-    "right center",
-    "right bottom",
-    "left top",
-    "left center",
-    "left bottom"
-  ];
 
   Popup.propTypes = {
     arrowStyle: PropTypes.object,
@@ -298,7 +312,7 @@ if (process.env.NODE_ENV !== "production") {
       PropTypes.oneOf(POSITION_TYPES),
       PropTypes.arrayOf(PropTypes.oneOf(POSITION_TYPES))
     ]),
-    getTooltipBoundary: PropTypes.func
+    keepTooltipInside: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
   };
 }
 
