@@ -32,7 +32,7 @@ const Cell = ({ value }) => (
         test {value}
       </div>
     }
-    position={"bottom center"}
+    position="bottom center"
     on="hover"
     mouseEnterDelay={0}
     mouseLeaveDelay={0}
