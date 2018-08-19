@@ -41,7 +41,7 @@ export default class Popup extends React.PureComponent {
     offsetY: 0,
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100,
-    keepTooltipInside: true
+    keepTooltipInside: false
   };
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
@@ -146,9 +146,10 @@ export default class Popup extends React.PureComponent {
     const content = this.ContentEl.getBoundingClientRect();
     const boundingBox = this.getTooltipBoundary();
     let positions = Array.isArray(position) ? position : [position];
+
+    // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
     if (keepTooltipInside || Array.isArray(position))
-      // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
-      positions = [...position, ...POSITION_TYPES];
+      positions = [...positions, ...POSITION_TYPES];
 
     const cords = calculatePosition(
       trigger,
