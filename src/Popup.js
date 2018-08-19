@@ -26,7 +26,8 @@ export default class Popup extends React.PureComponent {
     offsetX: 0,
     offsetY: 0,
     mouseEnterDelay: 100,
-    mouseLeaveDelay: 100
+    mouseLeaveDelay: 100,
+    getTooltipBoundary: () => {}
   };
   state = {
     isOpen: this.props.open || this.props.defaultOpen,
@@ -102,16 +103,36 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
-    const { arrow, position, offsetX, offsetY } = this.props;
+    const {
+      arrow,
+      position,
+      offsetX,
+      offsetY,
+      getTooltipBoundary
+    } = this.props;
     const { modal } = this.state;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
-    const cords = calculatePosition(trigger, content, position, arrow, {
-      offsetX,
-      offsetY
-    });
+
+    const tooltipBoundary = getTooltipBoundary();
+    const boundingBox =
+      tooltipBoundary && typeof tooltipBoundary.getBoundingClientRect === "function"
+        ? tooltipBoundary.getBoundingClientRect()
+        : null;
+
+    const cords = calculatePosition(
+      trigger,
+      content,
+      position,
+      arrow,
+      {
+        offsetX,
+        offsetY
+      },
+      boundingBox
+    );
     this.ContentEl.style.top = cords.top - helper.top + "px";
     this.ContentEl.style.left = cords.left - helper.left + "px";
     if (arrow) {
@@ -231,6 +252,21 @@ export default class Popup extends React.PureComponent {
 
 if (process.env.NODE_ENV !== "production") {
   const PropTypes = require("prop-types");
+  const TRIGGER_TYPES = ["hover", "click", "focus"];
+  const POSITION_TYPES = [
+    "top left",
+    "top center",
+    "top right",
+    "bottom left",
+    "bottom center",
+    "bottom right",
+    "right top",
+    "right center",
+    "right bottom",
+    "left top",
+    "left center",
+    "left bottom"
+  ];
 
   Popup.propTypes = {
     arrowStyle: PropTypes.object,
@@ -250,28 +286,19 @@ if (process.env.NODE_ENV !== "production") {
     defaultOpen: PropTypes.bool,
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([
-      PropTypes.oneOf(["hover", "click", "focus"]),
-      PropTypes.arrayOf(PropTypes.oneOf(["hover", "click", "focus"]))
+      PropTypes.oneOf(TRIGGER_TYPES),
+      PropTypes.arrayOf(PropTypes.oneOf(TRIGGER_TYPES))
     ]),
     children: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.element,
       PropTypes.string
     ]).isRequired,
-    position: PropTypes.oneOf([
-      "top left",
-      "top center",
-      "top right",
-      "bottom left",
-      "bottom center",
-      "bottom right",
-      "right top",
-      "right center",
-      "right bottom",
-      "left top",
-      "left center",
-      "left bottom"
-    ])
+    position: PropTypes.oneOfType([
+      PropTypes.oneOf(POSITION_TYPES),
+      PropTypes.arrayOf(PropTypes.oneOf(POSITION_TYPES))
+    ]),
+    getTooltipBoundary: PropTypes.func
   };
 }
 

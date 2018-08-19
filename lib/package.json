@@ -12,7 +12,7 @@
     "react-dom": "^16.0.0"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",

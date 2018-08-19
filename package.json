@@ -33,7 +33,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.0",
     "http-server": "^0.10.0",
-    "jest": "^22.0.4",
+    "jest": "^23.5.0",
     "parcel-bundler": "^1.7.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -42,7 +42,7 @@
     "why-did-you-update": "^0.1.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",

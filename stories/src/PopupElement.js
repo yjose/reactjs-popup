@@ -5,7 +5,8 @@ import { Centred } from "story-router";
 const Button = props => (
   <button {...props}>
     {" "}
-    Button nested with offsetX{props.open ? "open" : "close"}{" "}
+    Button nested with offsetX
+    {props.open ? "open" : "close"}{" "}
   </button>
 );
 
@@ -34,7 +35,7 @@ const Content = ({ close }) => (
     <button onClick={close}>close</button>
     <Popup
       on={["click"]}
-      position="bottom left"
+      position={"bottom left"}
       closeOnDocumentClick={true}
       trigger={<button>Button nested</button>}
     >
