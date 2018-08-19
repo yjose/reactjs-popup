@@ -51,7 +51,21 @@ export default [
     name: "Bounded Tooltip",
     component: Centred(BoundedTooltip),
     props: {
-      position: ["right center", "right bottom", "left center", "left bottom"]
+      style: { position: "absolute", top: 20, left: 20 },
+      position: [
+        "top left",
+        "top center",
+        "top right",
+        "right top",
+        "right center",
+        "right bottom",
+        "bottom left",
+        "bottom center",
+        "bottom right",
+        "left top",
+        "left center",
+        "left bottom"
+      ]
     }
   },
   ModalStory,

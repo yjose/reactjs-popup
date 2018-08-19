@@ -90,26 +90,11 @@ function getCoordinatesForPosition(
 export default function calculatePosition(
   triggerBounding,
   ContentBounding,
-  position,
+  positions,
   arrow,
   { offsetX, offsetY },
-  wrapperBounding
+  wrapperBox
 ) {
-  const positions = Array.isArray(position) ? position : [position];
-  const wrapperBox = wrapperBounding
-    ? {
-        top: wrapperBounding.top,
-        left: wrapperBounding.left,
-        width: wrapperBounding.width,
-        height: wrapperBounding.height
-      }
-    : {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight
-      };
-
   let bestCoords;
   let i = 0;
   while (i < positions.length) {
@@ -143,9 +128,3 @@ export default function calculatePosition(
 
   return bestCoords;
 }
-
-/*
-
-
-
-*/

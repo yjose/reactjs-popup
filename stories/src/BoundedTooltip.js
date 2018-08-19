@@ -8,10 +8,7 @@ export default class BoundedTooltip extends React.Component {
 
   render() {
     const trigger = (
-      <button
-        className="button"
-        style={{ position: "absolute", bottom: 20, right: 20 }}
-      >
+      <button className="button" style={this.props.style}>
         Controlled Tooltip{" "}
       </button>
     );
@@ -22,6 +19,7 @@ export default class BoundedTooltip extends React.Component {
         position={this.props.position}
         //open={this.state.open}
         closeOnDocumentClick
+        keepTooltipInside={false}
         // onClose={this.closeModal}
       >
         {close => (
@@ -29,10 +27,10 @@ export default class BoundedTooltip extends React.Component {
             <a className="close" onClick={close}>
               &times; remove
             </a>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-            magni omnis delectus nemo, maxime molestiae dolorem numquam
-            mollitia, voluptate ea, accusamus excepturi deleniti ratione
-            sapiente! Laudantium, aperiam doloribus. Odit, aut.
+            Lorem ipsum dolor sit amet, consectur adipisicing elit. Beatae magni
+            omnis delectus nemo, maxime molestiae dolorem numquam mollitia,
+            voluptate ea, accusamus excepturi deleniti ratione sapiente!
+            Laudantium, aperiam doloribus. Odit, aut.
           </div>
         )}
       </Popup>

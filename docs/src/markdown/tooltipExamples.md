@@ -3,9 +3,9 @@ title: React Popup |  Use case - Tooltip example
 description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position
 components:
   SimpleTooltip: SimpleTooltip
-  ToolTipPositions : ToolTipPositions
-  NestedToolTip : NestedToolTip
-  BoundedTooltip : BoundedTooltip
+  ToolTipPositions: ToolTipPositions
+  NestedToolTip: NestedToolTip
+  BoundedTooltip: BoundedTooltip
 ---
 
 ## Use Case - Tooltip
@@ -188,14 +188,14 @@ import Popup from "reactjs-popup";
 
 export default () => (
   <div
-    style={{ height: 200, width: 400, border: '1px solid #ccc' }}
-    className={'tooltipBoundary'}
+    style={{ height: 200, width: 400, border: "1px solid #ccc" }}
+    className={"tooltipBoundary"}
   >
     <Popup
       trigger={<button className="button"> Trigger 1 </button>}
-      position={['top center', 'bottom right', 'bottom left']}
+      position={["top center", "bottom right", "bottom left"]}
       closeOnDocumentClick
-      getTooltipBoundary={() => document.querySelector('.tooltipBoundary')}
+      keepTooltipInside=".tooltipBoundary"
     />
   </div>
 );
