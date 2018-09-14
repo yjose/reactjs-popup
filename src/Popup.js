@@ -138,7 +138,7 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
-    const { arrow, position, offsetX, offsetY, keepTooltipInside } = this.props;
+    const { arrow, position, offsetX, offsetY, keepTooltipInside, arrowStyle } = this.props;
     const { modal } = this.state;
     if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
@@ -168,8 +168,8 @@ export default class Popup extends React.PureComponent {
       this.ArrowEl.style["transform"] = cords.transform;
       this.ArrowEl.style["-ms-transform"] = cords.transform;
       this.ArrowEl.style["-webkit-transform"] = cords.transform;
-      this.ArrowEl.style.top = cords.arrowTop;
-      this.ArrowEl.style.left = cords.arrowLeft;
+      this.ArrowEl.style.top = arrowStyle.top || cords.arrowTop;
+      this.ArrowEl.style.left = arrowStyle.left || cords.arrowLeft;
     }
     if (
       window
