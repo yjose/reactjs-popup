@@ -50,6 +50,11 @@ const writePackageFiles = () => {
     fs.readFileSync(".npmignore", "utf-8"),
     "utf-8"
   );
+  fs.writeFileSync(
+    "./lib/index.d.ts",
+    fs.readFileSync("src/index.d.ts", "utf-8"),
+    "utf-8"
+  );
 };
 
 // and use babel config V7
