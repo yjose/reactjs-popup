@@ -252,6 +252,11 @@ export default class Popup extends React.PureComponent {
     const overlay = this.state.isOpen && !(on.indexOf("hover") >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
+      !!this.props.trigger && (
+        <Ref innerRef={this.setTriggerRef} key="R">
+          {this.renderTrigger()}
+        </Ref>
+      ),
       this.state.isOpen && (
         <div
           key="H"
@@ -270,11 +275,6 @@ export default class Popup extends React.PureComponent {
         </div>
       ),
       this.state.isOpen && !modal && this.renderContent(),
-      !!this.props.trigger && (
-        <Ref innerRef={this.setTriggerRef} key="R">
-          {this.renderTrigger()}
-        </Ref>
-      )
     ];
   }
 }
