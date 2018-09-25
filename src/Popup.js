@@ -215,6 +215,7 @@ export default class Popup extends React.PureComponent {
         case "hover":
           triggerProps.onMouseEnter = this.onMouseEnter;
           triggerProps.onMouseLeave = this.onMouseLeave;
+          break;
         case "focus":
           triggerProps.onFocus = this.onMouseEnter;
           break;
