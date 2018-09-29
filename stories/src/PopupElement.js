@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../../src/Popup";
+import Popup from "../../src/";
 import { Centred } from "story-router";
 
 const Button = props => (

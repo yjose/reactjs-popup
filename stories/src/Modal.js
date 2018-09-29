@@ -1,7 +1,7 @@
 import React from "react";
 import { Centred } from "story-router";
 
-import Popup from "../../src/Popup";
+import Popup from "../../src/";
 
 const ModalProps = {
   defaultOpen: false,
