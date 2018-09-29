@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../../src/Popup";
+import Popup from "../../src/";
 
 export default class ControlledPopup extends React.Component {
   constructor(props) {

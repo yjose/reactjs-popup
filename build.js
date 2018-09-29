@@ -6,7 +6,7 @@ const pkg = require("./package.json");
 const Bili = require("bili");
 
 const options = {
-  input: "./src/Popup.js",
+  input: "./src/index.js",
   outDir: "lib",
   name: "reactjs-popup",
   format: ["es", "cjs", "umd", "umd-min"],

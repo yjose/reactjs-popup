@@ -32,6 +32,17 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -88,17 +99,6 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -215,6 +215,17 @@ exports[`it should render correctly on click and will update the the popup conte
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -275,17 +286,6 @@ exports[`it should render correctly on click and will update the the popup conte
          
       </div>
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupContentAsFunction>
 `;
@@ -367,6 +367,18 @@ exports[`it should render correctly on click and will update the trigger text   
     position="bottom center"
     trigger={[Function]}
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+        Button nested 
+        open
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -423,18 +435,6 @@ exports[`it should render correctly on click and will update the trigger text   
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-        Button nested 
-        open
-      </button>
-    </Ref>
   </Popup>
 </PopupTriggerFunction>
 `;
@@ -516,6 +516,17 @@ exports[`it should rendered in the bottom center position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -572,17 +583,6 @@ exports[`it should rendered in the bottom center position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -619,6 +619,17 @@ exports[`it should rendered in the bottom left position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -675,17 +686,6 @@ exports[`it should rendered in the bottom left position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -722,6 +722,17 @@ exports[`it should rendered in the bottom right position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -778,17 +789,6 @@ exports[`it should rendered in the bottom right position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -825,6 +825,17 @@ exports[`it should rendered in the left bottom position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -881,17 +892,6 @@ exports[`it should rendered in the left bottom position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -928,6 +928,17 @@ exports[`it should rendered in the left center position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -984,17 +995,6 @@ exports[`it should rendered in the left center position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1031,6 +1031,17 @@ exports[`it should rendered in the left top position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1087,17 +1098,6 @@ exports[`it should rendered in the left top position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1134,6 +1134,17 @@ exports[`it should rendered in the right bottom position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1190,17 +1201,6 @@ exports[`it should rendered in the right bottom position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1237,6 +1237,17 @@ exports[`it should rendered in the right center position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1293,17 +1304,6 @@ exports[`it should rendered in the right center position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1340,6 +1340,17 @@ exports[`it should rendered in the right top position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1396,17 +1407,6 @@ exports[`it should rendered in the right top position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1443,6 +1443,17 @@ exports[`it should rendered in the top center position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1499,17 +1510,6 @@ exports[`it should rendered in the top center position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1546,6 +1546,17 @@ exports[`it should rendered in the top left position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1602,17 +1613,6 @@ exports[`it should rendered in the top left position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1649,6 +1649,17 @@ exports[`it should rendered in the top right position   1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1705,17 +1716,6 @@ exports[`it should rendered in the top right position   1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
@@ -1751,6 +1751,17 @@ exports[`it shouldn't close on click outside popup  1`] = `
       </button>
     }
   >
+    <Ref
+      innerRef={[Function]}
+      key="R"
+    >
+      <button
+        key="T"
+        onClick={[Function]}
+      >
+         Trigger
+      </button>
+    </Ref>
     <div
       key="H"
       style={
@@ -1807,17 +1818,6 @@ exports[`it shouldn't close on click outside popup  1`] = `
       />
       popup content
     </div>
-    <Ref
-      innerRef={[Function]}
-      key="R"
-    >
-      <button
-        key="T"
-        onClick={[Function]}
-      >
-         Trigger
-      </button>
-    </Ref>
   </Popup>
 </PopupTest>
 `;
