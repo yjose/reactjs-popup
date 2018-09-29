@@ -38,6 +38,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-testing-library": "^5.1.0",
     "story-router": "^1.0.1",
     "why-did-you-update": "^0.1.1"
   },
