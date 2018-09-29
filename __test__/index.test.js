@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import Enzyme from "enzyme";
-import Popup from "../src/Popup";
+import Popup from "../src/";
 import { shallowToJson } from "enzyme-to-json";
 import { cleanup, fireEvent, render, waitForElement } from "react-testing-library";
 
