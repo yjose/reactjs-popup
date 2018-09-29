@@ -19,12 +19,12 @@ export default class BoundedTooltip extends React.Component {
         position={this.props.position}
         //open={this.state.open}
         closeOnDocumentClick
-        keepTooltipInside={false}
+        keepTooltipInside={true}
         // onClose={this.closeModal}
       >
         {close => (
           <div className="modal">
-            <a className="close" onClick={close}>
+            <a className="close" onClick={close} href="#!">
               &times; remove
             </a>
             Lorem ipsum dolor sit amet, consectur adipisicing elit. Beatae magni
