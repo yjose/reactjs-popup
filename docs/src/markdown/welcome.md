@@ -15,7 +15,8 @@ Reactjs-popup is a simple react popup component with a lot of benefits :
 - Modal, Tooltip, Menu : All in one 🏋️
 - Full style customization 👌
 - Easy to use. 🚀
-- IE Support.
+- IE Support. 🚀
+- TypeScript Support 👌
 - All these clocks in at around 3 kB zipped. ⚡️
 
 Requires React >= 16.0
