@@ -1,21 +1,21 @@
-import React from 'react';
-import calculatePosition from './Utils';
-import styles from './index.css.js';
+import React from "react";
+import calculatePosition from "./Utils";
+import styles from "./index.css.js";
 
 const POSITION_TYPES = [
-  'top left',
-  'top center',
-  'top right',
-  'right top',
-  'right center',
-  'right bottom',
-  'bottom left',
-  'bottom center',
-  'bottom right',
-  'left top',
-  'left center',
-  'left bottom',
-  'center center',
+  "top left",
+  "top center",
+  "top right",
+  "right top",
+  "right center",
+  "right bottom",
+  "bottom left",
+  "bottom center",
+  "bottom right",
+  "left top",
+  "left center",
+  "left bottom",
+  "center center"
 ];
 
 export default class Popup extends React.PureComponent {
@@ -29,20 +29,21 @@ export default class Popup extends React.PureComponent {
     closeOnDocumentClick: true,
     repositionOnResize: true,
     closeOnEscape: true,
-    on: ['click'],
+    on: ["click"],
     contentStyle: {},
     arrowStyle: {},
     overlayStyle: {},
-    className: '',
-    position: 'bottom center',
+    className: "",
+    position: "bottom center",
     modal: false,
     lockScroll: false,
     arrow: true,
     offsetX: 0,
     offsetY: 0,
+    popupRootID: "popupRoot",
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100,
-    keepTooltipInside: false,
+    keepTooltipInside: false
   };
 
   constructor(props) {
@@ -52,30 +53,30 @@ export default class Popup extends React.PureComponent {
     this.setArrowRef = r => (this.ArrowEl = r);
     this.setHelperRef = r => (this.HelperEl = r);
     this.timeOut = 0;
-    const {open, modal, defaultOpen, trigger} = props;
+    const { open, modal, defaultOpen, trigger } = props;
     this.state = {
       isOpen: open || defaultOpen,
-      modal: modal ? true : !trigger,
+      modal: modal ? true : !trigger
       // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't exist
     };
   }
 
   componentDidMount() {
-    const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
+    const { closeOnEscape, defaultOpen, repositionOnResize } = this.props;
     if (defaultOpen) this.setPosition();
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
-      window.addEventListener('keyup', this.onEscape);
+      window.addEventListener("keyup", this.onEscape);
     }
     if (repositionOnResize) {
       /* eslint-disable-next-line no-undef */
-      window.addEventListener('resize', this.repositionOnResize);
+      window.addEventListener("resize", this.repositionOnResize);
     }
   }
 
   componentDidUpdate(prevProps) {
-    const {open, disabled} = this.props;
-    const {isOpen} = this.state;
+    const { open, disabled } = this.props;
+    const { isOpen } = this.state;
     if (prevProps.open !== open) {
       if (open) this.openPopup();
       else this.closePopup(undefined, true);
@@ -89,15 +90,15 @@ export default class Popup extends React.PureComponent {
     // kill any function to execute if the component is unmounted
     clearTimeout(this.timeOut);
 
-    const {closeOnEscape, repositionOnResize} = this.props;
+    const { closeOnEscape, repositionOnResize } = this.props;
     // remove events listeners
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
-      window.removeEventListener('keyup', this.onEscape);
+      window.removeEventListener("keyup", this.onEscape);
     }
     if (repositionOnResize) {
       /* eslint-disable-next-line no-undef */
-      window.removeEventListener('resize', this.repositionOnResize);
+      window.removeEventListener("resize", this.repositionOnResize);
     }
     this.resetScroll();
   }
@@ -107,23 +108,23 @@ export default class Popup extends React.PureComponent {
   };
 
   onEscape = e => {
-    if (e.key === 'Escape') this.closePopup();
+    if (e.key === "Escape") this.closePopup();
   };
 
   lockScroll = () => {
-    const {lockScroll} = this.props;
-    const {modal} = this.state;
+    const { lockScroll } = this.props;
+    const { modal } = this.state;
     if (modal && lockScroll)
       /* eslint-disable-next-line no-undef */
-      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
   };
 
   resetScroll = () => {
-    const {lockScroll} = this.props;
-    const {modal} = this.state;
+    const { lockScroll } = this.props;
+    const { modal } = this.state;
     if (modal && lockScroll)
       /* eslint-disable-next-line no-undef */
-      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      document.getElementsByTagName("body")[0].style.overflow = "auto";
   };
 
   togglePopup = e => {
@@ -134,55 +135,55 @@ export default class Popup extends React.PureComponent {
   };
 
   openPopup = e => {
-    const {disabled, onOpen} = this.props;
-    const {isOpen} = this.state;
+    const { disabled, onOpen } = this.props;
+    const { isOpen } = this.state;
     if (isOpen || disabled) return;
     onOpen(e);
-    this.setState({isOpen: true}, () => {
+    this.setState({ isOpen: true }, () => {
       this.setPosition();
       this.lockScroll();
     });
   };
 
   closePopup = e => {
-    const {onClose} = this.props;
-    const {isOpen} = this.state;
+    const { onClose } = this.props;
+    const { isOpen } = this.state;
     if (!isOpen) return;
     onClose(e);
-    this.setState({isOpen: false}, () => {
+    this.setState({ isOpen: false }, () => {
       this.resetScroll();
     });
   };
 
   onMouseEnter = () => {
     clearTimeout(this.timeOut);
-    const {mouseEnterDelay} = this.props;
+    const { mouseEnterDelay } = this.props;
     this.timeOut = setTimeout(() => this.openPopup(), mouseEnterDelay);
   };
 
   onMouseLeave = () => {
     clearTimeout(this.timeOut);
-    const {mouseLeaveDelay} = this.props;
+    const { mouseLeaveDelay } = this.props;
     this.timeOut = setTimeout(() => this.closePopup(), mouseLeaveDelay);
   };
 
   getTooltipBoundary = () => {
-    const {keepTooltipInside} = this.props;
+    const { keepTooltipInside } = this.props;
     let boundingBox = {
       top: 0,
       left: 0,
       /* eslint-disable-next-line no-undef */
       width: window.innerWidth,
       /* eslint-disable-next-line no-undef */
-      height: window.innerHeight,
+      height: window.innerHeight
     };
-    if (typeof keepTooltipInside === 'string') {
+    if (typeof keepTooltipInside === "string") {
       /* eslint-disable-next-line no-undef */
       const selector = document.querySelector(keepTooltipInside);
-      if (process.env.NODE_ENV !== 'production') {
+      if (process.env.NODE_ENV !== "production") {
         if (selector === null)
           throw new Error(
-            `${keepTooltipInside} selector is not exist : keepTooltipInside must be a valid html selector 'class' or 'Id'  or a boolean value`,
+            `${keepTooltipInside} selector is not exist : keepTooltipInside must be a valid html selector 'class' or 'Id'  or a boolean value`
           );
       }
       boundingBox = selector.getBoundingClientRect();
@@ -191,7 +192,7 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
-    const {modal, isOpen} = this.state;
+    const { modal, isOpen } = this.state;
     if (modal || !isOpen) return;
     const {
       arrow,
@@ -200,7 +201,7 @@ export default class Popup extends React.PureComponent {
       offsetY,
       keepTooltipInside,
       arrowStyle,
-      className,
+      className
     } = this.props;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
@@ -219,20 +220,20 @@ export default class Popup extends React.PureComponent {
       arrow,
       {
         offsetX,
-        offsetY,
+        offsetY
       },
-      boundingBox,
+      boundingBox
     );
     this.ContentEl.style.top = `${cords.top - helper.top}px`;
     this.ContentEl.style.left = `${cords.left - helper.left}px`;
     if (arrow) {
       this.ArrowEl.style.transform = cords.transform;
-      this.ArrowEl.style['-ms-transform'] = cords.transform;
-      this.ArrowEl.style['-webkit-transform'] = cords.transform;
+      this.ArrowEl.style["-ms-transform"] = cords.transform;
+      this.ArrowEl.style["-webkit-transform"] = cords.transform;
       this.ArrowEl.style.top = arrowStyle.top || cords.arrowTop;
       this.ArrowEl.style.left = arrowStyle.left || cords.arrowLeft;
       this.ArrowEl.classList.add(`popup-arrow`);
-      if (className !== '') {
+      if (className !== "") {
         this.ArrowEl.classList.add(`${className}-arrow`);
       }
     }
@@ -240,33 +241,33 @@ export default class Popup extends React.PureComponent {
       /* eslint-disable-next-line no-undef */
       window
         .getComputedStyle(this.TriggerEl, null)
-        .getPropertyValue('position') === 'static' ||
+        .getPropertyValue("position") === "static" ||
       /* eslint-disable-next-line no-undef */
       window
         .getComputedStyle(this.TriggerEl, null)
-        .getPropertyValue('position') === ''
+        .getPropertyValue("position") === ""
     )
-      this.TriggerEl.style.position = 'relative';
+      this.TriggerEl.style.position = "relative";
   };
 
   addWarperAction = () => {
-    const {contentStyle, className, on} = this.props;
-    const {modal} = this.state;
+    const { contentStyle, className, on } = this.props;
+    const { modal } = this.state;
     const popupContentStyle = modal
       ? styles.popupContent.modal
       : styles.popupContent.tooltip;
 
     const childrenElementProps = {
       className: `popup-content ${
-        className !== '' ? `${className}-content` : ''
+        className !== "" ? `${className}-content` : ""
       }`,
       style: Object.assign({}, popupContentStyle, contentStyle),
       ref: this.setContentRef,
       onClick: e => {
         e.stopPropagation();
-      },
+      }
     };
-    if (!modal && on.indexOf('hover') >= 0) {
+    if (!modal && on.indexOf("hover") >= 0) {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
@@ -274,45 +275,45 @@ export default class Popup extends React.PureComponent {
   };
 
   renderTrigger = () => {
-    const triggerProps = {key: 'T' , ref: this.setTriggerRef};
-    const {on, trigger} = this.props;
-    const {isOpen} = this.state;
+    const triggerProps = { key: "T", ref: this.setTriggerRef };
+    const { on, trigger } = this.props;
+    const { isOpen } = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
     for (let i = 0, len = onAsArray.length; i < len; i++) {
       switch (onAsArray[i]) {
-        case 'click':
+        case "click":
           triggerProps.onClick = this.togglePopup;
           break;
-        case 'hover':
+        case "hover":
           triggerProps.onMouseEnter = this.onMouseEnter;
           triggerProps.onMouseLeave = this.onMouseLeave;
           break;
-        case 'focus':
+        case "focus":
           triggerProps.onFocus = this.onMouseEnter;
           break;
         default:
       }
     }
 
-
-    if (typeof trigger === 'function')
+    if (typeof trigger === "function")
       return !!trigger && React.cloneElement(trigger(isOpen), triggerProps);
 
     return !!trigger && React.cloneElement(trigger, triggerProps);
   };
 
   renderContent = () => {
-    const {arrow, arrowStyle, children} = this.props;
-    const {modal, isOpen} = this.state;
+    const { arrow, arrowStyle, children } = this.props;
+    const { modal, isOpen } = this.state;
     return (
       <div {...this.addWarperAction()} key="C">
-        {arrow && !modal && (
-          <div
-            ref={this.setArrowRef}
-            style={Object.assign({}, styles.popupArrow, arrowStyle)}
-          />
-        )}
-        {typeof children === 'function'
+        {arrow &&
+          !modal && (
+            <div
+              ref={this.setArrowRef}
+              style={Object.assign({}, styles.popupArrow, arrowStyle)}
+            />
+          )}
+        {typeof children === "function"
           ? children(this.closePopup, isOpen)
           : children}
       </div>
@@ -325,17 +326,16 @@ export default class Popup extends React.PureComponent {
       closeOnDocumentClick,
       className,
       on,
-      trigger,
+      trigger
     } = this.props;
-    const {modal, isOpen} = this.state;
-    const overlay = isOpen && !(on.indexOf('hover') >= 0);
+    const { modal, isOpen } = this.state;
+    const overlay = isOpen && !(on.indexOf("hover") >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
-    return [
-       this.renderTrigger(),
+    const portalContent = [
       isOpen && (
         <div
           key="H"
-          style={{position: 'absolute', top: '0px', left: '0px'}}
+          style={{ position: "absolute", top: "0px", left: "0px" }}
           ref={this.setHelperRef}
         />
       ),
@@ -343,21 +343,34 @@ export default class Popup extends React.PureComponent {
         <div
           key="O"
           className={`popup-overlay ${
-            className !== '' ? `${className}-overlay` : ''
+            className !== "" ? `${className}-overlay` : ""
           }`}
           style={Object.assign({}, ovStyle, overlayStyle)}
-          onClick={closeOnDocumentClick ? this.closePopup : undefined}>
+          onClick={closeOnDocumentClick ? this.closePopup : undefined}
+        >
           {modal && this.renderContent()}
         </div>
       ),
-      isOpen && !modal && this.renderContent(),
+      isOpen && !modal && this.renderContent()
     ];
+
+    const portalRoot = document.getElementById(this.props.popupRootID);
+    const portal = portalRoot
+      ? [
+          ReactDOM.createPortal(
+            portalContent,
+            document.getElementById(this.props.popupRootID)
+          )
+        ]
+      : portalContent;
+
+    return [this.renderTrigger(), ...portal];
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  const PropTypes = require('prop-types');
-  const TRIGGER_TYPES = ['hover', 'click', 'focus'];
+if (process.env.NODE_ENV !== "production") {
+  const PropTypes = require("prop-types");
+  const TRIGGER_TYPES = ["hover", "click", "focus"];
 
   Popup.propTypes = {
     arrowStyle: PropTypes.object,
@@ -382,17 +395,18 @@ if (process.env.NODE_ENV !== 'production') {
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([
       PropTypes.oneOf(TRIGGER_TYPES),
-      PropTypes.arrayOf(PropTypes.oneOf(TRIGGER_TYPES)),
+      PropTypes.arrayOf(PropTypes.oneOf(TRIGGER_TYPES))
     ]),
     children: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.element,
-      PropTypes.string,
+      PropTypes.string
     ]).isRequired,
     position: PropTypes.oneOfType([
       PropTypes.oneOf(POSITION_TYPES),
-      PropTypes.arrayOf(PropTypes.oneOf(POSITION_TYPES)),
+      PropTypes.arrayOf(PropTypes.oneOf(POSITION_TYPES))
     ]),
     keepTooltipInside: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+    popupRootID: PropTypes.string
   };
 }
