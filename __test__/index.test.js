@@ -39,8 +39,14 @@ test("it should render correctly on click  ", () => {
   expect(getByText("popup content")).toBeDefined();
 });
 
+test("it should not render when disabled", () => {
+  const { getByText, queryByText } = render(<PopupTest disabled />);
+  fireEvent.click(getByText("Trigger"));
+  expect(queryByText("popup content")).toBeNull();
+});
+
 test("it should render correctly on click (on = 'click') ", () => {
-  const { getByText } = render(<PopupTest on="click"/>);
+  const { getByText } = render(<PopupTest on="click" />);
   fireEvent.click(getByText("Trigger"));
   expect(getByText("popup content")).toBeDefined();
 });

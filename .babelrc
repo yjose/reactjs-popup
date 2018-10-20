@@ -1,7 +1,7 @@
 {
   "presets": [
-    "@babel/env",
-    "@babel/react"
+    "env",
+    "react"
   ],
   "plugins": [
     "transform-class-properties"
