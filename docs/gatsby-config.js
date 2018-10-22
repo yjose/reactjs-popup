@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'React Popup Component',
+        name: 'React Popup Component - Modals,Tooltips and Menus —  All in one',
         short_name: 'React Popup',
         start_url: '/',
         background_color: '#663399',
