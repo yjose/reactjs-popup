@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   border: 1px #cfcece dashed;
   margin: 10px;
+  white-space: pre-line;;
 }
 
 .button {
