@@ -7,7 +7,7 @@ yarn-debug.log*
 yarn-error.log*
 dist
 .cache
-
+.DS_Store
 # Runtime data
 pids
 *.pid
