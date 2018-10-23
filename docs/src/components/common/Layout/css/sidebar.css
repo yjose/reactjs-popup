@@ -23,7 +23,7 @@
 }
 .sidebar a:hover,
 .sidebar .current {
-  color: #2980b9;
+  color: #663399;
 }
 .sidebar a:after {
   width: 3px;
@@ -32,7 +32,7 @@
   content: '';
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-  background-color: #2980b9;
+  background-color: #663399;
 }
 
 .sidebar a:after {

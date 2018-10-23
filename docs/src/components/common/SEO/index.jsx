@@ -14,7 +14,7 @@ import {
 } from '../../../../data/config'
 
 const SEO = ({ children, location = '' }) => {
-	const structuredDataOrganization = `{ 
+	const structuredDataOrganization = `{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"legalName": "${legalName}",
@@ -39,7 +39,6 @@ const SEO = ({ children, location = '' }) => {
 	return (
 		<Helmet>
 			<link rel="shortcut icon" href={favicon} />
-
 			<meta name="description" content={description} />
 			<meta name="image" content={cover} />
 
