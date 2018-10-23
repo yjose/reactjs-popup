@@ -4,13 +4,13 @@ import Popup from './reactjs-popup.es'
 //
 
 const SimpleModal = () => (
-  <Popup
-    trigger={<button className="button"> Open Modal </button>}
-    modal
-    closeOnDocumentClick
-  >
-    <span> Modal content </span>
-  </Popup>
+	<Popup
+		trigger={<button type="button" className="button"> Open Modal </button>}
+		modal
+		closeOnDocumentClick
+	>
+		<span> Modal content </span>
+	</Popup>
 )
 
 export default Warper(SimpleModal)
