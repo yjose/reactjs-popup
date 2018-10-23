@@ -21,7 +21,7 @@ const Cover = () => (
 			</a>
 			<br />
 			<a href="https://github.com/yjose/reactjs-popup/graphs/contributors">
-				<img src="https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square" alt="github contributors" />
+				<img src="https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square" alt="github contributors" />
 			</a>
 			<a href="http://makeapullrequest.com">
 				<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="pull requests are welcome" />
