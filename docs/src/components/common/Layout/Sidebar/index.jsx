@@ -29,7 +29,7 @@ const Sidebar = ({ pages }) => {
       <>
         <div className="sidebar website-sidebar" key="SW">
         	<Menu routes={routes} />
-        </div>,
+        </div>
         <div className="sidebar mobile-sidebar" key="SM">
         	<Popup
         		modal
