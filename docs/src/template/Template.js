@@ -43,7 +43,7 @@ export default ({ data: { mdx } }) => (
 				</a>
 				<a
 					className="edit"
-					href="https://github.com/yjose/reactjs-popup/tree/master/docs/src/markdown/"
+					href="https://github.com/yjose/reactjs-popup/tree/master/docs/src/mdPages/"
 				>
 							EDIT THIS PAGE
 				</a>
