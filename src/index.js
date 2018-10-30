@@ -319,13 +319,11 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 class Ref extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     const { innerRef } = this.props;
     if (innerRef) innerRef(findDOMNode(this));
   }
+
   render() {
     const { children } = this.props;
     return React.Children.only(children);
