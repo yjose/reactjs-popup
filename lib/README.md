@@ -5,7 +5,7 @@
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -132,7 +132,7 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
 [build]: https://travis-ci.org/yjose/reactjs-popup
 [version-badge]: https://img.shields.io/npm/v/reactjs-popup.svg?style=flat-square
 [package]: https://www.npmjs.com/package/reactjs-popup
-[downloads-badge]: https://img.shields.io/npm/dm/reactjs-popup.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dt/reactjs-popup.svg?style=flat-square
 [npmtrends]: http://www.npmtrends.com/reactjs-popup
 [license-badge]: https://img.shields.io/npm/l/reactjs-popup.svg?style=flat-square
 [license]: https://github.com/yjose/reactjs-popup/blob/master/LICENSE
