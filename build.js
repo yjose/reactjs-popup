@@ -21,8 +21,8 @@ const babelBiliConfig = {
   plugins: ["@babel/plugin-proposal-class-properties"]
 };
 const babelParcelConfig = {
-  presets: ["env", "react"],
-  plugins: ["transform-class-properties"]
+  presets: ["@babel/preset-env", "@babel/preset-react"],
+  plugins: ["@babel/plugin-proposal-class-properties"]
 };
 
 // Copy package.json, LICENSE,README and npmignore files
