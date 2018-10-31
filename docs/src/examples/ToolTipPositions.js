@@ -1,5 +1,5 @@
 import React from 'react'
-import Popup from './reactjs-popup.es'
+import Popup from '../../../src/index'
 //
 
 const ToolTipPositions = () => (
