@@ -26,6 +26,7 @@ export default class Popup extends React.PureComponent {
     onClose: () => {},
     defaultOpen: false,
     open: false,
+    disabled: false,
     closeOnDocumentClick: true,
     closeOnEscape: true,
     on: ["click"],
@@ -67,11 +68,21 @@ export default class Popup extends React.PureComponent {
       });
     }
   }
+
   componentWillReceiveProps(nextProps) {
     if (this.props.open === nextProps.open) return;
     if (nextProps.open) this.openPopup();
     else this.closePopup();
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.disabled !== this.props.disabled
+        && this.props.disabled
+        && this.state.isOpen) {
+        this.closePopup();
+    }
+  }
+
   componentWillUnmount() {
     // kill any function to execute if the component is unmounted
     clearTimeout(this.timeOut);
@@ -91,7 +102,7 @@ export default class Popup extends React.PureComponent {
     else this.openPopup();
   };
   openPopup = () => {
-    if (this.state.isOpen) return;
+    if (this.state.isOpen || this.props.disabled) return;
     this.setState({ isOpen: true }, () => {
       this.setPosition();
       this.props.onOpen();
@@ -291,6 +302,7 @@ if (process.env.NODE_ENV !== "production") {
     className: PropTypes.string,
     modal: PropTypes.bool,
     closeOnDocumentClick: PropTypes.bool,
+    disabled: PropTypes.bool,
     lockScroll: PropTypes.bool,
     offsetX: PropTypes.number,
     offsetY: PropTypes.number,

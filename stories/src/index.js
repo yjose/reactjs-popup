@@ -6,6 +6,7 @@ import { Centred } from "story-router";
 import PopupElementStory from "./PopupElement";
 import PopupFuncStory from "./PopupFunc";
 import PopupInputFocusStory from "./PopupInputFocus";
+import DisabledTooltip from "./DisabledTooltip";
 import ModalStory from "./Modal";
 import Menu from "./Menu";
 import ControlledModal from "./ControlledModal";
@@ -42,6 +43,10 @@ export default [
   {
     name: "Controlled Tooltip Component", // without props
     component: Centred(ControlledTooltip)
+  },
+  {
+    name: "Disabled Tooltip Component", // without props
+    component: Centred(DisabledTooltip)
   },
   {
     name: "Menu Component", // without props
