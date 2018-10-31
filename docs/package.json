@@ -1,34 +1,51 @@
 {
-  "name": "Reactjs-Popup-Docs",
+  "name": "reactjs-popup-docs",
+  "description": "React Popup Docs",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "Youssouf El Azizi <youssoufelazizi@gmail.com>",
+  "dependencies": {
+    "@mdx-js/mdx": "^0.15.5",
+    "@mdx-js/tag": "^0.15.0",
+    "gatsby": "^2.0.0",
+    "gatsby-cli": "^2.4.3",
+    "gatsby-mdx": "^0.2.0",
+    "gatsby-plugin-canonical-urls": "^2.0.6",
+    "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-manifest": "^2.0.2",
+    "gatsby-plugin-netlify": "^2.0.1",
+    "gatsby-plugin-nprogress": "^2.0.5",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-remark-prismjs": "^3.0.2",
+    "gatsby-source-filesystem": "^2.0.3",
+    "gatsby-transformer-remark": "^2.1.7",
+    "prismjs": "^1.15.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
+    "react-live": "1.8.0-0",
+    "reactjs-popup": "^1.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
-    "start": "react-static start",
-    "build": "react-static build",
-    "serve": "serve dist -p 3000"
-  },
-  "dependencies": {
-    "axios": "^0.16.2",
-    "babel-plugin-universal-import": "^1.4.0",
-    "markdown-to-jsx": "^6.3.2",
-    "prismjs": "^1.9.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-helmet": "^5.2.0",
-    "react-router": "^4.2.0",
-    "react-static": "^4.8.3",
-    "reactjs-popup": "^0.4.0",
-    "styled-components": "^2.4.0"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint-config-react-tools": "1.0.10",
-    "front-matter": "^2.3.0",
-    "front-matter-loader": "^0.2.0",
-    "json-loader": "^0.5.7",
-    "raw-loader": "^0.5.1",
-    "react-universal-component": "^2.8.1",
-    "serve": "^6.1.0",
-    "webpack-flush-chunks": "^1.2.3"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yjose/reactjs-popup/tree/master/docs"
   }
 }
