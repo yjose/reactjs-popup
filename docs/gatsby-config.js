@@ -60,6 +60,5 @@ module.exports = {
 				path: 'src/mdPages/'
 			}
 		},
-		'gatsby-plugin-offline'
 	]
 }
