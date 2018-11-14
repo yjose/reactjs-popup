@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const contentStyle = {
 	background: 'rgba(255,255,255,0',
-	width: '80%',
+	width: 'auto',
 	border: 'none',
 }
 
@@ -29,6 +29,7 @@ const Sidebar = ({ pages }) => {
       <>
         <div className="sidebar website-sidebar" key="SW">
         	<Menu routes={routes} />
+        	<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom" id="_carbonads_js" />
         </div>
         <div className="sidebar mobile-sidebar" key="SM">
         	<Popup
@@ -47,7 +48,7 @@ const Sidebar = ({ pages }) => {
 }
 
 const Menu = ({ routes, close }) => (
-	<ul>
+	<ul className="menu">
 		{routes.map((r, i) => {
 			if (r) {
 				return (
