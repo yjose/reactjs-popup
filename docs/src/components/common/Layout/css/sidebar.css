@@ -3,29 +3,30 @@
   padding: 20px 5px;
 }
 
-.sidebar ul {
+.menu {
+  background: transparent;
   position: sticky;
   top: 20px;
   display: block;
   padding: 0;
   margin-left: 0px;
 }
-.sidebar .link {
+.menu .link {
   display: block;
   margin: 0.5em 0.2em;
-  padding-left: 3;
+
 }
-.sidebar a {
+.menu a {
   padding: 0 0.6em;
   color: rgba(0, 0, 0, 0.8);
   position: relative;
   text-decoration: none;
 }
-.sidebar a:hover,
-.sidebar .current {
+.menu a:hover,
+.menu .current {
   color: #663399;
 }
-.sidebar a:after {
+.menu a:after {
   width: 3px;
   height: 0;
   position: absolute;
@@ -35,12 +36,12 @@
   background-color: #663399;
 }
 
-.sidebar a:after {
+.menu a:after {
   top: 0;
   left: 0;
 }
-.sidebar a:hover:after,
-.sidebar .current:after {
+.menu a:hover:after,
+.menu .current:after {
   height: 100%;
 }
 .mobile-sidebar {
@@ -57,13 +58,17 @@
     text-align: center;
     padding: 0px;
   }
-  .sidebar ul {
+  .menu {
     position: relative;
     top: 0px;
     font-size: 20px;
   }
-  .sidebar a:after {
+  .menu a:after {
     display: none;
+  }
+  .menu .link {
+    margin: 20px 0.2em;
+
   }
 }
 
