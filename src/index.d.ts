@@ -28,8 +28,6 @@ declare module 'reactjs-popup' {
     arrowStyle?: object;
     keepTooltipInside?: boolean | string;
   }
-
-  class Popup extends React.Component<Props> {}
-
-  export = Popup;
+  
+  export default class Popup extends React.PureComponent<Props> {}
 }
