@@ -2,11 +2,13 @@
   width: 250px !important;
   padding: 20px 5px;
 }
-
-.menu {
-  background: transparent;
+.sticky-sidebar{
   position: sticky;
   top: 20px;
+  width: 100%;
+}
+.menu {
+  background: transparent;
   display: block;
   padding: 0;
   margin-left: 0px;
