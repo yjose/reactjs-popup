@@ -28,8 +28,11 @@ const Sidebar = ({ pages }) => {
 	return (
       <>
         <div className="sidebar website-sidebar" key="SW">
-        	<Menu routes={routes} />
-        	<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom" id="_carbonads_js" />
+        	<div className="sticky-sidebar">
+        		<Menu routes={routes} />
+        		<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom" id="_carbonads_js" />
+        	</div>
+
         </div>
         <div className="sidebar mobile-sidebar" key="SM">
         	<Popup
