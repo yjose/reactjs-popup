@@ -17,7 +17,7 @@
 
 ## Welcome
 
-[Reactjs-popup](https://react-popup.netlify.com) is a simple react popup component with a lot of benefits :
+[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component with a lot of benefits :
 
 - Built with react fragment that’s mean no additional wrapper Divs in your code or in the trigger element. 😮
 - Does not inject HTML outside your app root. 📦
@@ -33,7 +33,7 @@ Requires React >= 16.0
 
 ## Demo
 
-[**Live Demo**](https://react-popup.netlify.com)
+[**Live Demo**](https://react-popup.elazizi.com)
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*x-TqQwyT2ADmnb51oRJCOg.gif)
 

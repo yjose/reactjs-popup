@@ -5,7 +5,7 @@ Have a usage question?
 ======================
 The issue tracker is only for bugs and feature requests, so please do the following if you have a question:
 
-- Read use cases : https://react-popup.netlify.com/
+- Read use cases : https://react-popup.elazizi.com/
 - Look for/ask questions on StackOverflow: https://stackoverflow.com/questions/tagged/reactjs-popup
 
 Have a feature request?
