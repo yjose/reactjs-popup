@@ -19,6 +19,7 @@ declare module 'reactjs-popup' {
     lockScroll?: boolean;
     closeOnDocumentClick?: boolean;
     closeOnEscape?: boolean;
+    repositionOnResize?: boolean;
     mouseEnterDelay?: number;
     mouseLeaveDelay?: number;
     onOpen?: () => any;
@@ -28,6 +29,6 @@ declare module 'reactjs-popup' {
     arrowStyle?: object;
     keepTooltipInside?: boolean | string;
   }
-  
+
   export default class Popup extends React.PureComponent<Props> {}
 }
