@@ -27,6 +27,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -131,6 +132,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -175,6 +177,7 @@ exports[`it should render correctly  1`] = `
   open={false}
   overlayStyle={Object {}}
   position="bottom center"
+  repositionOnResize={true}
   trigger={
     <button>
        Trigger
@@ -213,6 +216,7 @@ exports[`it should render correctly on click and will update the the popup conte
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -322,6 +326,7 @@ exports[`it should render correctly on click and will update the the popup conte
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -371,6 +376,7 @@ exports[`it should render correctly on click and will update the trigger text   
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={[Function]}
   >
     <Ref
@@ -473,6 +479,7 @@ exports[`it should render correctly on click and will update the trigger text   
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={[Function]}
   >
     <Ref
@@ -518,6 +525,7 @@ exports[`it should rendered in the bottom center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -622,6 +630,7 @@ exports[`it should rendered in the bottom left position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom left"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -726,6 +735,7 @@ exports[`it should rendered in the bottom right position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom right"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -830,6 +840,7 @@ exports[`it should rendered in the left bottom position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left bottom"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -934,6 +945,7 @@ exports[`it should rendered in the left center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1038,6 +1050,7 @@ exports[`it should rendered in the left top position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="left top"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1142,6 +1155,7 @@ exports[`it should rendered in the right bottom position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right bottom"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1246,6 +1260,7 @@ exports[`it should rendered in the right center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1350,6 +1365,7 @@ exports[`it should rendered in the right top position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="right top"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1454,6 +1470,7 @@ exports[`it should rendered in the top center position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1558,6 +1575,7 @@ exports[`it should rendered in the top left position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top left"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1662,6 +1680,7 @@ exports[`it should rendered in the top right position   1`] = `
     open={false}
     overlayStyle={Object {}}
     position="top right"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1765,6 +1784,7 @@ exports[`it shouldn't close on click outside popup  1`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
@@ -1868,6 +1888,7 @@ exports[`it shouldn't close on click outside popup  2`] = `
     open={false}
     overlayStyle={Object {}}
     position="bottom center"
+    repositionOnResize={true}
     trigger={
       <button>
          Trigger
