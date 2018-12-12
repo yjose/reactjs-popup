@@ -28,6 +28,7 @@ export default class Popup extends React.PureComponent {
     open: false,
     disabled: false,
     closeOnDocumentClick: true,
+    repositionOnResize:true,
     closeOnEscape: true,
     on: ["click"],
     contentStyle: {},
@@ -60,13 +61,21 @@ export default class Popup extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { closeOnEscape, defaultOpen } = this.props;
+    const { closeOnEscape, defaultOpen ,repositionOnResize} = this.props;
     if (defaultOpen) this.setPosition();
     if (closeOnEscape) {
-      window.addEventListener("keyup", e => {
-        if (e.key === "Escape") this.closePopup();
-      });
+      window.addEventListener("keyup", this.onEscape);
     }
+    if(repositionOnResize){
+      window.addEventListener('resize', this.rerepositionOnResize);
+    }
+  }
+
+  rerepositionOnResize = () => {
+      this.setPosition()
+  }
+  onEscape = (e) => {
+    if (e.key === "Escape") this.closePopup();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -86,6 +95,15 @@ export default class Popup extends React.PureComponent {
   componentWillUnmount() {
     // kill any function to execute if the component is unmounted
     clearTimeout(this.timeOut);
+
+    const { closeOnEscape ,repositionOnResize} = this.props;
+ // remove events listeners
+    if (closeOnEscape) {
+      window.removeEventListener("keyup", this.onEscape);
+    }
+    if(repositionOnResize){
+      window.removeEventListener('resize', this.rerepositionOnResize);
+    }
   }
 
   lockScroll = () => {
@@ -302,6 +320,7 @@ if (process.env.NODE_ENV !== "production") {
     className: PropTypes.string,
     modal: PropTypes.bool,
     closeOnDocumentClick: PropTypes.bool,
+    repositionOnResize:PropTypes.bool,
     disabled: PropTypes.bool,
     lockScroll: PropTypes.bool,
     offsetX: PropTypes.number,
