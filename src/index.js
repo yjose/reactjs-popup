@@ -67,11 +67,11 @@ export default class Popup extends React.PureComponent {
       window.addEventListener("keyup", this.onEscape);
     }
     if(repositionOnResize){
-      window.addEventListener('resize', this.rerepositionOnResize);
+      window.addEventListener('resize', this.repositionOnResize);
     }
   }
 
-  rerepositionOnResize = () => {
+  repositionOnResize = () => {
       this.setPosition()
   }
   onEscape = (e) => {
@@ -102,7 +102,7 @@ export default class Popup extends React.PureComponent {
       window.removeEventListener("keyup", this.onEscape);
     }
     if(repositionOnResize){
-      window.removeEventListener('resize', this.rerepositionOnResize);
+      window.removeEventListener('resize', this.repositionOnResize);
     }
   }
 
@@ -167,9 +167,9 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
+    const { modal,isOpen } = this.state;
+    if (modal|| !isOpen) return;
     const { arrow, position, offsetX, offsetY, keepTooltipInside, arrowStyle } = this.props;
-    const { modal } = this.state;
-    if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
