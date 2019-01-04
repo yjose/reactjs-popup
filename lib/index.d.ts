@@ -2,7 +2,10 @@ declare module 'reactjs-popup' {
   import * as React from 'react';
 
   type EventType = 'hover' | 'click' | 'focus';
-  type Position = 'top left' | 'top right' | 'bottom right' | 'bottom left' | 'right center' | 'left center' | 'top center' | 'bottom center';
+  type Position = 'top left' | 'top center' | 'top right' |
+                  'right top' | 'right center' | 'right bottom' |
+                  'bottom left' | 'bottom center' | 'bottom right' |
+                  'left top' | 'left center' | 'left bottom';
 
   interface Props {
     trigger?: JSX.Element | ((isOpen: boolean) => JSX.Element);
