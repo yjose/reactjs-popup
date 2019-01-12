@@ -26,6 +26,7 @@ export default class Popup extends React.PureComponent {
     onClose: () => {},
     defaultOpen: false,
     open: false,
+    preventClose: false,
     disabled: false,
     closeOnDocumentClick: true,
     repositionOnResize:true,
@@ -128,7 +129,7 @@ export default class Popup extends React.PureComponent {
     });
   };
   closePopup = () => {
-    if (!this.state.isOpen) return;
+    if (!this.state.isOpen || this.props.preventClose) return; // allow for the user to prevent close
     this.props.onClose();
     this.setState({ isOpen: false }, () => {
       this.resetScroll();
@@ -330,6 +331,7 @@ if (process.env.NODE_ENV !== "production") {
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
     open: PropTypes.bool,
+    preventClose: PropTypes.bool,
     defaultOpen: PropTypes.bool,
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([

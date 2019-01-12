@@ -12,6 +12,7 @@ import Menu from "./Menu";
 import ControlledModal from "./ControlledModal";
 import ControlledTooltip from "./ControlledTooltip";
 import BoundedTooltip from "./BoundedTooltip";
+import PreventClose from "./PreventClose"
 
 import CellTablePopupStory from "./CellTablePopup";
 
@@ -72,6 +73,9 @@ export default [
         "left bottom"
       ]
     }
+  },{
+    name:"Prevent Close",
+    component: Centred(PreventClose)
   },
   ModalStory,
   PopupFuncStory,
