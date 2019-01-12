@@ -8,6 +8,7 @@ declare module 'reactjs-popup' {
     trigger?: JSX.Element | ((isOpen: boolean) => JSX.Element);
     open?: boolean;
     disabled?: boolean;
+    preventClose?:boolean;
     defaultOpen?: boolean;
     on?: EventType | EventType[];
     children: JSX.Element | ((close: () => void, isOpen: boolean) => JSX.Element);
