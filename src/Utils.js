@@ -22,69 +22,69 @@ function getCoordinatesForPosition(
   ContentBounding,
   position,
   arrow,
-  { offsetX, offsetY }
+  {offsetX, offsetY},
 ) {
-  const style = {};
   const margin = arrow ? 8 : 0;
-  const args = position.split(" ");
+  const args = position.split(' ');
   // the step N 1 : center the popup content => ok
   const CenterTop = triggerBounding.top + triggerBounding.height / 2;
   const CenterLeft = triggerBounding.left + triggerBounding.width / 2;
-  const { height, width } = ContentBounding;
+  const {height, width} = ContentBounding;
   let top = CenterTop - height / 2;
   let left = CenterLeft - width / 2;
-  let transform = "";
-  let arrowTop = "0%";
-  let arrowLeft = "0%";
+  let transform = '';
+  let arrowTop = '0%';
+  let arrowLeft = '0%';
   // the  step N 2 : => ok
   switch (args[0]) {
-    case "top":
+    case 'top':
       top -= height / 2 + triggerBounding.height / 2 + margin;
       transform = `rotate(45deg)`;
-      arrowTop = "100%";
-      arrowLeft = "50%";
+      arrowTop = '100%';
+      arrowLeft = '50%';
       break;
-    case "bottom":
+    case 'bottom':
       top += height / 2 + triggerBounding.height / 2 + margin;
       transform = `rotate(225deg)`;
-      arrowLeft = "50%";
+      arrowLeft = '50%';
       break;
-    case "left":
+    case 'left':
       left -= width / 2 + triggerBounding.width / 2 + margin;
       transform = ` rotate(-45deg)`;
-      arrowLeft = "100%";
-      arrowTop = "50%";
+      arrowLeft = '100%';
+      arrowTop = '50%';
       break;
-    case "right":
+    case 'right':
       left += width / 2 + triggerBounding.width / 2 + margin;
       transform = `rotate(135deg)`;
-      arrowTop = "50%";
-
+      arrowTop = '50%';
       break;
+    default:
   }
   switch (args[1]) {
-    case "top":
+    case 'top':
       top = triggerBounding.top;
-      arrowTop = triggerBounding.height / 2 + "px";
+      arrowTop = `${triggerBounding.height / 2}px`;
       break;
-    case "bottom":
+    case 'bottom':
       top = triggerBounding.top - height + triggerBounding.height;
-      arrowTop = height - triggerBounding.height / 2 + "px";
+      arrowTop = `${height - triggerBounding.height / 2}px`;
       break;
-    case "left":
+    case 'left':
       left = triggerBounding.left;
-      arrowLeft = triggerBounding.width / 2 + "px";
+      arrowLeft = `${triggerBounding.width / 2}px`;
       break;
-    case "right":
+    case 'right':
       left = triggerBounding.left - width + triggerBounding.width;
-      arrowLeft = width - triggerBounding.width / 2 + "px";
+      arrowLeft = `${width - triggerBounding.width / 2}px`;
       break;
+    default:
   }
 
-  top = args[0] === "top" ? top - offsetY : top + offsetY;
-  left = args[0] === "left" ? left - offsetX : left + offsetX;
+  top = args[0] === 'top' ? top - offsetY : top + offsetY;
+  left = args[0] === 'left' ? left - offsetX : left + offsetX;
 
-  return { top, left, transform, arrowLeft, arrowTop };
+  return {top, left, transform, arrowLeft, arrowTop};
 }
 
 export default function calculatePosition(
@@ -92,8 +92,8 @@ export default function calculatePosition(
   ContentBounding,
   positions,
   arrow,
-  { offsetX, offsetY },
-  wrapperBox
+  {offsetX, offsetY},
+  wrapperBox,
 ) {
   let bestCoords;
   let i = 0;
@@ -103,14 +103,14 @@ export default function calculatePosition(
       ContentBounding,
       positions[i],
       arrow,
-      { offsetX, offsetY }
+      {offsetX, offsetY},
     );
 
     const contentBox = {
       top: bestCoords.top,
       left: bestCoords.left,
       width: ContentBounding.width,
-      height: ContentBounding.height
+      height: ContentBounding.height,
     };
 
     if (
