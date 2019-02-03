@@ -44,6 +44,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
   },
+  "resolutions": {
+    "terser": "3.14.*"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yjose/reactjs-popup/tree/master/docs"
