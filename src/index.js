@@ -1,7 +1,6 @@
 import React from 'react';
 import calculatePosition from './Utils';
 import Ref from './Ref';
-
 import styles from './index.css.js';
 
 const POSITION_TYPES = [
@@ -21,7 +20,6 @@ const POSITION_TYPES = [
 
 export default class Popup extends React.PureComponent {
   static defaultProps = {
-    // children: () => <span> Your Content Here !!</span>,
     trigger: null,
     onOpen: () => {},
     onClose: () => {},
@@ -53,36 +51,27 @@ export default class Popup extends React.PureComponent {
     this.setContentRef = r => (this.ContentEl = r);
     this.setArrowRef = r => (this.ArrowEl = r);
     this.setHelperRef = r => (this.HelperEl = r);
-    this.setOverlayRef = r => (this.OverlayEl = r);
+    this.timeOut = 0;
     const {open, modal, defaultOpen, trigger} = props;
-
     this.state = {
       isOpen: open || defaultOpen,
       modal: modal ? true : !trigger,
       // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't exist
     };
-
-    this.timeOut = 0;
   }
 
   componentDidMount() {
-    const {closeOnEscape, defaultOpen} = this.props;
+    const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
     if (defaultOpen) this.setPosition();
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
-      window.addEventListener('keyup', e => {
-        if (e.key === 'Escape') this.closePopup();
-      });
+      window.addEventListener('keyup', this.onEscape);
+    }
+    if (repositionOnResize) {
+      /* eslint-disable-next-line no-undef */
+      window.addEventListener('resize', this.repositionOnResize);
     }
   }
-
-  repositionOnResize = () => {
-    this.setPosition();
-  };
-
-  onEscape = e => {
-    if (e.key === 'Escape') this.closePopup();
-  };
 
   componentWillReceiveProps(nextProps) {
     if (this.props.open === nextProps.open) return;
@@ -92,8 +81,7 @@ export default class Popup extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     const {disabled} = this.props;
-    const {isOpen} = this.state;
-    if (prevProps.disabled !== disabled && disabled && isOpen) {
+    if (prevProps.disabled !== disabled && disabled && this.state.isOpen) {
       this.closePopup();
     }
   }
@@ -105,21 +93,35 @@ export default class Popup extends React.PureComponent {
     const {closeOnEscape, repositionOnResize} = this.props;
     // remove events listeners
     if (closeOnEscape) {
+      /* eslint-disable-next-line no-undef */
       window.removeEventListener('keyup', this.onEscape);
     }
     if (repositionOnResize) {
+      /* eslint-disable-next-line no-undef */
       window.removeEventListener('resize', this.repositionOnResize);
     }
   }
 
+  repositionOnResize = () => {
+    this.setPosition();
+  };
+
+  onEscape = e => {
+    if (e.key === 'Escape') this.closePopup();
+  };
+
   lockScroll = () => {
-    if (this.state.modal && this.props.lockScroll)
+    const {lockScroll} = this.props;
+    const {modal} = this.state;
+    if (modal && lockScroll)
       /* eslint-disable-next-line no-undef */
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
   };
 
   resetScroll = () => {
-    if (this.state.modal && this.props.lockScroll)
+    const {lockScroll} = this.props;
+    const {modal} = this.state;
+    if (modal && lockScroll)
       /* eslint-disable-next-line no-undef */
       document.getElementsByTagName('body')[0].style.overflow = 'auto';
   };
@@ -130,35 +132,24 @@ export default class Popup extends React.PureComponent {
   };
 
   openPopup = () => {
+    const {disabled, onOpen} = this.props;
     const {isOpen} = this.state;
-    const {onOpen, disabled} = this.props;
-
     if (isOpen || disabled) return;
     this.setState({isOpen: true}, () => {
       this.setPosition();
       onOpen();
       this.lockScroll();
-      setTimeout(() => {
-        this.OverlayEl.style['transform-style'] = 'none';
-        this.ContentEl.style['transform-style'] = 'none';
-        // this.OverlayEl.classList.remove("popup-overlay");
-        // this.ContentEl.classList.remove("popup-content");
-      }, 1000);
     });
   };
 
   closePopup = () => {
-    const {isOpen} = this.state;
-    if (isOpen) return;
     const {onClose} = this.props;
-    this.OverlayEl.classList.add('popup-overlay-out');
-    this.ContentEl.classList.add('popup-content-out');
-    setTimeout(() => {
-      onClose();
-      this.setState({isOpen: false}, () => {
-        this.resetScroll();
-      });
-    }, 500);
+    const {isOpen} = this.state;
+    if (!isOpen) return;
+    onClose();
+    this.setState({isOpen: false}, () => {
+      this.resetScroll();
+    });
   };
 
   onMouseEnter = () => {
@@ -198,6 +189,8 @@ export default class Popup extends React.PureComponent {
   };
 
   setPosition = () => {
+    const {modal, isOpen} = this.state;
+    if (modal || !isOpen) return;
     const {
       arrow,
       position,
@@ -206,8 +199,6 @@ export default class Popup extends React.PureComponent {
       keepTooltipInside,
       arrowStyle,
     } = this.props;
-    const {modal} = this.state;
-    if (modal) return;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
     const content = this.ContentEl.getBoundingClientRect();
@@ -276,6 +267,7 @@ export default class Popup extends React.PureComponent {
   renderTrigger = () => {
     const triggerProps = {key: 'T'};
     const {on, trigger} = this.props;
+    const {isOpen} = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
     for (let i = 0, len = onAsArray.length; i < len; i++) {
       switch (onAsArray[i]) {
@@ -294,7 +286,7 @@ export default class Popup extends React.PureComponent {
     }
 
     if (typeof trigger === 'function')
-      return React.cloneElement(trigger(this.state.isOpen), triggerProps);
+      return React.cloneElement(trigger(isOpen), triggerProps);
 
     return React.cloneElement(trigger, triggerProps);
   };
@@ -318,13 +310,7 @@ export default class Popup extends React.PureComponent {
   };
 
   render() {
-    const {
-      overlayStyle,
-      closeOnDocumentClick,
-      on,
-      className,
-      trigger,
-    } = this.props;
+    const {overlayStyle, closeOnDocumentClick, on, trigger} = this.props;
     const {modal, isOpen} = this.state;
     const overlay = isOpen && !(on.indexOf('hover') >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
@@ -346,8 +332,7 @@ export default class Popup extends React.PureComponent {
           key="O"
           className="popup-overlay"
           style={Object.assign({}, ovStyle, overlayStyle)}
-          onClick={closeOnDocumentClick ? this.closePopup : undefined}
-          ref={this.setOverlayRef}>
+          onClick={closeOnDocumentClick ? this.closePopup : undefined}>
           {modal && this.renderContent()}
         </div>
       ),

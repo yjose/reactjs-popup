@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import StoryRouter from 'story-router';
 import 'story-router/story-router.css';
 import './index.css';
-import './animations.css';
+// import './animations.css';
 
 import Stories from './src/index';
 
