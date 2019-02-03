@@ -19,19 +19,18 @@ const babelBiliConfig = {
   plugins: ['@babel/plugin-proposal-class-properties'],
 };
 const babelParcelConfig = {
-<<<<<<< Updated upstream
-  presets: [[
-    "@babel/preset-env", {
-      "targets": {
-        "node": "current"
-      }
-    }
-  ], "@babel/preset-react"],
-  plugins: ["@babel/plugin-proposal-class-properties"]
-=======
-  presets: ['@babel/preset-env', '@babel/preset-react'],
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
+    '@babel/preset-react',
+  ],
   plugins: ['@babel/plugin-proposal-class-properties'],
->>>>>>> Stashed changes
 };
 
 // Copy package.json, LICENSE,README and npmignore files
