@@ -25,7 +25,8 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-live": "1.8.0-0",
-    "reactjs-popup": "^1.2.0"
+    "reactjs-popup": "^1.2.0",
+    "terser": "3.14"
   },
   "keywords": [
     "gatsby"
@@ -43,6 +44,9 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
+  },
+  "resolutions": {
+    "terser": "3.14.*"
   },
   "repository": {
     "type": "git",
