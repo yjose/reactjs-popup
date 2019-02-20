@@ -13,8 +13,7 @@
     "update-snap": "jest --updateSnapshot",
     "eslint": "eslint src/**.js stories/**.js",
     "start": "parcel serve ./stories/index.html --no-autoinstall",
-    "build": "node build",
-    "postinstall": "npm run build"
+    "build": "node build"
   },
   "peerDependencies": {
     "react": "^16.0.0",
