@@ -128,27 +128,29 @@ export default class Popup extends React.PureComponent {
       document.getElementsByTagName('body')[0].style.overflow = 'auto';
   };
 
-  togglePopup = () => {
-    if (this.state.isOpen) this.closePopup();
-    else this.openPopup();
+  togglePopup = e => {
+    // https://reactjs.org/docs/events.html#event-pooling
+    e.persist();
+    if (this.state.isOpen) this.closePopup(e);
+    else this.openPopup(e);
   };
 
-  openPopup = () => {
+  openPopup = e => {
     const {disabled, onOpen} = this.props;
     const {isOpen} = this.state;
     if (isOpen || disabled) return;
+    onOpen(e);
     this.setState({isOpen: true}, () => {
       this.setPosition();
-      onOpen();
       this.lockScroll();
     });
   };
 
-  closePopup = () => {
+  closePopup = e => {
     const {onClose} = this.props;
     const {isOpen} = this.state;
     if (!isOpen) return;
-    onClose();
+    onClose(e);
     this.setState({isOpen: false}, () => {
       this.resetScroll();
     });
