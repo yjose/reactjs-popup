@@ -1,7 +1,7 @@
 import React from 'react';
-import { Centred } from "story-router";
-import Story from "./Story";
-//import { Centred } from "../../src/utils/";
+import {Centred} from 'story-router';
+import Story from './Story';
+// import { Centred } from "../../src/utils/";
 
 import PopupElementStory from './PopupElement';
 import PopupFuncStory from './PopupFunc';
@@ -14,6 +14,7 @@ import ControlledTooltip from './ControlledTooltip';
 import BoundedTooltip from './BoundedTooltip';
 
 import CellTablePopupStory from './CellTablePopup';
+import NestedLockScrollStory from './NestedLockScroll';
 
 const storyProps = {text: 'Parcel Storybook'};
 const buttonProps = {
@@ -78,4 +79,5 @@ export default [
   PopupInputFocusStory,
   PopupElementStory,
   CellTablePopupStory,
+  NestedLockScrollStory,
 ];
