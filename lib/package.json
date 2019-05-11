@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "reactjs-popup.cjs.js",
   "module": "reactjs-popup.es.js",
@@ -9,7 +9,8 @@
   "jsdelivr": "reactjs-popup.js",
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "prop-types": "^15.6.0"
   },
   "jest": {
     "testEnvironment": "jsdom"
