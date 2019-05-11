@@ -202,6 +202,7 @@ export default class Popup extends React.PureComponent {
       offsetY,
       keepTooltipInside,
       arrowStyle,
+      className,
     } = this.props;
     const helper = this.HelperEl.getBoundingClientRect();
     const trigger = this.TriggerEl.getBoundingClientRect();
@@ -232,6 +233,10 @@ export default class Popup extends React.PureComponent {
       this.ArrowEl.style['-webkit-transform'] = cords.transform;
       this.ArrowEl.style.top = arrowStyle.top || cords.arrowTop;
       this.ArrowEl.style.left = arrowStyle.left || cords.arrowLeft;
+      this.ArrowEl.classList.add(`popup-arrow`);
+      if (className !== '') {
+        this.ArrowEl.classList.add(`${className}-arrow`);
+      }
     }
     if (
       /* eslint-disable-next-line no-undef */
@@ -254,7 +259,9 @@ export default class Popup extends React.PureComponent {
       : styles.popupContent.tooltip;
 
     const childrenElementProps = {
-      className: `popup-content ${className}`,
+      className: `popup-content ${
+        className !== '' ? `${className}-content` : ''
+      }`,
       style: Object.assign({}, popupContentStyle, contentStyle),
       ref: this.setContentRef,
       onClick: e => {
@@ -314,7 +321,13 @@ export default class Popup extends React.PureComponent {
   };
 
   render() {
-    const {overlayStyle, closeOnDocumentClick, on, trigger} = this.props;
+    const {
+      overlayStyle,
+      closeOnDocumentClick,
+      className,
+      on,
+      trigger,
+    } = this.props;
     const {modal, isOpen} = this.state;
     const overlay = isOpen && !(on.indexOf('hover') >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
@@ -334,7 +347,9 @@ export default class Popup extends React.PureComponent {
       overlay && (
         <div
           key="O"
-          className="popup-overlay"
+          className={`popup-overlay ${
+            className !== '' ? `${className}-overlay` : ''
+          }`}
           style={Object.assign({}, ovStyle, overlayStyle)}
           onClick={closeOnDocumentClick ? this.closePopup : undefined}>
           {modal && this.renderContent()}
