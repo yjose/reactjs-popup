@@ -16,6 +16,7 @@ const POSITION_TYPES = [
   'left top',
   'left center',
   'left bottom',
+  'center center',
 ];
 
 export default class Popup extends React.PureComponent {
@@ -100,6 +101,7 @@ export default class Popup extends React.PureComponent {
       /* eslint-disable-next-line no-undef */
       window.removeEventListener('resize', this.repositionOnResize);
     }
+    this.resetScroll();
   }
 
   repositionOnResize = () => {

@@ -14,7 +14,11 @@ import ControlledTooltip from './ControlledTooltip';
 import BoundedTooltip from './BoundedTooltip';
 
 import CellTablePopupStory from './CellTablePopup';
+
 import PopupHandleEventStory from './PopupHandleEvent';
+
+import NestedLockScrollStory from './NestedLockScroll';
+
 
 const storyProps = {text: 'Parcel Storybook'};
 const buttonProps = {
@@ -80,4 +84,5 @@ export default [
   PopupElementStory,
   CellTablePopupStory,
   PopupHandleEventStory,
+  NestedLockScrollStory,
 ];
