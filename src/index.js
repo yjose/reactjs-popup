@@ -16,6 +16,7 @@ const POSITION_TYPES = [
   'left top',
   'left center',
   'left bottom',
+  'center center',
 ];
 
 export default class Popup extends React.PureComponent {

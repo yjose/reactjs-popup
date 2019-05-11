@@ -72,6 +72,15 @@ const ToolTipPositions = () => (
 		>
 			<Card title="Left Bottom" />
 		</Popup>
+
+		<Popup
+			trigger={<button type="button" className="button"> Center Center </button>}
+			position="center center"
+			on="hover"
+			arrow={false}
+		>
+			<Card title="Center Center" />
+		</Popup>
 	</div>
 )
 const Card = ({ title }) => (

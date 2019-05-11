@@ -5,7 +5,8 @@ declare module 'reactjs-popup' {
   type Position = 'top left' | 'top center' | 'top right' |
                   'right top' | 'right center' | 'right bottom' |
                   'bottom left' | 'bottom center' | 'bottom right' |
-                  'left top' | 'left center' | 'left bottom';
+                  'left top' | 'left center' | 'left bottom' |
+                  'center center';
 
   interface Props {
     trigger?: JSX.Element | ((isOpen: boolean) => JSX.Element);
