@@ -43,6 +43,18 @@ body {
   text-decoration: none;
   float: right;
 }
+.next-prev{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.next-prev a{
+  text-decoration: none;
+  color:'#663399'
+}
 pre[class*='language-'] {
   background-color: #bfbfbe61 !important;
 }
