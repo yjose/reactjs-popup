@@ -31,6 +31,7 @@ declare module 'reactjs-popup' {
     contentStyle?: object;
     overlayStyle?: object;
     arrowStyle?: object;
+    className?: string;
     keepTooltipInside?: boolean | string;
   }
 
