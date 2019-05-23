@@ -128,6 +128,28 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
 
 ...we are all made of stars [![Star on GitHub][github-star-badge]][github-star] !
 
+## Maintainers
+
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/yjose">
+          <img width="150" height="150" src="https://github.com/yjose.png?v=3&s=150">
+          </br>
+          Youssouf EL Azizi
+        </a>
+        <div>
+          <a href="https://twitter.com/ElaziziYoussouf">
+            <img src="https://img.shields.io/twitter/follow/ElaziziYoussouf.svg?style=social&label=Follow" />
+          </a>
+        </div>
+      </td>
+    </tr>
+  <tbody>
+</table>
+
 [build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square
 [build]: https://travis-ci.org/yjose/reactjs-popup
 [version-badge]: https://img.shields.io/npm/v/reactjs-popup.svg?style=flat-square
