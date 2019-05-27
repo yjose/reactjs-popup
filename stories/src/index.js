@@ -13,6 +13,7 @@ import ControlledModal from './ControlledModal';
 import ControlledTooltip from './ControlledTooltip';
 import BoundedTooltip from './BoundedTooltip';
 import PopupStyle from './PopupStyle';
+import PositionRelativeStory from './PositionRelative';
 
 import CellTablePopupStory from './CellTablePopup';
 
@@ -88,4 +89,5 @@ export default [
   PopupHandleEventStory,
   NestedLockScrollStory,
   PopupStyle,
+  PositionRelativeStory,
 ];

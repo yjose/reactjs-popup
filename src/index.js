@@ -58,6 +58,8 @@ export default class Popup extends React.PureComponent {
       isOpen: open || defaultOpen,
       modal: modal ? true : !trigger,
       // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't exist
+      triggerPosition: '',
+      // Store the initial trigger element position to reset it on closePopup
     };
   }
 
@@ -72,6 +74,11 @@ export default class Popup extends React.PureComponent {
       /* eslint-disable-next-line no-undef */
       window.addEventListener('resize', this.repositionOnResize);
     }
+    /* eslint-disable-next-line no-undef */
+    const triggerPosition = window
+      .getComputedStyle(this.TriggerEl, null)
+      .getPropertyValue('position');
+    this.setState({triggerPosition});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -148,12 +155,13 @@ export default class Popup extends React.PureComponent {
 
   closePopup = e => {
     const {onClose} = this.props;
-    const {isOpen} = this.state;
+    const {isOpen, triggerPosition} = this.state;
     if (!isOpen) return;
     onClose(e);
     this.setState({isOpen: false}, () => {
       this.resetScroll();
     });
+    this.TriggerEl.style.position = triggerPosition;
   };
 
   onMouseEnter = () => {
