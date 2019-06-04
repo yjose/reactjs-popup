@@ -65,6 +65,7 @@ export default class Popup extends React.PureComponent {
 
   componentDidMount() {
     const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
+    const {modal} = this.state;
     if (defaultOpen) this.setPosition();
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
@@ -74,11 +75,14 @@ export default class Popup extends React.PureComponent {
       /* eslint-disable-next-line no-undef */
       window.addEventListener('resize', this.repositionOnResize);
     }
-    /* eslint-disable-next-line no-undef */
-    const triggerPosition = window
-      .getComputedStyle(this.TriggerEl, null)
-      .getPropertyValue('position');
-    this.setState({triggerPosition});
+
+    if (!modal) {
+      /* eslint-disable-next-line no-undef */
+      const triggerPosition = window
+        .getComputedStyle(this.TriggerEl, null)
+        .getPropertyValue('position');
+      this.setState({triggerPosition});
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -155,13 +159,16 @@ export default class Popup extends React.PureComponent {
 
   closePopup = e => {
     const {onClose} = this.props;
-    const {isOpen, triggerPosition} = this.state;
+    const {isOpen, triggerPosition, modal} = this.state;
     if (!isOpen) return;
     onClose(e);
     this.setState({isOpen: false}, () => {
       this.resetScroll();
     });
-    this.TriggerEl.style.position = triggerPosition;
+    /* eslint-disable-next-line no-undef */
+    if (!modal) {
+      this.TriggerEl.style.position = triggerPosition;
+    }
   };
 
   onMouseEnter = () => {
