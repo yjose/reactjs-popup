@@ -35,15 +35,14 @@ const Layout = ({children}) => (
         <div className="main">
           <Sidebar pages={data.pages.edges} />
           {children}
-          <div style={{width: '220px'}}>
-            <div id="carbon_container">
-              <script
-                async
-                type="text/javascript"
-                src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom"
-                id="_carbonads_js"
-              />
-            </div>
+
+          <div id="carbon_container">
+            <script
+              async
+              type="text/javascript"
+              src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom"
+              id="_carbonads_js"
+            />
           </div>
         </div>
         <Footer />

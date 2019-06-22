@@ -126,7 +126,6 @@ pre {
 #carbonads {
   --width: 180px;
   --font-size: 14px;
-  margin-top: 30px;
 }
 
 #carbonads {
@@ -197,12 +196,18 @@ pre {
   font-size: 9px;
   line-height: 0;
 }
+#carbon_container {
+  width: 220px;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 759px) {
   #carbonads {
     float: none;
     margin: 0 auto;
     max-width: 330px;
+  }
+  #carbon_container {
+    width: 330px;
   }
   #carbonads span {
     position: relative;

@@ -46,14 +46,6 @@ const Sidebar = () => (
           <div className="sidebar website-sidebar" key="SW">
             <div className="sticky-sidebar">
               <Menu routes={routes} />
-              <div id="carbon_container">
-                <script
-                  async
-                  type="text/javascript"
-                  src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom"
-                  id="_carbonads_js"
-                />
-              </div>
             </div>
           </div>
           <div className="sidebar mobile-sidebar" key="SM">
