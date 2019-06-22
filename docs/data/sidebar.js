@@ -5,57 +5,81 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const data = [
-  {
-    id: 'welcome',
-    label: 'Home',
-  },
-  {
-    id: 'getting-started',
-    label: 'Getting Started',
-  },
-  {
-    id: 'component-api',
-    label: 'Component Api',
-  },
+module.exports = {
+  docs: [
+    {
+      id: 'welcome',
+      label: 'Home',
+    },
+    {
+      id: 'getting-started',
+      label: 'Getting Started',
+    },
+    {
+      id: 'component-api',
+      label: 'Component Api',
+    },
 
-  {
-    id: 'use-cases',
-    label: 'Use Cases',
-    children: [
-      {
-        id: 'modal',
-        label: 'React Modal',
-      },
-      {
-        id: 'tooltip',
-        label: 'React Tooltip',
-      },
-      {
-        id: 'menu',
-        label: 'React Menu',
-      },
-    ],
-  },
-  {
-    id: 'advanced-use',
-    label: 'Adcanced use',
-    children: [
-      {
-        id: 'controlled',
-        label: 'Controlled Popup',
-      },
-      {
-        id: 'uncontrolled',
-        label: 'UnControlled Popup',
-      },
-    ],
-  },
+    {
+      id: 'use-cases',
+      label: 'Use Cases',
+      children: [
+        {
+          id: 'modal',
+          label: 'React Modal',
+        },
+        {
+          id: 'tooltip',
+          label: 'React Tooltip',
+        },
+        {
+          id: 'menu',
+          label: 'React Menu',
+        },
+      ],
+    },
+    {
+      id: 'advanced-use',
+      label: 'Adcanced use',
+      children: [
+        {
+          id: 'controlled',
+          label: 'Controlled Popup',
+        },
+        {
+          id: 'nested-popup',
+          label: 'Nested Popup',
+        },
+      ],
+    },
+    {
+      id: 'styling',
+      label: 'Styling',
+      children: [
+        {
+          id: 'js-styling',
+          label: 'Using Js',
+        },
+        {
+          id: 'css-styling',
+          label: 'Using CSS',
+        },
+      ],
+    },
 
-  {
-    id: 'contributing',
-    label: 'Contributing',
-  },
-];
-
-export default data;
+    {
+      id: 'contributing',
+      label: 'Contributing',
+      children: [
+        {
+          id: 'how-to-contribute',
+          label: 'How to contribute',
+        },
+        {
+          id: 'road-map',
+          label: 'Road Map',
+        },
+      ],
+    },
+  ],
+};

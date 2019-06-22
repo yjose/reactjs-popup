@@ -6,6 +6,12 @@ const Cover = () => (
     <p className="description">
       React Popup Component - Modals,Tooltips and Menus —  All in one
     </p>
+    <p
+      style={{
+        fontSize: '50px',
+      }}>
+      🎀
+    </p>
     <div className="badges">
       <a href="https://travis-ci.org/yjose/reactjs-popup">
         <img

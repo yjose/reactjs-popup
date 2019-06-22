@@ -1,11 +1,15 @@
 import React from 'react';
 import {StaticQuery, graphql} from 'gatsby';
-import Cover from './Cover';
-import Sidebar from './Sidebar';
-import './css/layout.css';
-import './css/app.css';
-import './css/examples.css';
-import './css/sidebar.css';
+import Sidebar from '../Sidebar';
+
+import NavBar from '../NavBar';
+import Footer from '../Footer';
+
+// import './css/layout.css';
+
+// import './css/sidebar.css';
+import 'infima/dist/css/default/default.css';
+import './index.css';
 
 const Layout = ({children}) => (
   <StaticQuery
@@ -26,17 +30,17 @@ const Layout = ({children}) => (
       }
     `}
     render={data => (
-      <>
-        <div className="container">
-          <Cover />
-          <div className="main">
-            <Sidebar pages={data.pages.edges} />
-            {children}
-          </div>
+      <div className="main-container">
+        <NavBar />
+        <div className="main">
+          <Sidebar pages={data.pages.edges} />
+          {children}
+          <div style={{width: '220px'}} />
         </div>
-      </>
+        <Footer />
+      </div>
     )}
   />
 );
 
-export {Layout};
+export default Layout;
