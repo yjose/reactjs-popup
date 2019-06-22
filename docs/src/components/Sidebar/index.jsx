@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import {StaticQuery, graphql, Link} from 'gatsby';
+import {StaticQuery, graphql} from 'gatsby';
 import {BurgerIcon, normalizeRoutes, Menu} from './Utils';
 
 import sidebar from '../../../data/sidebar';

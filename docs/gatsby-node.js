@@ -5,7 +5,7 @@ const sidebar = require('./data/sidebar');
 const getUrlFromPath = p => p.replace(new RegExp(' ', 'g'), '-').toLowerCase();
 
 exports.createPages = ({graphql, actions}) => {
-  const {createPage, createRedirect} = actions;
+  const {createPage} = actions;
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
