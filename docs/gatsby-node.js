@@ -40,6 +40,7 @@ exports.createPages = ({graphql, actions}) => {
             return [...a, ...b.children.reduce((e, f) => [...e, f.id], [])];
           return [...a, b.id];
         }, []);
+
         const pages = dd.map(
           n => edges.filter(({node}) => node.frontmatter.id === n)[0],
         );
