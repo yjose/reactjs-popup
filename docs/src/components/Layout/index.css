@@ -36,6 +36,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+.index-hero-logo {
+  width: 150px;
+}
+.index-hero-inner {
+  max-width: 1100px;
+}
 
 .main {
   display: flex;

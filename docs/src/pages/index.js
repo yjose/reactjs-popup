@@ -1,21 +1,19 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import Layout from '../components/Layout';
+import img from '../../static/logo.png';
 
 export default () => (
   <Layout>
     <div className="index-hero">
       <div className="index-hero-inner">
         <h1 className="index-hero-project-tagline">
-          <span
-            role="img"
-            className="index-hero-logo"
-            style={{
-              fontSize: '200px',
-            }}>
-            🎀
-          </span>
-          React Popup Component - Modals,Tooltips and Menus —  All in one
+          <img role="img" className="index-hero-logo" src={img} />A React
+          Component to Create{' '}
+          <span className="index-hero-project-keywords">Modals,Tooltips</span>{' '}
+          and <span className="index-hero-project-keywords">Menus</span>
+          <br />
+           —  All in one  — 
         </h1>
         <div className="index-ctas">
           <Link className="index-ctas-get-started-button" to="/home/">
@@ -61,10 +59,53 @@ export default () => (
         </div>
       </div>
     </div>
+    <div className="announcement">
+      <div className="announcement-inner">
+        We're happy to see the{' '}
+        <a href="https://npmjs.com/package/reactjs-popup"> reactjs-popup </a>{' '}
+        package hits{' '}
+        <a href="https://npmjs.com/package/reactjs-popup">
+          4 millions downloads{' '}
+        </a>{' '}
+        on NPM
+      </div>
+    </div>
 
     <div className="section">
       <div className="container text--center margin-bottom--xl">
         <div className="row">
+          <div className="col">
+            <span
+              alt="Ready for Translations"
+              className="featureImage"
+              style={{
+                fontSize: '100px',
+              }}>
+              🏋️
+            </span>
+
+            <h3>All in one</h3>
+            <p className="padding-horiz--md">
+              Create Modals,Tooltips and Menus with the same component API and
+              Full style customization
+            </p>
+          </div>
+          <div className="col">
+            <span
+              alt="Ready for Translations"
+              className="featureImage"
+              style={{
+                fontSize: '100px',
+              }}>
+              💪
+            </span>
+
+            <h3>Full Control</h3>
+            <p className="padding-horiz--md">
+              Function as children pattern to take control over your popup
+              anywhere in your code.
+            </p>
+          </div>
           <div className="col">
             <span
               alt="Ready for Translations"
@@ -78,73 +119,6 @@ export default () => (
             <h3>Supper Small</h3>
             <p className="padding-horiz--md">
               All these clocks in at around 3 kB zipped.
-            </p>
-          </div>
-          <div className="col">
-            <span
-              alt="Ready for Translations"
-              className="featureImage"
-              style={{
-                fontSize: '100px',
-              }}>
-              🏋️
-            </span>
-
-            <h3>All in one</h3>
-            <p className="padding-horiz--md">
-              Modal, Tooltip, Menu : All in one{' '}
-            </p>
-          </div>
-          <div className="col">
-            <span
-              alt="Ready for Translations"
-              className="featureImage"
-              style={{
-                fontSize: '100px',
-              }}>
-              💪
-            </span>
-
-            <h3>Full Control</h3>
-            <p className="padding-horiz--md">
-              Function as children pattern to take control over your popup
-              anywhere in your code.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="container text--center">
-        <div className="row">
-          <div className="col col--4 col--offset-2">
-            <span
-              alt="Ready for Translations"
-              className="featureImage"
-              style={{
-                fontSize: '100px',
-              }}>
-              💪
-            </span>
-
-            <h3>Full Control</h3>
-            <p className="padding-horiz--md">
-              Function as children pattern to take control over your popup
-              anywhere in your code.
-            </p>
-          </div>
-          <div className="col col--4">
-            <span
-              alt="Ready for Translations"
-              className="featureImage"
-              style={{
-                fontSize: '100px',
-              }}>
-              💪
-            </span>
-
-            <h3>Full Control</h3>
-            <p className="padding-horiz--md">
-              Function as children pattern to take control over your popup
-              anywhere in your code.
             </p>
           </div>
         </div>

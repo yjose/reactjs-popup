@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
+import img from '../../../static/logo.png';
 
 import './index.css';
 
@@ -30,14 +31,8 @@ export default () => (
           </svg>
         </div>
         <Link aria-current="page" className="navbar__brand" to="/">
-          <span
-            role="img"
-            className="navbar__logo"
-            style={{
-              fontSize: '25px',
-            }}>
-            🎀
-          </span>
+          <img role="img" className="navbar__logo" src={img} />
+
           <strong>Reactjs-Popup</strong>
         </Link>
         <Link
