@@ -32,19 +32,7 @@ const Layout = ({children}) => (
     render={data => (
       <div className="main-container">
         <NavBar />
-        <div className="main">
-          <Sidebar pages={data.pages.edges} />
-          {children}
-
-          <div id="carbon_container">
-            <script
-              async
-              type="text/javascript"
-              src="//cdn.carbonads.com/carbon.js?serve=CK7D52QE&placement=react-popupelazizicom"
-              id="_carbonads_js"
-            />
-          </div>
-        </div>
+        {children}
         <Footer />
       </div>
     )}
