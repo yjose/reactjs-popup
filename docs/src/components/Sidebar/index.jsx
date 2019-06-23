@@ -7,9 +7,10 @@ import sidebar from '../../../data/sidebar';
 import './index.css';
 
 const contentStyle = {
-  background: 'rgba(255,255,255,0',
+  background: 'rgba(255,255,255,0)',
   width: 'auto',
   border: 'none',
+  overflow: 'scroll',
 };
 
 const Sidebar = () => (

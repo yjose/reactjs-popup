@@ -4,7 +4,7 @@
 }
 .sticky-sidebar {
   position: sticky;
-  top: 20px;
+  top: 100px;
   width: 100%;
 }
 .sticky-sidebar .menu {
@@ -28,6 +28,7 @@
     position: relative;
     top: 0px;
     font-size: 20px;
+    max-height: 100vh;
   }
   .menu a:after {
     display: none;
