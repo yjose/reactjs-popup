@@ -1,0 +1,245 @@
+:root {
+  --ifm-font-size-base: 17px !important;
+}
+
+body {
+  margin: 0px;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.cover {
+  text-align: center;
+  padding: 40px;
+  border-bottom: 1px solid rgb(207, 206, 206);
+}
+.title {
+  font-size: 50px;
+  color: #000000;
+}
+.badges {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.badges img {
+  margin: 0px 5px;
+}
+.description {
+  color: rgb(133, 132, 132);
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.index-hero-logo {
+  width: 150px;
+}
+.index-hero-inner {
+  max-width: 1100px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  width: 100%;
+  flex-wrap: nowrap;
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 100px;
+}
+.footer {
+  margin-top: 20px;
+}
+
+.markdown-body {
+  min-height: 400px;
+  position: relative;
+}
+.edit-page {
+  position: absolute;
+  padding: 5px;
+  font-size: 0.7rem;
+  right: 0;
+  margin-right: 5px;
+  border-radius: 0.25rem;
+  color: var(--ifm-link-color);
+  cursor: pointer;
+  line-height: 20px;
+  border: 1px solid var(--ifm-link-color);
+  text-decoration: none;
+}
+.next-prev {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.next-prev a {
+  text-decoration: none;
+  color: "#663399";
+}
+pre[class*="language-"] {
+  background-color: #bfbfbe61 !important;
+}
+pre {
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    flex: 1;
+    max-width: calc(100% - 220px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .main {
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .markdown-body {
+    padding: 5px 2%;
+    max-width: 96%;
+  }
+}
+
+.loader {
+  border: 6px solid #bebebe; /* Light grey */
+  border-top: 6px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#carbonads {
+  --width: 180px;
+  --font-size: 14px;
+}
+
+#carbonads {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+  max-width: var(--width);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: var(--width);
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: var(--width) !important;
+  width: var(--width);
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 10px var(--font-size);
+  background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 5px,
+      hsla(0, 0%, 0%, 0.025) 5px,
+      hsla(0, 0%, 0%, 0.025) 10px
+    )
+    hsla(203, 11%, 95%, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 0;
+}
+#carbon_container {
+  width: 220px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  #carbonads {
+    float: none;
+    margin: 0 auto;
+    max-width: 330px;
+  }
+  #carbon_container {
+    width: 330px;
+  }
+  #carbonads span {
+    position: relative;
+  }
+  #carbonads > span {
+    max-width: none;
+  }
+  .carbon-img {
+    float: left;
+    margin: 0;
+  }
+
+  .carbon-img img {
+    max-width: 130px !important;
+  }
+  .carbon-text {
+    float: left;
+    margin-bottom: 0;
+    padding: 8px 20px;
+    text-align: left;
+    max-width: calc(100% - 130px - 3em);
+  }
+  .carbon-poweredby {
+    left: 130px;
+    bottom: 0;
+    display: block;
+    width: 100%;
+  }
+}

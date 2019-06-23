@@ -1,5 +1,6 @@
 const path = require('path');
 const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
+const sidebar = require('./data/sidebar');
 
 const getUrlFromPath = p => p.replace(new RegExp(' ', 'g'), '-').toLowerCase();
 
@@ -15,9 +16,11 @@ exports.createPages = ({graphql, actions}) => {
                 node {
                   id
                   frontmatter {
+                    id
                     path
                     title
                     position
+                    redirects
                   }
                   code {
                     scope
@@ -32,35 +35,22 @@ exports.createPages = ({graphql, actions}) => {
           reject(result.errors);
         }
         const {edges} = result.data.allMdx;
-        console.log(edges);
+        const dd = sidebar.docs.reduce((a, b) => {
+          if (b.children)
+            return [...a, ...b.children.reduce((e, f) => [...e, f.id], [])];
+          return [...a, b.id];
+        }, []);
 
-        edges.forEach(async ({node}, i) => {
-          const prev = i === 0 ? null : edges[i - 1].node;
-          const next = i === edges.length - 1 ? null : edges[i + 1].node;
-          if (node.frontmatter.path === 'Home') {
-            createPage({
-              path: '/',
-              component: componentWithMDXScope(
-                path.resolve('./src/template/Template.js'),
-                node.code.scope,
-              ),
-              context: {
-                id: node.id,
-                name: node.frontmatter.path,
-                prev: prev && {
-                  path: getUrlFromPath(prev.frontmatter.path),
-                  name: prev.frontmatter.path,
-                },
-                next: next && {
-                  path: next && getUrlFromPath(next.frontmatter.path),
-                  name: next.frontmatter.path,
-                },
-              },
-            });
-          }
+        const pages = dd.map(
+          n => edges.filter(({node}) => node.frontmatter.id === n)[0],
+        );
+
+        pages.forEach(async ({node}, i) => {
+          const prev = i === 0 ? null : pages[i - 1].node;
+          const next = i === pages.length - 1 ? null : pages[i + 1].node;
+
           createPage({
             path: getUrlFromPath(node.frontmatter.path),
-
             component: componentWithMDXScope(
               path.resolve('./src/template/Template.js'),
               node.code.scope,
@@ -78,6 +68,30 @@ exports.createPages = ({graphql, actions}) => {
               },
             },
           });
+
+          if (node.frontmatter.redirects) {
+            node.frontmatter.redirects.forEach(fromPath => {
+              createPage({
+                path: getUrlFromPath(fromPath),
+                component: componentWithMDXScope(
+                  path.resolve('./src/template/Template.js'),
+                  node.code.scope,
+                ),
+                context: {
+                  id: node.id,
+                  name: node.frontmatter.path,
+                  prev: prev && {
+                    path: getUrlFromPath(prev.frontmatter.path),
+                    name: prev.frontmatter.path,
+                  },
+                  next: next && {
+                    path: getUrlFromPath(next.frontmatter.path),
+                    name: next.frontmatter.path,
+                  },
+                },
+              });
+            });
+          }
         });
       }),
     );

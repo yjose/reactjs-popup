@@ -17,9 +17,12 @@
     "gatsby-plugin-nprogress": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sass": "^2.1.0",
     "gatsby-remark-prismjs": "^3.0.2",
     "gatsby-source-filesystem": "^2.0.3",
     "gatsby-transformer-remark": "^2.1.7",
+    "infima": "^0.2.0-alpha.2",
+    "node-sass": "^4.12.0",
     "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
@@ -41,9 +44,11 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-app": "^4.0.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-hooks": "^1.6.0"
   },
   "resolutions": {
     "terser": "3.14.*"
