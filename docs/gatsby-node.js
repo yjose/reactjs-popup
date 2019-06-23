@@ -41,14 +41,18 @@ exports.createPages = ({graphql, actions}) => {
           return [...a, b.id];
         }, []);
 
-        const pages = edges.sort(
-          ({node: a}, {node: b}) =>
-            dd.indexOf(a.frontmatter.id) > dd.indexOf(b.frontmatter.id),
-        );
+        edges.forEach(async ({node}, i) => {
+          const prev =
+            i === 0
+              ? null
+              : edges.filter(({node}) => node.frontmatter.id === dd[i - 1])[0]
+                  .node;
+          const next =
+            i === edges.length - 1
+              ? null
+              : edges.filter(({node}) => node.frontmatter.id === dd[i + 1])[0]
+                  .node;
 
-        pages.forEach(async ({node}, i) => {
-          const prev = i === 0 ? null : edges[i - 1].node;
-          const next = i === edges.length - 1 ? null : edges[i + 1].node;
           createPage({
             path: getUrlFromPath(node.frontmatter.path),
             component: componentWithMDXScope(
