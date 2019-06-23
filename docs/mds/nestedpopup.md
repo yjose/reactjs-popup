@@ -51,3 +51,47 @@ const NestedToolTip = () => (
   </Popup>
 );
 ```
+
+## Bounded React Tooltip
+
+reactjs-popup supports tooltip bounded inside an element(defaults to window)
+
+<BoundedTooltip />
+
+```jsx
+import React from "react";
+import Popup from "reactjs-popup";
+
+const BoundedTooltip = () => (
+  <div
+    style={{ height: 200, width: 400, border: "1px solid #ccc" }}
+    className={"tooltipBoundary"}
+  >
+    <Popup
+      trigger={<button className="button"> Trigger 1 </button>}
+      position={["top center", "bottom right", "bottom left"]}
+      closeOnDocumentClick
+      keepTooltipInside=".tooltipBoundary"
+    />
+  </div>
+);
+```
+
+## Play with React Tooltip
+
+```jsx
+/* react-live */
+
+const Tooltip = () => (
+  <Popup
+    trigger={open => (
+      <button className="button">Trigger - {open ? "Opened" : "Closed"}</button>
+    )}
+    position="right center"
+    closeOnDocumentClick
+  >
+    <span> Popup content </span>
+  </Popup>
+);
+render(<Tooltip />);
+```
