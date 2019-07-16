@@ -40,7 +40,7 @@ module.exports = {
     },
     {
       id: 'advanced-use',
-      label: 'Adcanced use',
+      label: 'Advanced use',
       children: [
         {
           id: 'controlled',
