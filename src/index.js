@@ -351,7 +351,7 @@ export default class Popup extends React.PureComponent {
             className !== '' ? `${className}-overlay` : ''
           }`}
           style={Object.assign({}, ovStyle, overlayStyle)}
-          onClick={closeOnDocumentClick ? this.closePopup : undefined}>
+          onClickCapture={closeOnDocumentClick ? this.closePopup : undefined}>
           {modal && this.renderContent()}
         </div>
       ),
