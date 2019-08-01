@@ -1,6 +1,6 @@
 {
   "name": "reactjs-popup",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "reactjs-popup.cjs.js",
   "module": "reactjs-popup.es.js",
