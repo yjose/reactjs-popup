@@ -1,7 +1,7 @@
 declare module 'reactjs-popup' {
   import * as React from 'react';
 
-  type EventType = 'hover' | 'click' | 'focus';
+  type EventType = 'hover' | 'click' | 'focus' | 'right-click';
   type Position = 'top left' | 'top center' | 'top right' |
                   'right top' | 'right center' | 'right bottom' |
                   'bottom left' | 'bottom center' | 'bottom right' |

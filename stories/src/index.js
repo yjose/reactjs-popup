@@ -19,6 +19,7 @@ import CellTablePopupStory from './CellTablePopup';
 import PopupHandleEventStory from './PopupHandleEvent';
 
 import NestedLockScrollStory from './NestedLockScroll';
+import PopupOnRightClickStory from './PopupOnRightClick';
 
 const storyProps = {text: 'Parcel Storybook'};
 const buttonProps = {
@@ -88,4 +89,5 @@ export default [
   PopupHandleEventStory,
   NestedLockScrollStory,
   PopupStyle,
+  PopupOnRightClickStory,
 ];

@@ -168,6 +168,11 @@ export default class Popup extends React.PureComponent {
     this.timeOut = setTimeout(() => this.closePopup(), mouseLeaveDelay);
   };
 
+  onContextMenu = e => {
+    e.preventDefault();
+    this.togglePopup(e);
+  };
+
   getTooltipBoundary = () => {
     const {keepTooltipInside} = this.props;
     let boundingBox = {
@@ -284,6 +289,9 @@ export default class Popup extends React.PureComponent {
       switch (onAsArray[i]) {
         case 'click':
           triggerProps.onClick = this.togglePopup;
+          break;
+        case 'right-click':
+          triggerProps.onContextMenu = this.onContextMenu;
           break;
         case 'hover':
           triggerProps.onMouseEnter = this.onMouseEnter;
