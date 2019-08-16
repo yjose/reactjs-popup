@@ -1,14 +1,15 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom';
 
-export default class Ref extends React.PureComponent {
-  componentDidMount() {
-    const {innerRef} = this.props;
-    if (innerRef) innerRef(findDOMNode(this));
-  }
+export default function Ref(props) {
+  const {innerRef} = props;
 
-  render() {
-    const {children} = this.props;
-    return React.Children.only(children);
-  }
+  return React.Children.map(props.children, child =>
+    React.cloneElement(child, {
+      ref: node => {
+        if (typeof innerRef === 'function') {
+          innerRef(node);
+        }
+      },
+    }),
+  );
 }

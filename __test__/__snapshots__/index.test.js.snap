@@ -39,7 +39,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 1
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -144,7 +144,7 @@ exports[`it should close on click outside popup (closeOnDocumentClick = true ) 2
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -228,7 +228,7 @@ exports[`it should render correctly on click and will update the the popup conte
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -338,7 +338,7 @@ exports[`it should render correctly on click and will update the the popup conte
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -384,7 +384,7 @@ exports[`it should render correctly on click and will update the trigger text   
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
         Button nested 
@@ -487,7 +487,7 @@ exports[`it should render correctly on click and will update the trigger text   
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
         Button nested 
@@ -537,7 +537,7 @@ exports[`it should rendered in the bottom center position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -642,7 +642,7 @@ exports[`it should rendered in the bottom left position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -747,7 +747,7 @@ exports[`it should rendered in the bottom right position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -852,7 +852,7 @@ exports[`it should rendered in the left bottom position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -957,7 +957,7 @@ exports[`it should rendered in the left center position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1062,7 +1062,7 @@ exports[`it should rendered in the left top position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1167,7 +1167,7 @@ exports[`it should rendered in the right bottom position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1272,7 +1272,7 @@ exports[`it should rendered in the right center position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1377,7 +1377,7 @@ exports[`it should rendered in the right top position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1482,7 +1482,7 @@ exports[`it should rendered in the top center position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1587,7 +1587,7 @@ exports[`it should rendered in the top left position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1692,7 +1692,7 @@ exports[`it should rendered in the top right position   1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1796,7 +1796,7 @@ exports[`it shouldn't close on click outside popup  1`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
@@ -1900,7 +1900,7 @@ exports[`it shouldn't close on click outside popup  2`] = `
       key="R"
     >
       <button
-        key="T"
+        key=".$T"
         onClick={[Function]}
       >
          Trigger
