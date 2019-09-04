@@ -2,12 +2,12 @@ import React from 'react';
 import {Centred} from 'story-router';
 import Popup from '../../src/';
 
-const Button = props => (
-  <button {...props}>
+const Button = React.forwardRef((props, ref) => (
+  <button {...props} ref={ref}>
     Button nested with offsetX
     {props.open ? 'open' : 'close'}{' '}
   </button>
-);
+));
 
 const PopupElement = props => (
   <div>

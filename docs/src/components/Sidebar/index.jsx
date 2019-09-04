@@ -27,9 +27,6 @@ const Sidebar = () => (
                 title
                 position
               }
-              code {
-                scope
-              }
             }
           }
         }

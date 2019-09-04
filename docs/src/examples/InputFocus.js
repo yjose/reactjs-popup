@@ -1,6 +1,6 @@
-import React from 'react'
-import Warper from './Warper'
-import Popup from '../../../src/index'
+import React from 'react';
+import Warper from './Warper';
+import Popup from '../../../src/index';
 //
 
 const InputFocus = () => (
@@ -8,10 +8,9 @@ const InputFocus = () => (
     trigger={<input type="text" placeholder="start typing ... " />}
     on="focus"
     position="top center"
-    closeOnDocumentClick
-  >
+    closeOnDocumentClick>
     <span> On focus popup event </span>
   </Popup>
-)
+);
 
-export default Warper(InputFocus)
+export default Warper(InputFocus);

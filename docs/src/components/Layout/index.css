@@ -86,9 +86,7 @@ body {
   text-decoration: none;
   color: "#663399";
 }
-pre[class*="language-"] {
-  background-color: #bfbfbe61 !important;
-}
+
 pre {
   padding: 0;
 }
