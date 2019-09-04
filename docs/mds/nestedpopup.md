@@ -8,8 +8,8 @@ redirects:
   - "use case - Tooltip"
 ---
 
-import NestedToolTip from '../../../src/examples/NestedToolTip.js'
-import BoundedTooltip from '../../../src/examples/BoundedTooltip.js'
+import NestedToolTip from './../src/examples/NestedToolTip.js'
+import BoundedTooltip from './../src/examples/BoundedTooltip.js'
 
 ## Nested React Tooltip
 
@@ -72,15 +72,18 @@ const BoundedTooltip = () => (
       position={["top center", "bottom right", "bottom left"]}
       closeOnDocumentClick
       keepTooltipInside=".tooltipBoundary"
-    />
+    >
+    <span> Tooltip Content </span>
+
+    </Popup>
   </div>
 );
 ```
 
 ## Play with React Tooltip
 
-```jsx
-/* react-live */
+```jsx live=true
+
 
 const Tooltip = () => (
   <Popup

@@ -1,34 +1,14 @@
 import React from 'react';
 import {LiveProvider, LiveEditor, LiveError, LivePreview} from 'react-live';
 import {Link, graphql} from 'gatsby';
-import {MDXProvider} from '@mdx-js/tag';
-import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import {MDXProvider} from '@mdx-js/react';
+import {MDXRenderer} from 'gatsby-plugin-mdx';
+import mdxComponents from '../components/mdx';
+
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
 import SEO from '../components/SEO';
-
-import Popup from '../examples/reactjs-popup.es';
-import Warper from '../examples/Warper';
-
-const MyCodeComponent = ({children}) => {
-  if (children.includes('react-live')) {
-    return (
-      <LiveProvider code={children} scope={{React, Popup, Warper}} noInline>
-        <div className="example-warper">
-          <LivePreview />
-        </div>
-        <LiveError />
-        <LiveEditor />
-      </LiveProvider>
-    );
-  }
-  return (
-    <LiveProvider code={children} scope={{React, Popup, Warper}} noInline>
-      <LiveEditor />
-    </LiveProvider>
-  );
-};
 
 export default ({data: {mdx}, pageContext: {next, prev}}) => (
   <Layout>
@@ -42,9 +22,13 @@ export default ({data: {mdx}, pageContext: {next, prev}}) => (
           EDIT
         </a>
 
-        <MDXProvider components={{code: MyCodeComponent}}>
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        <MDXProvider components={mdxComponents}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
+
+        {/* <MDXProvider components={{code: MyCodeComponent}}>
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </MDXProvider> */}
         <div className="margin-top--xl margin-bottom--lg">
           <nav className="pagination-nav">
             <div className="pagination-nav__item">
@@ -89,10 +73,7 @@ export const pageQuery = graphql`
         path
         title
       }
-      code {
-        body
-        scope
-      }
+      body
     }
   }
 `;

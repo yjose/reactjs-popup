@@ -1,6 +1,5 @@
 import React from 'react';
 import calculatePosition from './Utils';
-import Ref from './Ref';
 import styles from './index.css.js';
 
 const POSITION_TYPES = [
@@ -275,7 +274,7 @@ export default class Popup extends React.PureComponent {
   };
 
   renderTrigger = () => {
-    const triggerProps = {key: 'T'};
+    const triggerProps = {key: 'T' , ref: this.setTriggerRef};
     const {on, trigger} = this.props;
     const {isOpen} = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
@@ -295,10 +294,11 @@ export default class Popup extends React.PureComponent {
       }
     }
 
-    if (typeof trigger === 'function')
-      return React.cloneElement(trigger(isOpen), triggerProps);
 
-    return React.cloneElement(trigger, triggerProps);
+    if (typeof trigger === 'function')
+      return !!trigger && React.cloneElement(trigger(isOpen), triggerProps);
+
+    return !!trigger && React.cloneElement(trigger, triggerProps);
   };
 
   renderContent = () => {
@@ -331,11 +331,7 @@ export default class Popup extends React.PureComponent {
     const overlay = isOpen && !(on.indexOf('hover') >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
-      !!trigger && (
-        <Ref innerRef={this.setTriggerRef} key="R">
-          {this.renderTrigger()}
-        </Ref>
-      ),
+       this.renderTrigger(),
       isOpen && (
         <div
           key="H"
