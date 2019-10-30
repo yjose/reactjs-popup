@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.15.5",
     "@mdx-js/tag": "^0.15.0",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.84",
     "gatsby-cli": "^2.4.3",
     "gatsby-mdx": "^0.2.0",
     "gatsby-plugin-canonical-urls": "^2.0.6",
@@ -18,7 +18,7 @@
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-remark-prismjs": "^3.0.2",
-    "gatsby-source-filesystem": "^2.0.3",
+    "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-remark": "^2.1.7",
     "prismjs": "^1.15.0",
     "react": "^16.5.1",
@@ -26,7 +26,8 @@
     "react-helmet": "^5.2.0",
     "react-live": "1.8.0-0",
     "reactjs-popup": "^1.2.0",
-    "terser": "3.14"
+    "terser": "3.14",
+    "snyk": "^1.239.5"
   },
   "keywords": [
     "gatsby"
@@ -35,7 +36,9 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -51,5 +54,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yjose/reactjs-popup/tree/master/docs"
-  }
+  },
+  "snyk": true
 }
