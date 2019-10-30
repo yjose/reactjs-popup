@@ -1,44 +1,42 @@
-import React from "react";
-import Popup from "../../src/";
-import { Centred } from "story-router";
+import React from 'react';
+import {Centred} from 'story-router';
+import Popup from '../../src/';
 
-const Button = props => (
-  <button {...props}>
-    {" "}
+const Button = React.forwardRef((props, ref) => (
+  <button {...props} ref={ref}>
     Button nested with offsetX
-    {props.open ? "open" : "close"}{" "}
+    {props.open ? 'open' : 'close'}{' '}
   </button>
-);
+));
 
 const PopupElement = props => (
   <div>
-    <div style={{ zIndex: "90" }}>
+    <div style={{zIndex: '90'}}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas s
       <Popup trigger={open => <Button open={open} />} {...props}>
         {close => <Content close={close} />}
       </Popup>
     </div>
 
-    <div style={{ zIndex: "90" }}>
-      {" "}
+    <div style={{zIndex: '90'}}>
+      {' '}
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
       blanditiis reiciendis dolor numquam pariatur facilis, labore, libero nihil
-      asperiores ae facilis{" "}
+      asperiores ae facilis{' '}
     </div>
   </div>
 );
 
-const Content = ({ close }) => (
+const Content = ({close}) => (
   <div>
     sum dolor sit amet consectetur adipisicing elit. Nemo voluptas ex,
-    blanditiis reiciendir voluptas tempora doloremque!{" "}
+    blanditiis reiciendir voluptas tempora doloremque!{' '}
     <button onClick={close}>close</button>
     <Popup
-      on={["click"]}
-      position={"bottom left"}
-      closeOnDocumentClick={true}
-      trigger={<button>Button nested</button>}
-    >
+      on={['click']}
+      position="bottom left"
+      closeOnDocumentClick
+      trigger={<button>Button nested</button>}>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
         ex, blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
@@ -50,13 +48,13 @@ const Content = ({ close }) => (
 );
 
 const PopupElementStory = {
-  name: "Popup trigger function",
+  name: 'Popup trigger function',
   component: Centred(PopupElement),
   props: {
     offsetX: 0,
     offsetY: 0,
-    position: "top left"
-  }
+    position: 'top left',
+  },
 };
 
 export default PopupElementStory;

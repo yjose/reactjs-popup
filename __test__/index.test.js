@@ -7,7 +7,7 @@ import {
   fireEvent,
   render,
   waitForElement,
-} from 'react-testing-library';
+} from '@testing-library/react';
 import 'babel-polyfill';
 
 import Adapter from 'enzyme-adapter-react-16';

@@ -5,7 +5,7 @@
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -135,7 +135,7 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
   <tbody>
     <tr>
       <td align="center">
-        <a href="https://github.com/natterstefan">
+        <a href="https://github.com/yjose">
           <img width="150" height="150" src="https://github.com/yjose.png?v=3&s=150">
           </br>
           Youssouf EL Azizi

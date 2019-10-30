@@ -37,7 +37,8 @@ module.exports = {
     'no-plusplus': 0,
     "react/forbid-prop-types":0,
     "global-require":0,
-    "no-return-assign":0
+    "no-return-assign":0,
+    "react/jsx-props-no-spreading":0
   }
 };
 

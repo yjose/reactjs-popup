@@ -5,7 +5,7 @@
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -127,6 +127,28 @@ The code in this project is licensed under MIT license.
 That's all, thank you for your attention, please [![Star on GitHub][github-star-badge]][github-star] the repo to show your support...
 
 ...we are all made of stars [![Star on GitHub][github-star-badge]][github-star] !
+
+## Maintainers
+
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/yjose">
+          <img width="150" height="150" src="https://github.com/yjose.png?v=3&s=150">
+          </br>
+          Youssouf EL Azizi
+        </a>
+        <div>
+          <a href="https://twitter.com/ElaziziYoussouf">
+            <img src="https://img.shields.io/twitter/follow/ElaziziYoussouf.svg?style=social&label=Follow" />
+          </a>
+        </div>
+      </td>
+    </tr>
+  <tbody>
+</table>
 
 [build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square
 [build]: https://travis-ci.org/yjose/reactjs-popup

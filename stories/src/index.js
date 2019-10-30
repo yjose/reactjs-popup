@@ -1,8 +1,8 @@
 import React from 'react';
-import { Centred } from "story-router";
-import Story from "./Story";
-//import { Centred } from "../../src/utils/";
-
+import {Centred} from 'story-router';
+import Story from './Story';
+// import { Centred } from "../../src/utils/";
+import Popup from '../../src';
 import PopupElementStory from './PopupElement';
 import PopupFuncStory from './PopupFunc';
 import PopupInputFocusStory from './PopupInputFocus';
@@ -12,8 +12,13 @@ import Menu from './Menu';
 import ControlledModal from './ControlledModal';
 import ControlledTooltip from './ControlledTooltip';
 import BoundedTooltip from './BoundedTooltip';
+import PopupStyle from './PopupStyle';
 
 import CellTablePopupStory from './CellTablePopup';
+
+import PopupHandleEventStory from './PopupHandleEvent';
+
+import NestedLockScrollStory from './NestedLockScroll';
 
 const storyProps = {text: 'Parcel Storybook'};
 const buttonProps = {
@@ -34,7 +39,9 @@ export default [
   },
   {
     name: 'without Prop', // without props
-    component: Centred(() => <button>Test without props</button>),
+    component: Centred(() => (
+      <Popup trigger={<button> trigger</button>}> content</Popup>
+    )),
   },
   {
     name: 'Controlled Modal Component', // without props
@@ -78,4 +85,7 @@ export default [
   PopupInputFocusStory,
   PopupElementStory,
   CellTablePopupStory,
+  PopupHandleEventStory,
+  NestedLockScrollStory,
+  PopupStyle,
 ];
