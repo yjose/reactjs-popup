@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import img from '../../../static/logo.png';
+import Support from '../Support';
 
 import './index.css';
 
@@ -29,6 +30,15 @@ export default () => (
           href="https://github.com/yjose/reactjs-popup">
           GitHub
         </a>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+          }}>
+          <Support style={{height: '40px'}} />
+        </div>
       </div>
     </div>
   </nav>

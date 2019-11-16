@@ -6,6 +6,9 @@ title: React Popup Road Map - Modals,Tooltips and Menus —  All in one
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
 
+import Support  from './../src/components/Support.js'
+
+
 ## TO DO Next
 
 - [x] Create repository && publish package
@@ -20,6 +23,8 @@ description: A Simple React popup component.Use it as a tooltip,modal,sub-menu a
 
 ## Show your support!
 
-That's all, thank you for your attention, please star the repo to show your support...
+<br/>
 
-...we are all made of stars star !
+<Support />
+
+
