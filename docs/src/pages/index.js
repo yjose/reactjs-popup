@@ -65,7 +65,7 @@ export default () => (
         <a href="https://npmjs.com/package/reactjs-popup"> reactjs-popup </a>{' '}
         package hits{' '}
         <a href="https://npmjs.com/package/reactjs-popup">
-          4 millions downloads{' '}
+          8 millions downloads{' '}
         </a>{' '}
         on NPM
       </div>
