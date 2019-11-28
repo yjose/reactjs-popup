@@ -182,7 +182,7 @@ export default class Popup extends React.PureComponent {
       if (process.env.NODE_ENV !== 'production') {
         if (selector === null)
           throw new Error(
-            `${keepTooltipInside} selector is not exist : keepTooltipInside must be a valid html selector 'class' or 'Id'  or a boolean value`,
+            `${keepTooltipInside} selector does not exist : keepTooltipInside must be a valid html selector 'class' or 'Id'  or a boolean value`,
           );
       }
       boundingBox = selector.getBoundingClientRect();
