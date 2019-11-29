@@ -35,6 +35,7 @@ export default {
       bottom: '0',
       left: '0',
       right: '0',
+      zIndex: 1
     },
     modal: {
       position: 'fixed',
