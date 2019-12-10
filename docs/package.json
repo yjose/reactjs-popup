@@ -7,7 +7,7 @@
     "@mdx-js/mdx": "^1.4.2",
     "@mdx-js/react": "^1.4.2",
     "@mdx-js/tag": "^0.20.3",
-    "gatsby": "^2.15.6",
+    "gatsby": "^2.18.10",
     "gatsby-cli": "^2.7.44",
     "gatsby-mdx": "^1.0.0",
     "gatsby-plugin-canonical-urls": "^2.1.6",
