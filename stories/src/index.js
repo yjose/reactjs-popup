@@ -1,5 +1,5 @@
 import React from 'react';
-import {Centred} from 'story-router';
+import { Centred } from 'story-router';
 import Story from './Story';
 // import { Centred } from "../../src/utils/";
 import Popup from '../../src';
@@ -19,8 +19,9 @@ import CellTablePopupStory from './CellTablePopup';
 import PopupHandleEventStory from './PopupHandleEvent';
 
 import NestedLockScrollStory from './NestedLockScroll';
+import OverlappingPopups from './OverlappingPopups';
 
-const storyProps = {text: 'Parcel Storybook'};
+const storyProps = { text: 'Parcel Storybook' };
 const buttonProps = {
   name: 'My Button',
   style: {
@@ -63,7 +64,7 @@ export default [
     name: 'Bounded Tooltip',
     component: Centred(BoundedTooltip),
     props: {
-      style: {position: 'absolute', top: 20, left: 20},
+      style: { position: 'absolute', top: 20, left: 20 },
       position: [
         'top left',
         'top center',
@@ -88,4 +89,8 @@ export default [
   PopupHandleEventStory,
   NestedLockScrollStory,
   PopupStyle,
+  {
+    name: 'Overlapping Popups', // without props
+    component: Centred(OverlappingPopups),
+  },
 ];
