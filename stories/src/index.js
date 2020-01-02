@@ -1,7 +1,6 @@
 import React from 'react';
 import {Centred} from 'story-router';
 import Story from './Story';
-// import { Centred } from "../../src/utils/";
 import Popup from '../../src';
 import PopupElementStory from './PopupElement';
 import PopupFuncStory from './PopupFunc';
@@ -13,6 +12,7 @@ import ControlledModal from './ControlledModal';
 import ControlledTooltip from './ControlledTooltip';
 import BoundedTooltip from './BoundedTooltip';
 import PopupStyle from './PopupStyle';
+import ModalTimeout from './Modal-timeout';
 
 import CellTablePopupStory from './CellTablePopup';
 
@@ -81,6 +81,7 @@ export default [
     },
   },
   ModalStory,
+  ModalTimeout,
   PopupFuncStory,
   PopupInputFocusStory,
   PopupElementStory,

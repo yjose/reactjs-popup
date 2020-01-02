@@ -19,8 +19,10 @@ const POSITION_TYPES = [
 ];
 
 export default class Popup extends React.PureComponent {
+
   static defaultProps = {
     trigger: null,
+    timer: 0,
     onOpen: () => {},
     onClose: () => {},
     defaultOpen: false,
@@ -52,16 +54,24 @@ export default class Popup extends React.PureComponent {
     this.setArrowRef = r => (this.ArrowEl = r);
     this.setHelperRef = r => (this.HelperEl = r);
     this.timeOut = 0;
-    const {open, modal, defaultOpen, trigger} = props;
+    const {open, modal, defaultOpen, trigger, timer} = props;
     this.state = {
       isOpen: open || defaultOpen,
+      render: !(timer > 0),
       modal: modal ? true : !trigger,
       // we create this modal state because the popup can't be a tooltip if the trigger prop doesn't exist
     };
   }
 
   componentDidMount() {
-    const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
+    const {
+      closeOnEscape,
+      defaultOpen,
+      repositionOnResize,
+      timer,
+      trigger,
+    } = this.props;
+    const {render} = this.state;
     if (defaultOpen) this.setPosition();
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
@@ -71,14 +81,24 @@ export default class Popup extends React.PureComponent {
       /* eslint-disable-next-line no-undef */
       window.addEventListener('resize', this.repositionOnResize);
     }
+    // Timer based rendering. If the timer is set there will be a delay in showing the popup.
+    // Only works when there is no trigger defined.
+    if (timer > 0 && !render && (trigger === undefined || trigger === null)) {
+      setTimeout(() => {
+        this.setState({render: true, isOpen: true}, () => {
+          this.setPosition();
+          this.lockScroll();
+        });
+      }, timer);
+    }
   }
 
   componentDidUpdate(prevProps) {
     const {open, disabled} = this.props;
     const {isOpen} = this.state;
     if (prevProps.open !== open) {
-      if (open) this.openPopup();
-      else this.closePopup(undefined, true);
+        if (open) this.openPopup();
+        else this.closePopup(undefined, true);
     }
     if (prevProps.disabled !== disabled && disabled && isOpen) {
       this.closePopup();
@@ -129,7 +149,8 @@ export default class Popup extends React.PureComponent {
   togglePopup = e => {
     // https://reactjs.org/docs/events.html#event-pooling
     e.persist();
-    if (this.state.isOpen) this.closePopup(e);
+    const {isOpen} = this.state;
+    if (isOpen) this.closePopup(e);
     else this.openPopup(e);
   };
 
@@ -260,7 +281,7 @@ export default class Popup extends React.PureComponent {
       className: `popup-content ${
         className !== '' ? `${className}-content` : ''
       }`,
-      style: Object.assign({}, popupContentStyle, contentStyle),
+      style: {...popupContentStyle, ...contentStyle},
       ref: this.setContentRef,
       onClick: e => {
         e.stopPropagation();
@@ -274,7 +295,7 @@ export default class Popup extends React.PureComponent {
   };
 
   renderTrigger = () => {
-    const triggerProps = {key: 'T' , ref: this.setTriggerRef};
+    const triggerProps = {key: 'T', ref: this.setTriggerRef};
     const {on, trigger} = this.props;
     const {isOpen} = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
@@ -294,10 +315,9 @@ export default class Popup extends React.PureComponent {
       }
     }
 
-
-    if (typeof trigger === 'function')
+    if (typeof trigger === 'function') {
       return !!trigger && React.cloneElement(trigger(isOpen), triggerProps);
-
+    }
     return !!trigger && React.cloneElement(trigger, triggerProps);
   };
 
@@ -309,7 +329,7 @@ export default class Popup extends React.PureComponent {
         {arrow && !modal && (
           <div
             ref={this.setArrowRef}
-            style={Object.assign({}, styles.popupArrow, arrowStyle)}
+            style={{...styles.popupArrow, ...arrowStyle}}
           />
         )}
         {typeof children === 'function'
@@ -320,18 +340,12 @@ export default class Popup extends React.PureComponent {
   };
 
   render() {
-    const {
-      overlayStyle,
-      closeOnDocumentClick,
-      className,
-      on,
-      trigger,
-    } = this.props;
-    const {modal, isOpen} = this.state;
+    const {overlayStyle, closeOnDocumentClick, className, on} = this.props;
+    const {modal, isOpen, render} = this.state;
     const overlay = isOpen && !(on.indexOf('hover') >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
-    return [
-       this.renderTrigger(),
+    const content = [
+      this.renderTrigger(),
       isOpen && (
         <div
           key="H"
@@ -345,13 +359,18 @@ export default class Popup extends React.PureComponent {
           className={`popup-overlay ${
             className !== '' ? `${className}-overlay` : ''
           }`}
-          style={Object.assign({}, ovStyle, overlayStyle)}
+          style={{...ovStyle, ...overlayStyle}}
           onClick={closeOnDocumentClick ? this.closePopup : undefined}>
           {modal && this.renderContent()}
         </div>
       ),
       isOpen && !modal && this.renderContent(),
     ];
+    // Defer rendering if the state.render value is false.
+    if (render) {
+      return content;
+    }
+    return false;
   }
 }
 
@@ -379,6 +398,7 @@ if (process.env.NODE_ENV !== 'production') {
     onClose: PropTypes.func,
     open: PropTypes.bool,
     defaultOpen: PropTypes.bool,
+    timer: PropTypes.number,
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([
       PropTypes.oneOf(TRIGGER_TYPES),
