@@ -24,7 +24,7 @@
     "gatsby-source-filesystem": "^2.1.20",
     "gatsby-transformer-remark": "^2.6.21",
     "infima": "^0.2.0-alpha.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "prismjs": "^1.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
