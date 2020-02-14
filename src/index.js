@@ -40,6 +40,7 @@ export default class Popup extends React.PureComponent {
     arrow: true,
     offsetX: 0,
     offsetY: 0,
+    popupTimeout: 0,
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100,
     keepTooltipInside: false,
@@ -138,7 +139,7 @@ export default class Popup extends React.PureComponent {
     const {isOpen} = this.state;
     if (isOpen || disabled) return;
     onOpen(e);
-    if (popupTimeout !== undefined) {
+    if (popupTimeout > 0) {
       setTimeout( e => {
         this.closePopup(e);
       }, popupTimeout);
