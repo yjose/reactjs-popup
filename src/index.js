@@ -139,13 +139,11 @@ export default class Popup extends React.PureComponent {
     const {isOpen} = this.state;
     if (isOpen || disabled) return;
     onOpen(e);
-    
-    if (popupTimeout !== undefined && popupTimeout > 0 ) {
-          setTimeout(function (e) {
-            this.closePopup(e);
-          }, popupTimeout);
-        }
-    
+    if (popupTimeout !== undefined && popupTimeout > 0) {
+      setTimeout( e => {
+        this.closePopup(e);
+      }, popupTimeout);
+    };
     this.setState({isOpen: true}, () => {
       this.setPosition();
       this.lockScroll();
@@ -385,8 +383,8 @@ if (process.env.NODE_ENV !== 'production') {
     mouseLeaveDelay: PropTypes.number,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    popupTimeout: PropTypes.number,
     open: PropTypes.bool,
+    popupTimeout: PropTypes.number,
     defaultOpen: PropTypes.bool,
     trigger: PropTypes.oneOfType([PropTypes.func, PropTypes.element]), // for uncontrolled component we don't need the trigger Element
     on: PropTypes.oneOfType([
