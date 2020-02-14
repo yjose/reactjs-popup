@@ -139,7 +139,7 @@ export default class Popup extends React.PureComponent {
     const {isOpen} = this.state;
     if (isOpen || disabled) return;
     onOpen(e);
-    if (popupTimeout !== undefined && popupTimeout > 0) {
+    if (popupTimeout !== undefined || popupTimeout > 0) {
       setTimeout( e => {
         this.closePopup(e);
       }, popupTimeout);
