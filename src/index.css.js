@@ -44,6 +44,8 @@ export default {
       right: '0',
       background: `rgba(0, 0, 0,0.5)`,
       display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       zIndex: '999',
     },
   },
