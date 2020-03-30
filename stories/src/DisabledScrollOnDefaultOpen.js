@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from "../../src";
 
 class NoScroll extends React.Component {
-  // thanks to adding this.lockScroll() in componentDidMount scroll is unabled even when 
+  // thanks to adding this.lockScroll() in componentDidMount scroll is unabled even when
   // popup is default open
   render() {
     return (
