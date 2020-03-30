@@ -62,7 +62,10 @@ export default class Popup extends React.PureComponent {
 
   componentDidMount() {
     const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
-    if (defaultOpen) this.setPosition();
+    if (defaultOpen) {
+      this.setPosition();
+      this.lockScroll();
+    }
     if (closeOnEscape) {
       /* eslint-disable-next-line no-undef */
       window.addEventListener('keyup', this.onEscape);
