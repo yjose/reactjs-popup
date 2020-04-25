@@ -26,50 +26,50 @@ const storyProps = {text: 'Parcel Storybook'};
 
 export default [
   {
-    name: "Story 1",
+    name: 'Story 1',
     component: Centred(Story),
     props: storyProps, // adding props
   },
   {
-    name: "without Prop", // without props
+    name: 'without Prop', // without props
     component: Centred(() => (
       <Popup trigger={<button> trigger</button>}> content</Popup>
     )),
   },
   {
-    name: "Controlled Modal Component", // without props
+    name: 'Controlled Modal Component', // without props
     component: Centred(ControlledModal),
   },
   {
-    name: "Controlled Tooltip Component", // without props
+    name: 'Controlled Tooltip Component', // without props
     component: Centred(ControlledTooltip),
   },
   {
-    name: "Disabled Tooltip Component", // without props
+    name: 'Disabled Tooltip Component', // without props
     component: Centred(DisabledTooltip),
   },
   {
-    name: "Menu Component", // without props
+    name: 'Menu Component', // without props
     component: Centred(Menu),
   },
   {
-    name: "Bounded Tooltip",
+    name: 'Bounded Tooltip',
     component: Centred(BoundedTooltip),
     props: {
-      style: { position: "absolute", top: 20, left: 20 },
+      style: {position: 'absolute', top: 20, left: 20},
       position: [
-        "top left",
-        "top center",
-        "top right",
-        "right top",
-        "right center",
-        "right bottom",
-        "bottom left",
-        "bottom center",
-        "bottom right",
-        "left top",
-        "left center",
-        "left bottom",
+        'top left',
+        'top center',
+        'top right',
+        'right top',
+        'right center',
+        'right bottom',
+        'bottom left',
+        'bottom center',
+        'bottom right',
+        'left top',
+        'left center',
+        'left bottom',
       ],
     },
   },
