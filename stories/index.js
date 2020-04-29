@@ -12,6 +12,7 @@ import Stories from './src/index';
 // const Components = Object.entries(require("./stories/*.js"));
 const App = () => <StoryRouter stories={Stories} />;
 
+// eslint-disable-next-line no-undef
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // Hot Module Replacement

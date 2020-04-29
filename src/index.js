@@ -19,32 +19,6 @@ const POSITION_TYPES = [
 ];
 
 export default class Popup extends React.PureComponent {
-  static defaultProps = {
-    trigger: null,
-    onOpen: () => {},
-    onClose: () => {},
-    defaultOpen: false,
-    open: false,
-    disabled: false,
-    closeOnDocumentClick: true,
-    repositionOnResize: true,
-    closeOnEscape: true,
-    on: ['click'],
-    contentStyle: {},
-    arrowStyle: {},
-    overlayStyle: {},
-    className: '',
-    position: 'bottom center',
-    modal: false,
-    lockScroll: false,
-    arrow: true,
-    offsetX: 0,
-    offsetY: 0,
-    mouseEnterDelay: 100,
-    mouseLeaveDelay: 100,
-    keepTooltipInside: false,
-  };
-
   constructor(props) {
     super(props);
     this.setTriggerRef = r => (this.TriggerEl = r);
@@ -130,9 +104,10 @@ export default class Popup extends React.PureComponent {
   };
 
   togglePopup = e => {
+    const {isOpen} = this.state;
     // https://reactjs.org/docs/events.html#event-pooling
     e.persist();
-    if (this.state.isOpen) this.closePopup(e);
+    if (isOpen) this.closePopup(e);
     else this.openPopup(e);
   };
 
@@ -263,7 +238,7 @@ export default class Popup extends React.PureComponent {
       className: `popup-content ${
         className !== '' ? `${className}-content` : ''
       }`,
-      style: Object.assign({}, popupContentStyle, contentStyle),
+      style: {...popupContentStyle, ...contentStyle},
       ref: this.setContentRef,
       onClick: e => {
         e.stopPropagation();
@@ -277,7 +252,7 @@ export default class Popup extends React.PureComponent {
   };
 
   renderTrigger = () => {
-    const triggerProps = {key: 'T' , ref: this.setTriggerRef};
+    const triggerProps = {key: 'T', ref: this.setTriggerRef};
     const {on, trigger} = this.props;
     const {isOpen} = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
@@ -297,7 +272,6 @@ export default class Popup extends React.PureComponent {
       }
     }
 
-
     if (typeof trigger === 'function')
       return !!trigger && React.cloneElement(trigger(isOpen), triggerProps);
 
@@ -312,7 +286,7 @@ export default class Popup extends React.PureComponent {
         {arrow && !modal && (
           <div
             ref={this.setArrowRef}
-            style={Object.assign({}, styles.popupArrow, arrowStyle)}
+            style={{...styles.popupArrow, arrowStyle}}
           />
         )}
         {typeof children === 'function'
@@ -328,13 +302,13 @@ export default class Popup extends React.PureComponent {
       closeOnDocumentClick,
       className,
       on,
-      trigger,
+      trigger, // eslint-disable-line no-unused-vars
     } = this.props;
     const {modal, isOpen} = this.state;
     const overlay = isOpen && !(on.indexOf('hover') >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
-       this.renderTrigger(),
+      this.renderTrigger(),
       isOpen && (
         <div
           key="H"
@@ -348,7 +322,7 @@ export default class Popup extends React.PureComponent {
           className={`popup-overlay ${
             className !== '' ? `${className}-overlay` : ''
           }`}
-          style={Object.assign({}, ovStyle, overlayStyle)}
+          style={{...ovStyle, overlayStyle}}
           onClick={closeOnDocumentClick ? this.closePopup : undefined}>
           {modal && this.renderContent()}
         </div>
@@ -357,6 +331,31 @@ export default class Popup extends React.PureComponent {
     ];
   }
 }
+Popup.defaultProps = {
+  trigger: null,
+  onOpen: () => {},
+  onClose: () => {},
+  defaultOpen: false,
+  open: false,
+  disabled: false,
+  closeOnDocumentClick: true,
+  repositionOnResize: true,
+  closeOnEscape: true,
+  on: ['click'],
+  contentStyle: {},
+  arrowStyle: {},
+  overlayStyle: {},
+  className: '',
+  position: 'bottom center',
+  modal: false,
+  lockScroll: false,
+  arrow: true,
+  offsetX: 0,
+  offsetY: 0,
+  mouseEnterDelay: 100,
+  mouseLeaveDelay: 100,
+  keepTooltipInside: false,
+};
 
 if (process.env.NODE_ENV !== 'production') {
   const PropTypes = require('prop-types');
