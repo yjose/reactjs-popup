@@ -387,11 +387,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(TRIGGER_TYPES),
       PropTypes.arrayOf(PropTypes.oneOf(TRIGGER_TYPES)),
     ]),
-    children: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.element,
-      PropTypes.string,
-    ]).isRequired,
+    children: PropTypes.node.isRequired,
     position: PropTypes.oneOfType([
       PropTypes.oneOf(POSITION_TYPES),
       PropTypes.arrayOf(PropTypes.oneOf(POSITION_TYPES)),
