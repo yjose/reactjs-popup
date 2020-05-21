@@ -26,8 +26,8 @@ declare module 'reactjs-popup' {
     repositionOnResize?: boolean;
     mouseEnterDelay?: number;
     mouseLeaveDelay?: number;
-    onOpen?: () => any;
-    onClose?: () => any;
+    onOpen?: (e: MouseEvent<HTMLDivElement>) => any;
+    onClose?: (e: MouseEvent<HTMLDivElement>) => any;
     contentStyle?: React.CSSProperties;
     overlayStyle?: React.CSSProperties;
     arrowStyle?: React.CSSProperties;
