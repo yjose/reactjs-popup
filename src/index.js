@@ -43,6 +43,7 @@ export default class Popup extends React.PureComponent {
     mouseEnterDelay: 100,
     mouseLeaveDelay: 100,
     keepTooltipInside: false,
+    closeOnKeyboardBlur: false
   };
 
   constructor(props) {
@@ -61,12 +62,15 @@ export default class Popup extends React.PureComponent {
   }
 
   componentDidMount() {
-    const {closeOnEscape, defaultOpen, repositionOnResize} = this.props;
+    const {
+      closeOnEscape, defaultOpen, repositionOnResize, closeOnKeyboardBlur
+    } = this.props;
+
     if (defaultOpen) {
       this.setPosition();
       this.lockScroll();
     }
-    if (closeOnEscape) {
+    if (closeOnEscape || closeOnKeyboardBlur) {
       /* eslint-disable-next-line no-undef */
       window.addEventListener('keyup', this.onEscape);
     }
@@ -92,9 +96,9 @@ export default class Popup extends React.PureComponent {
     // kill any function to execute if the component is unmounted
     clearTimeout(this.timeOut);
 
-    const {closeOnEscape, repositionOnResize} = this.props;
+    const {closeOnEscape, repositionOnResize, closeOnKeyboardBlur} = this.props;
     // remove events listeners
-    if (closeOnEscape) {
+    if (closeOnEscape || closeOnKeyboardBlur) {
       /* eslint-disable-next-line no-undef */
       window.removeEventListener('keyup', this.onEscape);
     }
@@ -110,8 +114,14 @@ export default class Popup extends React.PureComponent {
   };
 
   onEscape = e => {
-    if (e.key === 'Escape') this.closePopup();
+    if (
+      this.props.closeOnEscape && e.key === 'Escape' ||
+      this.props.closeOnKeyboardBlur && e.key === 'Tab'
+    ) {
+      this.closePopup();
+    }
   };
+
 
   lockScroll = () => {
     const {lockScroll} = this.props;
@@ -278,7 +288,7 @@ export default class Popup extends React.PureComponent {
 
   renderTrigger = () => {
     const triggerProps = {key: 'T' , ref: this.setTriggerRef};
-    const {on, trigger} = this.props;
+    const {on, trigger,} = this.props;
     const {isOpen} = this.state;
     const onAsArray = Array.isArray(on) ? on : [on];
     for (let i = 0, len = onAsArray.length; i < len; i++) {
@@ -295,6 +305,10 @@ export default class Popup extends React.PureComponent {
           break;
         default:
       }
+    }
+
+    if (this.props.closeOnKeyboardBlur) {
+      triggerProps.onBlur = this.onEscape;
     }
 
 

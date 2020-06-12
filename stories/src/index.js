@@ -21,6 +21,8 @@ import PopupHandleEventStory from './PopupHandleEvent';
 import NestedLockScrollStory from './NestedLockScroll';
 import NoScrollPopup from './DisabledScrollOnDefaultOpen';
 
+import PopupKeyboardManipulate from './PopupKeyboardManipulate';
+
 const storyProps = {text: 'Parcel Storybook'};
 const buttonProps = {
   name: 'My Button',
@@ -31,6 +33,7 @@ const buttonProps = {
     background: 'blue',
   },
 };
+
 
 export default [
   {
@@ -90,4 +93,8 @@ export default [
   NestedLockScrollStory,
   PopupStyle,
   NoScrollPopup,
+  {
+    name: 'Keyboard manipulate (blur and focus)', // without props
+    component: Centred(PopupKeyboardManipulate),
+  },
 ];
