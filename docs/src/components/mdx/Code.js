@@ -6,8 +6,6 @@ import Popup from '../../../../src/index';
 import Warper from '../../examples/Warper';
 
 const Code = ({children, codeString, className = 'language-js', ...props}) => {
-  console.log('herrrrree', props);
-
   const language = className.replace(/language-/, '');
   if (props.live) {
     return (

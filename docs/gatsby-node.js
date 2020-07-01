@@ -44,7 +44,25 @@ exports.createPages = ({graphql, actions}) => {
         pages.forEach(async ({node}, i) => {
           const prev = i === 0 ? null : pages[i - 1].node;
           const next = i === pages.length - 1 ? null : pages[i + 1].node;
-
+          // create website root as Home page
+          if (node.frontmatter.path === 'Introduction') {
+            createPage({
+              path: '/',
+              component: path.resolve('./src/template/Template.js'),
+              context: {
+                id: node.id,
+                name: node.frontmatter.path,
+                prev: prev && {
+                  path: getUrlFromPath(prev.frontmatter.path),
+                  name: prev.frontmatter.path,
+                },
+                next: next && {
+                  path: getUrlFromPath(next.frontmatter.path),
+                  name: next.frontmatter.path,
+                },
+              },
+            });
+          }
           createPage({
             path: getUrlFromPath(node.frontmatter.path),
             component: path.resolve('./src/template/Template.js'),
