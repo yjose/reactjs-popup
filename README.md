@@ -31,23 +31,21 @@
 
 Requires React >= 16.0
 
+
+
 ## Demo
 
 [**Live Demo**](https://react-popup.elazizi.com)
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*x-TqQwyT2ADmnb51oRJCOg.gif)
 
-## TO DO
+## Sponsor
+[Reactjs-popup](https://react-popup.elazizi.com) is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
 
-- [x] Create repository && publish package
-- [x] Create reactjs-popup Home page
-- [x] Tooltip Support
-- [x] Modal Support
-- [x] Menu & Nested Menu Support
-- [x] Add Live examples
-- [ ] Animation API
-- [ ] Toast Support
-- [ ] suggest a feature [here](https://github.com/yjose/reactjs-popup/labels/Features)
+
+<a href="https://tracking.gitads.io/?repo=reactjs-popup">
+ <img max-height="200px" src="https://images.gitads.io/reactjs-popup" alt="GitAds"/>
+</a>
 
 ## Installing / Getting started
 
@@ -125,7 +123,7 @@ The code in this project is licensed under MIT license.
 # Show your support!
 
 
- <a href="https://www.buymeacoffee.com/yjose" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+ <a href="https://www.buymeacoffee.com/yjose" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="40px" ></a>
 
 
 That's all, thank you for your attention, please [![Star on GitHub][github-star-badge]][github-star] the repo to show your support...
@@ -139,7 +137,7 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
   <tbody>
     <tr>
       <td align="center">
-        <a href="https://github.com/yjose">
+        <a href="http://elazizi.com/">
           <img width="150" height="150" src="https://github.com/yjose.png?v=3&s=150">
           </br>
           Youssouf EL Azizi
