@@ -31,7 +31,13 @@
 
 Requires React >= 16.0
 
+## Sponsor
+[Reactjs-popup](https://react-popup.elazizi.com) is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
 
+
+<a href="https://tracking.gitads.io/?repo=reactjs-popup/">
+ <img max-height="200px" src="https://images.gitads.io/reactjs-popup/" alt="GitAds"/>
+</a>
 
 ## Demo
 
@@ -39,13 +45,7 @@ Requires React >= 16.0
 
 ![alt text](https://cdn-images-1.medium.com/max/800/1*x-TqQwyT2ADmnb51oRJCOg.gif)
 
-## Sponsor
-[Reactjs-popup](https://react-popup.elazizi.com) is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
 
-
-<a href="https://tracking.gitads.io/?repo=reactjs-popup">
- <img max-height="200px" src="https://images.gitads.io/reactjs-popup" alt="GitAds"/>
-</a>
 
 ## Installing / Getting started
 
