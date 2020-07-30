@@ -236,10 +236,11 @@ export default class Popup extends React.PureComponent {
       this.ArrowEl.style.left = arrowStyle.left || cords.arrowLeft;
       this.ArrowEl.classList.add(`popup-arrow`);
       if (className !== '') {
-        const classList = className.split(' ');
-        for ( let i = 0, len = classList.length; i < len; i++ ) {
-          this.ArrowEl.classList.add(`${classList[i]}-arrow`);
-        }
+        const classList = className
+          .split(' ')
+          .filter(name => name)
+          .map(name => `${name}-arrow`);
+        this.ArrowEl.classList.add(...classList);
       }
     }
     if (
