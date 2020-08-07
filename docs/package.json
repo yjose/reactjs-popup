@@ -25,7 +25,7 @@
     "gatsby-transformer-remark": "^2.6.21",
     "infima": "^0.2.0-alpha.2",
     "node-sass": "^4.13.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
