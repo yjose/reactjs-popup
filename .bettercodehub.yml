@@ -1,7 +1,0 @@
-exclude:
-- /lib/.*
-- /docs/.*
-- /stories/.*
-component_depth: 1
-languages:
-- javascript

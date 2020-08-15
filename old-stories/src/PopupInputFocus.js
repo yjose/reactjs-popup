@@ -1,7 +1,7 @@
 import React from "react";
 import { Centred } from "story-router";
-import Popup from "../../src/";
-const PopupInputFocus = props => (
+import Popup from "../../old-src";
+const PopupInputFocus = (props) => (
   <div>
     <Popup
       {...props}
@@ -22,7 +22,7 @@ const PopupInputFocus = props => (
 const PopupInputFocusStory = {
   name: "Input focus Popup",
   component: Centred(PopupInputFocus),
-  props: {}
+  props: {},
 };
 
 export default PopupInputFocusStory;

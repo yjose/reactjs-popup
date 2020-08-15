@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../../src/";
+import Popup from "../../old-src";
 
 export default class ControlledPopup extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class ControlledPopup extends React.Component {
         closeOnDocumentClick
         // onClose={this.closeModal}
       >
-        {close => (
+        {(close) => (
           <div className="modal">
             <a className="close" onClick={close}>
               &times; remove

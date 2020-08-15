@@ -1,28 +1,28 @@
 import React from "react";
-import Popup from "../../src/";
+import Popup from "../../old-src";
 
 const gridCell = {
-  borderColor: "black"
+  borderColor: "black",
 };
 const styles = {
   root: {
     flex: "0 1 0%",
-    backgroundColor: "lightgrey"
+    backgroundColor: "lightgrey",
   },
   column: {
     flex: 1,
     margin: "1px",
     height: "100%",
     minWidth: "4px",
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   row: {
     display: "flex",
     flexDirection: "row",
     height: "40px",
     width: "100%",
-    marginTop: "1px"
-  }
+    marginTop: "1px",
+  },
 };
 
 const Cell = ({ value }) => (
@@ -60,7 +60,7 @@ const App = () => (
 
 const CellTablePopupStory = {
   name: "Cell table Popup",
-  component: App
+  component: App,
 };
 
 export default CellTablePopupStory;

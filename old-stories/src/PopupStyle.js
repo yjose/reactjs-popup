@@ -1,22 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React from "react";
 
-import Popup from '../../src';
+import Popup from "../../old-src";
 
 const PopupFuncProps = {
-  className: 'test',
+  className: "test",
   arrowStyle: {},
   contentStyle: {},
   overlayStyle: {},
-  on: 'click',
+  on: "click",
 };
 
-const PopupStyle = props => (
+const PopupStyle = (props) => (
   <div>
-    <div style={{height: '800px'}}> scroll to bottom :) </div>
-    <div style={{height: '100px', background: 'red', position: 'relative'}}>
+    <div style={{ height: "800px" }}> scroll to bottom :) </div>
+    <div style={{ height: "100px", background: "red", position: "relative" }}>
       <Popup {...props} trigger={<button type="button"> Button 2</button>}>
-        {close => (
+        {(close) => (
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
             voluptas s lore Lorem ipsum dolor sit amet consectetur adipisicing
@@ -26,9 +26,10 @@ const PopupStyle = props => (
             <a
               className="close"
               onClick={close}
-              style={{margin: '10px', background: 'red'}}>
+              style={{ margin: "10px", background: "red" }}
+            >
               close here &times;
-            </a>{' '}
+            </a>{" "}
           </div>
         )}
       </Popup>
@@ -37,7 +38,7 @@ const PopupStyle = props => (
 );
 
 const PopupStyleStory = {
-  name: 'Popup Style',
+  name: "Popup Style",
   component: PopupStyle,
   props: PopupFuncProps,
 };

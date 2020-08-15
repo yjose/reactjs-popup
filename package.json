@@ -1,76 +1,63 @@
 {
   "name": "reactjs-popup",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
-  "main": "reactjs-popup.cjs.js",
-  "module": "reactjs-popup.es.js",
-  "jsnext:main": "reactjs-popup.es.js",
-  "unpkg": "reactjs-popup.js",
-  "jsdelivr": "reactjs-popup.js",
+  "main": "dist/index.js",
+  "module": "dist/reactjs-popup.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watch",
-    "update-snap": "jest --updateSnapshot",
-    "eslint": "eslint src/**.js stories/**.js",
-    "start": "parcel serve ./stories/index.html --no-autoinstall",
-    "build": "node build"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.3",
-    "babel-polyfill": "^6.26.0",
-    "bili": "^3.0.15",
-    "cross-env": "^5.2.1",
-    "del": "^5.1.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
-    "eslint": "^6.3.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "@testing-library/react": "^9.1.4",
-    "http-server": "^0.11.1",
-    "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.3",
-    "prettier": "^1.18.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "story-router": "^1.0.1",
-    "why-did-you-update": "^1.0.6"
+    "@babel/core": "^7.11.1",
+    "@storybook/addon-actions": "^6.0.7",
+    "@storybook/addon-docs": "^6.0.7",
+    "@storybook/addon-essentials": "^6.0.7",
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-links": "^6.0.7",
+    "@storybook/addons": "^6.0.7",
+    "@storybook/react": "^6.0.7",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "husky": "^4.2.5",
+    "react": "^16.13.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "ts-loader": "^8.0.2",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.1",
+    "typescript": "^3.9.7"
   },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yjose/reactjs-popup.git"
-  },
-  "keywords": [
-    "react",
-    "popup",
-    "modal",
-    "tooltip",
-    "react-modal",
-    "reactjs",
-    "react-popup",
-    "reactjs-popup",
-    "reactjs-modal",
-    "react-tooltip"
-  ],
+  "dependencies": {},
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {

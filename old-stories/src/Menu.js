@@ -1,6 +1,6 @@
 import React from "react";
 
-import Popup from "../../src/";
+import Popup from "../../old-src";
 
 const Menu = () => (
   <div className="menu">

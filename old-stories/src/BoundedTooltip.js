@@ -1,5 +1,5 @@
 import React from "react";
-import Popup from "../../src/";
+import Popup from "../../old-src";
 
 export default class BoundedTooltip extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ export default class BoundedTooltip extends React.Component {
         keepTooltipInside={true}
         // onClose={this.closeModal}
       >
-        {close => (
+        {(close) => (
           <div className="modal">
             <a className="close" onClick={close} href="#!">
               &times; remove

@@ -1,19 +1,19 @@
-import React from 'react';
-import {Centred} from 'story-router';
+import React from "react";
+import { Centred } from "story-router";
 
-import Popup from '../../src/';
+import Popup from "../../old-src";
 
 const ModalProps = {
   defaultOpen: false,
   open: false,
   closeOnDocumentClick: true,
   closeOnEscape: true,
-  on: ['click'],
+  on: ["click"],
   contentStyle: {},
   arrowStyle: {},
   overlayStyle: {},
-  className: '',
-  position: 'bottom center',
+  className: "",
+  position: "bottom center",
   lockScroll: false,
   arrow: true,
   offsetX: 0,
@@ -23,7 +23,7 @@ const ModalProps = {
   modal: true,
 };
 
-const Modal = props => {
+const Modal = (props) => {
   return (
     <Popup {...props} trigger={<button>Button Trigger</button>}>
       <div>
@@ -35,7 +35,8 @@ const Modal = props => {
           on="click"
           position="bottom left"
           closeOnDocumentClick
-          trigger={<button>Button nested</button>}>
+          trigger={<button>Button nested</button>}
+        >
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
             voluptas ex, blanditiis reiciendis dolor numquam pariatur facilis,
@@ -50,7 +51,7 @@ const Modal = props => {
 };
 
 const ModalStory = {
-  name: 'Modal example',
+  name: "Modal example",
   component: Centred(Modal),
   props: ModalProps, // adding props
 };
