@@ -50,7 +50,7 @@ export const useOnClickOutside = (
           return;
         }
       });
-
+      event.stopPropagation();
       if (!contains) handler();
     };
 

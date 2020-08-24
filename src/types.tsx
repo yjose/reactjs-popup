@@ -16,6 +16,11 @@ export type PopupPosition =
   | 'left bottom'
   | 'center center';
 
+export type PopupActions = {
+  open: () => void;
+  close: () => void;
+  toggle: () => void;
+};
 export interface PopupProps {
   trigger?: JSX.Element | ((isOpen: boolean) => JSX.Element);
   open?: boolean;
