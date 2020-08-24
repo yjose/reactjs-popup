@@ -1,8 +1,21 @@
-export default {
+import React from 'react';
+
+type PopupStyle = {
+  popupContent: {
+    tooltip: React.CSSProperties;
+    modal: React.CSSProperties;
+  };
+  popupArrow: React.CSSProperties;
+  overlay: {
+    tooltip: React.CSSProperties;
+    modal: React.CSSProperties;
+  };
+};
+
+const Style: PopupStyle = {
   popupContent: {
     tooltip: {
       position: 'absolute',
-      zIndex: '1999',
       //zIndex: '2',
       width: '200px',
       background: `rgb(255, 255, 255)`,
@@ -26,7 +39,7 @@ export default {
     background: 'rgb(255, 255, 255)',
     transform: 'rotate(45deg)',
     margin: '-5px',
-    zIndex: '-1',
+    zIndex: 1,
     boxShadow: 'rgba(0, 0, 0, 0.2) 1px 1px 1px',
   },
   overlay: {
@@ -36,7 +49,7 @@ export default {
       bottom: '0',
       left: '0',
       right: '0',
-      zIndex: '999',
+      //zIndex: '999',
     },
     modal: {
       position: 'fixed',
@@ -46,7 +59,9 @@ export default {
       right: '0',
       background: `rgba(0, 0, 0,0.5)`,
       display: 'flex',
-      zIndex: '999',
+      zIndex: 999,
     },
   },
 };
+
+export default Style;
