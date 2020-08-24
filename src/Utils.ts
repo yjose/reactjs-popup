@@ -18,7 +18,7 @@
 */
 import { PopupPosition } from './types';
 
-const POSITION_TYPES: PopupPosition[] = [
+export const POSITION_TYPES: PopupPosition[] = [
   'top left',
   'top center',
   'top right',
@@ -31,7 +31,7 @@ const POSITION_TYPES: PopupPosition[] = [
   'left top',
   'left center',
   'left bottom',
-  'center center',
+  //'center center',
 ];
 
 type CordsType = {
@@ -113,6 +113,7 @@ const getCoordinatesForPosition = (
 };
 
 export const getTooltipBoundary = (keepTooltipInside: string | Boolean) => {
+  // add viewport
   let boundingBox = {
     top: 0,
     left: 0,
@@ -132,6 +133,7 @@ export const getTooltipBoundary = (keepTooltipInside: string | Boolean) => {
     }
     if (selector !== null) boundingBox = selector.getBoundingClientRect();
   }
+
   return boundingBox;
 };
 
@@ -157,6 +159,10 @@ const calculatePosition = (
   // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
   if (keepTooltipInside || Array.isArray(position))
     positions = [...positions, ...POSITION_TYPES];
+
+  // add viewPort for WarpperBox
+  // wrapperBox.top = wrapperBox.top + window.scrollY;
+  // wrapperBox.left = wrapperBox.left + window.scrollX;
 
   while (i < positions.length) {
     bestCoords = getCoordinatesForPosition(

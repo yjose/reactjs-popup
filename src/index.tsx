@@ -23,7 +23,7 @@ export const Popup: FC<PopupProps> = ({
   onOpen = () => {},
   onClose = () => {},
   defaultOpen = false,
-  open = false,
+  open = undefined,
   disabled = false,
   nested = false,
   closeOnDocumentClick = true,
@@ -59,7 +59,7 @@ export const Popup: FC<PopupProps> = ({
 
   // for uncontrolled popup we need to sync isOpen with open prop
   useEffect(() => {
-    setIsOpen(open && !disabled);
+    if (typeof open === 'boolean') setIsOpen(open && !disabled);
   }, [open]);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export const Popup: FC<PopupProps> = ({
   };
 
   const closePopup = () => {
-    if (!isOpen) return;
+    if (!isOpen || disabled) return;
     setIsOpen(false);
   };
   const togglePopup = () => setIsOpen(isOpen => !isOpen && !disabled);
@@ -229,7 +229,11 @@ export const Popup: FC<PopupProps> = ({
         className={`popup-overlay ${
           className !== '' ? `${className}-overlay` : ''
         }`}
-        style={Object.assign(ovStyle, overlayStyle)}
+        style={{
+          ...ovStyle,
+          ...overlayStyle,
+          pointerEvents: closeOnDocumentClick && nested ? 'auto' : 'none',
+        }}
         onClick={closeOnDocumentClick && nested ? closePopup : undefined}
       >
         {isModal && renderContent()}
