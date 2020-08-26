@@ -18,6 +18,8 @@ import {
 import styles from './index.css';
 import calculatePosition from './Utils';
 
+let popupIdCounter = 0;
+
 const getRootPopup = () => {
   let PopupRoot = document.getElementById('popup-root');
 
@@ -66,6 +68,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const contentRef = useRef<HTMLElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
     const focusedElBeforeOpen = useRef<Element | null>(null);
+    const popupId = useRef<string>(`popup-${++popupIdCounter}`);
 
     const isModal = modal ? true : !trigger;
     const timeOut = useRef<any>(0);
@@ -97,7 +100,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const closePopup = () => {
       if (!isOpen || disabled) return;
       setIsOpen(false);
-      (focusedElBeforeOpen.current as HTMLElement).focus();
+      if (isModal) (focusedElBeforeOpen.current as HTMLElement).focus();
       setTimeout(onClose, 0);
       resetScroll();
     };
@@ -185,7 +188,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     };
     // hooks
     useOnEscape(closePopup, closeOnEscape); // can be optimized if we disabled for hover
-    useTabbing(contentRef, isOpen);
+    useTabbing(contentRef, isOpen && isModal);
     useRepositionOnResize(setPosition, repositionOnResize);
     useOnClickOutside(
       !!trigger ? [contentRef, triggerRef] : [contentRef],
@@ -199,6 +202,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       const triggerProps: any = {
         key: 'T',
         ref: triggerRef,
+        'aria-describedby': popupId.current,
       };
       const onAsArray = Array.isArray(on) ? on : [on];
       for (let i = 0, len = onAsArray.length; i < len; i++) {
@@ -212,6 +216,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
             break;
           case 'focus':
             triggerProps.onFocus = onMouseEnter;
+            triggerProps.onBlur = onMouseLeave;
             break;
           default:
         }
@@ -253,7 +258,12 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     const renderContent = () => {
       return (
-        <div {...addWarperAction()} key="C" role="dialog">
+        <div
+          {...addWarperAction()}
+          key="C"
+          role={isModal ? 'dialog' : 'tooltip'}
+          id={popupId.current}
+        >
           {arrow && !isModal && (
             <div
               ref={arrowRef}
