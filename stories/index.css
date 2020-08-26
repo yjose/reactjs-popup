@@ -8,3 +8,15 @@
   height: 28px;
   border-bottom: 1px solid rgb(187, 187, 187);
 }
+
+button {
+  background-color: beige;
+  border: 2px dashed grey;
+  padding: 10px 30px;
+  margin: 10px;
+  font-size: 20px;
+}
+button:focus {
+  border: 2px dashed red !important;
+  background-color: pink;
+}

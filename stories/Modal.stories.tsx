@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { PopupProps } from '../src/types';
-import { Popup, PopupActions } from '../src';
-import { Button } from './components/Button';
-import Center from './components/Center';
+import { Popup } from '../src';
+import { PopupActions } from '../src/types';
+import { Button, Center, Content } from './components';
 import { useState } from '@storybook/addons';
+// import './animations.css';
 
 export default {
   title: 'Example/Modal',
@@ -61,6 +62,35 @@ const MultipleModalTemplate: Story<PopupProps> = args => (
 export const MultipleModal = MultipleModalTemplate.bind({});
 
 MultipleModal.args = {
+  trigger: <Button> click me </Button>,
+  on: 'click',
+  modal: true,
+};
+
+const MultipleModalAccessibilityTemplate: Story<PopupProps> = args => (
+  <Center>
+    <Popup {...args}>
+      <Content>
+        <button> 1</button>
+        <button> 2</button>
+        <button> 3</button>
+      </Content>
+    </Popup>
+    <Popup {...args}>
+      <Content>
+        <button> 1</button>
+        <button> 2</button>
+        <button> 3</button>
+      </Content>
+    </Popup>
+  </Center>
+);
+
+export const MultipleModalAccessibility = MultipleModalAccessibilityTemplate.bind(
+  {}
+);
+
+MultipleModalAccessibility.args = {
   trigger: <Button> click me </Button>,
   on: 'click',
   modal: true,

@@ -2,7 +2,8 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { PopupProps } from '../src/types';
 import { Popup } from '../src';
-import Center from './components/Center';
+import { Center } from './components';
+
 import './index.css';
 
 const Menu = () => (

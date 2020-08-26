@@ -2,13 +2,13 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { PopupProps } from '../src/types';
 import { Popup } from '../src';
-import { Button } from './components/Button';
-import Center from './components/Center';
+import { Button, Center } from './components';
+
 import { useState } from '@storybook/addons';
 import { POSITION_TYPES } from '../src/Utils';
 
 export default {
-  title: 'Example/Menu',
+  title: 'Example/Tooltip',
   component: Popup,
 } as Meta;
 

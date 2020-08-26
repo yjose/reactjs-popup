@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-const Center = ({ children }: { children: ReactNode }) => (
+export const Center = ({ children }: { children: ReactNode }) => (
   <div
     style={{
       display: 'flex',
@@ -12,5 +12,3 @@ const Center = ({ children }: { children: ReactNode }) => (
     {children}
   </div>
 );
-
-export default Center;
