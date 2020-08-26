@@ -8,7 +8,12 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import { PopupProps, PopupActions } from './types';
-import { useOnEscape, useRepositionOnResize, useOnClickOutside } from './hooks';
+import {
+  useOnEscape,
+  useRepositionOnResize,
+  useOnClickOutside,
+  useTabbing,
+} from './hooks';
 
 import styles from './index.css';
 import calculatePosition from './Utils';
@@ -60,12 +65,17 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const triggerRef = useRef<HTMLElement>(null);
     const contentRef = useRef<HTMLElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
+    const focusedElBeforeOpen = useRef<Element | null>(null);
 
     const isModal = modal ? true : !trigger;
     const timeOut = useRef<any>(0);
 
     useLayoutEffect(() => {
-      if (isOpen) setPosition();
+      if (isOpen) {
+        focusedElBeforeOpen.current = document.activeElement;
+        setPosition();
+        focusContentOnOpen(); // for accessibility
+      }
       return () => {
         clearTimeout(timeOut.current);
       };
@@ -80,12 +90,14 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       if (isOpen || disabled) return;
       setIsOpen(true);
       setTimeout(onOpen, 0);
+
       lockScrolll();
     };
 
     const closePopup = () => {
       if (!isOpen || disabled) return;
       setIsOpen(false);
+      (focusedElBeforeOpen.current as HTMLElement).focus();
       setTimeout(onClose, 0);
       resetScroll();
     };
@@ -113,6 +125,13 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const resetScroll = () => {
       if (isModal && lockScroll)
         document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    };
+    const focusContentOnOpen = () => {
+      const focusableEls = contentRef?.current?.querySelectorAll(
+        'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
+      );
+      const firstEl = Array.prototype.slice.call(focusableEls)[0];
+      firstEl?.focus();
     };
 
     useImperativeHandle(ref, () => ({
@@ -166,6 +185,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     };
     // hooks
     useOnEscape(closePopup, closeOnEscape); // can be optimized if we disabled for hover
+    useTabbing(contentRef, isOpen);
     useRepositionOnResize(setPosition, repositionOnResize);
     useOnClickOutside(
       !!trigger ? [contentRef, triggerRef] : [contentRef],
@@ -233,7 +253,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     const renderContent = () => {
       return (
-        <div {...addWarperAction()} key="C">
+        <div {...addWarperAction()} key="C" role="dialog">
           {arrow && !isModal && (
             <div
               ref={arrowRef}
@@ -264,6 +284,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
               (closeOnDocumentClick && nested) || isModal ? 'auto' : 'none',
           }}
           onClick={closeOnDocumentClick && nested ? closePopup : undefined}
+          tabIndex={-1}
         >
           {isModal && renderContent()}
         </div>
