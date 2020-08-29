@@ -156,6 +156,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         return; /// show error as one of ref is undefined
       const trigger = triggerRef.current.getBoundingClientRect();
       const content = contentRef.current.getBoundingClientRect();
+
       const cords = calculatePosition(
         trigger,
         content,
@@ -182,7 +183,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           arrowStyle.left?.toString() || cords.arrowLeft;
         arrowRef.current.classList.add(`popup-arrow`);
         if (className !== '') {
-          arrowRef.current.classList.add(`${className}-arrow`);
+          arrowRef.current.classList.add(
+            ...className.split(' ').map(c => `${c}-arrow`)
+          );
         }
       }
     };
@@ -197,8 +200,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     ); // we need to add a ne
     // render the trigger element and add events
     const renderTrigger = () => {
-      console.log('render trigger');
-
       const triggerProps: any = {
         key: 'T',
         ref: triggerRef,
@@ -237,7 +238,12 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
       const childrenElementProps: any = {
         className: `popup-content ${
-          className !== '' ? `${className}-content` : ''
+          className !== ''
+            ? className
+                .split(' ')
+                .map(c => `${c}-content`)
+                .join(' ')
+            : ''
         }`,
         style: {
           ...popupContentStyle,
@@ -268,6 +274,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
             <div
               ref={arrowRef}
               style={Object.assign({}, styles.popupArrow, arrowStyle)}
+              data-testid="arrow"
             />
           )}
           {children && typeof children === 'function'
@@ -284,8 +291,14 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       overlay && (
         <div
           key="O"
+          data-testid="overlay"
           className={`popup-overlay ${
-            className !== '' ? `${className}-overlay` : ''
+            className !== ''
+              ? className
+                  .split(' ')
+                  .map(c => `${c}-overlay`)
+                  .join(' ')
+              : ''
           }`}
           style={{
             ...ovStyle,

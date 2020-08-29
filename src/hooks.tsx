@@ -1,4 +1,4 @@
-import { useEffect, RefObject, SyntheticEvent } from 'react';
+import { useEffect, RefObject } from 'react';
 
 export const useOnEscape = (handler: () => void, active = true) => {
   useEffect(() => {
