@@ -1,25 +1,26 @@
 {
   "name": "reactjs-popup",
-  "version": "2.0.0",
+  "version": "1.5.0",
   "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "dist/index.js",
   "module": "dist/reactjs-popup.esm.js",
+  "umd:main": "dist/reactjs-popup.umd.production.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build --entry src/index.tsx",
+    "build": "NODE_ENV=production tsdx build --entry src/index.tsx  --format=cjs,esm,umd",
     "test": "tsdx test --passWithNoTests --env=jest-environment-jsdom-sixteen",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "np": "np --any-branch"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -53,6 +54,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "np": "^6.5.0",
     "react": "^16.13.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
