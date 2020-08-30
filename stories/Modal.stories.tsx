@@ -101,7 +101,10 @@ const NestedModalTemplate: Story<PopupProps> = args => (
     <Popup {...args} nested>
       Popup content Here
       <Popup {...args} nested>
-        sqddsf
+        this a tooltip
+        <Popup {...args} modal={false}>
+          tooltip content
+        </Popup>
       </Popup>
       Popup content Here Lorem ipsum dolor sit amet consectetur adipisicing
       elit. Ut commodi veniam sint maiores, quas ullam labore doloribus quia
