@@ -3,14 +3,41 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import Popup from '../src';
-import { PopupProps } from '../src/types';
-import { getTooltipBoundary } from '../src/Utils';
+import { PopupProps, PopupPosition } from '../src/types';
+import calculatePosition, {
+  getTooltipBoundary,
+  POSITION_TYPES,
+} from '../src/Utils';
 
 const SimplePopup = ({ ...props }: Partial<PopupProps>) => (
   <Popup trigger={<button> trigger </button>} {...props}>
     <span> popup Content </span>
   </Popup>
 );
+
+const triggerBound = {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 40,
+  top: 100,
+  left: 100,
+  right: window.innerWidth - 300,
+  bottom: window.innerHeight - 100,
+  toJSON: () => {},
+};
+
+const contentBound = {
+  x: 100,
+  y: 100,
+  width: 300,
+  height: 100,
+  top: 100,
+  left: 100,
+  right: window.innerWidth - 300,
+  bottom: window.innerHeight - 100,
+  toJSON: () => {},
+};
 
 /*
 At this Moment I didn't found a right way to test  position as position depend on getBoundingClientRect
@@ -60,5 +87,20 @@ describe('Popup Positions ', () => {
     );
     fireEvent.click(screen.getByText('trigger'));
     expect(screen.getByRole('tooltip')).toHaveStyle(`position: absolute`);
+  });
+
+  test('should respect position prop ', () => {
+    const cords = (position: PopupPosition) =>
+      calculatePosition(
+        triggerBound,
+        contentBound,
+        position,
+        true,
+        { offsetX: 0, offsetY: 0 },
+        false
+      );
+    POSITION_TYPES.forEach((position: PopupPosition) => {
+      expect(cords(position)).toMatchSnapshot();
+    });
   });
 });
