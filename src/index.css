@@ -1,0 +1,22 @@
+/*
+default style for popup
+
+*/
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  border: 1px solid rgb(187, 187, 187);
+  padding: 5px;
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[role='tooltip'].popup-overlay {
+  background: transparent;
+}

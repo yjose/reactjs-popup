@@ -6,6 +6,7 @@ import { PopupActions } from '../src/types';
 import { Button, Center, Content } from './components';
 import { useState } from '@storybook/addons';
 // import './animations.css';
+import '../src/index.css';
 
 export default {
   title: 'Example/Modal',

@@ -1,20 +1,3 @@
-# Reactjs-popup
-
-- Add a nested prop to fix click outside => ok
-- add stories => ok
-- Fix accessability issues for modal => ok
-- accessability for tooltip => ok
-- stop on close propagation => ok
-- fix default styling ?
-- react testing library implementation
-- fix child as function typing
-- Alpha release with github
-- Animation using css : https://github.com/atomiks/tippyjs/tree/master/src/scss/animations
-- Create a useTooltip hook
-- update contributing guide
-- fix issue with nested Modal and Popup
-- add react dom as perDeps
-
 ## Accessibility
 
 https://bitsofco.de/accessible-modal-dialog/

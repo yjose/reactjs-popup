@@ -16,19 +16,10 @@ const Style: PopupStyle = {
   popupContent: {
     tooltip: {
       position: 'absolute',
-      width: '200px',
-      background: `rgb(255, 255, 255)`,
-      border: `1px solid rgb(187, 187, 187)`,
-      boxShadow: `rgba(0, 0, 0, 0.2) 0px 1px 3px`,
-      padding: '5px',
     },
     modal: {
       position: 'relative',
-      background: `rgb(255, 255, 255)`,
-      width: '50%',
       margin: 'auto',
-      border: `1px solid rgb(187, 187, 187)`,
-      padding: '5px',
     },
   },
   popupArrow: {
@@ -55,7 +46,6 @@ const Style: PopupStyle = {
       bottom: '0',
       left: '0',
       right: '0',
-      background: `rgba(0, 0, 0,0.5)`,
       display: 'flex',
     },
   },
