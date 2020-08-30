@@ -105,8 +105,8 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       resetScroll();
     };
 
-    const togglePopup = (event: React.SyntheticEvent) => {
-      event.stopPropagation();
+    const togglePopup = (event?: React.SyntheticEvent) => {
+      event?.stopPropagation();
       if (!isOpen) openPopup();
       else closePopup();
     };
@@ -142,10 +142,10 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         openPopup();
       },
       close: () => {
-        openPopup();
+        closePopup();
       },
       toggle: () => {
-        openPopup();
+        togglePopup();
       },
     }));
 
