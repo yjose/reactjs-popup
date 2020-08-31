@@ -15,7 +15,9 @@ import {
   useTabbing,
 } from './hooks';
 
-import styles from './index.css';
+import './index.css';
+
+import styles from './styles';
 import calculatePosition from './Utils';
 
 let popupIdCounter = 0;
