@@ -16,6 +16,7 @@ const Style: PopupStyle = {
   popupContent: {
     tooltip: {
       position: 'absolute',
+      zIndex: 999,
     },
     modal: {
       position: 'relative',
@@ -39,6 +40,7 @@ const Style: PopupStyle = {
       bottom: '0',
       left: '0',
       right: '0',
+      zIndex: 999,
     },
     modal: {
       position: 'fixed',
@@ -47,6 +49,7 @@ const Style: PopupStyle = {
       left: '0',
       right: '0',
       display: 'flex',
+      zIndex: 999,
     },
   },
 };
