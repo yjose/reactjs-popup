@@ -55,6 +55,7 @@
     "babel-loader": "^8.1.0",
     "cssnano": "^4.1.10",
     "husky": "^4.2.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.2",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "np": "^6.5.0",
@@ -67,6 +68,11 @@
     "tsdx": "^0.13.2",
     "tslib": "^2.0.1",
     "typescript": "^3.9.7"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   },
   "dependencies": {},
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
