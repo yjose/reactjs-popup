@@ -1,0 +1,61 @@
+---
+id: controlled
+position: 4
+path: Controlled Popup
+hide_title: true
+sidebar_label: Controlled Popup
+title: React Popup Component - Controlled React Popup
+description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more, In this Tuto, we introduce how you can create a controlled popup, so you can control you popup state completely ...
+---
+
+<!-- import ControlledPopup from './../examples/ControlledPopup.js' -->
+
+### Controlled React Popup
+
+As we already mentioned in the Component API section, you can create a controlled popup component by using the `open` prop like the following :
+
+```jsx live=true
+class ControlledPopup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+  openModal() {
+    this.setState({ open: true });
+  }
+  closeModal() {
+    this.setState({ open: false });
+  }
+
+  render() {
+    return (
+      <div>
+        <button className="button" onClick={this.openModal}>
+          Controlled Popup
+        </button>
+        <Popup
+          open={this.state.open}
+          closeOnDocumentClick
+          onClose={this.closeModal}
+        >
+          <div className="modal">
+            <a className="close" onClick={this.closeModal}>
+              &times;
+            </a>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+            omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+            ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+            doloribus. Odit, aut.
+          </div>
+        </Popup>
+      </div>
+    );
+  }
+}
+
+// render(<ControlledPopup />);
+```
+
+It's important to mention that the controlled popup works for modal only and I think it does not make sense to use controlled popup for tooltip and menu because we need the trigger element to calculate popup position.
