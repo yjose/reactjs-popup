@@ -275,9 +275,19 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           {arrow && !isModal && (
             <div
               ref={arrowRef}
-              style={Object.assign({}, styles.popupArrow, arrowStyle)}
               data-testid="arrow"
-            />
+              style={Object.assign({}, styles.popupArrow, arrowStyle)}
+            >
+              <svg
+                viewBox="0 0 32 16"
+                style={{
+                  position: 'absolute',
+                  filter: 'drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16))',
+                }}
+              >
+                <path d="M16 0l16 16H0z" fill="currentcolor" />
+              </svg>
+            </div>
           )}
           {children && typeof children === 'function'
             ? children(closePopup, isOpen)
@@ -294,6 +304,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         <div
           key="O"
           data-testid="overlay"
+          data-popup={isModal ? 'modal' : 'tooltip'}
           className={`popup-overlay ${
             className !== ''
               ? className

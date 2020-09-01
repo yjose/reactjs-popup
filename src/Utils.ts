@@ -64,24 +64,24 @@ const getCoordinatesForPosition = (
   switch (args[0]) {
     case 'top':
       top -= height / 2 + triggerBounding.height / 2 + margin;
-      transform = `rotate(45deg)`;
+      transform = `rotate(180deg)  translateX(50%)`;
       arrowTop = '100%';
       arrowLeft = '50%';
       break;
     case 'bottom':
       top += height / 2 + triggerBounding.height / 2 + margin;
-      transform = `rotate(225deg)`;
+      transform = `rotate(0deg) translateY(-100%) translateX(-50%)`;
       arrowLeft = '50%';
       break;
     case 'left':
       left -= width / 2 + triggerBounding.width / 2 + margin;
-      transform = ` rotate(-45deg)`;
+      transform = ` rotate(90deg)  translateY(50%) translateX(-25%)`;
       arrowLeft = '100%';
       arrowTop = '50%';
       break;
     case 'right':
       left += width / 2 + triggerBounding.width / 2 + margin;
-      transform = `rotate(135deg)`;
+      transform = `rotate(-90deg)  translateY(-150%) translateX(25%)`;
       arrowTop = '50%';
       break;
     default:

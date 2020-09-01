@@ -24,14 +24,12 @@ const Style: PopupStyle = {
     },
   },
   popupArrow: {
-    height: '10px',
-    width: '10px',
+    height: '8px',
+    width: '16px',
     position: 'absolute',
-    background: 'rgb(255, 255, 255)',
-    transform: 'rotate(45deg)',
-    margin: '-5px',
-    zIndex: 1,
-    boxShadow: 'rgba(0, 0, 0, 0.2) 1px 1px 1px',
+    background: 'transparent',
+    color: '#FFF',
+    zIndex: -1,
   },
   overlay: {
     tooltip: {
