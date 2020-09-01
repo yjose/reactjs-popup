@@ -1,6 +1,5 @@
 ---
 id: component-api
-position: 3
 path: Component API
 hide_title: true
 sidebar_label: Component API
@@ -60,7 +59,7 @@ Take full control over popup state.
 
 > bool | false
 
-default open value : initial state
+Default open value : initial state
 
 ### on
 
@@ -120,19 +119,19 @@ Disable body scroll when modal is open ( work only with modal)
 
 > bool | true
 
-close popup when the overlay clicked
+Close popup when the overlay clicked
 
 ### closeOnEscape
 
 > bool | true
 
-close popup when Escape clicked
+Close popup when Escape clicked
 
 ### repositionOnResize
 
 > bool | true
 
-recalculate position when window is resized
+Recalculate position when window is resized
 
 ### mouseEnterDelay
 
@@ -155,7 +154,7 @@ Function called on open event
 
 > {func}
 
-function called on close event
+Function called on close event
 
 ### contentStyle
 
@@ -185,21 +184,10 @@ Custom Popup ClassName <br/> Note: this class name will be merged with the compo
 
 > bool, string | true
 
-html selector, class name or id element that the tooltip must be inside (defaults to `window` if keepTooltipInside = true) default false |
+Html selector, class name or id element that the tooltip must be inside (defaults to `window` if keepTooltipInside = true) default false |
 
-### Example : on focus
+### nested
 
-```jsx live=true
-const PopupOnFocus = () => (
-  <Popup
-    trigger={<input type="text" placeholder="start typing ... " />}
-    on="focus"
-    position="top left"
-    closeOnDocumentClick
-  >
-    <span> On focus popup event </span>
-  </Popup>
-);
+> bool | false
 
-render(<PopupOnFocus />);
-```
+Starting from v2 you should add nested props if you are going to use nested popups ( to make sure `onClickOutside` behavior will work as expected)

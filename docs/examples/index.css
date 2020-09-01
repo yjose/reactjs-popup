@@ -8,10 +8,6 @@
   white-space: pre-line;
 }
 
-.popup-content {
-  background-color: #2980b9;
-}
-
 .example-warper .button,
 .popup-content .button {
   font-family: 'Roboto', Arial, sans-serif;
@@ -75,12 +71,12 @@
   position: absolute;
   display: block;
   padding: 2px 5px;
-  line-height: 20px;
   right: -10px;
   top: -10px;
   font-size: 24px;
   border-radius: 18px;
   border: 1px solid #cfcece;
+  background-color: #fff;
 }
 .example-warper .example-warper-start {
   width: 100%;
@@ -89,18 +85,29 @@
   flex-wrap: wrap;
   border: 1px #cfcece dashed;
 }
-.modal > .menu {
+.popup-menu {
   width: 200px;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
 }
-.modal > .menu .menu-item {
+.popup-menu .menu-item {
   cursor: pointer;
   padding: 5px;
-  height: 28px;
-  border-top: 1px solid #bbbbbb;
+  border-top: 1px solid #e8e7e7;
 }
-.modal > .menu .menu-item:hover {
+.popup-menu .menu-item:hover {
   color: #2980b9;
+}
+
+html[data-theme='dark'] .popup-content {
+  background-color: #817f7f;
+  color: #fff;
+}
+
+html[data-theme='light'] .popup-content {
+  background-color: #fff;
+  color: #000;
+}
+html[data-theme='dark'] .popup-arrow > svg {
+  color: #817f7f;
 }

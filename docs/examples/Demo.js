@@ -18,6 +18,7 @@ const CustomModal = () => (
     modal
     lockScroll={false}
     contentStyle={contentStyle}
+    nested
   >
     {close => (
       <div className="modal">
@@ -47,8 +48,9 @@ const CustomModal = () => (
             position="top center"
             closeOnDocumentClick
             contentStyle={{ padding: '0px', border: 'none' }}
+            nested
           >
-            <div className="menu">
+            <div className="popup-menu">
               <div className="menu-item"> Menu item 1</div>
               <div className="menu-item"> Menu item 2</div>
               <div className="menu-item"> Menu item 3</div>
@@ -62,7 +64,7 @@ const CustomModal = () => (
                 contentStyle={{ padding: '0px', border: 'none' }}
                 arrow={false}
               >
-                <div className="menu">
+                <div className="popup-menu">
                   <div className="menu-item"> item 1</div>
                   <div className="menu-item"> item 2</div>
                   <div className="menu-item"> item 3</div>
