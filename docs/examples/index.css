@@ -6,12 +6,14 @@
   border: 1px #cfcece dashed;
   margin: 10px;
   white-space: pre-line;
-  color: #000;
-  /*
-  card
-  */
 }
-.example-warper .button {
+
+.popup-content {
+  background-color: #2980b9;
+}
+
+.example-warper .button,
+.popup-content .button {
   font-family: 'Roboto', Arial, sans-serif;
   color: #000000;
   cursor: pointer;
@@ -45,29 +47,30 @@
   font-size: 14px;
   text-align: center;
 }
-.example-warper .modal {
+.modal {
   font-size: 12px;
 }
-.example-warper .modal > .header {
+.modal > .header {
   width: 100%;
   border-bottom: 1px solid gray;
   font-size: 18px;
   text-align: center;
   padding: 5px;
 }
-.example-warper .modal > .content {
+.modal > .content {
   width: 100%;
   padding: 10px 5px;
 }
-.example-warper .modal > .actions {
+.modal > .actions {
   margin: auto;
 }
-.example-warper .modal > .actions {
+.modal > .actions {
   width: 100%;
   padding: 10px 5px;
   text-align: center;
 }
-.example-warper .modal > .close {
+
+.modal > .close {
   cursor: pointer;
   position: absolute;
   display: block;
@@ -76,7 +79,6 @@
   right: -10px;
   top: -10px;
   font-size: 24px;
-  background: #ffffff;
   border-radius: 18px;
   border: 1px solid #cfcece;
 }
@@ -87,18 +89,18 @@
   flex-wrap: wrap;
   border: 1px #cfcece dashed;
 }
-.example-warper .menu {
+.modal > .menu {
   width: 200px;
   display: flex;
   flex-direction: column;
   background: #ffffff;
 }
-.example-warper .menu-item {
+.modal > .menu .menu-item {
   cursor: pointer;
   padding: 5px;
   height: 28px;
   border-top: 1px solid #bbbbbb;
 }
-.example-warper .menu-item:hover {
+.modal > .menu .menu-item:hover {
   color: #2980b9;
 }
