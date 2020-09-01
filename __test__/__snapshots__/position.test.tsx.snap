@@ -6,7 +6,7 @@ Object {
   "arrowTop": "100%",
   "left": 100,
   "top": -8,
-  "transform": "rotate(45deg)",
+  "transform": "rotate(180deg)  translateX(50%)",
 }
 `;
 
@@ -16,7 +16,7 @@ Object {
   "arrowTop": "100%",
   "left": 0,
   "top": -8,
-  "transform": "rotate(45deg)",
+  "transform": "rotate(180deg)  translateX(50%)",
 }
 `;
 
@@ -26,7 +26,7 @@ Object {
   "arrowTop": "100%",
   "left": -100,
   "top": -8,
-  "transform": "rotate(45deg)",
+  "transform": "rotate(180deg)  translateX(50%)",
 }
 `;
 
@@ -36,7 +36,7 @@ Object {
   "arrowTop": "20px",
   "left": 208,
   "top": 100,
-  "transform": "rotate(135deg)",
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
 }
 `;
 
@@ -46,7 +46,7 @@ Object {
   "arrowTop": "50%",
   "left": 208,
   "top": 70,
-  "transform": "rotate(135deg)",
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
 }
 `;
 
@@ -56,7 +56,7 @@ Object {
   "arrowTop": "80px",
   "left": 208,
   "top": 40,
-  "transform": "rotate(135deg)",
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
 }
 `;
 
@@ -66,7 +66,7 @@ Object {
   "arrowTop": "0%",
   "left": 100,
   "top": 148,
-  "transform": "rotate(225deg)",
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
 }
 `;
 
@@ -76,7 +76,7 @@ Object {
   "arrowTop": "0%",
   "left": 0,
   "top": 148,
-  "transform": "rotate(225deg)",
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
 }
 `;
 
@@ -86,7 +86,7 @@ Object {
   "arrowTop": "0%",
   "left": -100,
   "top": 148,
-  "transform": "rotate(225deg)",
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
 }
 `;
 
@@ -96,7 +96,7 @@ Object {
   "arrowTop": "20px",
   "left": -208,
   "top": 100,
-  "transform": " rotate(-45deg)",
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
 }
 `;
 
@@ -106,7 +106,7 @@ Object {
   "arrowTop": "50%",
   "left": -208,
   "top": 70,
-  "transform": " rotate(-45deg)",
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
 }
 `;
 
@@ -116,6 +116,6 @@ Object {
   "arrowTop": "80px",
   "left": -208,
   "top": 40,
-  "transform": " rotate(-45deg)",
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
 }
 `;
