@@ -10,14 +10,13 @@ redirects:
   - 'use case - Tooltip'
 ---
 
-<!-- import NestedToolTip from './../examples/NestedToolTip.js' -->
-<!-- import BoundedTooltip from './../src/examples/BoundedTooltip.js' -->
+import NestedToolTip from './../examples/NestedToolTip.js';
 
-## Nested React Tooltip
+# Nested React Tooltip
 
-reactjs-popup support nested Tooltip
+Starting from v2 you need to add `nested` popup to make sure nested Modal/tooltips will work as expected
 
-<!-- <NestedToolTip /> -->
+<NestedToolTip />
 
 ```jsx
 import React from 'react';
@@ -27,7 +26,7 @@ const NestedToolTip = () => (
   <Popup
     trigger={<button className="button"> Trigger 1 </button>}
     position="top center"
-    closeOnDocumentClick
+    nested
   >
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor
@@ -35,7 +34,7 @@ const NestedToolTip = () => (
       <Popup
         trigger={<button className="button"> Trigger 2 </button>}
         position="bottom left"
-        closeOnDocumentClick
+        nested
       >
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
@@ -43,7 +42,7 @@ const NestedToolTip = () => (
           <Popup
             trigger={<button className="button"> Trigger 3 </button>}
             position="top right"
-            closeOnDocumentClick
+            nested
           >
             <span> Popup content </span>
           </Popup>
@@ -52,48 +51,4 @@ const NestedToolTip = () => (
     </div>
   </Popup>
 );
-```
-
-## Bounded React Tooltip
-
-reactjs-popup supports tooltip bounded inside an element(defaults to window)
-
-<!-- <BoundedTooltip /> -->
-
-```jsx
-import React from 'react';
-import Popup from 'reactjs-popup';
-
-const BoundedTooltip = () => (
-  <div
-    style={{ height: 200, width: 400, border: '1px solid #ccc' }}
-    className={'tooltipBoundary'}
-  >
-    <Popup
-      trigger={<button className="button"> Trigger 1 </button>}
-      position={['top center', 'bottom right', 'bottom left']}
-      closeOnDocumentClick
-      keepTooltipInside=".tooltipBoundary"
-    >
-      <span> Tooltip Content </span>
-    </Popup>
-  </div>
-);
-```
-
-## Play with React Tooltip
-
-```jsx live=true
-const Tooltip = () => (
-  <Popup
-    trigger={open => (
-      <button className="button">Trigger - {open ? 'Opened' : 'Closed'}</button>
-    )}
-    position="right center"
-    closeOnDocumentClick
-  >
-    <span> Popup content </span>
-  </Popup>
-);
-// render(<Tooltip />);
 ```

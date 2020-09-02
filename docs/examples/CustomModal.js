@@ -1,6 +1,6 @@
 import React from 'react';
 import Warper from './Warper';
-import Popup from '../../src/index';
+import Popup from 'reactjs-popup';
 //
 
 const contentStyle = {
@@ -12,12 +12,12 @@ const CustomModal = () => (
   <Popup
     trigger={
       <button type="button" className="button">
-        {' '}
-        Open Modal{' '}
+        Open Modal
       </button>
     }
     modal
     contentStyle={contentStyle}
+    nested
   >
     {close => (
       <div className="modal">
@@ -26,7 +26,6 @@ const CustomModal = () => (
         </a>
         <div className="header"> Modal Title </div>
         <div className="content">
-          {' '}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a
           nostrum. Dolorem, repellat quidem ut, minima sint vel eveniet
           quibusdam voluptates delectus doloremque, explicabo tempore dicta
@@ -41,15 +40,13 @@ const CustomModal = () => (
           <Popup
             trigger={
               <button type="button" className="button">
-                {' '}
-                Trigger{' '}
+                Trigger
               </button>
             }
             position="top center"
-            closeOnDocumentClick
+            nested
           >
             <span>
-              {' '}
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
               magni omnis delectus nemo, maxime molestiae dolorem numquam
               mollitia, voluptate ea, accusamus excepturi deleniti ratione

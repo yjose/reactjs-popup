@@ -3,6 +3,6 @@ module.exports = {
     'Getting Started': ['welcome', 'getting-started', 'component-api'],
     Guides: ['modal', 'tooltip', 'menu', 'controlled', 'nested-popup'],
     Styling: ['js-styling', 'css-styling', 'styled-styling'],
-    'Advanced Guides': ['accessibility', 'animations'],
+    'Advanced Guides': ['accessibility', 'animations', 'migrating'],
   },
 };

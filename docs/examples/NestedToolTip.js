@@ -1,18 +1,18 @@
 import React from 'react';
 import Warper from './Warper';
-import Popup from '../../src/index';
+import Popup from 'reactjs-popup';
 //
 
 const NestedToolTip = () => (
   <Popup
     trigger={
       <button type="button" className="button">
-        {' '}
-        Trigger 1{' '}
+        Trigger 1
       </button>
     }
     position="bottom center"
     closeOnDocumentClick
+    nested
   >
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor
@@ -20,12 +20,12 @@ const NestedToolTip = () => (
       <Popup
         trigger={
           <button type="button" className="button">
-            {' '}
-            Trigger 2{' '}
+            Trigger 2
           </button>
         }
         position="bottom left"
         closeOnDocumentClick
+        nested
       >
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
@@ -33,12 +33,12 @@ const NestedToolTip = () => (
           <Popup
             trigger={
               <button type="button" className="button">
-                {' '}
-                Trigger 3{' '}
+                Trigger 3
               </button>
             }
             position="top right"
             closeOnDocumentClick
+            nested
           >
             <span> Popup content </span>
           </Popup>

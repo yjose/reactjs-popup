@@ -8,11 +8,15 @@ title: React Popup Component - Js Styling
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
 
-## js Styling
+# Using Styled-Components
 
-## Using Styled-Components
+The Component support styling using `Styled-component`:
 
-```javascript
+```jsx
+import React from 'react';
+import Popup from 'reactjs-popup';
+import Styled from 'styled-components';
+
 const StyledPopup = styled(Popup)`
   // use your custom style for ".popup-overlay"
   &-overlay {
@@ -33,6 +37,4 @@ const Modal = () => (
     <span> Modal content </span>
   </StyledPopup>
 );
-
-render(<Modal />);
 ```

@@ -10,13 +10,15 @@ redirects:
   - 'use case - Menu'
 ---
 
-// import SimpleMenu from './../examples/SimpleMenu.js'
+import SimpleMenu from './../examples/SimpleMenu.js';
 
-## React Menu
+# React Menu
 
 You can create a nested menu with reactjs-popup easily as the following example shows.
 
-```jsx live=true
+<SimpleMenu />
+
+```jsx
 const Menu = () => (
   <div className="menu">
     <div className="menu-item"> Menu item 1</div>
@@ -41,8 +43,6 @@ const Menu = () => (
     <div className="menu-item"> Menu item 4</div>
   </div>
 );
-
-render(<Menu />);
 ```
 
 ```css

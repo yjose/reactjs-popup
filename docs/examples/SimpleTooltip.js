@@ -1,6 +1,6 @@
 import React from 'react';
 import Warper from './Warper';
-import Popup from '../../dist/index';
+import Popup from 'reactjs-popup';
 //
 
 const SimpleTooltip = () => (
@@ -10,6 +10,7 @@ const SimpleTooltip = () => (
         Trigger
       </button>
     }
+    on="hover"
     position="right center"
     closeOnDocumentClick
   >
@@ -17,4 +18,4 @@ const SimpleTooltip = () => (
   </Popup>
 );
 
-export default SimpleTooltip;
+export default Warper(SimpleTooltip);

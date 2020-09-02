@@ -1,0 +1,116 @@
+---
+id: tooltip
+position: 5
+path: React Tooltip
+hide_title: true
+sidebar_label: Tooltip
+title: React Popup |  Use case - React Tooltip Example
+description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position
+redirects:
+  - 'use case - Tooltip'
+---
+
+import SimpleTooltip from './../examples/SimpleTooltip.js';
+import ToolTipPositions from './../examples/ToolTipPositions.js';
+import BoundedTooltip from './../examples/BoundedTooltip.js';
+
+# React Tooltip
+
+`reactjs-popup` is built to be a tooltip by default :
+
+<SimpleTooltip />
+
+```jsx
+const Tooltip = () => (
+  <Popup
+    trigger={open => (
+      <button className="button">Trigger - {open ? 'Opened' : 'Closed'}</button>
+    )}
+    position="right center"
+    closeOnDocumentClick
+  >
+    <span> Popup content </span>
+  </Popup>
+);
+```
+
+## React Tooltip Position
+
+we support almost all position for tooltip:
+
+<ToolTipPositions />
+
+```jsx
+import React from 'react';
+import Popup from 'reactjs-popup';
+import Card from './Card';
+//
+
+const POSITION_TYPES = [
+  'top left',
+  'top center',
+  'top right',
+  'right top',
+  'right center',
+  'right bottom',
+  'bottom left',
+  'bottom center',
+  'bottom right',
+  'left top',
+  'left center',
+  'left bottom',
+  'center center',
+];
+
+const ToolTipPositions = () => (
+  <div className="example-warper">
+    {POSITION_TYPES.map((position, i) => (
+      <Popup
+        key={`tp-${i}`}
+        trigger={
+          <button type="button" className="button">
+            {position}
+          </button>
+        }
+        position={position}
+        on="hover"
+        arrow={position !== 'center center'}
+      >
+        <Card title={position} />
+      </Popup>
+    ))}
+  </div>
+);
+```
+
+## Smart Tooltip Position
+
+For more accessability you should make sure your tooltip is visible under body viewport, in such case you can set `position` as array of positions and set `keepTooltipInside` to `true`.
+You can use `KeepTooltipInside` as a Html selector to make sure your popup is visible under the element viewport
+
+<BoundedTooltip />
+
+```jsx
+import React from 'react';
+import Popup from 'reactjs-popup';
+
+const BoundedTooltip = () => (
+  <div
+    style={{ height: 200, width: 400, border: '1px solid red' }}
+    className="tooltipBoundary"
+  >
+    <Popup
+      trigger={
+        <button type="button" className="button">
+          Trigger 1
+        </button>
+      }
+      position={['top center', 'bottom right', 'bottom left']}
+      closeOnDocumentClick
+      keepTooltipInside=".tooltipBoundary"
+    >
+      Tooltip content
+    </Popup>
+  </div>
+);
+```

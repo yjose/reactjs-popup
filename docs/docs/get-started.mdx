@@ -26,7 +26,7 @@ yarn add reactjs-popup -s
 
 To start using `reactjs-popup` you just need to import the component from the `reactjs-popup` package.
 
-```javascript
+```jsx
 import React from 'react';
 import Popup from 'reactjs-popup';
 
@@ -37,7 +37,15 @@ const PopupExample = () => (
 );
 ```
 
-> Optional : starting from v2 you need to import default styling
+:::important
+
+Starting from v2, you need to import default styling for modals and tooltips.
+
+Default styling is optional and we are using it to make prototyping with `reactjs-popup` more easy.
+
+If you are planing to create your own css for Modals and tooltip, which the case for most cases, You don't need to import default styling.check [css styling section](./css-styling.mdx) for more information.
+
+:::
 
 ```javascript
 import 'reactjs-popup/dist/index.css';
@@ -62,4 +70,4 @@ const PopupExample = () => (
 );
 ```
 
-> More Example in Guides Section
+> More Example in [Guides Section](./tooltip-examples.mdx)

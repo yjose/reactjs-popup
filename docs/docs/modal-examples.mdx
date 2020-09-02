@@ -10,10 +10,13 @@ redirects:
   - 'use case - modal'
 ---
 
-// import SimpleModal from './../examples/SimpleModal.js'
-// import CustomModal from './../examples/CustomModal.js'
+import SimpleModal from './../examples/SimpleModal.js';
 
-## React Modal
+import CustomModal from './../examples/CustomModal.js';
+
+# React Modal
+
+## Simple Modal
 
 To create a simple modal with reactjs-popup you just need to add the 'modal' attribute to your popup component.
 
@@ -25,16 +28,22 @@ const Modal = () => (
 );
 ```
 
+## Custom Modal
+
 You can take more control over your modal by using a function as children pattern
 
-{/_ <CustomModal /> _/}
+<CustomModal />
 
 ```jsx
 import React from 'react';
 import Popup from 'reactjs-popup';
 
 export default () => (
-  <Popup trigger={<button className="button"> Open Modal </button>} modal>
+  <Popup
+    trigger={<button className="button"> Open Modal </button>}
+    modal
+    nested
+  >
     {close => (
       <div className="modal">
         <a className="close" onClick={close}>
@@ -55,7 +64,7 @@ export default () => (
           <Popup
             trigger={<button className="button"> Trigger </button>}
             position="top center"
-            closeOnDocumentClick
+            nested
           >
             <span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae

@@ -8,6 +8,105 @@ title: React Popup Component - Css Styling
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
 
-## Css Styling
+# Css Styling
 
-- TO DO
+To style your Popup component using css classes, you can use the className we already provide by default with component or use your own custom className:
+
+### Default css classes
+
+- `popup-content`: to style popup content.
+- `popup-overlay`: to style popup overlay.
+- `popup-arrow` : to style popup arrow (arrow here is an svg element)
+
+using those css class will override the following default style :
+
+```css
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  padding: 5px;
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+```
+
+### Custom css classes
+
+`reactjs-popup` provide a `className` prop, but you need to be carful using this class in your css as we add `-content` , `-overlay` and `-arrow`, which mean you need to add style for `className-popup`,`className-overlay`,`className-arrow`:
+
+Lets assume you are going to add a className prop called `my-popup`, your css should look like the following :
+
+```css
+.my-popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  padding: 5px;
+}
+.my-popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].my-popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.my-popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].my-popup-overlay {
+  background: transparent;
+}
+```
+
+## Support Multiple theme
+
+Check our custom css styling for docs website which support dark and light themes:
+
+```css
+.popup-content {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+html[data-theme='dark'] .popup-content {
+  background-color: rgb(41, 45, 62);
+  color: #fff;
+  border: 1px solid #9a9595;
+}
+
+html[data-theme='light'] .popup-content {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #d7d7d7;
+}
+
+html[data-theme='dark'] .popup-arrow > svg {
+  color: rgb(41, 45, 62);
+  stroke-width: 2px;
+  stroke: #9a9595;
+  stroke-dasharray: 30px;
+  stroke-dashoffset: -54px;
+}
+
+html[data-theme='light'] .popup-arrow > svg {
+  color: #fff;
+  stroke-width: 2px;
+  stroke: #d7d7d7;
+  stroke-dasharray: 30px;
+  stroke-dashoffset: -54px;
+}
+```

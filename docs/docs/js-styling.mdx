@@ -8,31 +8,21 @@ title: React Popup Component - Js Styling
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
 ---
 
-## js Styling
+# js Styling
 
-## Using Styled-Components
+To style Popup Component using js styling, we provide `contentStyle`, `overlayStyle`, `arrowStyle` props to make your work easy.
 
-```javascript
-const StyledPopup = styled(Popup)`
-  // use your custom style for ".popup-overlay"
-  &-overlay {
-    ...;
-  }
-  // use your custom style for ".popup-content"
-  &-content {
-    ...;
-  }
-`;
+```jsx
+const contentStyle = { background: '#000' };
+const overlayStyle = { background: 'rgba(0,0,0,0.5)' };
+const arrowStyle = { color: '#000' }; // style for an svg element
 
 const Modal = () => (
-  <StyledPopup
+  <Popup
     trigger={<button className="button"> Open Modal </button>}
-    modal
-    closeOnDocumentClick
+    {...{ modal, closeOnDocumentClick, contentStyle, overlayStyle, arrowStyle }}
   >
     <span> Modal content </span>
-  </StyledPopup>
+  </Popup>
 );
-
-render(<Modal />);
 ```

@@ -4,7 +4,7 @@ import Popup from 'reactjs-popup';
 
 const BoundedTooltip = () => (
   <div
-    style={{ height: 200, width: 400, border: '1px solid #ccc' }}
+    style={{ height: 200, width: 400, border: '1px solid red' }}
     className="tooltipBoundary"
   >
     <Popup

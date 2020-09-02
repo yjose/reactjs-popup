@@ -1,0 +1,101 @@
+---
+id: controlled
+position: 4
+path: Controlled Popup
+hide_title: true
+sidebar_label: Controlled Popup
+title: React Popup Component - Controlled React Popup
+description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more, In this Tuto, we introduce how you can create a controlled popup, so you can control you popup state completely ...
+---
+
+import ControlledPopup from './../examples/ControlledPopup.js';
+import ControlledRefPopup from './../examples/ControlledRefPopup.js';
+
+# Controlled React Popup
+
+### Using `open` prop
+
+As we already mentioned in the Component API section, you can create a controlled popup component by using the `open` prop like the following :
+
+<ControlledPopup />
+
+```jsx
+import React, { useState } from 'react';
+import Warper from './Warper';
+import Popup from 'reactjs-popup';
+//
+
+const ControlledPopup = () => {
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
+  return (
+    <div>
+      <button type="button" className="button" onClick={() => setOpen(o => !o)}>
+        Controlled Popup
+      </button>
+      <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+        <div className="modal">
+          <a className="close" onClick={closeModal}>
+            &times;
+          </a>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+          omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+          ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+          doloribus. Odit, aut.
+        </div>
+      </Popup>
+    </div>
+  );
+};
+```
+
+:::note
+
+It's important to mention that the controlled popup works for modal only and I think it does not make sense to use controlled popup for tooltip and menu because we need the trigger element to calculate popup position.
+
+:::
+
+### Using ref to access Popup actions
+
+You can use Ref to access to Popup actions `open`, `close`, `toggle`
+
+<ControlledRefPopup />
+
+```jsx
+import React, { useRef } from 'react';
+import Warper from './Warper';
+import Popup from 'reactjs-popup';
+//
+
+const ControlledRefPopup = () => {
+  const ref = useRef();
+  const openTooltip = () => ref.current.open();
+  const closeTooltip = () => ref.current.close();
+  const toggleTooltip = () => ref.current.toggle();
+
+  return (
+    <div>
+      <button type="button" className="button" onClick={openTooltip}>
+        open
+      </button>
+      <button type="button" className="button" onClick={closeTooltip}>
+        close
+      </button>
+
+      <button type="button" className="button" onClick={toggleTooltip}>
+        toggle
+      </button>
+      <Popup
+        ref={ref}
+        trigger={
+          <button type="button" className="button">
+            I am the trigger
+          </button>
+        }
+      >
+        <div>Lorem ipsum dolor sit</div>
+      </Popup>
+    </div>
+  );
+};
+```

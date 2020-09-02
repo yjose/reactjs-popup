@@ -16,7 +16,7 @@ const CustomModal = () => (
       </button>
     }
     modal
-    lockScroll={false}
+    lockScroll={true}
     contentStyle={contentStyle}
     nested
   >
@@ -41,13 +41,12 @@ const CustomModal = () => (
           <Popup
             trigger={
               <button type="button" className="button">
-                {' '}
-                Menu Demo{' '}
+                Menu Demo
               </button>
             }
             position="top center"
             closeOnDocumentClick
-            contentStyle={{ padding: '0px', border: 'none' }}
+            contentStyle={{ padding: '0px' }}
             nested
           >
             <div className="popup-menu">
@@ -55,7 +54,7 @@ const CustomModal = () => (
               <div className="menu-item"> Menu item 2</div>
               <div className="menu-item"> Menu item 3</div>
               <Popup
-                trigger={<div className="menu-item"> sup Menu </div>}
+                trigger={<div className="menu-item"> Sup Menu </div>}
                 position="right top"
                 on="hover"
                 closeOnDocumentClick
