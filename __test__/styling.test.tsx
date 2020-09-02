@@ -49,9 +49,7 @@ describe('Popup Positions ', () => {
     render(<SimplePopup className="my_popup" />);
 
     fireEvent.click(screen.getByText(/trigger/));
-    expect(screen.getByTestId('arrow').className).toBe(
-      'popup-arrow my_popup-arrow'
-    );
+
     expect(screen.getByTestId('overlay').className).toBe(
       'popup-overlay my_popup-overlay'
     );
@@ -60,12 +58,10 @@ describe('Popup Positions ', () => {
     );
   });
 
-  test('should support multiple   classNames ', async () => {
+  test('should support multiple  classNames ', async () => {
     render(<SimplePopup className="my_popup test" />);
     fireEvent.click(screen.getByText(/trigger/));
-    expect(screen.getByTestId('arrow').className).toBe(
-      'popup-arrow my_popup-arrow test-arrow'
-    );
+
     expect(screen.getByTestId('overlay').className).toBe(
       'popup-overlay my_popup-overlay test-overlay'
     );

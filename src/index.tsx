@@ -183,12 +183,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           arrowStyle.top?.toString() || cords.arrowTop;
         arrowRef.current.style.left =
           arrowStyle.left?.toString() || cords.arrowLeft;
-        arrowRef.current.classList.add(`popup-arrow`);
-        if (className !== '') {
-          arrowRef.current.classList.add(
-            ...className.split(' ').map(c => `${c}-arrow`)
-          );
-        }
       }
     };
     // hooks
@@ -273,16 +267,22 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           id={popupId.current}
         >
           {arrow && !isModal && (
-            <div
-              ref={arrowRef}
-              data-testid="arrow"
-              style={Object.assign({}, styles.popupArrow, arrowStyle)}
-            >
+            <div ref={arrowRef} style={styles.popupArrow}>
               <svg
+                data-testid="arrow"
+                className={`popup-arrow ${
+                  className !== ''
+                    ? className
+                        .split(' ')
+                        .map(c => `${c}-arrow`)
+                        .join(' ')
+                    : ''
+                }`}
                 viewBox="0 0 32 16"
                 style={{
                   position: 'absolute',
                   filter: 'drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16))',
+                  ...arrowStyle,
                 }}
               >
                 <path d="M16 0l16 16H0z" fill="currentcolor" />

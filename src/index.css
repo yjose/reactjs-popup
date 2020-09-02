@@ -14,6 +14,7 @@ default style for popup
 [role='tooltip'].popup-content {
   width: 200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+  border-radius: 5px;
 }
 
 .popup-overlay {
