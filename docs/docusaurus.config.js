@@ -9,6 +9,10 @@ module.exports = {
   projectName: 'reactjs-popup', // Usually your repo name.
   themeConfig: {
     //sidebarCollapsible: false,
+    colorMode: {
+      // "light" | "dark"
+      defaultMode: 'dark',
+    },
     navbar: {
       title: 'Reactjs-popup',
       logo: {
