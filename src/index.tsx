@@ -117,6 +117,10 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       clearTimeout(timeOut.current);
       timeOut.current = setTimeout(openPopup, mouseEnterDelay);
     };
+    const onContextMenu = (event?: React.SyntheticEvent) => {
+      event?.preventDefault();
+      togglePopup();
+    };
 
     const onMouseLeave = () => {
       clearTimeout(timeOut.current);
@@ -206,6 +210,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         switch (onAsArray[i]) {
           case 'click':
             triggerProps.onClick = togglePopup;
+            break;
+          case 'right-click':
+            triggerProps.onContextMenu = onContextMenu;
             break;
           case 'hover':
             triggerProps.onMouseEnter = onMouseEnter;

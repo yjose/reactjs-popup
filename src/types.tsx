@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type EventType = 'hover' | 'click' | 'focus';
+export type EventType = 'hover' | 'click' | 'focus' | 'right-click';
 export type PopupPosition =
   | 'top left'
   | 'top center'

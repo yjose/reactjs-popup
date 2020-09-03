@@ -134,6 +134,14 @@ describe('Popup Component with "on" Prop ', () => {
     fireEvent.click(screen.getByText('trigger'));
     popupContentShouldntExist();
   });
+  test('it should be opened only on Right-Click where on="right-click" ', () => {
+    render(<SimplePopup on="right-click" />);
+    popupContentShouldntExist();
+    fireEvent.contextMenu(screen.getByText('trigger'));
+    popupContentShouldExist();
+    fireEvent.contextMenu(screen.getByText('trigger'));
+    popupContentShouldntExist();
+  });
   test('it should be opened only on Hover where on="hover" ', async () => {
     render(<SimplePopup on="hover" />);
     popupContentShouldntExist();
