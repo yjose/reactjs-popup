@@ -24,6 +24,25 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+.github-stars::before {
+  content: '';
+  height: 20px;
+  width: 90px;
+  display: flex;
+  background: url(https://img.shields.io/github/stars/yjose/reactjs-popup.svg?style=social);
+  background-repeat: no-repeat;
+}
+
+.buy-me-coffee::before {
+  content: '';
+  height: 30px;
+  width: 120px;
+  display: flex;
+  background: url(https://cdn.buymeacoffee.com/buttons/default-orange.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 #carbonads {
   --width: 180px;
   --font-size: 14px;

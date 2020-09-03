@@ -1,12 +1,10 @@
 ---
 id: how-to-contribute
-position: 8
-path: Contributing
-title: React Popup | Component Contributing Guide
+slug: how-to-contribute
+sidebar_label: Contributing Guide
+title: Contributing Guide
 description: A Simple React popup component. Use it as a tooltip,modal,sub-menu and match more ...
 ---
-
-# Contributing
 
 ## Clone Repo
 
@@ -22,28 +20,24 @@ Install all npm scripts:
     or
     yarn install
 
-we use a simple package called parcel-story it's a simple storybook alternative more info https://github.com/yjose/parcel-story
+we use [storybook](https://storybook.js.org/) to build popup use cases.
 
-Run parcel-story :
+To start storybook:
 
 ```
-yarn start
+yarn storybook
 ```
 
 Run Test in watch mode
 
 ```
-yarn test-watch
+yarn test
 ```
 
-To make contributing simply you need to create a new story with documentation under stories/src directory ( you can copy/paste any story to start with).
+To make contributing simply you need to create a new story for your use case under `stories` directory to demonstrate the new features or the bug fix .
 
-In this story, you need to present the new features or the bug fix and don't forget to comment your code :) .
+Make Changes 😀.
 
-Make Changes. If you want to contribute check out the [help wanted](https://github.com/yjose/reactjs-popup/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues for things that need fixing.
+If you want to contribute check out the [help wanted](https://github.com/yjose/reactjs-popup/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues for things that need fixing.
 
-Before submitting a pull request run `npm run test` to run the unit-tests and `npm run eslint` to check for linting errors in your changes.
-
-## Licensing
-
-The code in this project is licensed under MIT license.
+Before submitting a pull request run `npm run test` to run the unit tests .

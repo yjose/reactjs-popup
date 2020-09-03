@@ -1,6 +1,7 @@
 module.exports = {
-  title: 'Reactjs Popup ',
-  tagline: 'The tagline of my site',
+  title: 'ReactJs Popup: Modals, Tooltips and Menus, All in One ',
+  tagline:
+    'react-popup,react-modal,react-tooltip,tooltip,modal,react,react-menu',
   url: 'https://reactjs-popup.elazizi.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -25,6 +26,16 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
+        {
+          href: 'https://www.buymeacoffee.com/yjose',
+          className: 'buy-me-coffee',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/yjose/reactjs-popup/stargazers',
+          className: 'github-stars',
+          position: 'right',
+        },
         {
           href: 'https://github.com/yjose/reactjs-popup',
           label: 'GitHub',
