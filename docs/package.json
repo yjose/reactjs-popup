@@ -30,5 +30,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@docusaurus/plugin-google-analytics": "^2.0.0-alpha.37",
+    "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37"
   }
 }

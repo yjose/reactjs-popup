@@ -21,13 +21,6 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
-        // { to: 'blog', label: 'Blog', position: 'left' },
-        {
           href: 'https://github.com/yjose/reactjs-popup',
           label: 'GitHub',
           position: 'right',
@@ -36,18 +29,10 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} reactjs-popup, Inc. Built with Docusaurus.`,
+    },
+    googleAnalytics: {
+      trackingID: 'UA-127901499-1',
     },
   },
   presets: [
@@ -55,6 +40,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
@@ -68,6 +54,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          cacheTime: 600 * 1000, // 600 sec - cache purge period
+          changefreq: 'weekly',
+          priority: 0.5,
         },
       },
     ],
