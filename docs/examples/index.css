@@ -123,7 +123,7 @@ html[data-theme='light'] .popup-content {
   border: 1px solid #d7d7d7;
 }
 
-html[data-theme='dark'] .popup-arrow > svg {
+html[data-theme='dark'] .popup-arrow {
   color: rgb(41, 45, 62);
   stroke-width: 2px;
   stroke: #464545;
@@ -131,7 +131,7 @@ html[data-theme='dark'] .popup-arrow > svg {
   stroke-dashoffset: -54px;
 }
 
-html[data-theme='light'] .popup-arrow > svg {
+html[data-theme='light'] .popup-arrow {
   color: #fff;
   stroke-width: 2px;
   stroke: #d7d7d7;

@@ -13,6 +13,11 @@ module.exports = {
       // "light" | "dark"
       defaultMode: 'dark',
     },
+    announcementBar: {
+      id: 'support_us', // Any value that will identify this message.
+      content:
+        '⭐️ If you like reactjs-popup, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/yjose/reactjs-popup/stargazers">GitHub!</a>  ⭐️ ',
+    },
     navbar: {
       title: 'Reactjs-popup',
       logo: {
