@@ -13,8 +13,6 @@
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-## Welcome
-
 [Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component that help you create simple and complex Modals, tooltips and Menus for your next React App.
 
 You should consider using reactjs-popup for those couple of reasons :
