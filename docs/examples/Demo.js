@@ -48,6 +48,7 @@ const CustomModal = () => (
             closeOnDocumentClick
             contentStyle={{ padding: '0px' }}
             nested
+            keepTooltipInside
           >
             <div className="popup-menu">
               <div className="menu-item"> Menu item 1</div>
@@ -62,6 +63,7 @@ const CustomModal = () => (
                 mouseEnterDelay={0}
                 contentStyle={{ padding: '0px', border: 'none' }}
                 arrow={false}
+                keepTooltipInside
               >
                 <div className="popup-menu">
                   <div className="menu-item"> item 1</div>
