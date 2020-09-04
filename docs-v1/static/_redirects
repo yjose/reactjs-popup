@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://react-popup.netlify.com/* https://react-popup.elazizi.com/:splat 301!
