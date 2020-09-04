@@ -80,5 +80,17 @@
   "bugs": {
     "url": "https://github.com/yjose/reactjs-popup/issues"
   },
+  "keywords": [
+    "react",
+    "popup",
+    "modal",
+    "tooltip",
+    "react-modal",
+    "reactjs",
+    "react-popup",
+    "reactjs-popup",
+    "reactjs-modal",
+    "react-tooltip"
+  ],
   "homepage": "https://react-popup.elazizi.com/"
 }

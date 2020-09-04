@@ -1,10 +1,11 @@
 # Reactjs-popup
 
 [![Build Status][build-badge]][build]
+[![npm bundle size][npm-bundle-size]][build]
 [![version][version-badge]][package]
 [![downloads][downloads-badge]][npmtrends]
-[![MIT License][license-badge]][license]
 
+[![MIT License][license-badge]][license]
 [![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
@@ -69,13 +70,13 @@ export default () => (
 
 # Contributing
 
-## Clone Repo
+### Clone Repo
 
 Fork and then clone the repo
 
     git clone git@github.com:your-username/reactjs-popup.git
 
-## Start Developing
+### Start Developing
 
 Install all npm scripts:
 
@@ -152,6 +153,7 @@ we are all made of stars [![Star on GitHub][github-star-badge]][github-star]
 </table>
 
 [build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square
+[npm-bundle-size]: https://img.shields.io/bundlephobia/minzip/reactjs-popup?style=flat-square
 [build]: https://travis-ci.org/yjose/reactjs-popup
 [version-badge]: https://img.shields.io/npm/v/reactjs-popup.svg?style=flat-square
 [package]: https://www.npmjs.com/package/reactjs-popup
