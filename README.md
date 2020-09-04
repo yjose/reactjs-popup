@@ -67,7 +67,7 @@ export default () => (
 );
 ```
 
-You can find more examples in the [reactjs-popup home page](https://react-popup.netlify.com)
+## 👉 [Full Reactjs Popup Docs](https://react-popup.elazizi.com)
 
 # Contributing
 
