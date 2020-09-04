@@ -46,7 +46,7 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} reactjs-popup, Inc. Built with Docusaurus.`,
+      copyright: `Built with ❤️ by <a target="_blank" rel="noopener noreferrer" href="https://elazizi.com/">Youssouf El Azizi</a> © ${new Date().getFullYear()}`,
     },
     googleAnalytics: {
       trackingID: 'UA-127901499-1',
