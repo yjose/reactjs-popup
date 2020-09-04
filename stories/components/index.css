@@ -1,0 +1,22 @@
+.modal-title {
+  border-bottom: 1px dashed #000;
+  text-align: center;
+}
+.modal-content {
+  padding: 20px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}

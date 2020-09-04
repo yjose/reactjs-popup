@@ -1,4 +1,21 @@
-# Reactjs-popup
+---
+id: welcome
+position: 1
+path: Introduction
+slug: /
+sidebar_label: Introduction
+title: React Popup
+hide_title: true
+description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
+
+redirects:
+  - 'Home'
+---
+
+import Demo from '../examples/Demo.js';
+// import Popup from 'reactjs-popup';
+
+# Introduction
 
 [![Build Status][build-badge]][build]
 [![version][version-badge]][package]
@@ -13,9 +30,7 @@
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-## Welcome
-
-[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component that help you create simple and complex Modals, tooltips and Menus for your next React App.
+Reactjs-popup is a simple react popup component that help you create simple and complex Modals, tooltips and Menus for your next React App.
 
 You should consider using reactjs-popup for those couple of reasons :
 
@@ -34,84 +49,7 @@ You should consider using reactjs-popup for those couple of reasons :
 
 This is a simple Demo to demonstrate how you can create Modals,Tooltips, Menus using `reactjs-popup`.
 
-[**Live Demo**](https://react-popup.elazizi.com)
-
-![ reactjs popup demo](https://user-images.githubusercontent.com/11137944/92184555-74556c00-ee49-11ea-81c5-eb2a0087e93a.gif)
-
-## Installing / Getting started
-
-This package is available in npm repository as reactjs-popup. It will work correctly with all popular bundlers.
-
-```bash
-npm install reactjs-popup --save
-```
-
-Using yarn
-
-```bash
-yarn add reactjs-popup -s
-```
-
-## Include the Component
-
-To start using reactjs popup you just need to import the component from the reactjs-popup package.
-
-```jsx
-import React from 'react';
-import Popup from 'reactjs-popup';
-
-export default () => (
-  <Popup trigger={<button> Trigger</button>} position="right center">
-    <div>Popup content here !!</div>
-  </Popup>
-);
-```
-
-## 👉 [Full Reactjs Popup Docs](https://react-popup.elazizi.com)
-
-# Contributing
-
-## Clone Repo
-
-Fork and then clone the repo
-
-    git clone git@github.com:your-username/reactjs-popup.git
-
-## Start Developing
-
-Install all npm scripts:
-
-    npm install
-    or
-    yarn install
-
-we use [storybook](https://storybook.js.org/) to build popup use cases.
-
-To start storybook:
-
-```
-yarn storybook
-```
-
-Run Test in watch mode
-
-```
-yarn test
-```
-
-To make contributing simply you need to create a new story for your use case under `stories` directory to demonstrate the new features or the bug fix .
-
-Make Changes 😀.
-
-If you want to contribute check out the [help wanted](https://github.com/yjose/reactjs-popup/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues for things that need fixing.
-
-Before submitting a pull request run `npm run test` to run the unit tests .
-
-## Licensing
-
-The code in this project is licensed under MIT license.
-
-# Show your support!
+<Demo />
 
 ## Sponsor
 
@@ -132,6 +70,10 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
 
 we are all made of stars [![Star on GitHub][github-star-badge]][github-star]
 
+## Licensing
+
+The code in this project is licensed under MIT license.
+
 ## Maintainers
 
 <table>
@@ -139,8 +81,12 @@ we are all made of stars [![Star on GitHub][github-star-badge]][github-star]
     <tr>
       <td align="center">
         <a href="http://elazizi.com/">
-          <img width="150" height="150" src="https://github.com/yjose.png?v=3&s=150">
-          </br>
+          <img
+            width="150"
+            height="150"
+            src="https://github.com/yjose.png?v=3&s=150"
+          />
+          <br />
           Youssouf EL Azizi
         </a>
         <div>
@@ -150,7 +96,7 @@ we are all made of stars [![Star on GitHub][github-star-badge]][github-star]
         </div>
       </td>
     </tr>
-  <tbody>
+  </tbody>
 </table>
 
 [build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square

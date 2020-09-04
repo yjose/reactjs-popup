@@ -1,0 +1,28 @@
+---
+id: accessibility
+title: Accessibility
+sidebar_label: Accessibility
+slug: react-popup-accessibility
+description: Accessibility for  reactjs-popup,Nested Tooltip, all available position
+---
+
+Starting from v2 we built `reactjs-popup` with accessibility in mind based on the [WAI-ARIA Specification](https://www.w3.org/TR/wai-aria/) guidelines on how to build an accessible Modals and tooltip.
+
+Those are some default behavior we are implementing to make sure we are delivering accessible tooltips and Modals :
+
+- ✓ Markup the Modal, Tooltip and Overlay Appropriately
+
+  - ✓ Set `role="dialog"` for Modals and `role="tooltip"` for tooltips
+  - ✓ Set `aria-labelledby`
+  - ✓ Set `aria-describedby`
+
+- ✓ On Popup Open, we set focus to the first focusable element.
+- ✓ On Popup Close, we return focus to the last focused element.
+
+- ✓ While Open, we prevent mouse clicks outside for modal.
+- ✓ While Open, we prevent Tabbing to Outside the Popup.
+- ✓ Allow the ESC Key to Close the Modal and tooltip.
+
+:::important
+For accessible tooltip is highly recommended to set `on` prop to `focus` whenever you can.
+:::

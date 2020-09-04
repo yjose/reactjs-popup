@@ -1,66 +1,38 @@
 {
-  "name": "reactjs-popup-docs",
-  "description": "React Popup Docs",
-  "version": "1.0.0",
-  "author": "Youssouf El Azizi <youssoufelazizi@gmail.com>",
-  "dependencies": {
-    "@mdx-js/mdx": "^1.4.2",
-    "@mdx-js/react": "^1.4.2",
-    "@mdx-js/tag": "^0.20.3",
-    "gatsby": "^2.18.10",
-    "gatsby-cli": "^2.7.44",
-    "gatsby-mdx": "^1.0.0",
-    "gatsby-plugin-canonical-urls": "^2.1.6",
-    "gatsby-plugin-google-analytics": "^2.1.14",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.2.13",
-    "gatsby-plugin-mdx": "^1.0.37",
-    "gatsby-plugin-netlify": "^2.1.11",
-    "gatsby-plugin-nprogress": "^2.1.5",
-    "gatsby-plugin-offline": "^3.0.1",
-    "gatsby-plugin-react-helmet": "^3.1.6",
-    "gatsby-plugin-sass": "^2.1.13",
-    "gatsby-remark-prismjs": "^3.3.12",
-    "gatsby-source-filesystem": "^2.1.20",
-    "gatsby-transformer-remark": "^2.6.21",
-    "infima": "^0.2.0-alpha.2",
-    "node-sass": "^4.13.1",
-    "prismjs": "^1.17.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.0",
-    "react-live": "2.2.0",
-    "reactjs-popup": "^1.4.2",
-    "terser": "4.2.1",
-    "snyk": "^1.239.5"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "name": "docs",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.62",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.62",
+    "@mdx-js/react": "^1.5.8",
+    "clsx": "^1.1.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "reactjs-popup": "^2.0.0-5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.3.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-react-app": "^5.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1"
-  },
-  "resolutions": {
-    "terser": "3.14.*"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yjose/reactjs-popup/tree/master/docs"
-  },
-  "snyk": true
+    "@docusaurus/plugin-google-analytics": "^2.0.0-alpha.37",
+    "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37"
+  }
 }

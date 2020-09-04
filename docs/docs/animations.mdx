@@ -1,0 +1,44 @@
+---
+id: animations
+slug: react-popup-animation
+title: Animations
+sidebar_label: Animations
+description: A simple tooltip Animation example with reactjs-popup,Nested Tooltip, all available position
+---
+
+Adding animation to `reactjs-popup` is simple as animating any regular `div` in your react app. we recommend using css classes and `keyframes` a to animate Popup content.
+
+### Example
+
+Maybe you noticed the animation we are adding to most or our docs examples, Here is How you can add custom animation to your project.
+
+```css
+/* animation */
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}
+.popup-content {
+  -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+```
+
+:::caution
+
+it's important to mention that `reactjs-popup` only support animation on open.
+
+:::

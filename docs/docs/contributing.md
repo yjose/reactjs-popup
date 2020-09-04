@@ -1,4 +1,10 @@
-# Contributing
+---
+id: how-to-contribute
+slug: how-to-contribute
+sidebar_label: Contributing Guide
+title: Contributing Guide
+description: A Simple React popup component. Use it as a tooltip,modal,sub-menu and match more ...
+---
 
 ## Clone Repo
 

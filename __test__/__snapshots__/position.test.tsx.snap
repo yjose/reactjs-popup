@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup Positions  should respect position prop  1`] = `
+Object {
+  "arrowLeft": "50px",
+  "arrowTop": "100%",
+  "left": 100,
+  "top": -8,
+  "transform": "rotate(180deg)  translateX(50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  2`] = `
+Object {
+  "arrowLeft": "50%",
+  "arrowTop": "100%",
+  "left": 0,
+  "top": -8,
+  "transform": "rotate(180deg)  translateX(50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  3`] = `
+Object {
+  "arrowLeft": "250px",
+  "arrowTop": "100%",
+  "left": -100,
+  "top": -8,
+  "transform": "rotate(180deg)  translateX(50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  4`] = `
+Object {
+  "arrowLeft": "0%",
+  "arrowTop": "20px",
+  "left": 208,
+  "top": 100,
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  5`] = `
+Object {
+  "arrowLeft": "0%",
+  "arrowTop": "50%",
+  "left": 208,
+  "top": 70,
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  6`] = `
+Object {
+  "arrowLeft": "0%",
+  "arrowTop": "80px",
+  "left": 208,
+  "top": 40,
+  "transform": "rotate(-90deg)  translateY(-150%) translateX(25%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  7`] = `
+Object {
+  "arrowLeft": "50px",
+  "arrowTop": "0%",
+  "left": 100,
+  "top": 148,
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  8`] = `
+Object {
+  "arrowLeft": "50%",
+  "arrowTop": "0%",
+  "left": 0,
+  "top": 148,
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  9`] = `
+Object {
+  "arrowLeft": "250px",
+  "arrowTop": "0%",
+  "left": -100,
+  "top": 148,
+  "transform": "rotate(0deg) translateY(-100%) translateX(-50%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  10`] = `
+Object {
+  "arrowLeft": "100%",
+  "arrowTop": "20px",
+  "left": -208,
+  "top": 100,
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  11`] = `
+Object {
+  "arrowLeft": "100%",
+  "arrowTop": "50%",
+  "left": -208,
+  "top": 70,
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
+}
+`;
+
+exports[`Popup Positions  should respect position prop  12`] = `
+Object {
+  "arrowLeft": "100%",
+  "arrowTop": "80px",
+  "left": -208,
+  "top": 40,
+  "transform": " rotate(90deg)  translateY(50%) translateX(-25%)",
+}
+`;

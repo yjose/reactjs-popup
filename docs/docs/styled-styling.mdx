@@ -1,0 +1,39 @@
+---
+id: styled-styling
+slug: styled-styling
+hide_title: true
+sidebar_label: Styled Component Styling
+title: Styled Component Styling
+description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
+---
+
+# Using Styled-Components
+
+The Component support styling using `Styled-component`:
+
+```jsx
+import React from 'react';
+import Popup from 'reactjs-popup';
+import Styled from 'styled-components';
+
+const StyledPopup = styled(Popup)`
+  // use your custom style for ".popup-overlay"
+  &-overlay {
+    ...;
+  }
+  // use your custom style for ".popup-content"
+  &-content {
+    ...;
+  }
+`;
+
+const Modal = () => (
+  <StyledPopup
+    trigger={<button className="button"> Open Modal </button>}
+    modal
+    closeOnDocumentClick
+  >
+    <span> Modal content </span>
+  </StyledPopup>
+);
+```

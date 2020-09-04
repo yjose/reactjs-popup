@@ -1,0 +1,51 @@
+---
+id: nested-popup
+path: nested-react-tooltip
+hide_title: true
+sidebar_label: Nested React Tooltip
+title: Nested React Tooltip
+description: A simple tooltip example with reactjs-popup,Nested Tooltip, all available position
+---
+
+import NestedToolTip from './../examples/NestedToolTip.js';
+
+# Nested React Tooltip
+
+Starting from v2 you need to add `nested` popup to make sure nested Modal/tooltips will work as expected
+
+<NestedToolTip />
+
+```jsx
+import React from 'react';
+import Popup from 'reactjs-popup';
+
+const NestedToolTip = () => (
+  <Popup
+    trigger={<button className="button"> Trigger 1 </button>}
+    position="top center"
+    nested
+  >
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolor
+      nulla animi, natus velit assumenda deserunt molestias
+      <Popup
+        trigger={<button className="button"> Trigger 2 </button>}
+        position="bottom left"
+        nested
+      >
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          dolor nulla animi, natus velit assumenda deserunt
+          <Popup
+            trigger={<button className="button"> Trigger 3 </button>}
+            position="top right"
+            nested
+          >
+            <span> Popup content </span>
+          </Popup>
+        </div>
+      </Popup>
+    </div>
+  </Popup>
+);
+```
