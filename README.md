@@ -13,39 +13,30 @@
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-> built with react Fragment : react 16 Tiny 3KB
-
 ## Welcome
 
-[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component with a lot of benefits :
+[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component that help you create simple and complex Modals, tooltips and Menus for your next React App.
 
-- Built with react fragment that’s mean no additional wrapper Divs in your code or in the trigger element. 😮
-- Does not inject HTML outside your app root. 📦
-- Function as children pattern to take control over your popup anywhere in your code. 💪
-- Modal, Tooltip, Menu : All in one 🏋️
-- Full style customization 👌
-- Easy to use. 🚀
-- IE Support.🚀
-- TypeScript Support 👌
-- All these clocks in at around 3 kB zipped. ⚡️
+You should consider using reactjs-popup for those couple of reasons :
 
-Requires React >= 16.0
-
-## Sponsor
-[Reactjs-popup](https://react-popup.elazizi.com) is being sponsored by the following tool; please help to support us by taking a look and signing up to a free trial
-
-
-<a href="https://tracking.gitads.io/?repo=reactjs-popup/">
- <img max-height="200px" src="https://images.gitads.io/reactjs-popup/" alt="GitAds"/>
-</a>
+- **✅ Modal, Tooltip, Menu : All in one library 🏋️**
+- **✅ Very tiny library (3kb) ⚡️**
+- **✅ Fully accessible.**
+- **✅ Function as children pattern to take control over your popup anywhere in your code. 💪**
+- **✅ Easy to use. 🚀**
+- **✅ TypeScript Support 👌**
+- **✅ IE Support. 🚀**
+- **✅ Full style customization 👌 (js, CSS, styled-components)**
+- **✅ Support for controlled Modals & Tooltips**
+- **✅ Default & Custom Animations**
 
 ## Demo
 
+This is a simple Demo to demonstrate how you can create Modals,Tooltips, Menus using `reactjs-popup`.
+
 [**Live Demo**](https://react-popup.elazizi.com)
 
-![alt text](https://cdn-images-1.medium.com/max/800/1*x-TqQwyT2ADmnb51oRJCOg.gif)
-
-
+![ reactjs popup demo](https://user-images.githubusercontent.com/11137944/92184555-74556c00-ee49-11ea-81c5-eb2a0087e93a.gif)
 
 ## Installing / Getting started
 
@@ -66,8 +57,8 @@ yarn add reactjs-popup -s
 To start using reactjs popup you just need to import the component from the reactjs-popup package.
 
 ```jsx
-import React from "react";
-import Popup from "reactjs-popup";
+import React from 'react';
+import Popup from 'reactjs-popup';
 
 export default () => (
   <Popup trigger={<button> Trigger</button>} position="right center">
@@ -94,27 +85,27 @@ Install all npm scripts:
     or
     yarn install
 
-we use a simple package called parcel-story it's a simple storybook alternative more info https://github.com/yjose/parcel-story
+we use [storybook](https://storybook.js.org/) to build popup use cases.
 
-Run parcel-story :
+To start storybook:
 
 ```
-yarn start
+yarn storybook
 ```
 
 Run Test in watch mode
 
 ```
-yarn test-watch
+yarn test
 ```
 
-To make contributing simply you need to create a new story with documentation under stories/src directory ( you can copy/past any story to start with ).
+To make contributing simply you need to create a new story for your use case under `stories` directory to demonstrate the new features or the bug fix .
 
-In this story, you need to present the new features or the bug fix and don't forget to comment your code :) .
+Make Changes 😀.
 
-Make Changes. If you want to contribute check out the [help wanted](https://github.com/yjose/reactjs-popup/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues for things that need fixing.
+If you want to contribute check out the [help wanted](https://github.com/yjose/reactjs-popup/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) issues for things that need fixing.
 
-Before submitting a pull request run `npm run test` to run the unit-tests and `npm run eslint` to check for linting errors in your changes.
+Before submitting a pull request run `npm run test` to run the unit tests .
 
 ## Licensing
 
@@ -122,16 +113,26 @@ The code in this project is licensed under MIT license.
 
 # Show your support!
 
+## Sponsor
 
- <a href="https://www.buymeacoffee.com/yjose" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="40px" ></a>
+if you are interested to Sponsor this library and list your logo in this section, [Make sure to contact me](https://twitter.com/ElaziziYoussouf).
 
+## Show Your Support
 
-That's all, thank you for your attention, please [![Star on GitHub][github-star-badge]][github-star] the repo to show your support...
+<a href="https://www.buymeacoffee.com/yjose" target="_blank">
+  <img
+    src="https://cdn.buymeacoffee.com/buttons/default-orange.png"
+    alt="Buy Me A Coffee"
+    height="40px"
+  />
+</a>
+<br />
 
-...we are all made of stars [![Star on GitHub][github-star-badge]][github-star] !
+That's all, thank you for your attention, please [![Star on GitHub][github-star-badge]][github-star] the repo to show your support.
+
+we are all made of stars [![Star on GitHub][github-star-badge]][github-star]
 
 ## Maintainers
-
 
 <table>
   <tbody>
@@ -151,7 +152,6 @@ That's all, thank you for your attention, please [![Star on GitHub][github-star-
     </tr>
   <tbody>
 </table>
-
 
 [build-badge]: https://img.shields.io/travis/yjose/reactjs-popup.svg?style=flat-square
 [build]: https://travis-ci.org/yjose/reactjs-popup

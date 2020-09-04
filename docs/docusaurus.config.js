@@ -10,6 +10,7 @@ module.exports = {
   projectName: 'reactjs-popup', // Usually your repo name.
   themeConfig: {
     //sidebarCollapsible: false,
+    image: 'img/demo.gif',
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
