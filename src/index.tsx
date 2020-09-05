@@ -80,6 +80,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         focusedElBeforeOpen.current = document.activeElement;
         setPosition();
         focusContentOnOpen(); // for accessibility
+        lockScrolll();
+      } else {
+        resetScroll();
       }
       return () => {
         clearTimeout(timeOut.current);
@@ -98,8 +101,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       if (isOpen || disabled) return;
       setIsOpen(true);
       setTimeout(onOpen, 0);
-
-      lockScrolll();
     };
 
     const closePopup = () => {
@@ -107,7 +108,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       setIsOpen(false);
       if (isModal) (focusedElBeforeOpen.current as HTMLElement).focus();
       setTimeout(onClose, 0);
-      resetScroll();
     };
 
     const togglePopup = (event?: React.SyntheticEvent) => {

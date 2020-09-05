@@ -123,12 +123,12 @@ NestedModal.args = {
 };
 
 const ControlledModalTemplate: Story<PopupProps> = args => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <Center>
       <Button onClick={() => setOpen(prv => !prv)}>I controlled Modal</Button>
-      <Popup {...args} open={open} onClose={() => setOpen(false)}>
+      <Popup {...args} open={open} onClose={() => setOpen(false)} lockScroll>
         Popup content Here
       </Popup>
     </Center>
