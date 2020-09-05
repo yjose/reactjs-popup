@@ -8260,10 +8260,10 @@ react@^16.8.4:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-reactjs-popup@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/reactjs-popup/-/reactjs-popup-2.0.2.tgz#4e1bf5ac6a4aafa918921b685bbc275f448f016f"
-  integrity sha512-8uVnDzfuEsWWcwE3LE/YTzgu42gg3iGOE1HrRN47UH2g85DFq3CXqdmehNjVROacAp8AIvMAZtshZvotsFFODg==
+reactjs-popup@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/reactjs-popup/-/reactjs-popup-2.0.3.tgz#fd81e95671a6bc00eed38573db43ffaf08ce5a46"
+  integrity sha512-X/MxeOMwVAnqeCUaN8tvmiKEhqWB6Aa7m1UqAzotp8sGTcXWIGW6/Wsil7GT8AW5eFeeFWBavmytQJVcvEQTnA==
 
 "readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.7"

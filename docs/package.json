@@ -17,7 +17,7 @@
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "reactjs-popup": "^2.0.2"
+    "reactjs-popup": "^2.0.3"
   },
   "browserslist": {
     "production": [
