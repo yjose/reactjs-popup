@@ -291,7 +291,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
                 viewBox="0 0 32 16"
                 style={{
                   position: 'absolute',
-                  filter: 'drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16))',
                   ...arrowStyle,
                 }}
               >

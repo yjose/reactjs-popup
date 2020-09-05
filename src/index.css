@@ -7,6 +7,7 @@ default style for popup
   background: rgb(255, 255, 255);
   width: 50%;
   padding: 5px;
+  border: 1px solid #d7d7d7;
 }
 .popup-arrow {
   color: rgb(255, 255, 255);
@@ -22,4 +23,13 @@ default style for popup
 }
 [data-popup='tooltip'].popup-overlay {
   background: transparent;
+}
+
+.popup-arrow {
+  filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16));
+  color: #fff;
+  stroke-width: 2px;
+  stroke: #d7d7d7;
+  stroke-dasharray: 30px;
+  stroke-dashoffset: -54px;
 }

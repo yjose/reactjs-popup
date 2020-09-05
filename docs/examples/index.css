@@ -124,6 +124,7 @@ html[data-theme='light'] .popup-content {
 }
 
 html[data-theme='dark'] .popup-arrow {
+  filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16));
   color: rgb(41, 45, 62);
   stroke-width: 2px;
   stroke: #464545;
@@ -132,6 +133,7 @@ html[data-theme='dark'] .popup-arrow {
 }
 
 html[data-theme='light'] .popup-arrow {
+  filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16));
   color: #fff;
   stroke-width: 2px;
   stroke: #d7d7d7;
