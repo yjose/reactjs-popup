@@ -88,7 +88,10 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     // for uncontrolled popup we need to sync isOpen with open prop
     useEffect(() => {
-      if (typeof open === 'boolean') setIsOpen(open && !disabled);
+      if (typeof open === 'boolean') {
+        if (open) openPopup();
+        else closePopup();
+      }
     }, [open, disabled]);
 
     const openPopup = () => {
@@ -288,7 +291,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
                 viewBox="0 0 32 16"
                 style={{
                   position: 'absolute',
-                  filter: 'drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16))',
                   ...arrowStyle,
                 }}
               >

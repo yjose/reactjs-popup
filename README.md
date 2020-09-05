@@ -58,6 +58,7 @@ To start using reactjs popup you just need to import the component from the reac
 ```jsx
 import React from 'react';
 import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 export default () => (
   <Popup trigger={<button> Trigger</button>} position="right center">
@@ -66,7 +67,14 @@ export default () => (
 );
 ```
 
-## 👉 [Full Reactjs Popup Docs](https://react-popup.elazizi.com)
+# Documentation
+
+- [Getting Started](https://react-popup.elazizi.com/)
+- [Modals, Tooltips, Menus examples ](https://react-popup.elazizi.com/react-modal)
+- [Custom Styling](https://react-popup.elazizi.com/css-styling)
+- [Controlled Components](https://react-popup.elazizi.com/controlled-popup)
+- [Animations](https://react-popup.elazizi.com/react-popup-animation)
+- [Migrating from V1 to V2 ](https://react-popup.elazizi.com/migrate-from-v1-to-v2)
 
 # Contributing
 

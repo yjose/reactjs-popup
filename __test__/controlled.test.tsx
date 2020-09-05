@@ -111,6 +111,18 @@ describe('Controlled Popup ', () => {
     expect(screen.queryByRole('dialog')).toBeInTheDocument();
   });
 
+  test('should lock scroll with controlled popup ', async () => {
+    render(<ControlledPopup lockScroll />);
+
+    fireEvent.click(screen.getByTestId('button'));
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(document.body).toHaveStyle(`overflow: hidden`);
+
+    fireEvent.click(screen.getByTestId('button'));
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(document.body).toHaveStyle(`overflow: auto`);
+  });
+
   test('should work correctly with children as fun and trigger as function ', async () => {
     render(<PopupAsFunc modal />);
 
