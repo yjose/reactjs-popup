@@ -21,9 +21,9 @@ const CustomModal = () => (
   >
     {close => (
       <div className="modal">
-        <a className="close" onClick={close}>
+        <button className="close" onClick={close}>
           &times;
-        </a>
+        </button>
         <div className="header"> Modal Title </div>
         <div className="content">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a

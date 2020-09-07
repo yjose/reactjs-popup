@@ -5,7 +5,9 @@ hide_title: true
 sidebar_label: Modal
 title: React Modal
 description: Create React Modal using reactjs-popup
----import SimpleModal from './../examples/SimpleModal.js';
+---
+
+import SimpleModal from './../examples/SimpleModal.js';
 
 import CustomModal from './../examples/CustomModal.js';
 
@@ -15,7 +17,7 @@ import CustomModal from './../examples/CustomModal.js';
 
 To create a simple modal with reactjs-popup you just need to add the 'modal' attribute to your popup component.
 
-```jsx live=true
+```jsx
 const Modal = () => (
   <Popup trigger={<button className="button"> Open Modal </button>} modal>
     <span> Modal content </span>
@@ -41,9 +43,9 @@ export default () => (
   >
     {close => (
       <div className="modal">
-        <a className="close" onClick={close}>
+        <button className="close" onClick={close}>
           &times;
-        </a>
+        </button>
         <div className="header"> Modal Title </div>
         <div className="content">
           {' '}

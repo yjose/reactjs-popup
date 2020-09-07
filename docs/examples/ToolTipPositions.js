@@ -29,7 +29,7 @@ const ToolTipPositions = () => (
           </button>
         }
         position={position}
-        on="hover"
+        on={['hover', 'focus']}
         arrow={position !== 'center center'}
       >
         <Card title={position} />
