@@ -92,5 +92,6 @@
     "reactjs-modal",
     "react-tooltip"
   ],
-  "homepage": "https://react-popup.elazizi.com/"
+  "homepage": "https://react-popup.elazizi.com/",
+  "repository": "yjose/reactjs-popup"
 }
