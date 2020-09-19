@@ -48,7 +48,7 @@ npm install reactjs-popup --save
 Using yarn
 
 ```bash
-yarn add reactjs-popup -s
+yarn add reactjs-popup
 ```
 
 ## Include the Component
