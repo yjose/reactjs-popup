@@ -6,7 +6,7 @@ title: Migrating from V1 to V2
 sidebar_label: Migrating from V1 to V2
 ---This doc guides you through migrating from reactjs-popup v1 to v2.
 
-As you may now, v2 is a complete rewrite of reactjs-popup first version, and we built the new version very carefully to make sure everything should work as expected with the old component API.
+As you may now, v2 is a complete rewrite of reactjs-popup first version, and we built the new version very carefully to make sure everything works as expected with the old component API.
 
 Unfortunately, with v2 improvements, you have some breaking changes for the following use cases.
 
@@ -18,7 +18,7 @@ If you are using nested modal, tooltips you should set `nested` as true.
 
 In reactjs-popup v1 we are shipping some default inline css styles that people usually override, and because all those styles are inline you can't override them using css className.
 
-For those couple of reasons, we through that maybe it would be more clean and practical to make those styles as an css file to make sure people can override them easily:
+For these reasons, we thought that maybe it would be more clean and practical to make those styles as a css file to make sure people can override them easily:
 
 - Import default style from the package :
 
