@@ -14,15 +14,15 @@
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component that help you create simple and complex Modals, tooltips and Menus for your next React App.
+[Reactjs-popup](https://react-popup.elazizi.com) is a simple react popup component that helps you create simple and complex Modals, tooltips, and Menus for your next React App.
 
 You should consider using reactjs-popup for those couple of reasons :
 
 - **✅ Modal, Tooltip, Menu : All in one library 🏋️**
 - **✅ Very tiny library (3kb) ⚡️**
-- **✅ Fully accessible.**
-- **✅ Function as children pattern to take control over your popup anywhere in your code. 💪**
-- **✅ Easy to use. 🚀**
+- **✅ Fully accessible**
+- **✅ Function as children pattern to take control over your popup anywhere in your code 💪**
+- **✅ Easy to use 🚀**
 - **✅ TypeScript Support 👌**
 - **✅ IE Support. 🚀**
 - **✅ Full style customization 👌 (js, CSS, styled-components)**
@@ -31,7 +31,7 @@ You should consider using reactjs-popup for those couple of reasons :
 
 ## Demo
 
-This is a simple Demo to demonstrate how you can create Modals,Tooltips, Menus using `reactjs-popup`.
+This is a simple Demo to demonstrate how you can create Modals, Tooltips, Menus using `reactjs-popup`.
 
 [**Live Demo**](https://react-popup.elazizi.com)
 
@@ -39,7 +39,7 @@ This is a simple Demo to demonstrate how you can create Modals,Tooltips, Menus u
 
 ## Installing / Getting started
 
-This package is available in npm repository as reactjs-popup. It will work correctly with all popular bundlers.
+This package is available in NPM repository as reactjs-popup. It will work correctly with all popular bundlers.
 
 ```bash
 npm install reactjs-popup --save
