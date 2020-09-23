@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from 'react';
+import { useEffect, RefObject, useLayoutEffect } from 'react';
 
 export const useOnEscape = (handler: () => void, active = true) => {
   useEffect(() => {
@@ -105,3 +105,6 @@ export const useTabbing = (
     };
   }, [contentRef, active]);
 };
+
+export const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;

@@ -2,7 +2,6 @@ import React, {
   useState,
   useRef,
   useEffect,
-  useLayoutEffect,
   forwardRef,
   useImperativeHandle,
 } from 'react';
@@ -13,6 +12,7 @@ import {
   useRepositionOnResize,
   useOnClickOutside,
   useTabbing,
+  useIsomorphicLayoutEffect,
 } from './hooks';
 
 import './index.css';
@@ -75,7 +75,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const isModal = modal ? true : !trigger;
     const timeOut = useRef<any>(0);
 
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       if (isOpen) {
         focusedElBeforeOpen.current = document.activeElement;
         setPosition();
