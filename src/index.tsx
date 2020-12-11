@@ -177,8 +177,8 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         },
         keepTooltipInside
       );
-      contentRef.current.style.top = `${cords.top + window.scrollY}px`;
-      contentRef.current.style.left = `${cords.left + window.scrollX}px`;
+      contentRef.current.style.top = `${cords.top + window.pageYOffset}px`;
+      contentRef.current.style.left = `${cords.left + window.pageXOffset}px`;
       if (arrow && !!arrowRef.current) {
         arrowRef.current.style.transform = cords.transform;
         arrowRef.current.style.setProperty('-ms-transform', cords.transform);
