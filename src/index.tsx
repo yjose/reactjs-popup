@@ -97,38 +97,40 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       }
     }, [open, disabled]);
 
-    const openPopup = () => {
+    const openPopup = (event?: React.SyntheticEvent) => {
       if (isOpen || disabled) return;
       setIsOpen(true);
-      setTimeout(onOpen, 0);
+      setTimeout(() => onOpen(event), 0);
     };
 
-    const closePopup = () => {
+    const closePopup = (event?: React.SyntheticEvent) => {
       if (!isOpen || disabled) return;
       setIsOpen(false);
       if (isModal) (focusedElBeforeOpen.current as HTMLElement).focus();
-      setTimeout(onClose, 0);
+      setTimeout(() => onClose(event), 0);
     };
 
     const togglePopup = (event?: React.SyntheticEvent) => {
       event?.stopPropagation();
-      if (!isOpen) openPopup();
-      else closePopup();
+      if (!isOpen) openPopup(event);
+      else closePopup(event);
     };
 
-    const onMouseEnter = () => {
+    const onMouseEnter = (event?: React.SyntheticEvent) => {
       clearTimeout(timeOut.current);
-      timeOut.current = setTimeout(openPopup, mouseEnterDelay);
+      timeOut.current = setTimeout(() => openPopup(event), mouseEnterDelay);
     };
+
     const onContextMenu = (event?: React.SyntheticEvent) => {
       event?.preventDefault();
       togglePopup();
     };
 
-    const onMouseLeave = () => {
+    const onMouseLeave = (event?: React.SyntheticEvent) => {
       clearTimeout(timeOut.current);
-      timeOut.current = setTimeout(closePopup, mouseLeaveDelay);
+      timeOut.current = setTimeout(() => closePopup(event), mouseLeaveDelay);
     };
+
     const lockScrolll = () => {
       if (isModal && lockScroll)
         document.getElementsByTagName('body')[0].style.overflow = 'hidden'; // migrate to document.body

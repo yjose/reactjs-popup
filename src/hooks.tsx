@@ -1,11 +1,11 @@
 import { useEffect, RefObject, useLayoutEffect } from 'react';
 
-export const useOnEscape = (handler: () => void, active = true) => {
+export const useOnEscape = (handler: (event: any) => void, active = true) => {
   useEffect(() => {
     if (!active) return;
     const listener = (event: any) => {
       // check if key is an Escape
-      if (event.key === 'Escape') handler();
+      if (event.key === 'Escape') handler(event);
     };
     document.addEventListener('keyup', listener);
 
@@ -34,7 +34,7 @@ export const useRepositionOnResize = (handler: () => void, active = true) => {
 
 export const useOnClickOutside = (
   ref: RefObject<HTMLElement> | RefObject<HTMLElement>[],
-  handler: () => void,
+  handler: (event: any) => void,
   active = true
 ) => {
   useEffect(() => {
@@ -51,7 +51,7 @@ export const useOnClickOutside = (
         }
       });
       event.stopPropagation();
-      if (!contains) handler();
+      if (!contains) handler(event);
     };
 
     document.addEventListener('mousedown', listener);

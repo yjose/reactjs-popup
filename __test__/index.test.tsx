@@ -68,9 +68,17 @@ describe('Popup Component Render ', () => {
     render(<SimplePopup onOpen={onOpen} onClose={onClose} />);
 
     fireEvent.click(screen.getByText('trigger'));
-    await waitFor(() => expect(onOpen).toHaveBeenCalled());
+    await waitFor(() => {
+      expect(onOpen).toHaveBeenCalled();
+      const [event] = onOpen.mock.calls[0];
+      expect(event.hasOwnProperty('target')).toBe(true);
+    });
     fireEvent.click(screen.getByText('trigger'));
-    await waitFor(() => expect(onClose).toHaveBeenCalled());
+    await waitFor(() => {
+      expect(onClose).toHaveBeenCalled();
+      const [event] = onClose.mock.calls[0];
+      expect(event.hasOwnProperty('target')).toBe(true);
+    });
     // expect(screen.getByRole('tooltip')).toBeInTheDocument();
   });
 

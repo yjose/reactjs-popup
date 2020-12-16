@@ -42,8 +42,8 @@ export interface PopupProps {
   repositionOnResize?: boolean;
   mouseEnterDelay?: number;
   mouseLeaveDelay?: number;
-  onOpen?: () => any;
-  onClose?: () => any;
+  onOpen?: (event?: React.SyntheticEvent) => any;
+  onClose?: (event?: React.SyntheticEvent) => any;
   contentStyle?: React.CSSProperties;
   overlayStyle?: React.CSSProperties;
   arrowStyle?: React.CSSProperties;
