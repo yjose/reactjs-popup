@@ -8,7 +8,7 @@
     "@mdx-js/react": "^1.4.2",
     "@mdx-js/tag": "^0.20.3",
     "gatsby": "^2.18.10",
-    "gatsby-cli": "^2.7.44",
+    "gatsby-cli": "^2.12.14",
     "gatsby-mdx": "^1.0.0",
     "gatsby-plugin-canonical-urls": "^2.1.6",
     "gatsby-plugin-google-analytics": "^2.1.14",
@@ -25,14 +25,14 @@
     "gatsby-transformer-remark": "^2.6.21",
     "infima": "^0.2.0-alpha.2",
     "node-sass": "^4.13.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.0",
-    "react-live": "2.2.0",
+    "react-live": "2.2.3",
     "reactjs-popup": "^1.4.2",
     "terser": "4.2.1",
-    "snyk": "^1.239.5"
+    "snyk": "^1.437.2"
   },
   "keywords": [
     "gatsby"
@@ -43,7 +43,7 @@
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn run snyk-protect"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
