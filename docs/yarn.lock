@@ -1304,11 +1304,6 @@
     "@docusaurus/utils" "^2.0.0-alpha.62"
     react-json-view "^1.19.1"
 
-"@docusaurus/plugin-google-analytics@^2.0.0-alpha.37":
-  version "2.0.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.37.tgz#e546bf61b35d4abd7e65bb9c4f6c02ba5c2297e3"
-  integrity sha512-RCR2UHL6OyYSupRxVn0x4PBJf4VJ1Xob/5Ps0ang915KfrUjLh51aXtvtx3SlRqsMJQt0aS/K5RFsPrpyfP38g==
-
 "@docusaurus/plugin-google-analytics@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.62.tgz#acb79218b6811c62c56dedc213958dc922609a91"
@@ -1318,14 +1313,6 @@
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-alpha.62.tgz#675e0f6674b54d5c391dfdbd6621927ec588f7eb"
   integrity sha512-CCfOAtrAzTLEcwvvZgVS9Iiivl43n8972CCZOkXE2+eCcNUrisygrP8+qFEq6TtgNwqO68bz4ceVb9zcu7CCig==
-
-"@docusaurus/plugin-sitemap@^2.0.0-alpha.37":
-  version "2.0.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-alpha.37.tgz#174fa03e7184db2971a491849b27e33f577a26b4"
-  integrity sha512-IF4uk2dcm1TFm9Lu9OOOk1QaLEeoUb6LXvvweKP+Usuw4OFfUcEd7KBJi2/mDSm+Ud3EenoQOENywNbKiLSzvg==
-  dependencies:
-    "@docusaurus/types" "^2.0.0-alpha.37"
-    sitemap "^3.2.2"
 
 "@docusaurus/plugin-sitemap@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
@@ -1388,15 +1375,6 @@
     clsx "^1.1.1"
     eta "^1.1.1"
     lodash "^4.17.19"
-
-"@docusaurus/types@^2.0.0-alpha.37":
-  version "2.0.0-alpha.37"
-  resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.0.0-alpha.37.tgz#e14b8758cfefab5235c5ec190c489dd32cb7a8b8"
-  integrity sha512-t0bwfUQLEY6FGZX1OGhB29y7OQFAzqmNfP/UewUWOb/OiG5HBZ/r7OfwOH1dfmbjRJD99eHA3r4br8jwuvQfPg==
-  dependencies:
-    "@types/webpack" "^4.41.0"
-    commander "^4.0.1"
-    querystring "0.2.0"
 
 "@docusaurus/types@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
