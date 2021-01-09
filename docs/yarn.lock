@@ -1126,7 +1126,7 @@
     "@francoischalifour/autocomplete-preset-algolia" "^1.0.0-alpha.28"
     algoliasearch "^4.0.0"
 
-"@docusaurus/core@^2.0.0-alpha.62":
+"@docusaurus/core@2.0.0-alpha.62", "@docusaurus/core@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-2.0.0-alpha.62.tgz#d95eaea49a558616e10bbbdb415cb0419f7a5787"
   integrity sha512-6Mk9kisCx54oyvgLm74tBeNWBwwrLBNTMU0X4+xoq34QHhtyJW0/fhIZoH+/JcmIrONhAyqckF6ZAhn4rGNpVg==
@@ -1304,7 +1304,7 @@
     "@docusaurus/utils" "^2.0.0-alpha.62"
     react-json-view "^1.19.1"
 
-"@docusaurus/plugin-google-analytics@^2.0.0-alpha.62":
+"@docusaurus/plugin-google-analytics@2.0.0-alpha.62", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.62.tgz#acb79218b6811c62c56dedc213958dc922609a91"
   integrity sha512-3Niw4BT9oPwadE/Hh6pX+YqlnAn0zfFxEktNbN/EZEpMLmC3CmV/KyKvdEIBcT+vPXrNC51uSUC5sAdgI48d8Q==
@@ -1314,7 +1314,7 @@
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-alpha.62.tgz#675e0f6674b54d5c391dfdbd6621927ec588f7eb"
   integrity sha512-CCfOAtrAzTLEcwvvZgVS9Iiivl43n8972CCZOkXE2+eCcNUrisygrP8+qFEq6TtgNwqO68bz4ceVb9zcu7CCig==
 
-"@docusaurus/plugin-sitemap@^2.0.0-alpha.62":
+"@docusaurus/plugin-sitemap@2.0.0-alpha.62", "@docusaurus/plugin-sitemap@^2.0.0-alpha.62":
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-alpha.62.tgz#5d5ebe895352c22ebb61a026e75185a28cad817d"
   integrity sha512-SUkI2NabQjYlVcRckpbCMH+6lzOV//MRB9k13u9XpPrOLho7X4BabPywQ1x3mAeiDL647YMTxPTWZELoE1vvaA==
@@ -1324,7 +1324,7 @@
     fs-extra "^8.1.0"
     sitemap "^3.2.2"
 
-"@docusaurus/preset-classic@^2.0.0-alpha.62":
+"@docusaurus/preset-classic@2.0.0-alpha.62":
   version "2.0.0-alpha.62"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-2.0.0-alpha.62.tgz#a840e0fe8e2d7c86ca4715e12cf5cdf221017335"
   integrity sha512-DT5JCePMMZ7c5be5FLRqzcEF/ipDbAYsZ+Hfgdh2+gVamM+rlnrUWx21luSa05legTrmrT7Ju3MDm4JhVnVtkg==
