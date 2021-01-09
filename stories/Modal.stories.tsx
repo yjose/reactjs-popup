@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { ReactNode, useRef } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { PopupProps } from '../src/types';
 import { Popup } from '../src';
@@ -176,5 +176,79 @@ export const GlobalModalWithRef = GlobalModalWithRefTemplate.bind({});
 GlobalModalWithRef.args = {
   onClose: () => alert('popup closed'),
   onOpen: () => alert('popup opened '),
+  modal: true,
+};
+
+const DelayContentModalTemplate: Story<PopupProps> = args => {
+  const [timeRemainingInSeconds, setTimeRemainingInSeconds] = useState(-1);
+  const [content, setContent] = useState<ReactNode>('');
+
+  React.useEffect(() => {
+    if (timeRemainingInSeconds > 0) {
+      setContent(`Loading... ${timeRemainingInSeconds}`);
+      setTimeout(() => {
+        setTimeRemainingInSeconds(timeRemainingInSeconds - 1);
+      }, 1000);
+    } else if (timeRemainingInSeconds === 0) {
+      setContent(
+        <>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque
+            id diam vel quam elementum. Nec sagittis aliquam malesuada bibendum
+            arcu vitae. Id aliquet lectus proin nibh nisl condimentum. Egestas
+            erat imperdiet sed euismod nisi porta. Aliquet nec ullamcorper sit
+            amet risus nullam eget. Vulputate ut pharetra sit amet aliquam id.
+            Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum.
+            At imperdiet dui accumsan sit amet. In nulla posuere sollicitudin
+            aliquam ultrices sagittis orci a. Enim neque volutpat ac tincidunt
+            vitae semper quis.
+          </p>
+          <p>
+            Lectus sit amet est placerat in egestas erat. Nibh cras pulvinar
+            mattis nunc sed blandit. Varius duis at consectetur lorem. Aliquam
+            sem fringilla ut morbi tincidunt. Nibh mauris cursus mattis molestie
+            a iaculis at erat pellentesque. Enim ut sem viverra aliquet.
+            Adipiscing diam donec adipiscing tristique. Adipiscing elit
+            pellentesque habitant morbi tristique senectus et. Non diam
+            phasellus vestibulum lorem sed risus ultricies tristique nulla. Eu
+            consequat ac felis donec et.
+          </p>
+          <p>
+            Vestibulum lectus mauris ultrices eros in cursus turpis massa. At
+            augue eget arcu dictum varius duis. Vitae justo eget magna fermentum
+            iaculis eu. Enim eu turpis egestas pretium aenean. In est ante in
+            nibh. Diam in arcu cursus euismod quis. Imperdiet massa tincidunt
+            nunc pulvinar sapien et ligula ullamcorper malesuada. Nulla aliquet
+            enim tortor at auctor urna nunc id. Quis lectus nulla at volutpat
+            diam ut venenatis tellus. Sem nulla pharetra diam sit.
+          </p>
+        </>
+      );
+    }
+  }, [timeRemainingInSeconds]);
+
+  const updateText = () => {
+    setTimeRemainingInSeconds(3);
+  };
+
+  return (
+    <Center>
+      <Popup
+        {...args}
+        onOpen={() => updateText()}
+        onClose={() => setContent('')}
+      >
+        {content}
+      </Popup>
+    </Center>
+  );
+};
+
+export const DelayContentModal = DelayContentModalTemplate.bind({});
+
+DelayContentModal.args = {
+  trigger: <Button> click me </Button>,
+  on: 'click',
   modal: true,
 };

@@ -175,3 +175,44 @@ TooltipEffects.args = {
   onClose: () => alert('popup closed'),
   onOpen: () => alert('popup opened '),
 };
+
+const DelayedContentTemplate: Story<PopupProps> = args => {
+  const [timeRemainingInSeconds, setTimeRemainingInSeconds] = useState(-1);
+  const [content, setContent] = useState('');
+
+  React.useEffect(() => {
+    if (timeRemainingInSeconds > 0) {
+      setContent(`Loading... ${timeRemainingInSeconds}`);
+      setTimeout(() => {
+        setTimeRemainingInSeconds(timeRemainingInSeconds - 1);
+      }, 1000);
+    } else if (timeRemainingInSeconds === 0) {
+      setContent(
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      );
+    }
+  }, [timeRemainingInSeconds]);
+
+  const updateText = () => {
+    setTimeRemainingInSeconds(3);
+  };
+
+  return (
+    <Center>
+      <Popup
+        {...args}
+        onOpen={() => updateText()}
+        onClose={() => setContent('')}
+      >
+        {content}
+      </Popup>
+    </Center>
+  );
+};
+
+export const DelayedContent = DelayedContentTemplate.bind({});
+
+DelayedContent.args = {
+  trigger: <button> click Me </button>,
+  position: 'top right',
+};

@@ -87,7 +87,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       return () => {
         clearTimeout(timeOut.current);
       };
-    }, [isOpen]);
+    }, [isOpen, children]);
 
     // for uncontrolled popup we need to sync isOpen with open prop
     useEffect(() => {
