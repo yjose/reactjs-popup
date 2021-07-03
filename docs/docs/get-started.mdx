@@ -69,4 +69,34 @@ const PopupExample = () => (
 );
 ```
 
+## Custom Root
+
+Starting from v2 you can customize where the popup is rendered on the page!
+
+By default a div with id `popup-root` is appended to the very end of the `body` tag and the popup content is rendered inside, but if an element with this id already exists, this will be used instead.
+
+This can be helpful when you need your popup to render inside of React's root element.
+
+```jsx
+const PopupExample = () => (
+  <Popup trigger={<button>Trigger</button>} position="top left">
+    {close => (
+      <div>
+        Content here
+        <a className="close" onClick={close}>
+          &times;
+        </a>
+      </div>
+    )}
+  </Popup>
+);
+
+const App = () => (
+  <div>
+    <PopupExample />
+    <div id="popup-root" />
+  </div>
+);
+```
+
 > More examples in [Guides Section](./tooltip-examples.mdx)

@@ -32,4 +32,8 @@ default style for popup
   stroke: #d7d7d7;
   stroke-dasharray: 30px;
   stroke-dashoffset: -54px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }

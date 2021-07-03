@@ -21,7 +21,14 @@ const Template: Story<PopupProps> = args => (
 export const SimpleTooltip = Template.bind({});
 
 SimpleTooltip.args = {
-  trigger: <button> click Me </button>,
+  trigger: <button> Click Me </button>,
+};
+
+export const CenteredTextTooltip = Template.bind({});
+
+CenteredTextTooltip.args = {
+  trigger: <button> Click Me </button>,
+  contentStyle: {textAlign: 'center'}
 };
 
 const PositionsTooltipTemplate: Story<PopupProps> = args => (
