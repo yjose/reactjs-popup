@@ -3,7 +3,7 @@ import { useEffect, RefObject, useLayoutEffect } from 'react';
 export const useOnEscape = (handler: (event: any) => void, active = true) => {
   useEffect(() => {
     if (!active) return;
-    const listener = (event: any) => {
+    const listener = (event: KeyboardEvent) => {
       // check if key is an Escape
       if (event.key === 'Escape') handler(event);
     };
@@ -72,7 +72,7 @@ export const useTabbing = (
 ) => {
   useEffect(() => {
     if (!active) return;
-    const listener = (event: any) => {
+    const listener = (event: KeyboardEvent) => {
       // check if key is an Tab
       if (event.keyCode === 9) {
         const els = contentRef?.current?.querySelectorAll(
