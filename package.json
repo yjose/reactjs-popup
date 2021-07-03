@@ -93,5 +93,8 @@
     "react-tooltip"
   ],
   "homepage": "https://react-popup.elazizi.com/",
-  "repository": "yjose/reactjs-popup"
+  "repository": "yjose/reactjs-popup",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
 }
