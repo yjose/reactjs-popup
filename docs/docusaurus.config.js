@@ -1,3 +1,6 @@
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
 module.exports = {
   title: 'ReactJs Popup: Modals, Tooltips and Menus, All in One ',
   tagline:
@@ -19,6 +22,10 @@ module.exports = {
       id: 'support_us', // Any value that will identify this message.
       content:
         '⭐️ If you like reactjs-popup, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/yjose/reactjs-popup/stargazers">GitHub!</a>  ⭐️ ',
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
     },
     navbar: {
       title: 'Reactjs-popup',
@@ -67,13 +74,12 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/yjose/reactjs-popup/edit/master/docs/blog/',
+            'https://github.com/yjose/reactjs-popup/edit/master/docs/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
         sitemap: {
-          cacheTime: 600 * 1000, // 600 sec - cache purge period
           changefreq: 'weekly',
           priority: 0.5,
         },
