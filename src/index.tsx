@@ -106,7 +106,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const closePopup = () => {
       if (!isOpen || disabled) return;
       setIsOpen(false);
-      if (isModal && focusedElBeforeOpen.current && (focusedElBeforeOpen.current as HTMLElement).focus) (focusedElBeforeOpen.current as HTMLElement).focus();
+      if (isModal) (focusedElBeforeOpen.current as HTMLElement)?.focus();
       setTimeout(onClose, 0);
     };
 
