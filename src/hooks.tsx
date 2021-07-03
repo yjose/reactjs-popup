@@ -1,6 +1,9 @@
 import { useEffect, RefObject, useLayoutEffect } from 'react';
 
-export const useOnEscape = (handler: (event: any) => void, active = true) => {
+export const useOnEscape = (
+  handler: (event: KeyboardEvent) => void,
+  active = true
+) => {
   useEffect(() => {
     if (!active) return;
     const listener = (event: KeyboardEvent) => {
@@ -34,18 +37,18 @@ export const useRepositionOnResize = (handler: () => void, active = true) => {
 
 export const useOnClickOutside = (
   ref: RefObject<HTMLElement> | RefObject<HTMLElement>[],
-  handler: (event: any) => void,
+  handler: (event: TouchEvent | MouseEvent) => void,
   active = true
 ) => {
   useEffect(() => {
     if (!active) return;
-    const listener = (event: any) => {
+    const listener = (event: TouchEvent | MouseEvent) => {
       // Do nothing if clicking ref's element or descendent elements
       const refs = Array.isArray(ref) ? ref : [ref];
 
       let contains = false;
       refs.forEach(r => {
-        if (!r.current || r.current.contains(event.target)) {
+        if (!r.current || r.current.contains(event.target as Node)) {
           contains = true;
           return;
         }

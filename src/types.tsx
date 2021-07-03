@@ -42,8 +42,11 @@ export interface PopupProps {
   repositionOnResize?: boolean;
   mouseEnterDelay?: number;
   mouseLeaveDelay?: number;
-  onOpen?: (event?: React.SyntheticEvent) => any;
-  onClose?: (event?: React.SyntheticEvent) => any;
+  onOpen?: (event?: React.SyntheticEvent) => void;
+  // the popup can be closed depend on multiple factor: mouse click outside, keyboard esc, click a close button
+  onClose?: (
+    event?: React.SyntheticEvent | KeyboardEvent | TouchEvent | MouseEvent
+  ) => void;
   contentStyle?: React.CSSProperties;
   overlayStyle?: React.CSSProperties;
   arrowStyle?: React.CSSProperties;

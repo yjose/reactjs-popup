@@ -103,7 +103,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       setTimeout(() => onOpen(event), 0);
     };
 
-    const closePopup = (event?: React.SyntheticEvent) => {
+    const closePopup = (
+      event?: React.SyntheticEvent | KeyboardEvent | TouchEvent | MouseEvent
+    ) => {
       if (!isOpen || disabled) return;
       setIsOpen(false);
       if (isModal) (focusedElBeforeOpen.current as HTMLElement).focus();
