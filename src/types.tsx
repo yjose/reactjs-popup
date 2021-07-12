@@ -34,6 +34,7 @@ export interface PopupProps {
   position?: PopupPosition | PopupPosition[];
   offsetX?: number;
   offsetY?: number;
+  arrowOffset?: number;
   arrow?: boolean;
   modal?: boolean;
   lockScroll?: boolean;

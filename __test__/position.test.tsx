@@ -97,6 +97,7 @@ describe('Popup Positions ', () => {
         position,
         true,
         { offsetX: 0, offsetY: 0 },
+        0,
         false
       );
     POSITION_TYPES.forEach((position: PopupPosition) => {
