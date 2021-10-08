@@ -14,7 +14,7 @@ export default {
 
 const Template: Story<PopupProps> = args => (
   <Center>
-    <Popup {...args}>Popup content Here</Popup>
+    <Popup {...args}>Popup content Here<input value={"Focusable content"}/></Popup>
   </Center>
 );
 

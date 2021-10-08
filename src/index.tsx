@@ -61,6 +61,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       mouseEnterDelay = 100,
       mouseLeaveDelay = 100,
       keepTooltipInside = false,
+      disableFocusContentOnOpen = false,
       children,
     },
     ref
@@ -143,6 +144,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         document.getElementsByTagName('body')[0].style.overflow = 'auto';
     };
     const focusContentOnOpen = () => {
+      if (disableFocusContentOnOpen) {
+        return;
+      }
       const focusableEls = contentRef?.current?.querySelectorAll(
         'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
       );
