@@ -34,6 +34,10 @@ const getRootPopup = () => {
   return PopupRoot;
 };
 
+export const PopupGlobalConfig = {
+  getRootPopup
+}
+
 export const Popup = forwardRef<PopupActions, PopupProps>(
   (
     {
@@ -345,7 +349,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     return (
       <>
         {renderTrigger()}
-        {isOpen && ReactDOM.createPortal(content, getRootPopup())}
+        {isOpen && ReactDOM.createPortal(content, PopupGlobalConfig.getRootPopup())}
       </>
     );
   }
