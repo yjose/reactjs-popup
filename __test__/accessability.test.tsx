@@ -86,6 +86,7 @@ describe('Popup Positions ', () => {
     expect(screen.getByTestId('b1')).toHaveFocus();
     userEvent.click(screen.getByText(/trigger/));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(screen.getByRole('dialog')).toHaveAttribute('aria-modal', 'true');
     fireEvent.keyUp(document, { key: 'Escape', code: 'Escape' });
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(screen.getByText(/trigger/)).toHaveFocus();

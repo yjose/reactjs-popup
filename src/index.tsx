@@ -278,6 +278,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           {...addWarperAction()}
           key="C"
           role={isModal ? 'dialog' : 'tooltip'}
+          aria-modal={isModal ? 'true' : null}
           id={popupId.current}
         >
           {arrow && !isModal && (
