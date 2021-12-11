@@ -57,13 +57,11 @@ export const useOnClickOutside = (
       if (!contains) handler(event);
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener('click', listener);
 
     return () => {
       if (!active) return;
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener('click', listener);
     };
   }, [ref, handler, active]);
 };
