@@ -1,24 +1,17 @@
 import React, {
-  useState,
-  useRef,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
+  forwardRef, useEffect, useImperativeHandle, useRef, useState
 } from 'react';
 import ReactDOM from 'react-dom';
-import { PopupProps, PopupActions } from './types';
 import {
-  useOnEscape,
-  useRepositionOnResize,
-  useOnClickOutside,
-  useTabbing,
-  useIsomorphicLayoutEffect,
+  useIsomorphicLayoutEffect, useOnClickOutside, useOnEscape,
+  useRepositionOnResize, useTabbing
 } from './hooks';
-
 import './index.css';
-
 import styles from './styles';
+import { PopupActions, PopupProps } from './types';
 import calculatePosition from './Utils';
+
+
 
 let popupIdCounter = 0;
 
@@ -38,8 +31,8 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
   (
     {
       trigger = null,
-      onOpen = () => {},
-      onClose = () => {},
+      onOpen = () => { },
+      onClose = () => { },
       defaultOpen = false,
       open = undefined,
       disabled = false,
@@ -91,14 +84,18 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     // for uncontrolled popup we need to sync isOpen with open prop
     useEffect(() => {
-      if (typeof open === 'boolean') {
-        if (open) openPopup();
-        else closePopup();
+      if (!disabled) {
+        if (typeof open === 'boolean') {
+          if (open) openPopup();
+          else closePopup();
+        }
+      } else {
+        closePopup();
       }
     }, [open, disabled]);
 
     const openPopup = (event?: React.SyntheticEvent) => {
-      if (isOpen || disabled) return;
+      if (isOpen) return;
       setIsOpen(true);
       setTimeout(() => onOpen(event), 0);
     };
@@ -106,7 +103,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const closePopup = (
       event?: React.SyntheticEvent | KeyboardEvent | TouchEvent | MouseEvent
     ) => {
-      if (!isOpen || disabled) return;
+      if (!isOpen) return;
       setIsOpen(false);
       if (isModal) (focusedElBeforeOpen.current as HTMLElement)?.focus();
       setTimeout(() => onClose(event), 0);
@@ -247,14 +244,13 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
         : styles.popupContent.tooltip;
 
       const childrenElementProps: any = {
-        className: `popup-content ${
-          className !== ''
-            ? className
-                .split(' ')
-                .map(c => `${c}-content`)
-                .join(' ')
-            : ''
-        }`,
+        className: `popup-content ${className !== ''
+          ? className
+            .split(' ')
+            .map(c => `${c}-content`)
+            .join(' ')
+          : ''
+          }`,
         style: {
           ...popupContentStyle,
           ...contentStyle,
@@ -284,14 +280,13 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
             <div ref={arrowRef} style={styles.popupArrow}>
               <svg
                 data-testid="arrow"
-                className={`popup-arrow ${
-                  className !== ''
-                    ? className
-                        .split(' ')
-                        .map(c => `${c}-arrow`)
-                        .join(' ')
-                    : ''
-                }`}
+                className={`popup-arrow ${className !== ''
+                  ? className
+                    .split(' ')
+                    .map(c => `${c}-arrow`)
+                    .join(' ')
+                  : ''
+                  }`}
                 viewBox="0 0 32 16"
                 style={{
                   position: 'absolute',
@@ -318,14 +313,13 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           key="O"
           data-testid="overlay"
           data-popup={isModal ? 'modal' : 'tooltip'}
-          className={`popup-overlay ${
-            className !== ''
-              ? className
-                  .split(' ')
-                  .map(c => `${c}-overlay`)
-                  .join(' ')
-              : ''
-          }`}
+          className={`popup-overlay ${className !== ''
+            ? className
+              .split(' ')
+              .map(c => `${c}-overlay`)
+              .join(' ')
+            : ''
+            }`}
           style={{
             ...ovStyle,
             ...overlayStyle,
