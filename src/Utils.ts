@@ -158,7 +158,9 @@ const calculatePosition = (
 
   // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
   if (keepTooltipInside || Array.isArray(position))
-    positions = [...positions, ...POSITION_TYPES];
+    if (keepTooltipInside) {
+      positions = [...positions, ...POSITION_TYPES];
+    }
 
   // add viewPort for WarpperBox
   // wrapperBox.top = wrapperBox.top + window.scrollY;
