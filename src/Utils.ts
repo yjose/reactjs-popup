@@ -159,7 +159,7 @@ const calculatePosition = (
   // keepTooltipInside would be activated if the  keepTooltipInside exist or the position is Array
   if (keepTooltipInside || Array.isArray(position))
     if (keepTooltipInside) {
-      positions = [...positions, ...POSITION_TYPES];
+      positions = [...POSITION_TYPES, ...positions];
     }
 
   // add viewPort for WarpperBox
