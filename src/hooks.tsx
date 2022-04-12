@@ -13,7 +13,6 @@ export const useOnEscape = (
     document.addEventListener('keyup', listener);
 
     return () => {
-      if (!active) return;
       document.removeEventListener('keyup', listener);
     };
   }, [handler, active]);
@@ -29,7 +28,6 @@ export const useRepositionOnResize = (handler: () => void, active = true) => {
     window.addEventListener('resize', listener);
 
     return () => {
-      if (!active) return;
       window.removeEventListener('resize', listener);
     };
   }, [handler, active]);
@@ -61,7 +59,6 @@ export const useOnClickOutside = (
     document.addEventListener('touchstart', listener);
 
     return () => {
-      if (!active) return;
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };
@@ -103,7 +100,6 @@ export const useTabbing = (
     document.addEventListener('keydown', listener);
 
     return () => {
-      if (!active) return;
       document.removeEventListener('keydown', listener);
     };
   }, [contentRef, active]);
