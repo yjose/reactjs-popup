@@ -1,5 +1,7 @@
 # Reactjs-popup
 
+## [⚠️ Looking for maintainers for reactjs-popup library](https://github.com/yjose/reactjs-popup/issues/332)
+
 [![Build Status][build-badge]][build]
 [![npm bundle size][npm-bundle-size]][build]
 [![version][version-badge]][package]
