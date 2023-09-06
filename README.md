@@ -41,9 +41,9 @@ This is a simple Demo to demonstrate how you can create Modals, Tooltips, Menus 
 
 ---
 
-<a href='https://frigade.com/?source=react-popup'>
-<img src ='https://github.com/yjose/reactjs-popup/assets/11137944/6250740a-82a2-426e-8422-fc6af987fcec' style="max-width:600px" >
-</a>
+Sponsored by
+
+[![frigade-sponsor](https://github.com/yjose/reactjs-popup/assets/11137944/9b5d5362-62e7-4649-bc35-9dd31b343325)](https://frigade.com/?source=react-popup)
 
 React-JS Popup is proud to be sponsored by [Frigade](https://frigade.com/?source=react-popup), a developer tool for building better product onboarding: guided tours, getting started checklists, announcements, and more.
 
