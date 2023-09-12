@@ -28,7 +28,7 @@ export interface PopupProps {
   nested?: boolean;
   defaultOpen?: boolean;
   on?: EventType | EventType[];
-  children: React.ReactNode;
+  children: React.ReactNode | ((close: () => void, isClose?: boolean) => React.ReactNode);
 
   //| ((close: () => void, isOpen: boolean) => React.ReactNode);
   position?: PopupPosition | PopupPosition[];
