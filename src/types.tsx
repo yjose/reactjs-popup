@@ -52,4 +52,5 @@ export interface PopupProps {
   arrowStyle?: React.CSSProperties;
   className?: string;
   keepTooltipInside?: boolean | string;
+  disableFocusContentOnOpen?: boolean;
 }
