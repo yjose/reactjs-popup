@@ -62,6 +62,21 @@ PositionsTooltip.args = {
   on: 'hover',
 };
 
+const ArrowOffsetTooltipTemplate: Story<PopupProps> = args => (
+  <Center>
+    <Popup {...args}>Popup with arrow offset (applied automatically when changing of position with keepTooltipInside) </Popup>
+  </Center>
+);
+
+export const ArrowOffsetTooltip = ArrowOffsetTooltipTemplate.bind({});
+
+ArrowOffsetTooltip.args = {
+  trigger: <button> Click Me </button>,
+  arrowOffset: 5,
+  keepTooltipInside: true,
+  position : ['right center', 'bottom center', 'left center']
+};
+
 const TriggerAsFunTemplate: Story<PopupProps> = args => (
   <Center>
     <Popup

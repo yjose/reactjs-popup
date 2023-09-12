@@ -47,9 +47,10 @@ const getCoordinatesForPosition = (
   ContentBounding: DOMRect,
   position: PopupPosition, //PopupPosition | PopupPosition[],
   arrow: boolean,
-  { offsetX, offsetY }: { offsetX: number; offsetY: number }
+  { offsetX, offsetY }: { offsetX: number; offsetY: number },
+  arrowOffset: number
 ): CordsType => {
-  const margin = arrow ? 8 : 0;
+  const margin = arrow ? 8 + arrowOffset : 0;
   const args = position.split(' ');
   // the step N 1 : center the popup content => ok
   const CenterTop = triggerBounding.top + triggerBounding.height / 2;
@@ -143,6 +144,7 @@ const calculatePosition = (
   position: PopupPosition | PopupPosition[],
   arrow: boolean,
   { offsetX, offsetY }: { offsetX: number; offsetY: number },
+  arrowOffset: number,
   keepTooltipInside: string | boolean
 ): CordsType => {
   let bestCoords: CordsType = {
@@ -170,7 +172,8 @@ const calculatePosition = (
       ContentBounding,
       positions[i],
       arrow,
-      { offsetX, offsetY }
+      { offsetX, offsetY },
+      arrowOffset
     );
 
     const contentBox = {

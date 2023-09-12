@@ -56,6 +56,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       modal = false,
       lockScroll = false,
       arrow = true,
+      arrowOffset = 0,
       offsetX = 0,
       offsetY = 0,
       mouseEnterDelay = 100,
@@ -179,6 +180,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           offsetX,
           offsetY,
         },
+        arrowOffset,
         keepTooltipInside
       );
       contentRef.current.style.top = `${cords.top + window.scrollY}px`;
@@ -251,7 +253,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           className !== ''
             ? className
                 .split(' ')
-                .map(c => `${c}-content`)
+                .map((c) => `${c}-content`)
                 .join(' ')
             : ''
         }`,
@@ -288,7 +290,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
                   className !== ''
                     ? className
                         .split(' ')
-                        .map(c => `${c}-arrow`)
+                        .map((c) => `${c}-arrow`)
                         .join(' ')
                     : ''
                 }`}
@@ -322,7 +324,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
             className !== ''
               ? className
                   .split(' ')
-                  .map(c => `${c}-overlay`)
+                  .map((c) => `${c}-overlay`)
                   .join(' ')
               : ''
           }`}
