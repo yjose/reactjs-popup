@@ -101,14 +101,14 @@ describe('Popup Component Render ', () => {
     render(<SimplePopup />);
     fireEvent.click(screen.getByText('trigger'));
     popupContentShouldExist();
-    fireEvent.mouseDown(document);
+    fireEvent.click(document);
     popupContentShouldntExist();
   });
   test('shouldnt close on ClickOutside if closeOnDocumentClick=false', async () => {
     render(<SimplePopup closeOnDocumentClick={false} />);
     fireEvent.click(screen.getByText('trigger'));
     popupContentShouldExist();
-    fireEvent.mouseDown(document);
+    fireEvent.click(document);
     popupContentShouldExist();
   });
 
