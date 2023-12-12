@@ -165,7 +165,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     // set Position
     const setPosition = () => {
       if (isModal || !isOpen) return;
-      if (!triggerRef?.current || !triggerRef?.current || !contentRef?.current)
+      if (!triggerRef?.current || !contentRef?.current)
         return; /// show error as one of ref is undefined
       const trigger = triggerRef.current.getBoundingClientRect();
       const content = contentRef.current.getBoundingClientRect();
