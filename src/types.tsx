@@ -39,6 +39,7 @@ export interface PopupProps {
   lockScroll?: boolean;
   closeOnDocumentClick?: boolean;
   closeOnEscape?: boolean;
+  disabledAutofocus?: boolean;
   repositionOnResize?: boolean;
   mouseEnterDelay?: number;
   mouseLeaveDelay?: number;

@@ -178,3 +178,21 @@ GlobalModalWithRef.args = {
   onOpen: () => alert('popup opened '),
   modal: true,
 };
+
+const DisabledAutofocusOnFirstElementTemplate: Story<PopupProps> = args => (
+  <Center>
+    <Popup
+      {...args}
+      trigger={<Button>Open modal</Button>}
+    >
+      <input placeholder='Start type'/>
+    </Popup>
+  </Center>
+);
+
+export const DisabledAutofocusOnFirstElement = DisabledAutofocusOnFirstElementTemplate.bind({});
+
+DisabledAutofocusOnFirstElement.args = {
+  modal: true,
+  disabledAutofocus: true
+};
