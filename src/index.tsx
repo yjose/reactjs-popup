@@ -44,6 +44,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       open = undefined,
       disabled = false,
       nested = false,
+      disabledAutofocus = false,
       closeOnDocumentClick = true,
       repositionOnResize = true,
       closeOnEscape = true,
@@ -79,7 +80,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       if (isOpen) {
         focusedElBeforeOpen.current = document.activeElement;
         setPosition();
-        focusContentOnOpen(); // for accessibility
+        if (!disabledAutofocus) {
+          focusContentOnOpen(); // for accessibility
+        } 
         lockScrolll();
       } else {
         resetScroll();
