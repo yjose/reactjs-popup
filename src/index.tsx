@@ -114,6 +114,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     const togglePopup = (event?: React.SyntheticEvent) => {
       event?.stopPropagation();
+      event?.preventDefault();
       if (!isOpen) openPopup(event);
       else closePopup(event);
     };
