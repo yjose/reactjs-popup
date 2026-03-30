@@ -1,6 +1,6 @@
 {
-  "name": "reactjs-popup",
-  "version": "2.0.6",
+  "name": "@tomino/react-popup",
+  "version": "2.0.10",
   "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "dist/index.js",
   "module": "dist/reactjs-popup.esm.js",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "NODE_ENV=production tsdx build --entry src/index.tsx  --format=cjs,esm,umd",
+    "build": "NODE_ENV=production tsdx build --entry src/index.tsx  --format=cjs,esm",
     "test": "tsdx test --passWithNoTests --env=jest-environment-jsdom-sixteen",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
@@ -78,7 +78,7 @@
   "author": "Youssouf EL AZIZI <youssoufelazizi@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yjose/reactjs-popup/issues"
+    "url": "https://github.com/tomitrescak/react-popup/issues"
   },
   "keywords": [
     "react",
@@ -93,7 +93,7 @@
     "react-tooltip"
   ],
   "homepage": "https://react-popup.elazizi.com/",
-  "repository": "yjose/reactjs-popup",
+  "repository": "tomitrescak/react-popup",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   }

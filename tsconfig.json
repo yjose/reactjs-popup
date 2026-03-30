@@ -1,13 +1,21 @@
 {
-  "include": ["src", "types", "stories"],
+  "include": [
+    "src",
+    "types",
+    "stories"
+  ],
   "compilerOptions": {
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
     "rootDir": "./",
     "strict": true,
+    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -15,8 +23,13 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "@": ["./"],
-      "*": ["src/*", "node_modules/*"]
+      "@": [
+        "./"
+      ],
+      "*": [
+        "src/*",
+        "node_modules/*"
+      ]
     },
     "jsx": "react",
     "esModuleInterop": true

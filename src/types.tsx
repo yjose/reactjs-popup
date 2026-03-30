@@ -22,6 +22,7 @@ export type PopupActions = {
   toggle: () => void;
 };
 export interface PopupProps {
+  id?: string | number;
   trigger?: JSX.Element | ((isOpen: boolean) => JSX.Element);
   open?: boolean;
   disabled?: boolean;

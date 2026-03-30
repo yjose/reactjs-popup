@@ -47,7 +47,7 @@ export const useOnClickOutside = (
       const refs = Array.isArray(ref) ? ref : [ref];
 
       let contains = false;
-      refs.forEach(r => {
+      refs.forEach((r) => {
         if (!r.current || r.current.contains(event.target as Node)) {
           contains = true;
           return;

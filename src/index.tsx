@@ -1,26 +1,26 @@
 import React, {
-  useState,
-  useRef,
-  useEffect,
   forwardRef,
+  useEffect,
   useImperativeHandle,
+  useRef,
+  useState,
 } from 'react';
 import ReactDOM from 'react-dom';
-import { PopupProps, PopupActions } from './types';
 import {
+  useIsomorphicLayoutEffect,
+  useOnClickOutside,
   useOnEscape,
   useRepositionOnResize,
-  useOnClickOutside,
   useTabbing,
-  useIsomorphicLayoutEffect,
 } from './hooks';
+import { PopupActions, PopupProps } from './types';
 
 import './index.css';
 
 import styles from './styles';
 import calculatePosition from './Utils';
 
-let popupIdCounter = 0;
+// let popupIdCounter = 0;
 
 const getRootPopup = () => {
   let PopupRoot = document.getElementById('popup-root');
@@ -37,6 +37,7 @@ const getRootPopup = () => {
 export const Popup = forwardRef<PopupActions, PopupProps>(
   (
     {
+      id = undefined,
       trigger = null,
       onOpen = () => {},
       onClose = () => {},
@@ -70,7 +71,6 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const contentRef = useRef<HTMLElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
     const focusedElBeforeOpen = useRef<Element | null>(null);
-    const popupId = useRef<string>(`popup-${++popupIdCounter}`);
 
     const isModal = modal ? true : !trigger;
     const timeOut = useRef<any>(0);
@@ -210,7 +210,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
       const triggerProps: any = {
         key: 'T',
         ref: triggerRef,
-        'aria-describedby': popupId.current,
+        'aria-describedby': id,
       };
       const onAsArray = Array.isArray(on) ? on : [on];
       for (let i = 0, len = onAsArray.length; i < len; i++) {
@@ -251,7 +251,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           className !== ''
             ? className
                 .split(' ')
-                .map(c => `${c}-content`)
+                .map((c) => `${c}-content`)
                 .join(' ')
             : ''
         }`,
@@ -278,7 +278,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
           {...addWarperAction()}
           key="C"
           role={isModal ? 'dialog' : 'tooltip'}
-          id={popupId.current}
+          id={id}
         >
           {arrow && !isModal && (
             <div ref={arrowRef} style={styles.popupArrow}>
@@ -288,7 +288,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
                   className !== ''
                     ? className
                         .split(' ')
-                        .map(c => `${c}-arrow`)
+                        .map((c) => `${c}-arrow`)
                         .join(' ')
                     : ''
                 }`}
@@ -322,7 +322,7 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
             className !== ''
               ? className
                   .split(' ')
-                  .map(c => `${c}-overlay`)
+                  .map((c) => `${c}-overlay`)
                   .join(' ')
               : ''
           }`}
