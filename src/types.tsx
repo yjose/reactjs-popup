@@ -14,7 +14,9 @@ export type PopupPosition =
   | 'left top'
   | 'left center'
   | 'left bottom'
-  | 'center center';
+  | 'center left'
+  | 'center center'
+  | 'center right';
 
 export type PopupActions = {
   open: () => void;
