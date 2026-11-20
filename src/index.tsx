@@ -65,7 +65,9 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     },
     ref
   ) => {
-    const [isOpen, setIsOpen] = useState<boolean>(open || defaultOpen);
+    const [isOpen, setIsOpen] = useState<boolean>(
+      !disabled && (open || defaultOpen)
+    );
     const triggerRef = useRef<HTMLElement>(null);
     const contentRef = useRef<HTMLElement>(null);
     const arrowRef = useRef<HTMLDivElement>(null);
@@ -91,6 +93,11 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
 
     // for uncontrolled popup we need to sync isOpen with open prop
     useEffect(() => {
+      // a disabled popup can't be shown, so close it if it's open (#293)
+      if (disabled) {
+        closePopup();
+        return;
+      }
       if (typeof open === 'boolean') {
         if (open) openPopup();
         else closePopup();
@@ -106,7 +113,8 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
     const closePopup = (
       event?: React.SyntheticEvent | KeyboardEvent | TouchEvent | MouseEvent
     ) => {
-      if (!isOpen || disabled) return;
+      // closing is still allowed while disabled, only opening isn't
+      if (!isOpen) return;
       setIsOpen(false);
       if (isModal) (focusedElBeforeOpen.current as HTMLElement)?.focus();
       setTimeout(() => onClose(event), 0);
