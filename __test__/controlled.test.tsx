@@ -134,5 +134,20 @@ describe('Controlled Popup ', () => {
     expect(screen.getByTestId('button')).toHaveTextContent('closed');
     expect(screen.queryByRole('dialog')).toBeNull();
   });
+
+  test('a controlled open popup closes when disabled becomes true (#293)', () => {
+    const Controlled = ({ disabled }: { disabled: boolean }) => (
+      <Popup open disabled={disabled}>
+        <span> popup Content </span>
+      </Popup>
+    );
+    const { rerender } = render(<Controlled disabled={false} />);
+    expect(screen.getByText(/popup Content/)).toBeInTheDocument();
+    rerender(<Controlled disabled />);
+    expect(screen.queryByText(/popup Content/)).toBeNull();
+    // open is still true: enabling again shows it, as before
+    rerender(<Controlled disabled={false} />);
+    expect(screen.getByText(/popup Content/)).toBeInTheDocument();
+  });
 });
 // should add nested prop

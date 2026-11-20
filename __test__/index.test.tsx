@@ -57,6 +57,40 @@ describe('Popup Component Render ', () => {
     fireEvent.click(screen.getByText('trigger'));
     popupContentShouldntExist();
   });
+  test('it should close an open popup when disabled becomes true (#293)', async () => {
+    const onClose = jest.fn();
+    const { rerender } = render(<SimplePopup onClose={onClose} />);
+    fireEvent.click(screen.getByText('trigger'));
+    popupContentShouldExist();
+    rerender(<SimplePopup onClose={onClose} disabled />);
+    popupContentShouldntExist();
+    await waitFor(() => expect(onClose).toHaveBeenCalledTimes(1));
+    // still can't be opened while disabled
+    fireEvent.click(screen.getByText('trigger'));
+    popupContentShouldntExist();
+    // enabling again doesn't open it by itself, but a click does
+    rerender(<SimplePopup onClose={onClose} />);
+    popupContentShouldntExist();
+    fireEvent.click(screen.getByText('trigger'));
+    popupContentShouldExist();
+  });
+
+  test('it should close an open hover tooltip when disabled becomes true (#293)', async () => {
+    const { rerender } = render(<SimplePopup on="hover" mouseEnterDelay={0} />);
+    fireEvent.mouseEnter(screen.getByText('trigger'));
+    await waitFor(() => popupContentShouldExist());
+    rerender(<SimplePopup on="hover" mouseEnterDelay={0} disabled />);
+    popupContentShouldntExist();
+    fireEvent.mouseEnter(screen.getByText('trigger'));
+    await new Promise(r => setTimeout(r, 50));
+    popupContentShouldntExist();
+  });
+
+  test('defaultOpen with disabled stays closed (#293)', () => {
+    render(<SimplePopup defaultOpen disabled />);
+    popupContentShouldntExist();
+  });
+
   test('should be open by default on defaultOpen= true  ', () => {
     render(<SimplePopup defaultOpen />);
     popupContentShouldExist();
